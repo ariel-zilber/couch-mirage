@@ -1,0 +1,209 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-33:12
+MERGED from [androidx.core:core-ktx:1.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f5c377fe6b8e93fb379cfc3f4d6f2e82/jetified-core-ktx-1.3.1/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.appcompat:appcompat:1.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f69a628eaaf91940e7a1f610b7836c95/appcompat-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f218e8e9835316d8e1e6d052f41c77b9/constraintlayout-1.1.3/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.ar.sceneform.ux:sceneform-ux:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/c769672d698bb982e74b44a1dd068afb/jetified-sceneform-ux-1.15.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.ar.sceneform:core:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/1959c45920b747ab484625cc07e52f9a/jetified-core-1.15.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.ar.sceneform:animation:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3efa5dd7dde7e73c883f18575cbf37d4/jetified-animation-1.15.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.ar.sceneform:rendering:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/423c2be6b3e96285c684bf54407febe3/jetified-rendering-1.15.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:17:1-46:12
+MERGED from [com.google.ar.sceneform:assets:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/cbf029afe4e1d2f6b3ba541312a77bc7/jetified-assets-1.15.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.fragment:fragment:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/a0da5dcc6e891ea4650760b0863bc530/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/e71035bedc2cabb9270ac7c01e8c0031/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/30e65f49dcef904865d55d112d6710f4/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/2a3c81b04501f75bfe20fdd82bc18311/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/7fea223dc5af229a3e529225e4dbe654/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/72d036559d55f8abc723fb55d072433c/jetified-activity-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/807b7424194e7da05c455f07e756d817/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/a446013d26b530355f0842f86e41d6c5/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/b7220cebdfe06b0496d8a9e5f8472be0/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/26e0a91a5e33b53b297eff4012f2b2cf/core-1.3.1/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5c3dcffd3a40e72fba2490423ca5ff4f/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9b4f1bf844ec479dd404687c5156b5ea/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/43ce44d96bcae8550cfa69c5d9880df9/lifecycle-runtime-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/b80578592cdb348ecad3a6b9992a8cf2/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/e3ca38bccc6259b8826cf31dbe8cc2ed/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/ddf8fd4d9724056b9de1dbdfb3d0adcb/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/467931ca000356ee47106dc23bf7333d/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/faf5783af95c832400322383a7dd9ded/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/ac91a101c17d6746f14fb898434e5b89/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.ar.sceneform:sceneform-base:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/97f0e2f3f5d47aa88d2278b8f5d9f416/jetified-sceneform-base-1.15.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.ar.sceneform:filament-android:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/ffca094129871e54e65be078f35d79ee/jetified-filament-android-1.15.0/AndroidManifest.xml:2:1-11:12
+INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-33:12
+	package
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:3:5-35
+		INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
+		INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-33:12
+		INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-33:12
+		INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.CAMERA
+ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:6:5-65
+	android:name
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:6:22-62
+uses-permission#android.permission.INTERNET
+ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:7:5-67
+	android:name
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:7:22-64
+uses-feature#0x00030000
+ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:8:5-78
+	android:glEsVersion
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:8:19-51
+	android:required
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:8:52-75
+uses-feature#android.hardware.camera.ar
+ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:9:5-63
+	android:name
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:9:19-60
+application
+ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:12:5-31:19
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f218e8e9835316d8e1e6d052f41c77b9/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f218e8e9835316d8e1e6d052f41c77b9/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:30:5-44:19
+MERGED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:30:5-44:19
+MERGED from [androidx.core:core:1.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/26e0a91a5e33b53b297eff4012f2b2cf/core-1.3.1/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/26e0a91a5e33b53b297eff4012f2b2cf/core-1.3.1/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9b4f1bf844ec479dd404687c5156b5ea/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9b4f1bf844ec479dd404687c5156b5ea/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/26e0a91a5e33b53b297eff4012f2b2cf/core-1.3.1/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:17:9-35
+	android:label
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:15:9-41
+	android:roundIcon
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:16:9-54
+	android:icon
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:14:9-43
+	android:allowBackup
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:13:9-35
+	android:theme
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:18:9-40
+activity#com.huji.couchmirage.MainActivity
+ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:19:9-25:20
+	android:name
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:19:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:20:13-24:29
+action#android.intent.action.MAIN
+ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:21:17-69
+	android:name
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:21:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:23:17-77
+	android:name
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:23:27-74
+meta-data#com.google.ar.core
+ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:29:9-81
+	android:value
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:29:54-78
+	android:name
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:29:20-53
+uses-sdk
+INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
+INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
+MERGED from [androidx.core:core-ktx:1.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f5c377fe6b8e93fb379cfc3f4d6f2e82/jetified-core-ktx-1.3.1/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f5c377fe6b8e93fb379cfc3f4d6f2e82/jetified-core-ktx-1.3.1/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f69a628eaaf91940e7a1f610b7836c95/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f69a628eaaf91940e7a1f610b7836c95/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f218e8e9835316d8e1e6d052f41c77b9/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f218e8e9835316d8e1e6d052f41c77b9/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.ar.sceneform.ux:sceneform-ux:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/c769672d698bb982e74b44a1dd068afb/jetified-sceneform-ux-1.15.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.ar.sceneform.ux:sceneform-ux:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/c769672d698bb982e74b44a1dd068afb/jetified-sceneform-ux-1.15.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.ar.sceneform:core:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/1959c45920b747ab484625cc07e52f9a/jetified-core-1.15.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.ar.sceneform:core:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/1959c45920b747ab484625cc07e52f9a/jetified-core-1.15.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.ar.sceneform:animation:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3efa5dd7dde7e73c883f18575cbf37d4/jetified-animation-1.15.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.ar.sceneform:animation:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3efa5dd7dde7e73c883f18575cbf37d4/jetified-animation-1.15.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.ar.sceneform:rendering:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/423c2be6b3e96285c684bf54407febe3/jetified-rendering-1.15.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.ar.sceneform:rendering:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/423c2be6b3e96285c684bf54407febe3/jetified-rendering-1.15.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:26:5-28:41
+MERGED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:26:5-28:41
+MERGED from [com.google.ar.sceneform:assets:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/cbf029afe4e1d2f6b3ba541312a77bc7/jetified-assets-1.15.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.ar.sceneform:assets:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/cbf029afe4e1d2f6b3ba541312a77bc7/jetified-assets-1.15.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.fragment:fragment:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/a0da5dcc6e891ea4650760b0863bc530/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/a0da5dcc6e891ea4650760b0863bc530/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/e71035bedc2cabb9270ac7c01e8c0031/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/e71035bedc2cabb9270ac7c01e8c0031/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/30e65f49dcef904865d55d112d6710f4/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/30e65f49dcef904865d55d112d6710f4/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/2a3c81b04501f75bfe20fdd82bc18311/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/2a3c81b04501f75bfe20fdd82bc18311/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/7fea223dc5af229a3e529225e4dbe654/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/7fea223dc5af229a3e529225e4dbe654/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/72d036559d55f8abc723fb55d072433c/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/72d036559d55f8abc723fb55d072433c/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/807b7424194e7da05c455f07e756d817/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/807b7424194e7da05c455f07e756d817/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/a446013d26b530355f0842f86e41d6c5/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/a446013d26b530355f0842f86e41d6c5/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/b7220cebdfe06b0496d8a9e5f8472be0/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/b7220cebdfe06b0496d8a9e5f8472be0/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/26e0a91a5e33b53b297eff4012f2b2cf/core-1.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/26e0a91a5e33b53b297eff4012f2b2cf/core-1.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5c3dcffd3a40e72fba2490423ca5ff4f/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5c3dcffd3a40e72fba2490423ca5ff4f/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9b4f1bf844ec479dd404687c5156b5ea/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9b4f1bf844ec479dd404687c5156b5ea/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/43ce44d96bcae8550cfa69c5d9880df9/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/43ce44d96bcae8550cfa69c5d9880df9/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/b80578592cdb348ecad3a6b9992a8cf2/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/b80578592cdb348ecad3a6b9992a8cf2/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/e3ca38bccc6259b8826cf31dbe8cc2ed/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/e3ca38bccc6259b8826cf31dbe8cc2ed/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/ddf8fd4d9724056b9de1dbdfb3d0adcb/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/ddf8fd4d9724056b9de1dbdfb3d0adcb/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/467931ca000356ee47106dc23bf7333d/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/467931ca000356ee47106dc23bf7333d/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/faf5783af95c832400322383a7dd9ded/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/faf5783af95c832400322383a7dd9ded/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/ac91a101c17d6746f14fb898434e5b89/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/ac91a101c17d6746f14fb898434e5b89/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.ar.sceneform:sceneform-base:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/97f0e2f3f5d47aa88d2278b8f5d9f416/jetified-sceneform-base-1.15.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.ar.sceneform:sceneform-base:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/97f0e2f3f5d47aa88d2278b8f5d9f416/jetified-sceneform-base-1.15.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.ar.sceneform:filament-android:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/ffca094129871e54e65be078f35d79ee/jetified-filament-android-1.15.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.ar.sceneform:filament-android:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/ffca094129871e54e65be078f35d79ee/jetified-filament-android-1.15.0/AndroidManifest.xml:7:5-9:41
+INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
+INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
+		INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
+		INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
+meta-data#com.google.ar.core.min_apk_version
+ADDED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:33:9-35:41
+	android:value
+		ADDED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:35:13-38
+	android:name
+		ADDED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:34:13-62
+activity#com.google.ar.core.InstallActivity
+ADDED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:37:9-43:80
+	android:excludeFromRecents
+		ADDED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:40:13-46
+	android:launchMode
+		ADDED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:42:13-43
+	android:exported
+		ADDED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:41:13-37
+	android:configChanges
+		ADDED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:39:13-74
+	android:theme
+		ADDED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:43:13-77
+	android:name
+		ADDED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:38:13-62

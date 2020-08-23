@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/arikzil/couch-mirage/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fr-rCH/values-fr-rCH.xml",
+            "map": [
+                {
+                    "source": "/home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/res/values-fr-rCH/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "0,0,0,0,0",
+                        "startOffsets": "194,242,294,449,611",
+                        "endColumns": "47,51,154,161,92",
+                        "endOffsets": "241,293,448,610,703"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,107,163,322,488",
+                        "endColumns": "51,55,158,165,96",
+                        "endOffsets": "102,158,317,483,580"
+                    }
+                }
+            ]
+        }
+    ]
+}
