@@ -49,3 +49,9 @@ dependencies {
     implementation "com.google.ar.sceneform:animation:1.15.0"
 
 }
+
+/// scenfront plugins
+sceneform.asset('sampledata/models/andy.obj',
+        'default',
+        'sampledata/models/andy.sfa',
+        'src/main/res/raw/andy')

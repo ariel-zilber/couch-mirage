@@ -790,6 +790,7 @@ id line1
 id line3
 id listMode
 id list_item
+id measure
 id message
 id middle
 id multiply
@@ -928,6 +929,7 @@ layout support_simple_spinner_dropdown_item
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
+raw andy
 raw keep_arcore
 raw sceneform_camera_material
 raw sceneform_default_light_probe
@@ -974,7 +976,9 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string app_name
+string clear
 string lib_name
+string measure
 string search_menu_title
 string status_bar_notification_info_overflow
 style AlertDialog_AppCompat
