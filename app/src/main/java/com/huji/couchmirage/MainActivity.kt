@@ -10,31 +10,25 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
-import com.google.ar.sceneform.AnchorNode
-import com.google.ar.sceneform.Camera
-import com.google.ar.sceneform.Node
-import com.google.ar.sceneform.Sun
+import com.google.ar.core.Pose
+import com.google.ar.sceneform.*
+import com.google.ar.sceneform.collision.Box
 import com.google.ar.sceneform.math.Quaternion
 import com.google.ar.sceneform.math.Vector3
-import com.google.ar.sceneform.rendering.Color
-import com.google.ar.sceneform.rendering.MaterialFactory
-import com.google.ar.sceneform.rendering.ModelRenderable
-import com.google.ar.sceneform.rendering.ShapeFactory
+import com.google.ar.sceneform.rendering.*
 import com.google.ar.sceneform.ux.ArFragment
 import com.google.ar.sceneform.ux.TransformableNode
 import java.util.ArrayList
 
 @SuppressLint("Registered")
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), Scene.OnUpdateListener {
 
     //
     val TAG = MainActivity::class.simpleName
     val MIN_OPENGL_VERSION: Double = 3.0
 
-    //
-    var pose1 = ArrayList<Float>()
-    var pose2 = ArrayList<Float>()
 
     // TODO
     var btnRulerSelected: Boolean = false
@@ -44,11 +38,11 @@ class MainActivity : AppCompatActivity() {
 
     // renderable
     var cubeRenderable: ModelRenderable? = null
+    private var distanceCardViewRenderable: ViewRenderable? = null
 
-    var heightRenderable: ModelRenderable? = null
 
     // renderable constants
-    val CUBE_RENDABLE_RADIUS = 0.01f
+    val CUBE_RENDABLE_RADIUS = 0.015f
     val CUBE_RENDABLE_COLOR = Color(0F, 219F, 0F)
 
 
@@ -112,19 +106,10 @@ class MainActivity : AppCompatActivity() {
 
                     // fixed location and orientation in the real world
                     val anchor = hitResult.createAnchor()
-
+                    //
                     // sticks to anchor.can attach renderable
                     val anchorNode = AnchorNode(anchor)
                     anchorNode.setParent(arFragment.arSceneView.scene)
-
-                    // the
-                    val pose = anchor.pose
-                    if (pose1.isEmpty()) {
-                        pose1.add(pose.tx())
-                        pose1.add(pose.ty())
-                        pose1.add(pose.tz())
-                    }
-
                     val transformableNode = TransformableNode(arFragment.transformationSystem)
                     transformableNode.setParent(anchorNode)
                     transformableNode.renderable = cubeRenderable
@@ -155,21 +140,6 @@ class MainActivity : AppCompatActivity() {
                     val anchorNode = AnchorNode(anchor)
                     anchorNode.setParent(arFragment.arSceneView.scene)
 
-                    val pose = anchor.pose
-                    if (pose2.isEmpty()) {
-                        pose2.add(pose.tx())
-                        pose2.add(pose.ty())
-                        pose2.add(pose.tz())
-                        val d = getDistanceMeters(pose1, pose2)
-                    } else {
-                        pose1.clear()
-                        pose1.addAll(pose2)
-                        pose2.clear()
-                        pose2.add(pose.tx())
-                        pose2.add(pose.ty())
-                        pose2.add(pose.tz())
-                        val d = getDistanceMeters(pose1, pose2)
-                    }
 
                     //
                     val transformableNode =
@@ -212,36 +182,31 @@ class MainActivity : AppCompatActivity() {
                 node.setParent(null)
             }
         }
-        pose1.clear()
-        pose2.clear()
         lastAnchorNode = null
-        point1 = null
-        point2 = null
 
-    }
-
-
-
-    private fun getDistanceMeters(pose1: ArrayList<Float>, pose2: ArrayList<Float>): Any {
-        val distanceX = pose1[0] - pose2[0]
-        val distanceY = pose1[1] - pose2[1]
-        val distanceZ = pose1[2] - pose2[2]
-        return Math.sqrt(
-            (distanceX * distanceX +
-                    distanceY * distanceY +
-                    distanceZ * distanceZ).toDouble()
-        )
     }
 
 
     private fun setDrawUI() {
+        //
         MaterialFactory.makeTransparentWithColor(this, CUBE_RENDABLE_COLOR)
             .thenAccept { material ->
-                cubeRenderable = ShapeFactory.makeSphere(0.015f, Vector3.zero(), material)
+                cubeRenderable =
+                    ShapeFactory.makeSphere(CUBE_RENDABLE_RADIUS, Vector3.zero(), material)
                 cubeRenderable?.isShadowReceiver = false
                 cubeRenderable?.isShadowCaster = false
             }
+        //
 
+        ViewRenderable
+            .builder()
+            .setView(this, R.layout.distance_card_layout)
+            .build()
+            .thenAccept {
+                distanceCardViewRenderable = it
+                distanceCardViewRenderable!!.isShadowCaster = false
+                distanceCardViewRenderable!!.isShadowReceiver = false
+            }
     }
 
 
@@ -280,6 +245,9 @@ class MainActivity : AppCompatActivity() {
         val point1: Vector3 = anchorNodeFirst.worldPosition
         val point2: Vector3 = anchorNodeSecond.worldPosition
 
+        val pose1 = anchorNodeFirst.anchor?.pose
+        val pose2 = anchorNodeSecond.anchor?.pose
+
         val difference = Vector3.subtract(point1, point2).scaled(-1F)
         if (difference != Vector3.zero()) {
             val directionFromTopToBottom = difference.normalized()
@@ -297,12 +265,44 @@ class MainActivity : AppCompatActivity() {
                     )
 
 
+
+//                    val midPosition = floatArrayOf(
+//                        (anchorNodeFirst.worldPosition.x + anchorNodeSecond.worldPosition.x) / 2,
+//                        (anchorNodeFirst.worldPosition.y + anchorNodeSecond.worldPosition.y) / 2,
+//                        (anchorNodeFirst.worldPosition.z + anchorNodeSecond.worldPosition.z) / 2
+//                    )
+//
+//                    val quaternion = floatArrayOf(0.0f, 0.0f, 0.0f, 0.0f)
+//                    val pose = Pose(midPosition, quaternion)
+//                    placeMidAnchor(
+//                        pose,
+//                        distanceCardViewRenderable!!,
+//                        "${getDistanceMeters(pose1!!, pose2!!)}"
+//                    )
+
+
                     val node = Node()
                     node.setParent(anchorNodeSecond)
                     node.renderable = modelRenderable
-
                     node.worldPosition = Vector3.add(point1, point2).scaled(.5f)
                     node.worldRotation = rotationFromAToB
+
+                    val dist=getDistanceMeters(pose1!!, pose2!!)
+
+                    ViewRenderable.builder()
+                        .setView(this@MainActivity, R.layout.distance_card_layout)
+                        .build()
+                        .thenAccept { it ->
+                            (it.view as TextView).text = "${String.format("%.1f",  dist * 100)} CM"
+                            it.isShadowCaster = false
+                            CameraFacingNode().apply {
+                                setParent(node)
+                                localRotation = Quaternion.axisAngle(Vector3(0f, 1f, 0f), 90f)
+                                localPosition = Vector3(0f, 0.02f, 0f)
+                                renderable = it
+                            }
+                        }
+
                 }
 
 
@@ -312,4 +312,55 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    private fun placeMidAnchor(
+        pose: Pose,
+        renderable: Renderable,
+        distance: String
+    ) {
+
+
+        val anchor = arFragment!!.arSceneView.session!!.createAnchor(pose)
+
+        val anchorNode = AnchorNode(anchor).apply {
+            isSmoothed = true
+            setParent(arFragment!!.arSceneView.scene)
+        }
+
+
+        val node = TransformableNode(arFragment!!.transformationSystem)
+            .apply {
+                this.rotationController.isEnabled = false
+                this.scaleController.isEnabled = false
+                this.translationController.isEnabled = true
+                this.renderable = renderable
+
+
+
+                setParent(anchorNode)
+            }
+
+
+
+
+
+        arFragment!!.arSceneView.scene.addChild(anchorNode)
+    }
+
+
+    private fun getDistanceMeters(pose1: Pose, pose2: Pose): Double {
+
+        val distanceX = pose1.tx() - pose2.tx()
+        val distanceY = pose1.ty() - pose2.ty()
+        val distanceZ = pose1.tz() - pose2.tz()
+        return Math.sqrt(
+            (distanceX * distanceX +
+                    distanceY * distanceY +
+                    distanceZ * distanceZ).toDouble()
+        )
+    }
+
+
+    override fun onUpdate(p0: FrameTime?) {
+        TODO("Not yet implemented")
+    }
 }

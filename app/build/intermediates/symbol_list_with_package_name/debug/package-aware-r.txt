@@ -679,6 +679,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable sceneform_hand_phone
 drawable sceneform_plane
+drawable shape_rect_white
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
@@ -914,6 +915,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
 layout custom_dialog
+layout distance_card_layout
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big

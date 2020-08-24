@@ -48,6 +48,10 @@
         "source": "/home/arikzil/couch-mirage/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },
     {
+        "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/drawable_shape_rect_white.xml.flat",
+        "source": "/home/arikzil/couch-mirage/app/src/main/res/drawable/shape_rect_white.xml"
+    },
+    {
         "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
         "source": "/home/arikzil/couch-mirage/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     },
@@ -78,6 +82,10 @@
     {
         "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
         "source": "/home/arikzil/couch-mirage/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/layout_distance_card_layout.xml.flat",
+        "source": "/home/arikzil/couch-mirage/app/src/main/res/layout/distance_card_layout.xml"
     },
     {
         "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
