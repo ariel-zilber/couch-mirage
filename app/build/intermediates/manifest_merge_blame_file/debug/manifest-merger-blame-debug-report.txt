@@ -47,9 +47,9 @@
 29        android:testOnly="true"
 30        android:theme="@style/AppTheme" >
 30-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:18:9-40
-31        <activity android:name="com.huji.couchmirage.MainActivity" >
+31        <activity android:name="com.huji.couchmirage.OpenCameraActivity" >
 31-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:19:9-25:20
-31-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:19:19-47
+31-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:19:19-53
 32            <intent-filter>
 32-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:20:13-24:29
 33                <action android:name="android.intent.action.MAIN" />

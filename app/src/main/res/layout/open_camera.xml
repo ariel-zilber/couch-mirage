@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OpenCameraActivity">
+
+    <fragment
+        android:id="@+id/fragment"
+        android:name="com.google.ar.sceneform.ux.ArFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+
+        android:layout_above="@+id/bottomPanel"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottomPanel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <com.warkiz.widget.IndicatorSeekBar
+        android:id="@+id/slider"
+        app:isb_max="300"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomPanel"
+        app:isb_min="00"
+        app:isb_progress="0"
+        android:layout_marginBottom="10dp"
+        app:isb_seek_smoothly="true"
+        app:isb_ticks_count="0"
+        app:isb_show_tick_marks_type="oval"
+        app:isb_tick_marks_size="13dp"
+        app:isb_tick_marks_drawable="@mipmap/ic_launcher"
+        app:isb_show_tick_texts="true"
+        app:isb_tick_texts_size="15dp"
+        app:isb_tick_texts_color="@color/btn_send_normal"
+        app:isb_thumb_color="@android:color/darker_gray"
+        app:isb_thumb_size="20dp"
+        app:isb_show_indicator="rounded_rectangle"
+        app:isb_indicator_color="#CC787878"
+        app:isb_indicator_text_color="#69E781"
+        app:isb_indicator_text_size="18sp"
+        app:isb_track_background_color="@color/fab_color_shadow"
+        app:isb_track_background_size="2dp"
+        app:isb_track_progress_color="#69E781"
+        app:isb_track_progress_size="4dp"
+        app:isb_only_thumb_draggable="false"/>
+
+
+    <LinearLayout
+        android:id="@+id/bottomPanel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="#111111"
+
+        >
+
+        <FrameLayout
+            android:layout_width="64dp"
+            android:layout_height="96dp"
+            android:layout_weight="1">
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/design_default_color_on_secondary"
+                android:src="@drawable/search_green_32"
+                app:backgroundTint="#69E781"
+                app:borderWidth="1dp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="64dp"
+            android:layout_height="96dp"
+            android:layout_weight="1">
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/design_default_color_on_secondary"
+                android:src="@drawable/ic_camera"
+
+                app:backgroundTint="#69E781"
+                app:borderWidth="1dp"
+                app:rippleColor="#F29FF8B0" />
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:layout_width="64dp"
+            android:layout_height="96dp"
+            android:layout_weight="1">
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_measurement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/design_default_color_on_secondary"
+                android:src="@drawable/ruler_green_32"
+                app:backgroundTint="#69E781"
+                app:borderWidth="1dp"
+                app:rippleColor="#F29FF8B0" />
+        </FrameLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>
