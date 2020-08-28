@@ -1477,6 +1477,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable done_green_32
 drawable fab
 drawable ic_arrow_back_white_24dp
 drawable ic_arrow_forward_white_24dp
