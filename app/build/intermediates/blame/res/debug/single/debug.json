@@ -172,12 +172,12 @@
         "source": "/home/arikzil/couch-mirage/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/drawable_fab.xml.flat",
-        "source": "/home/arikzil/couch-mirage/app/src/main/res/drawable/fab.xml"
-    },
-    {
         "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/drawable_ic_camera.xml.flat",
         "source": "/home/arikzil/couch-mirage/app/src/main/res/drawable/ic_camera.xml"
+    },
+    {
+        "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/drawable_fab.xml.flat",
+        "source": "/home/arikzil/couch-mirage/app/src/main/res/drawable/fab.xml"
     },
     {
         "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/drawable_ic_arrow_forward_white_24dp.png.flat",
@@ -190,6 +190,10 @@
     {
         "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/drawable_btn_capture.xml.flat",
         "source": "/home/arikzil/couch-mirage/app/src/main/res/drawable/btn_capture.xml"
+    },
+    {
+        "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/drawable_button_background.xml.flat",
+        "source": "/home/arikzil/couch-mirage/app/src/main/res/drawable/button_background.xml"
     },
     {
         "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",

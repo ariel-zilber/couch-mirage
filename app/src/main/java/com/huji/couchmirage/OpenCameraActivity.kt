@@ -66,7 +66,6 @@ class OpenCameraActivity : AppCompatActivity() {
 
 
     var photoSaver = PhotoSaver(this)
-    var videoSaver = VideoRecorder(this)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -85,6 +84,8 @@ class OpenCameraActivity : AppCompatActivity() {
     }
 
     lateinit var seekBar: IndicatorSeekBar
+
+
 
     private fun setSeekBar() {
         seekBar = findViewById<IndicatorSeekBar>(R.id.slider)
@@ -186,11 +187,15 @@ class OpenCameraActivity : AppCompatActivity() {
                 measureSelected = true
                 onClear()
 
+
                 if (box.getMeasurementStage() == MeasurementStage.HEIGHT) {
                     vibrate()
 
                 }
+
                 changeIconAnimated(measurement, 180f, R.drawable.done_green_32)
+                val clear: View = findViewById(R.id.clear)
+                clear.visibility = View.VISIBLE
 
             } else if (measureSelected && box.getMeasurementStage() == MeasurementStage.HEIGHT) {
                 measureSelected = false
@@ -205,6 +210,21 @@ class OpenCameraActivity : AppCompatActivity() {
         }
 
 
+        val clear: View = findViewById(R.id.clear)
+        clear.setOnClickListener { view ->
+            onClear()
+
+            if (measureSelected) {
+                measureSelected = false
+                changeIconAnimated(measurement, 180f, R.drawable.ruler_green_32)
+                clear.visibility = View.GONE
+
+            }
+
+
+        }
+        clear.visibility = View.GONE
+
         val search: View = findViewById(R.id.fab_search)
         search.setOnClickListener { view ->
         }
@@ -212,12 +232,11 @@ class OpenCameraActivity : AppCompatActivity() {
         val camera: View = findViewById(R.id.fab_camera)
         camera.setOnClickListener { view ->
 
-
+            // https://github.com/owahltinez/androidx-camera-activity/tree/master/sample/src/main
             photoSaver.takePhoto(arFragment.arSceneView)
         }
 
         camera.setOnLongClickListener() { view ->
-            videoSaver.toggleRecordingState()
 
             true
         }

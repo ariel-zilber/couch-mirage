@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">CouchMirage</string>
-    <string name="clear">clear</string>
     <string name="measure">measure</string>
     <string name="free_measurement">free measurement</string>
     <string name="square_measurments">Square Measurments</string>
@@ -34,4 +33,5 @@
     </string-array>
     <string name="user_profile_photo">http://igcdn-photos-f-a.akamaihd.net/hphotos-ak-xpa1/t51.2885-19/929118_455075441302693_1605108410_a.jpg</string>
     <string name="bottom_transient_bar_behavior">com.tunjid.androidx.material.behavior.BottomTransientBarBehavior</string>
+    <string name="clear">clear</string>
 </resources>

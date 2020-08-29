@@ -19,83 +19,90 @@
 13-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:7:22-64
 14
 15    <uses-feature
-15-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:8:5-78
+15-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:9:5-11:35
 16        android:glEsVersion="0x00030000"
-16-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:8:19-51
+16-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:10:9-41
 17        android:required="true" />
-17-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:8:52-75
+17-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:11:9-32
 18    <uses-feature android:name="android.hardware.camera.ar" />
-18-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:9:5-63
-18-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:9:19-60
+18-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:12:5-63
+18-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:12:19-60
 19
-20    <uses-permission android:name="android.permission.VIBRATE" />
-20-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:12:5-66
-20-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:12:22-63
-21
-22    <application
-22-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:13:5-32:19
-23        android:allowBackup="true"
-23-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:14:9-35
-24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-24-->[androidx.core:core:1.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/26e0a91a5e33b53b297eff4012f2b2cf/core-1.3.1/AndroidManifest.xml:24:18-86
-25        android:debuggable="true"
-26        android:extractNativeLibs="false"
-27        android:icon="@mipmap/ic_launcher"
-27-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:15:9-43
-28        android:label="@string/app_name"
-28-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:16:9-41
-29        android:roundIcon="@mipmap/ic_launcher_round"
-29-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:17:9-54
-30        android:supportsRtl="true"
-30-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:18:9-35
-31        android:testOnly="true"
-32        android:theme="@style/AppTheme" >
-32-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:19:9-40
-33        <activity android:name="com.huji.couchmirage.OpenCameraActivity" >
-33-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:20:9-26:20
-33-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:20:19-53
-34            <intent-filter>
-34-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:21:13-25:29
-35                <action android:name="android.intent.action.MAIN" />
-35-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:22:17-69
-35-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:22:25-66
-36
-37                <category android:name="android.intent.category.LAUNCHER" />
-37-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:24:17-77
-37-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:24:27-74
-38            </intent-filter>
-39        </activity>
-40
-41        <!-- ARCODE REQUIRED -->
-42
-43        <meta-data
-43-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:30:9-81
-44            android:name="com.google.ar.core"
-44-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:30:20-53
-45            android:value="required" />
-45-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:30:54-78
-46
-47        <!-- The minimal version code of ARCore APK required for an app using this SDK. -->
-48        <meta-data
-48-->[com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:33:9-35:41
-49            android:name="com.google.ar.core.min_apk_version"
-49-->[com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:34:13-62
-50            android:value="191220000" /> <!-- This activity is critical for installing ARCore when it is not already present. -->
-50-->[com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:35:13-38
-51        <activity
-51-->[com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:37:9-43:80
-52            android:name="com.google.ar.core.InstallActivity"
-52-->[com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:38:13-62
-53            android:configChanges="keyboardHidden|orientation|screenSize"
-53-->[com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:39:13-74
-54            android:excludeFromRecents="true"
-54-->[com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:40:13-46
-55            android:exported="false"
-55-->[com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:41:13-37
-56            android:launchMode="singleTop"
-56-->[com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:42:13-43
-57            android:theme="@android:style/Theme.Material.Light.Dialog.Alert" />
-57-->[com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:43:13-77
-58    </application>
-59
-60</manifest>
+20    <!-- save photos -->
+21    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+21-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:15:5-81
+21-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:15:22-78
+22    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+22-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:16:5-80
+22-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:16:22-77
+23    <uses-permission android:name="android.permission.VIBRATE" />
+23-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:18:5-66
+23-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:18:22-63
+24
+25    <application
+25-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:20:5-41:19
+26        android:allowBackup="true"
+26-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:21:9-35
+27        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+27-->[androidx.core:core:1.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/26e0a91a5e33b53b297eff4012f2b2cf/core-1.3.1/AndroidManifest.xml:24:18-86
+28        android:debuggable="true"
+29        android:extractNativeLibs="false"
+30        android:icon="@mipmap/ic_launcher"
+30-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:22:9-43
+31        android:label="@string/app_name"
+31-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:23:9-41
+32        android:roundIcon="@mipmap/ic_launcher_round"
+32-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:24:9-54
+33        android:supportsRtl="true"
+33-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:25:9-35
+34        android:testOnly="true"
+35        android:theme="@style/AppTheme" >
+35-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:26:9-40
+36        <activity android:name="com.huji.couchmirage.OpenCameraActivity" >
+36-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:27:9-33:20
+36-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:27:19-53
+37            <intent-filter>
+37-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:28:13-32:29
+38                <action android:name="android.intent.action.MAIN" />
+38-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:29:17-69
+38-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:29:25-66
+39
+40                <category android:name="android.intent.category.LAUNCHER" />
+40-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:31:17-77
+40-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:31:27-74
+41            </intent-filter>
+42        </activity>
+43
+44        <!-- ARCODE REQUIRED -->
+45
+46        <meta-data
+46-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:37:9-39:40
+47            android:name="com.google.ar.core"
+47-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:38:13-46
+48            android:value="required" />
+48-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:39:13-37
+49
+50        <!-- The minimal version code of ARCore APK required for an app using this SDK. -->
+51        <meta-data
+51-->[com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:33:9-35:41
+52            android:name="com.google.ar.core.min_apk_version"
+52-->[com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:34:13-62
+53            android:value="191220000" /> <!-- This activity is critical for installing ARCore when it is not already present. -->
+53-->[com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:35:13-38
+54        <activity
+54-->[com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:37:9-43:80
+55            android:name="com.google.ar.core.InstallActivity"
+55-->[com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:38:13-62
+56            android:configChanges="keyboardHidden|orientation|screenSize"
+56-->[com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:39:13-74
+57            android:excludeFromRecents="true"
+57-->[com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:40:13-46
+58            android:exported="false"
+58-->[com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:41:13-37
+59            android:launchMode="singleTop"
+59-->[com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:42:13-43
+60            android:theme="@android:style/Theme.Material.Light.Dialog.Alert" />
+60-->[com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:43:13-77
+61    </application>
+62
+63</manifest>

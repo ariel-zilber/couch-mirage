@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".OpenCameraActivity">
 
+    <Button
+        android:id="@+id/clear"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_background"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/clear" />
+
     <fragment
         android:id="@+id/fragment"
         android:name="com.google.ar.sceneform.ux.ArFragment"

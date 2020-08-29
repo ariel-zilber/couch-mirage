@@ -10,6 +10,7 @@ import android.os.Environment
 import android.os.Handler
 import android.os.HandlerThread
 import android.provider.MediaStore
+import android.util.Log
 import android.view.PixelCopy
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -24,8 +25,9 @@ class PhotoSaver(
 
     private fun generateFilename(): String? {
         val date = SimpleDateFormat("yyyyMMddHHmmss", Locale.getDefault()).format(Date())
-        return Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)?.absolutePath +
-                "/CouchMirage/${date}_screenshot.jpg"
+
+        return activity.getExternalFilesDir(Environment.DIRECTORY_PICTURES)?.absolutePath +
+                "/${date}_screenshot.jpg"
     }
 
     @RequiresApi(Build.VERSION_CODES.Q)
@@ -37,14 +39,18 @@ class PhotoSaver(
             put(MediaStore.MediaColumns.RELATIVE_PATH, "DCIM/CouchMirage")
         }
 
-        val uri = activity.contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
+        val uri = activity.contentResolver.insert(
+            MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+            contentValues
+        )
 
         activity.contentResolver.openOutputStream(uri ?: return).use { outputStream ->
             outputStream?.let {
                 try {
                     saveDataToGallery(bmp, outputStream)
-                } catch(e: IOException) {
-                    Toast.makeText(activity, "Failed to save bitmap to gallery.", Toast.LENGTH_LONG).show()
+                } catch (e: IOException) {
+                    Toast.makeText(activity, "Failed to save bitmap to gallery.", Toast.LENGTH_LONG)
+                        .show()
                 }
             }
         }
@@ -52,21 +58,26 @@ class PhotoSaver(
 
     private fun saveBitmapToGallery(bmp: Bitmap, filename: String) {
         val out = File(filename)
-        if(!out.parentFile.exists()) {
+        if (!out.parentFile.exists()) {
             out.parentFile.mkdirs()
+            Log.d("PhotoSaver", "creating folder:${out.absolutePath}")
         }
         try {
+
             val outputStream = FileOutputStream(filename)
             saveDataToGallery(bmp, outputStream)
             MediaScannerConnection.scanFile(activity, arrayOf(filename), null, null)
-        }
-        catch(e: IOException) {
+
+        } catch (e: IOException) {
             Toast.makeText(activity, "Failed to save bitmap to gallery.", Toast.LENGTH_LONG).show()
+            Log.d("PhotoSaver", "Failed to save bitmap to gallery. ${e.message}")
+
         }
     }
 
     private fun saveDataToGallery(bmp: Bitmap, outputStream: OutputStream) {
         val outputData = ByteArrayOutputStream()
+
         bmp.compress(Bitmap.CompressFormat.JPEG, 100, outputData)
         outputData.writeTo(outputStream)
         outputStream.flush()
@@ -74,13 +85,14 @@ class PhotoSaver(
     }
 
     fun takePhoto(arSceneView: ArSceneView) {
-        val bmp = Bitmap.createBitmap(arSceneView.width, arSceneView.height, Bitmap.Config.ARGB_8888)
+        val bmp =
+            Bitmap.createBitmap(arSceneView.width, arSceneView.height, Bitmap.Config.ARGB_8888)
         val handlerThread = HandlerThread("PixelCopyThread")
         handlerThread.start()
 
         PixelCopy.request(arSceneView, bmp, { result ->
-            if(result == PixelCopy.SUCCESS) {
-                if(Build.VERSION.SDK_INT <= Build.VERSION_CODES.P) {
+            if (result == PixelCopy.SUCCESS) {
+                if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.P) {
                     val filename = generateFilename()
                     saveBitmapToGallery(bmp, filename ?: return@request)
                 } else {
