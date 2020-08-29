@@ -11,6 +11,7 @@ import com.google.ar.sceneform.math.Vector3
 import com.google.ar.sceneform.rendering.*
 import com.google.ar.sceneform.ux.TransformableNode
 import com.google.ar.sceneform.ux.TransformationSystem
+import org.w3c.dom.Text
 import java.text.FieldPosition
 
 enum class MeasurementStage {
@@ -30,9 +31,11 @@ class Box(
     private var verticalVertices: ArrayList<Node> = ArrayList()
     private var anchorNodeList: ArrayList<AnchorNode> = ArrayList()
     private var upperFrameVertices: ArrayList<Node> = ArrayList()
+    private var textViewList: ArrayList<TextView> = ArrayList()
 
 
     private var areaCenterNode: Node? = null
+    private var centerNode: Node? = null
     private var centerRealScale: Vector3? = null
     private var cubeRenderable: ModelRenderable? = null
     private var distanceCardViewRenderable: ViewRenderable? = null
@@ -166,17 +169,23 @@ class Box(
 
 
     private fun addTextBox(
-        node: Node, dist: Float,
+        node: Node,
+        dist: Float,
         position: Vector3 = Vector3(0f, 0.02f, 0f),
-        rotation: Quaternion = Quaternion.axisAngle(Vector3(0f, 1f, 0f), 90f)
+        rotation: Quaternion = Quaternion.axisAngle(Vector3(0f, 1f, 0f), 90f),
+        measurement: String = "cm"
 
     ) {
+
+
+
         ViewRenderable.builder()
             .setView(applicationContext, cardLayout)
             .build()
             .thenAccept { it ->
                 (it.view as TextView).text =
-                    "${String.format("%.1f", dist * 100)} CM"
+                    "${String.format("%.1f", dist * 100)} ${measurement}"
+
                 it.isShadowCaster = false
                 it.isShadowReceiver = false
 
@@ -282,6 +291,8 @@ class Box(
 
 
                 }
+
+
             /////////////////////////////////////////////////////////////
 
             // point 1
@@ -334,6 +345,7 @@ class Box(
                     vertices.add(node)
 
                 }
+
 
             // double existing vertex from 4 to 8
             multipleNodeArrayList(vertices)
@@ -634,6 +646,48 @@ class Box(
                     upperFrameVertices.add(node)
 
                     //  addTextBox(node, dist)
+                }
+
+            Log.d("textViewList", "wtf!!")
+
+            // center point
+            MaterialFactory.makeTransparentWithColor(
+                applicationContext,
+                Color(0F, 255F, 0F)
+            )
+                .thenAccept { material ->
+                    Log.d("textViewList", "wtf!!2")
+
+                    val modelRenderable = ShapeFactory.makeCube(
+                        Vector3(0f, 0f, pointRenderableRadius),
+                        toAdd,
+                        material
+                    ).apply {
+                        isShadowCaster = true
+                        isShadowReceiver = true
+                    }
+                    Log.d("textViewList", "wtf!!3")
+
+                    val node = Node()
+                    node.setParent(anchorNodeList[2])
+                    node.renderable = modelRenderable
+                    node.worldPosition = midPoint
+                    node.worldRotation = rotation
+
+                    Log.d("textViewList", "wtf!!4")
+
+                    var dist = r.length() * p2ToPt1.length()
+
+
+                     addTextBox(
+                        node,
+                        dist,
+                        position = Vector3(0f, 0.02f, 0f),
+                        measurement = "s"
+                    )
+
+
+                    upperFrameVertices.add(node)
                 }
 
         }

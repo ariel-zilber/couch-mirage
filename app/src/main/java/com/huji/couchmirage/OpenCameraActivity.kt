@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.ActivityManager
 import android.content.Context
+import android.media.CamcorderProfile
 import android.os.Build
 import android.os.Bundle
 import android.os.VibrationEffect
@@ -18,7 +19,8 @@ import com.google.ar.core.HitResult
 import com.google.ar.sceneform.AnchorNode
 import com.google.ar.sceneform.Camera
 import com.google.ar.sceneform.Sun
-import com.google.ar.sceneform.rendering.*
+import com.google.ar.sceneform.rendering.Color
+import com.google.ar.sceneform.rendering.ModelRenderable
 import com.google.ar.sceneform.ux.ArFragment
 import com.warkiz.widget.IndicatorSeekBar
 import com.warkiz.widget.OnSeekChangeListener
@@ -66,7 +68,8 @@ class OpenCameraActivity : AppCompatActivity() {
 
 
     var photoSaver = PhotoSaver(this)
-
+    var videoSaver = VideoRecorder()
+    // todo fix video recorder
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,9 +80,10 @@ class OpenCameraActivity : AppCompatActivity() {
         }
 
         box.setUI()
+        setARFragment()
+
         setBottomPanel()
         setSeekBar()
-        setARFragment()
 
     }
 
@@ -210,6 +214,7 @@ class OpenCameraActivity : AppCompatActivity() {
         }
 
 
+
         val clear: View = findViewById(R.id.clear)
         clear.setOnClickListener { view ->
             onClear()
@@ -236,7 +241,16 @@ class OpenCameraActivity : AppCompatActivity() {
             photoSaver.takePhoto(arFragment.arSceneView)
         }
 
+
+        setUpVideoSaver()
+
+
         camera.setOnLongClickListener() { view ->
+            //
+
+
+
+           videoSaver.onToggleRecord()
 
             true
         }
@@ -244,6 +258,14 @@ class OpenCameraActivity : AppCompatActivity() {
 
         search.isEnabled = false
 
+
+    }
+    private  fun setUpVideoSaver(){
+
+        val orientation = resources.configuration.orientation
+        videoSaver.setVideoSize(320,480)
+        videoSaver.setVideoQuality(CamcorderProfile.QUALITY_2160P, orientation)
+        videoSaver.setSceneView(arFragment.arSceneView)
 
     }
 
