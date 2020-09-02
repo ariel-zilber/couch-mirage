@@ -50,7 +50,7 @@ class Box(
     val PT_7: Int = 6
     val PT_8: Int = 7
     private val NUM_OF_VERTICIES: Int = 8
-
+    private val MIN_HEIGHT_INDICATOR = 10
     private val TAG = Box::class.simpleName
 
 
@@ -152,15 +152,25 @@ class Box(
             val rotationFromAToB =
                 Quaternion.lookRotation(directionFromTopToBottom, Vector3.up())
 
-            renderLine(
-                .005f,
-                .01f,
-                difference.length(),
-                rotationFromAToB,
-                Vector3.add(point1, point2).scaled(.5f),
-                anchorNodeSecond,
-                getDistanceMeters(pose1!!, pose2!!).toFloat()
-            )
+
+            // add line
+            MaterialFactory.makeOpaqueWithColor(applicationContext, pointRenderableColor)
+                .thenAccept { material ->
+
+                    val modelRenderable = ShapeFactory.makeCube(
+                        Vector3(.01f, .01f, difference.length()),
+                        Vector3.zero(),
+                        material
+                    )
+
+                    val node = Node()
+                    node.setParent(anchorNodeSecond)
+                    node.renderable = modelRenderable
+                    node.worldPosition = Vector3.add(point1, point2).scaled(.5f)
+                    node.worldRotation = rotationFromAToB
+
+                    addTextBox(node, getDistanceMeters(pose1!!, pose2!!).toFloat())
+                }
 
 
         }
@@ -176,7 +186,6 @@ class Box(
         measurement: String = "cm"
 
     ) {
-
 
 
         ViewRenderable.builder()
@@ -303,7 +312,7 @@ class Box(
                 .thenAccept { material ->
 
                     val modelRenderable = ShapeFactory.makeCube(
-                        Vector3(.005f, .005f, pointRenderableRadius),
+                        Vector3(.01f, .01f, pointRenderableRadius),
                         Vector3(boxWidth / 2, 0f, Math.abs(r.length())),
                         material
                     ).apply {
@@ -328,7 +337,7 @@ class Box(
                 .thenAccept { material ->
 
                     val modelRenderable = ShapeFactory.makeCube(
-                        Vector3(.005f, .005f, pointRenderableRadius),
+                        Vector3(.01f, .01f, pointRenderableRadius),
                         Vector3(-boxWidth / 2, 0f, Math.abs(r.length())),
                         material
                     ).apply {
@@ -359,7 +368,7 @@ class Box(
                         Vector3(
                             p2ToPt1.length(),
                             .01f,
-                            .005f
+                            .01f
                         ),
                         Vector3(0f, 0f, Math.abs(r.length())),
 
@@ -388,7 +397,7 @@ class Box(
 
                     val modelRenderable = ShapeFactory.makeCube(
                         Vector3(
-                            .005f,
+                            .01f,
                             .01f,
                             r.length()
                         ),
@@ -418,7 +427,7 @@ class Box(
 
                     val modelRenderable = ShapeFactory.makeCube(
                         Vector3(
-                            .005f,
+                            .01f,
                             .01f,
                             r.length()
                         ),
@@ -446,65 +455,109 @@ class Box(
             // add horizontal lines ---------------------------------------------------------------
 
             // line 1
-            MaterialFactory.makeTransparentWithColor(
-                applicationContext,
-                lineRenderableColor
+            renderVerticalLine(
+                context = applicationContext,
+                color = lineRenderableColor,
+                modeSize = Vector3(.01f, .01f, .01f),
+                offset = Vector3(p2ToPt1.length() / 2, 0f, 0f),
+                parentAnchorNode = anchorNodeList[2],
+                position = midPoint,
+                rotation = rotation
             )
-                .thenAccept { material ->
-
-                    val modelRenderable = ShapeFactory.makeCube(
-                        Vector3(.005f, .01f, .01f),
-                        Vector3(p2ToPt1.length() / 2, 0f, 0f),
-                        material
-                    ).apply {
-                        isShadowCaster = true
-                        isShadowReceiver = true
-                    }
-
-                    val node = Node()
-                    node.setParent(anchorNodeList[2])
-                    node.renderable = modelRenderable
-                    node.worldPosition = midPoint
-                    node.worldRotation = rotation
-
-                    verticalVertices.add(node)
-                }
 
             // line 2
-            MaterialFactory.makeTransparentWithColor(
-                applicationContext,
-                lineRenderableColor
+            renderVerticalLine(
+                context = applicationContext,
+                color = lineRenderableColor,
+                modeSize = Vector3(.01f, .01f, .01f),
+                offset = Vector3(-p2ToPt1.length() / 2, 0f, 0f),
+                parentAnchorNode = anchorNodeList[2],
+                position = midPoint,
+                rotation = rotation
             )
-                .thenAccept { material ->
-
-                    val modelRenderable = ShapeFactory.makeCube(
-                        Vector3(.005f, .01f, .01f),
-                        Vector3(-p2ToPt1.length() / 2, 0f, 0f),
-                        material
-                    ).apply {
-                        isShadowCaster = true
-                        isShadowReceiver = true
-                    }
-
-                    val node = Node()
-                    node.setParent(anchorNodeList[2])
-                    node.renderable = modelRenderable
-                    node.worldPosition = midPoint
-                    node.worldRotation = rotation
-
-                    verticalVertices.add(node)
-                }
 
 
             // line 3
+            renderVerticalLine(
+                context = applicationContext,
+                color = lineRenderableColor,
+                modeSize = Vector3(.01f, .01f, .01f),
+                offset = Vector3(boxWidth / 2, 0f, Math.abs(r.length())),
+                parentAnchorNode = anchorNodeList[2],
+                position = midPoint,
+                rotation = rotation
+            )
+
+            // line 4
+            renderVerticalLine(
+                context = applicationContext,
+                color = lineRenderableColor,
+                modeSize = Vector3(.01f, .01f, .01f),
+                offset = Vector3(-boxWidth / 2, 0f, Math.abs(r.length())),
+                parentAnchorNode = anchorNodeList[2],
+                position = midPoint,
+                rotation = rotation
+            )
+
+            // add upper frame --------------------------------------------------------------------------
+
+            // add line
+            renderUpperFrameLine(
+                context = applicationContext,
+                color = lineRenderableColor,
+                modeSize = Vector3(p2ToPt1.length(), .01f, .01f),
+                offset = Vector3.zero(),
+                parentAnchorNode = anchorNodeList[2],
+                position = midPoint,
+                rotation = rotation,
+                dist = 0f
+            )
+
+            // add line
+            renderUpperFrameLine(
+                context = applicationContext,
+                color = lineRenderableColor,
+                modeSize = Vector3(p2ToPt1.length(), .01f, .01f),
+                offset = Vector3(0f, 0f, Math.abs(r.length())),
+                parentAnchorNode = anchorNodeList[2],
+                position = midPoint,
+                rotation = rotation,
+                dist = 0f
+            )
+
+            // add line
+            renderUpperFrameLine(
+                context = applicationContext,
+                color = lineRenderableColor,
+                modeSize = Vector3(.01f, .01f, r.length()),
+                offset = Vector3(-p2ToPt1.length() / 2, 0f, Math.abs(r.length() / 2)),
+                parentAnchorNode = anchorNodeList[2],
+                position = midPoint,
+                rotation = rotation,
+                dist = 0f
+            )
+
+            // add line
+            renderUpperFrameLine(
+                context = applicationContext,
+                color = lineRenderableColor,
+                modeSize = Vector3(.01f, .01f, r.length()),
+                offset = Vector3(p2ToPt1.length() / 2, 0f, Math.abs(r.length() / 2)),
+                parentAnchorNode = anchorNodeList[2],
+                position = midPoint,
+                rotation = rotation,
+                dist = 0f
+            )
+
+            // center point
             MaterialFactory.makeTransparentWithColor(
                 applicationContext,
-                lineRenderableColor
+                Color(0F, 255F, 0F)
             ).thenAccept { material ->
 
                 val modelRenderable = ShapeFactory.makeCube(
-                    Vector3(.005f, .01f, .01f),
-                    Vector3(boxWidth / 2, 0f, Math.abs(r.length())),
+                    Vector3(0f, 0f, pointRenderableRadius),
+                    Vector3.zero(),
                     material
                 ).apply {
                     isShadowCaster = true
@@ -517,178 +570,20 @@ class Box(
                 node.worldPosition = midPoint
                 node.worldRotation = rotation
 
-                verticalVertices.add(node)
+
+                var dist = r.length() * p2ToPt1.length()
+
+
+                addTextBox(
+                    node,
+                    dist,
+                    position = Vector3(0f, 0f, r.length() / 2),
+                    measurement = "s"
+                )
+
+
+                upperFrameVertices.add(node)
             }
-
-            // line 4
-            MaterialFactory.makeTransparentWithColor(
-                applicationContext,
-                lineRenderableColor
-            )
-                .thenAccept { material ->
-
-                    val modelRenderable = ShapeFactory.makeCube(
-                        Vector3(.005f, .01f, .01f),
-                        Vector3(-boxWidth / 2, 0f, Math.abs(r.length())),
-                        material
-                    ).apply {
-                        isShadowCaster = true
-                        isShadowReceiver = true
-                    }
-
-                    val node = Node()
-                    node.setParent(anchorNodeList[2])
-                    node.renderable = modelRenderable
-                    node.worldPosition = midPoint
-                    node.worldRotation = rotation
-
-                    verticalVertices.add(node)
-
-                }
-
-
-            // add upper frame --------------------------------------------------------------------------
-
-            // add line
-            MaterialFactory.makeOpaqueWithColor(applicationContext, lineRenderableColor)
-                .thenAccept { material ->
-
-                    val modelRenderable = ShapeFactory.makeCube(
-                        Vector3(
-                            p2ToPt1.length(),
-                            .01f,
-                            .005f
-                        ),
-                        Vector3(0f, 0f, 0f),
-
-                        material
-                    )
-
-                    val node = Node()
-                    node.setParent(anchorNodeList[2])
-                    node.renderable = modelRenderable
-                    node.worldPosition = midPoint
-                    node.worldRotation = rotation
-                    upperFrameVertices.add(node)
-                    //  addTextBox(node, dist)
-                }
-
-            // add line
-            MaterialFactory.makeOpaqueWithColor(applicationContext, lineRenderableColor)
-                .thenAccept { material ->
-
-                    val modelRenderable = ShapeFactory.makeCube(
-                        Vector3(
-                            p2ToPt1.length(),
-                            .01f,
-                            .005f
-                        ),
-                        Vector3(0f, 0f, Math.abs(r.length())),
-
-                        material
-                    )
-
-                    val node = Node()
-                    node.setParent(anchorNodeList[2])
-                    node.renderable = modelRenderable
-                    node.worldPosition = midPoint
-                    node.worldRotation = rotation
-                    upperFrameVertices.add(node)
-
-                    //  addTextBox(node, dist)
-                }
-
-            // add line
-            MaterialFactory.makeOpaqueWithColor(applicationContext, lineRenderableColor)
-                .thenAccept { material ->
-
-                    val modelRenderable = ShapeFactory.makeCube(
-                        Vector3(
-                            .005f,
-                            .01f,
-                            r.length()
-                        ),
-                        Vector3(-p2ToPt1.length() / 2, 0f, Math.abs(r.length() / 2)),
-
-                        material
-                    )
-
-                    val node = Node()
-                    node.setParent(anchorNodeList[2])
-                    node.renderable = modelRenderable
-                    node.worldPosition = midPoint
-                    node.worldRotation = rotation
-                    upperFrameVertices.add(node)
-
-                    //  addTextBox(node, dist)
-                }
-
-            // add line
-            MaterialFactory.makeOpaqueWithColor(applicationContext, lineRenderableColor)
-                .thenAccept { material ->
-
-                    val modelRenderable = ShapeFactory.makeCube(
-                        Vector3(
-                            .005f,
-                            .01f,
-                            r.length()
-                        ),
-                        Vector3(p2ToPt1.length() / 2, 0f, Math.abs(r.length() / 2)),
-
-                        material
-                    )
-
-                    val node = Node()
-                    node.setParent(anchorNodeList[2])
-                    node.renderable = modelRenderable
-                    node.worldPosition = midPoint
-                    node.worldRotation = rotation
-                    upperFrameVertices.add(node)
-
-                    //  addTextBox(node, dist)
-                }
-
-            Log.d("textViewList", "wtf!!")
-
-            // center point
-            MaterialFactory.makeTransparentWithColor(
-                applicationContext,
-                Color(0F, 255F, 0F)
-            )
-                .thenAccept { material ->
-                    Log.d("textViewList", "wtf!!2")
-
-                    val modelRenderable = ShapeFactory.makeCube(
-                        Vector3(0f, 0f, pointRenderableRadius),
-                        toAdd,
-                        material
-                    ).apply {
-                        isShadowCaster = true
-                        isShadowReceiver = true
-                    }
-                    Log.d("textViewList", "wtf!!3")
-
-                    val node = Node()
-                    node.setParent(anchorNodeList[2])
-                    node.renderable = modelRenderable
-                    node.worldPosition = midPoint
-                    node.worldRotation = rotation
-
-                    Log.d("textViewList", "wtf!!4")
-
-                    var dist = r.length() * p2ToPt1.length()
-
-
-                     addTextBox(
-                        node,
-                        dist,
-                        position = Vector3(0f, 0.02f, 0f),
-                        measurement = "s"
-                    )
-
-
-                    upperFrameVertices.add(node)
-                }
 
         }
 
@@ -725,7 +620,6 @@ class Box(
         upperFrameVertices.clear()
         centerRealScale = null
         areaCenterNode = null
-        // xxx
 
 
     }
@@ -767,9 +661,90 @@ class Box(
         ascendNode(height * 2, upperFrameVertices[1], centerRealScale!!)
         ascendNode(height * 2, upperFrameVertices[2], centerRealScale!!)
         ascendNode(height * 2, upperFrameVertices[3], centerRealScale!!)
+        ascendNode(height * 2, upperFrameVertices[4], centerRealScale!!)
+
+
+        if (height > MIN_HEIGHT_INDICATOR) {
+
+
+        }
 
 
     }
 
 
+    private fun renderUpperFrameLine(
+        context: Context, color: Color,
+        modeSize: Vector3,
+        offset: Vector3,
+        parentAnchorNode: AnchorNode,
+        position: Vector3,
+        rotation: Quaternion, dist: Float
+    ) {
+
+        var node = renderLine(
+            context, color,
+            modeSize, offset,
+            parentAnchorNode,
+            position, rotation
+        )
+
+        upperFrameVertices.add(node)
+
+
+    }
+
+    private fun renderVerticalLine(
+        context: Context, color: Color,
+        modeSize: Vector3,
+        offset: Vector3,
+        parentAnchorNode: AnchorNode,
+        position: Vector3,
+        rotation: Quaternion
+    ) {
+
+        var node = renderLine(
+            context, color,
+            modeSize, offset,
+            parentAnchorNode,
+            position, rotation
+        )
+
+        verticalVertices.add(node)
+
+    }
+
+
+    private fun renderLine(
+        context: Context, color: Color,
+        modeSize: Vector3,
+        offset: Vector3,
+        parentAnchorNode: AnchorNode,
+        position: Vector3,
+        rotation: Quaternion
+    ): Node {
+        var node = Node()
+
+        // add line
+        MaterialFactory.makeOpaqueWithColor(context, color)
+            .thenAccept { material ->
+
+                val modelRenderable = ShapeFactory.makeCube(
+                    modeSize,
+                    offset,
+                    material
+                )
+
+                node.apply {
+
+                    setParent(parentAnchorNode)
+                    renderable = modelRenderable
+                    worldPosition = position
+                    worldRotation = rotation
+                }
+
+            }
+
+        return node
+    }
 }

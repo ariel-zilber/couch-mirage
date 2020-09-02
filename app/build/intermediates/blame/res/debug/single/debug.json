@@ -64,6 +64,10 @@
         "source": "/home/arikzil/couch-mirage/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png"
     },
     {
+        "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/drawable_ic_videocam.xml.flat",
+        "source": "/home/arikzil/couch-mirage/app/src/main/res/drawable/ic_videocam.xml"
+    },
+    {
         "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/drawable_btn_capture_options.xml.flat",
         "source": "/home/arikzil/couch-mirage/app/src/main/res/drawable/btn_capture_options.xml"
     },

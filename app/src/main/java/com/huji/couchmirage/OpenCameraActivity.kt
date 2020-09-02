@@ -1,19 +1,24 @@
 package com.huji.couchmirage
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.ActivityManager
+import android.content.ContentValues
 import android.content.Context
+import android.content.Intent
+import android.content.pm.PackageManager
 import android.media.CamcorderProfile
-import android.os.Build
-import android.os.Bundle
-import android.os.VibrationEffect
-import android.os.Vibrator
+import android.net.Uri
+import android.os.*
+import android.provider.MediaStore
+import android.provider.Settings
 import android.util.Log
 import android.view.View
 import android.widget.SeekBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.ar.core.HitResult
 import com.google.ar.sceneform.AnchorNode
@@ -25,6 +30,7 @@ import com.google.ar.sceneform.ux.ArFragment
 import com.warkiz.widget.IndicatorSeekBar
 import com.warkiz.widget.OnSeekChangeListener
 import com.warkiz.widget.SeekParams
+import java.text.SimpleDateFormat
 import java.util.*
 
 class OpenCameraActivity : AppCompatActivity() {
@@ -37,10 +43,6 @@ class OpenCameraActivity : AppCompatActivity() {
     var measureSelected: Boolean = false
 
     //
-    var lastAnchorNode: AnchorNode? = null
-
-    // renderable
-    var cubeRenderable: ModelRenderable? = null
 
 
     // renderable constants
@@ -61,15 +63,10 @@ class OpenCameraActivity : AppCompatActivity() {
         this
     )
 
-
-    companion object {
-
-    }
-
-
     var photoSaver = PhotoSaver(this)
-    var videoSaver = VideoRecorder()
-    // todo fix video recorder
+    var videoSaver = VideoRecorder()    // todo fix video recorder
+
+    lateinit var seekBar: IndicatorSeekBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -86,9 +83,6 @@ class OpenCameraActivity : AppCompatActivity() {
         setSeekBar()
 
     }
-
-    lateinit var seekBar: IndicatorSeekBar
-
 
 
     private fun setSeekBar() {
@@ -137,6 +131,9 @@ class OpenCameraActivity : AppCompatActivity() {
 
     }
 
+    // todo:: model loader
+
+
     private fun changeIconAnimated(measurement: FloatingActionButton, rotation: Float, icon: Int) {
         //Rise
         measurement.animate()
@@ -180,7 +177,117 @@ class OpenCameraActivity : AppCompatActivity() {
     }
 
     private fun setBottomPanel() {
-        var rotation = 180f
+
+
+        setupRulerButton()
+        setupClearButton()
+        setupSearchButton()
+
+        setupCameraButton()
+
+
+    }
+
+    private fun setupCameraButton() {
+
+        val camera: View = findViewById(R.id.fab_camera)
+
+        // take picture
+        camera.setOnClickListener { view ->
+
+            // https://github.com/owahltinez/androidx-camera-activity/tree/master/sample/src/main
+            if (!videoSaver.isRecording) {
+                photoSaver.takePhoto(arFragment.arSceneView)
+            } else {
+                toggleRecording()
+
+            }
+        }
+
+        // take video
+        // Initialize the VideoRecorder.
+
+        // Initialize the VideoRecorder.
+        videoSaver = VideoRecorder(this)
+        val orientation = resources.configuration.orientation
+        videoSaver.setVideoQuality(CamcorderProfile.QUALITY_2160P, orientation)
+        videoSaver.setSceneView(arFragment.arSceneView)
+
+        camera.setOnLongClickListener() { view ->
+            toggleRecording()
+            true
+
+        }
+
+    }
+
+    fun hasWritePermission(): Boolean {
+        return (ActivityCompat.checkSelfPermission(
+            arFragment.requireActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE
+        )
+                === PackageManager.PERMISSION_GRANTED)
+    }
+
+    /** Launch Application Setting to grant permissions.  */
+    fun launchPermissionSettings() {
+        val intent = Intent()
+        intent.action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
+        intent.data = Uri.fromParts(
+            "package",
+            arFragment.requireActivity().getPackageName(),
+            null
+        )
+        arFragment.requireActivity().startActivity(intent)
+    }
+
+    /*
+   * Used as a handler for onClick, so the signature must match onClickListener.
+   */
+    private fun toggleRecording() {
+        val recordButton: FloatingActionButton =
+            findViewById(R.id.fab_camera) as FloatingActionButton
+
+        if (!hasWritePermission()) {
+
+            Toast.makeText(
+                this,
+                "Video recording requires the WRITE_EXTERNAL_STORAGE permission",
+                Toast.LENGTH_LONG
+            )
+                .show()
+            launchPermissionSettings()
+            return
+        }
+        val recording: Boolean = videoSaver.onToggleRecord()
+        if (recording) {
+
+            recordButton.setImageResource(R.drawable.ic_videocam)
+        } else {
+            recordButton.setImageResource(R.drawable.ic_camera)
+            vibrate()
+
+            val videoPath: String = videoSaver.getVideoPath().getAbsolutePath()
+            Toast.makeText(this, "Video saved: $videoPath", Toast.LENGTH_SHORT).show()
+
+
+            // Send  notification of updated content.
+
+
+            val date = SimpleDateFormat("yyyyMMddHHmmss", Locale.getDefault()).format(Date())
+
+            var name = getExternalFilesDir(Environment.DIRECTORY_PICTURES)?.absolutePath +
+                    "/${date}_screenshot.jpg"
+
+            val values = ContentValues()
+            values.put(MediaStore.Video.Media.TITLE, "Sceneform Video")
+            values.put(MediaStore.Video.Media.MIME_TYPE, "video/mp4")
+            values.put(MediaStore.Video.Media.DATA, videoPath)
+            contentResolver.insert(MediaStore.Video.Media.EXTERNAL_CONTENT_URI, values)
+        }
+    }
+
+    private fun setupRulerButton() {
+        val clear: View = findViewById(R.id.clear)
 
         val measurement: FloatingActionButton = findViewById(R.id.fab_measurement)
         measurement.setOnClickListener { view ->
@@ -198,7 +305,6 @@ class OpenCameraActivity : AppCompatActivity() {
                 }
 
                 changeIconAnimated(measurement, 180f, R.drawable.done_green_32)
-                val clear: View = findViewById(R.id.clear)
                 clear.visibility = View.VISIBLE
 
             } else if (measureSelected && box.getMeasurementStage() == MeasurementStage.HEIGHT) {
@@ -207,15 +313,29 @@ class OpenCameraActivity : AppCompatActivity() {
 
                 vibrate()
                 changeIconAnimated(measurement, 180f, R.drawable.ruler_green_32)
+                clear.visibility = View.GONE
+
 
             }
 
 
         }
 
+    }
 
+    private fun setupSearchButton() {
+        val search: View = findViewById(R.id.fab_search)
+        search.setOnClickListener { view ->
+        }
 
+        search.isEnabled = false
+
+    }
+
+    private fun setupClearButton() {
         val clear: View = findViewById(R.id.clear)
+        val measurement: FloatingActionButton = findViewById(R.id.fab_measurement)
+
         clear.setOnClickListener { view ->
             onClear()
 
@@ -228,46 +348,11 @@ class OpenCameraActivity : AppCompatActivity() {
 
 
         }
+
         clear.visibility = View.GONE
 
-        val search: View = findViewById(R.id.fab_search)
-        search.setOnClickListener { view ->
-        }
-
-        val camera: View = findViewById(R.id.fab_camera)
-        camera.setOnClickListener { view ->
-
-            // https://github.com/owahltinez/androidx-camera-activity/tree/master/sample/src/main
-            photoSaver.takePhoto(arFragment.arSceneView)
-        }
-
-
-        setUpVideoSaver()
-
-
-        camera.setOnLongClickListener() { view ->
-            //
-
-
-
-           videoSaver.onToggleRecord()
-
-            true
-        }
-
-
-        search.isEnabled = false
-
-
     }
-    private  fun setUpVideoSaver(){
 
-        val orientation = resources.configuration.orientation
-        videoSaver.setVideoSize(320,480)
-        videoSaver.setVideoQuality(CamcorderProfile.QUALITY_2160P, orientation)
-        videoSaver.setSceneView(arFragment.arSceneView)
-
-    }
 
     internal fun onClear() {
         val children = ArrayList(arFragment.arSceneView.scene.children)
@@ -281,7 +366,6 @@ class OpenCameraActivity : AppCompatActivity() {
                 node.setParent(null)
             }
         }
-        lastAnchorNode = null
         box.clear()
         seekBar.visibility = View.GONE
     }

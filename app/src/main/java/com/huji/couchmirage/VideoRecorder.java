@@ -1,5 +1,6 @@
 package com.huji.couchmirage;
 
+import android.app.Activity;
 import android.content.res.Configuration;
 import android.media.CamcorderProfile;
 import android.media.MediaRecorder;
@@ -7,9 +8,14 @@ import android.os.Environment;
 import android.util.Log;
 import android.util.Size;
 import android.view.Surface;
+
 import com.google.ar.sceneform.SceneView;
+
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
+import java.util.Locale;
+import java.text.SimpleDateFormat;
 
 /**
  * Video Recorder class handles recording the contents of a SceneView. It uses MediaRecorder to
@@ -44,6 +50,11 @@ public class VideoRecorder {
             CamcorderProfile.QUALITY_720P,
             CamcorderProfile.QUALITY_480P
     };
+    private Activity activity;
+
+    public VideoRecorder(Activity activity) {
+        this.activity = activity;
+    }
 
     public VideoRecorder() {
         recordingVideoFlag = false;
@@ -105,11 +116,11 @@ public class VideoRecorder {
         if (videoDirectory == null) {
             videoDirectory =
                     new File(
-                            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
-                                    + "/Sceneform");
+                            activity.getExternalFilesDir(Environment.DIRECTORY_MOVIES).getAbsolutePath()
+                    );
         }
         if (videoBaseName == null || videoBaseName.isEmpty()) {
-            videoBaseName = "Sample";
+            videoBaseName = new SimpleDateFormat("yyyyMMddHHmmss", Locale.getDefault()).format(new Date());
         }
         videoPath =
                 new File(
@@ -188,4 +199,6 @@ public class VideoRecorder {
     public boolean isRecording() {
         return recordingVideoFlag;
     }
+
+
 }

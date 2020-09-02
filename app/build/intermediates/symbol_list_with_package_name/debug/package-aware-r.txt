@@ -1496,6 +1496,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_question
+drawable ic_videocam
 drawable ic_videocam_white_24dp
 drawable isb_indicator_rounded_corners
 drawable isb_indicator_square_corners

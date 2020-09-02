@@ -1,0 +1,40 @@
+renderVerticalLine(
+                context = applicationContext,
+                color = lineRenderableColor,
+                modeSize =Vector3(.005f, .01f, .01f),
+                offset = Vector3(-p2ToPt1.length() / 2, 0f, 0f),
+                parentAnchorNode = anchorNodeList[2],
+                position = midPoint,
+                rotation = rotation
+            )
+
+
+                        MaterialFactory.makeOpaqueWithColor(applicationContext, lineRenderableColor)
+                            .thenAccept { material ->
+
+                                val modelRenderable = ShapeFactory.makeCube(
+                                    Vector3(
+                                        .005f,
+                                        .01f,
+                                        r.length()
+                                    ),
+                                    Vector3(p2ToPt1.length() / 2, 0f, Math.abs(r.length() / 2)),
+
+                                    material
+                                )
+
+                                val node = Node()
+                                node.setParent(anchorNodeList[2])
+                                node.renderable = modelRenderable
+                                node.worldPosition = midPoint
+                                node.worldRotation = rotation
+
+                                var dist = r.length()
+                                addTextBox(
+                                    node,
+                                    dist,
+                                    position = Vector3(p2ToPt1.length() / 2, 0f, Math.abs(r.length() / 2))
+                                )
+
+
+                            }
