@@ -15,7 +15,8 @@ import android.provider.MediaStore
 import android.provider.Settings
 import android.util.Log
 import android.view.View
-import android.widget.SeekBar
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -25,15 +26,18 @@ import com.google.ar.sceneform.AnchorNode
 import com.google.ar.sceneform.Camera
 import com.google.ar.sceneform.Sun
 import com.google.ar.sceneform.rendering.Color
-import com.google.ar.sceneform.rendering.ModelRenderable
 import com.google.ar.sceneform.ux.ArFragment
 import com.warkiz.widget.IndicatorSeekBar
+import com.warkiz.widget.IndicatorStayLayout
 import com.warkiz.widget.OnSeekChangeListener
 import com.warkiz.widget.SeekParams
+import es.dmoral.toasty.Toasty
 import java.text.SimpleDateFormat
 import java.util.*
 
 class OpenCameraActivity : AppCompatActivity() {
+    // https://github.com/GrenderG/Toasty
+
 
     //
     val TAG = OpenCameraActivity::class.simpleName
@@ -42,31 +46,25 @@ class OpenCameraActivity : AppCompatActivity() {
     //
     var measureSelected: Boolean = false
 
-    //
-
 
     // renderable constants
-    val CUBE_RENDABLE_RADIUS = 0.0075f
-    val CUBE_RENDABLE_COLOR = Color(0F, 255F, 0F)
-    val CUBE_RENDABLE_SQUARE_COLOR = Color(0F, 0F, 0F, 0F)
+    val CUBE_RENDABLE_RADIUS = 0.01f
+    val CUBE_RENDABLE_COLOR = Color(0F, 255F, 0F, 0F)
+    val CUBE_RENDABLE_SQUARE_COLOR = Color(0F, 0.05F, 0F, 0.9F)
 
     // square related
 
     lateinit var arFragment: ArFragment
 
-    val box = Box(
-        CUBE_RENDABLE_RADIUS,
-        CUBE_RENDABLE_COLOR,
-        CUBE_RENDABLE_COLOR,
-        CUBE_RENDABLE_SQUARE_COLOR,
-        R.layout.distance_card_layout,
-        this
-    )
+
+    private lateinit var box: Box
 
     var photoSaver = PhotoSaver(this)
     var videoSaver = VideoRecorder()    // todo fix video recorder
 
     lateinit var seekBar: IndicatorSeekBar
+    lateinit var minus: ImageView
+    lateinit var plus: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,58 +74,115 @@ class OpenCameraActivity : AppCompatActivity() {
             return
         }
 
-        box.setUI()
         setARFragment()
-
+        setBox()
+        setARFragmentAction()
         setBottomPanel()
         setSeekBar()
+    }
 
+    private var isSeeking = false
+
+    private fun setBox() {
+        //
+        var boxRenderData = BoxRenderData(
+            pointRenderableRadius = CUBE_RENDABLE_RADIUS,
+            pointRenderableColor = CUBE_RENDABLE_COLOR,
+            lineRenderableColor = CUBE_RENDABLE_COLOR,
+            areaRenderableColor = CUBE_RENDABLE_SQUARE_COLOR
+        )
+
+        //
+        var boxInfoCardLayouts = BoxInfoCardLayouts(
+            cardLayout = R.layout.distance_card_layout,
+            heightCardLayout = R.layout.height_distance_card_layout
+        )
+
+        box = Box(
+            boxRenderData = boxRenderData,
+            boxInfoCardLayouts = boxInfoCardLayouts,
+            applicationContext = this,
+            arFragment = arFragment
+        )
+
+        box.setUI()
+    }
+
+
+    private fun setToasty() {
+//        Toasty.Config.getInstance()
+//            .tintIcon(boolean tintIcon) // optional (apply textColor also to the icon)
+//            .setToastTypeface(@NonNull Typeface typeface) // optional
+//            .setTextSize(int sizeInSp) // optional
+//            .allowQueue(boolean allowQueue) // optional (prevents several Toastys from queuing)
+//            .apply(); // required
     }
 
 
     private fun setSeekBar() {
+
+
         seekBar = findViewById<IndicatorSeekBar>(R.id.slider)
         seekBar.setIndicatorTextFormat("\${PROGRESS} cm")
 
         //
         seekBar.visibility = View.GONE
 
-        seekBar.onSeekChangeListener = (object : SeekBar.OnSeekBarChangeListener,
-            OnSeekChangeListener {
+        seekBar.onSeekChangeListener = (object : OnSeekChangeListener {
 
 
             override fun onSeeking(seekParams: SeekParams?) {
-                box.setBoxHeight(seekParams!!.progress.toFloat())
+                if (isSeeking) {
+                    box.setBoxHeight(seekParams!!.progress.toFloat())
+
+                }
                 //   TODO("Not yet implemented")
             }
 
             override fun onStartTrackingTouch(seekBar: IndicatorSeekBar?) {
 //                TODO("Not yet implemented")
+                isSeeking = true
 
             }
 
             override fun onStopTrackingTouch(seekBar: IndicatorSeekBar?) {
                 //    TODO("Not yet implemented")
+                isSeeking = false
 
             }
 
-            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                //   TODO("Not yet implemented")
-
-            }
-
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {
-
-                //  TODO("Not yet implemented")
-            }
-
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {
-
-                //    TODO("Not yet implemented")
-            }
 
         })
 
+
+        var minus = findViewById<ImageView>(R.id.dec_height)
+        var plus = findViewById<ImageView>(R.id.inc_height)
+
+        minus.visibility = View.GONE
+        plus.visibility = View.GONE
+
+
+        minus.setOnClickListener {
+            box.setBoxHeight(seekBar.progress.toFloat() - 1)
+            this.seekBar.setProgress((seekBar.progress - 1).toFloat())
+
+        }
+        minus.setOnLongClickListener {
+            box.setBoxHeight(seekBar.progress.toFloat() - 1)
+            this.seekBar.setProgress((seekBar.progress - 1).toFloat())
+            true
+        }
+
+        plus.setOnClickListener {
+            box.setBoxHeight(seekBar.progress.toFloat() + 1)
+            this.seekBar.setProgress((seekBar.progress + 1).toFloat())
+
+        }
+        plus.setOnLongClickListener {
+            box.setBoxHeight(seekBar.progress.toFloat() + 1)
+            this.seekBar.setProgress((seekBar.progress + 1).toFloat())
+            true
+        }
 
     }
 
@@ -367,20 +422,30 @@ class OpenCameraActivity : AppCompatActivity() {
             }
         }
         box.clear()
+        findViewById<IndicatorStayLayout>(R.id.indicator_container).visibility = View.GONE
+        seekBar.setProgress(0f)
+
         seekBar.visibility = View.GONE
+        minus.visibility = View.GONE
+        plus.visibility = View.GONE
     }
 
-
     private fun setARFragment() {
-
         arFragment = supportFragmentManager.findFragmentById(R.id.fragment) as ArFragment
+
+    }
+
+    private fun setARFragmentAction() {
+        minus = findViewById<ImageView>(R.id.dec_height)
+        plus = findViewById<ImageView>(R.id.inc_height)
+
         arFragment.setOnTapArPlaneListener { hitResult, plane, motionEvent ->
 
 
             if (measureSelected && box.getMeasurementStage() < MeasurementStage.LENGTH) {
 
                 val anchorNode = createAnchorNode(hitResult)
-                box.addAnchorNode(anchorNode, arFragment.transformationSystem)
+                box.addAnchorNode(anchorNode)
 
                 if (box.getAnchorListSize() < 3) {
                     box.addVertex(anchorNode)
@@ -397,12 +462,20 @@ class OpenCameraActivity : AppCompatActivity() {
 
 
                     seekBar.visibility = View.VISIBLE
+                    minus.visibility = View.VISIBLE
+                    plus.visibility = View.VISIBLE
+                    findViewById<IndicatorStayLayout>(R.id.indicator_container).visibility =
+                        View.VISIBLE
+
+
                 }
 
             }
 
 
         }
+
+        box.arFragment = arFragment
 
     }
 

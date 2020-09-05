@@ -1508,6 +1508,8 @@ drawable material_ic_keyboard_arrow_left_black_24dp
 drawable material_ic_keyboard_arrow_right_black_24dp
 drawable material_ic_menu_arrow_down_black_24dp
 drawable material_ic_menu_arrow_up_black_24dp
+drawable minus_48
+drawable minus_green_48
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
 drawable mtrl_ic_arrow_drop_down
@@ -1530,6 +1532,8 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable plus_48
+drawable plus_green_48
 drawable question_black
 drawable ruler_24
 drawable ruler_green_32
@@ -1539,6 +1543,7 @@ drawable sceneform_hand_phone
 drawable sceneform_plane
 drawable search_24
 drawable search_green_32
+drawable shape_rect_blue
 drawable shape_rect_white
 drawable test_custom_background
 drawable tooltip_frame_dark
@@ -1648,6 +1653,7 @@ id custom
 id customPanel
 id cut
 id date_picker_actions
+id dec_height
 id decor_content_parent
 id default_activity_button
 id design_bottom_sheet
@@ -1693,6 +1699,7 @@ id icon
 id icon_group
 id ifRoom
 id image
+id inc_height
 id indicator_arrow
 id indicator_container
 id info
@@ -1802,6 +1809,7 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id size_changer
 id skipCollapsed
 id slide
 id slider
@@ -1953,6 +1961,8 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout distance_card_layout
+layout frame_layout
+layout height_distance_card_layout
 layout isb_indicator
 layout measurment_item_model
 layout mtrl_alert_dialog

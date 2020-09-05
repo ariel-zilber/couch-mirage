@@ -4,23 +4,6 @@
             "outputFile": "/home/arikzil/couch-mirage/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rGB/values-en-rGB.xml",
             "map": [
                 {
-                    "source": "/home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/res/values-en-rGB/values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8",
-                        "startColumns": "0,0,0,0,0",
-                        "startOffsets": "194,241,292,414,536",
-                        "endColumns": "46,50,121,121,83",
-                        "endOffsets": "240,291,413,535,619"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "105,156,211,337,463",
-                        "endColumns": "50,54,125,125,87",
-                        "endOffsets": "151,206,332,458,546"
-                    }
-                },
-                {
                     "source": "/home/arikzil/.gradle/caches/transforms-2/files-2.1/26e0a91a5e33b53b297eff4012f2b2cf/core-1.3.1/res/values-en-rGB/values-en-rGB.xml",
                     "from": {
                         "startLines": "2",
@@ -52,6 +35,23 @@
                         "startOffsets": "551,655,755,863,947,1047,1162,1240,1315,1406,1499,1594,1688,1788,1881,1976,2070,2161,2252,2334,2437,2540,2639,2744,2848,2952,3108,3208",
                         "endColumns": "103,99,107,83,99,114,77,74,90,92,94,93,99,92,94,93,90,90,81,102,102,98,104,103,103,155,99,82",
                         "endOffsets": "650,750,858,942,1042,1157,1235,1310,1401,1494,1589,1683,1783,1876,1971,2065,2156,2247,2329,2432,2535,2634,2739,2843,2947,3103,3203,3286"
+                    }
+                },
+                {
+                    "source": "/home/arikzil/.gradle/caches/transforms-2/files-2.1/73b98a6fb30a6e9ec5210b81e6fad72a/jetified-core-1.19.0/res/values-en-rGB/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "0,0,0,0,0",
+                        "startOffsets": "194,241,292,414,536",
+                        "endColumns": "46,50,121,121,83",
+                        "endOffsets": "240,291,413,535,619"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "105,156,211,337,463",
+                        "endColumns": "50,54,125,125,87",
+                        "endOffsets": "151,206,332,458,546"
                     }
                 }
             ]

@@ -4,6 +4,23 @@
             "outputFile": "/home/arikzil/couch-mirage/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ko/values-ko.xml",
             "map": [
                 {
+                    "source": "/home/arikzil/.gradle/caches/transforms-2/files-2.1/73b98a6fb30a6e9ec5210b81e6fad72a/jetified-core-1.19.0/res/values-ko/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "0,0,0,0,0",
+                        "startOffsets": "190,233,278,373,468",
+                        "endColumns": "42,44,94,94,68",
+                        "endOffsets": "232,277,372,467,536"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "105,152,201,300,399",
+                        "endColumns": "46,48,98,98,72",
+                        "endOffsets": "147,196,295,394,467"
+                    }
+                },
+                {
                     "source": "/home/arikzil/.gradle/caches/transforms-2/files-2.1/26e0a91a5e33b53b297eff4012f2b2cf/core-1.3.1/res/values-ko/values-ko.xml",
                     "from": {
                         "startLines": "2",
@@ -18,23 +35,6 @@
                         "startOffsets": "3131",
                         "endColumns": "100",
                         "endOffsets": "3227"
-                    }
-                },
-                {
-                    "source": "/home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/res/values-ko/values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8",
-                        "startColumns": "0,0,0,0,0",
-                        "startOffsets": "190,233,278,373,468",
-                        "endColumns": "42,44,94,94,68",
-                        "endOffsets": "232,277,372,467,536"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "105,152,201,300,399",
-                        "endColumns": "46,48,98,98,72",
-                        "endOffsets": "147,196,295,394,467"
                     }
                 },
                 {

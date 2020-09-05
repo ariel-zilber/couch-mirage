@@ -8,12 +8,12 @@ MERGED from [androidx.core:core-ktx:1.3.1] /home/arikzil/.gradle/caches/transfor
 MERGED from [com.google.android.material:material:1.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/545bb05f8cd8812a6c9d5dcfcc1c1017/material-1.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f69a628eaaf91940e7a1f610b7836c95/appcompat-1.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f218e8e9835316d8e1e6d052f41c77b9/constraintlayout-1.1.3/AndroidManifest.xml:2:1-11:12
-MERGED from [com.google.ar.sceneform.ux:sceneform-ux:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/c769672d698bb982e74b44a1dd068afb/jetified-sceneform-ux-1.15.0/AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.ar.sceneform:core:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/1959c45920b747ab484625cc07e52f9a/jetified-core-1.15.0/AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.ar.sceneform:animation:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3efa5dd7dde7e73c883f18575cbf37d4/jetified-animation-1.15.0/AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.ar.sceneform:rendering:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/423c2be6b3e96285c684bf54407febe3/jetified-rendering-1.15.0/AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:17:1-46:12
-MERGED from [com.google.ar.sceneform:assets:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/cbf029afe4e1d2f6b3ba541312a77bc7/jetified-assets-1.15.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.ar.sceneform.ux:sceneform-ux:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/bbf78ad7c4e60724cb551c208c49f117/jetified-sceneform-ux-1.17.1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.ar.sceneform:core:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3559f3c97abdddfc84b7a2a1cc0be513/jetified-core-1.17.1/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.ar.sceneform:animation:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/50cce682355d7c549f1a2ffd2fdaf3d5/jetified-animation-1.17.1/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.ar.sceneform:rendering:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3fb0dac592e9047a59e1425362d82673/jetified-rendering-1.17.1/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/73b98a6fb30a6e9ec5210b81e6fad72a/jetified-core-1.19.0/AndroidManifest.xml:17:1-49:12
+MERGED from [com.google.ar.sceneform:assets:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/c299e98897dabf0c609b74d98951581e/jetified-assets-1.17.1/AndroidManifest.xml:2:1-7:12
 MERGED from [com.github.warkiz.widget:indicatorseekbar:2.1.2] /home/arikzil/.gradle/caches/transforms-2/files-2.1/77f1cea958e31ae32ed7c174974d8989/jetified-indicatorseekbar-2.1.2/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/404d6b853b1f32cc93a7126ebea73460/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/a0da5dcc6e891ea4650760b0863bc530/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
@@ -40,8 +40,8 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/arikzil/.gradle/
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/faf5783af95c832400322383a7dd9ded/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/ac91a101c17d6746f14fb898434e5b89/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/c926da3625af602d183147d360fef55d/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.ar.sceneform:sceneform-base:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/97f0e2f3f5d47aa88d2278b8f5d9f416/jetified-sceneform-base-1.15.0/AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.ar.sceneform:filament-android:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/ffca094129871e54e65be078f35d79ee/jetified-filament-android-1.15.0/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.ar.sceneform:sceneform-base:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/ee41773a307d0522077b2b43c00fd85e/jetified-sceneform-base-1.17.1/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.ar.sceneform:filament-android:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/81709c0a9cd03a039cab6e90dae2dfb7/jetified-filament-android-1.17.1/AndroidManifest.xml:2:1-11:12
 INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-43:12
 INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-43:12
 INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-43:12
@@ -95,8 +95,8 @@ MERGED from [com.google.android.material:material:1.2.0] /home/arikzil/.gradle/c
 MERGED from [com.google.android.material:material:1.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/545bb05f8cd8812a6c9d5dcfcc1c1017/material-1.2.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f218e8e9835316d8e1e6d052f41c77b9/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f218e8e9835316d8e1e6d052f41c77b9/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
-MERGED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:30:5-44:19
-MERGED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:30:5-44:19
+MERGED from [com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/73b98a6fb30a6e9ec5210b81e6fad72a/jetified-core-1.19.0/AndroidManifest.xml:33:5-47:19
+MERGED from [com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/73b98a6fb30a6e9ec5210b81e6fad72a/jetified-core-1.19.0/AndroidManifest.xml:33:5-47:19
 MERGED from [androidx.core:core:1.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/26e0a91a5e33b53b297eff4012f2b2cf/core-1.3.1/AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/26e0a91a5e33b53b297eff4012f2b2cf/core-1.3.1/AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9b4f1bf844ec479dd404687c5156b5ea/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
@@ -147,18 +147,18 @@ MERGED from [androidx.appcompat:appcompat:1.2.0] /home/arikzil/.gradle/caches/tr
 MERGED from [androidx.appcompat:appcompat:1.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f69a628eaaf91940e7a1f610b7836c95/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f218e8e9835316d8e1e6d052f41c77b9/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f218e8e9835316d8e1e6d052f41c77b9/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
-MERGED from [com.google.ar.sceneform.ux:sceneform-ux:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/c769672d698bb982e74b44a1dd068afb/jetified-sceneform-ux-1.15.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.ar.sceneform.ux:sceneform-ux:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/c769672d698bb982e74b44a1dd068afb/jetified-sceneform-ux-1.15.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.ar.sceneform:core:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/1959c45920b747ab484625cc07e52f9a/jetified-core-1.15.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.ar.sceneform:core:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/1959c45920b747ab484625cc07e52f9a/jetified-core-1.15.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.ar.sceneform:animation:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3efa5dd7dde7e73c883f18575cbf37d4/jetified-animation-1.15.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.ar.sceneform:animation:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3efa5dd7dde7e73c883f18575cbf37d4/jetified-animation-1.15.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.ar.sceneform:rendering:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/423c2be6b3e96285c684bf54407febe3/jetified-rendering-1.15.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.ar.sceneform:rendering:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/423c2be6b3e96285c684bf54407febe3/jetified-rendering-1.15.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:26:5-28:41
-MERGED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:26:5-28:41
-MERGED from [com.google.ar.sceneform:assets:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/cbf029afe4e1d2f6b3ba541312a77bc7/jetified-assets-1.15.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.ar.sceneform:assets:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/cbf029afe4e1d2f6b3ba541312a77bc7/jetified-assets-1.15.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.ar.sceneform.ux:sceneform-ux:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/bbf78ad7c4e60724cb551c208c49f117/jetified-sceneform-ux-1.17.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.ar.sceneform.ux:sceneform-ux:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/bbf78ad7c4e60724cb551c208c49f117/jetified-sceneform-ux-1.17.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.ar.sceneform:core:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3559f3c97abdddfc84b7a2a1cc0be513/jetified-core-1.17.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.ar.sceneform:core:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3559f3c97abdddfc84b7a2a1cc0be513/jetified-core-1.17.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.ar.sceneform:animation:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/50cce682355d7c549f1a2ffd2fdaf3d5/jetified-animation-1.17.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.ar.sceneform:animation:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/50cce682355d7c549f1a2ffd2fdaf3d5/jetified-animation-1.17.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.ar.sceneform:rendering:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3fb0dac592e9047a59e1425362d82673/jetified-rendering-1.17.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.ar.sceneform:rendering:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3fb0dac592e9047a59e1425362d82673/jetified-rendering-1.17.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/73b98a6fb30a6e9ec5210b81e6fad72a/jetified-core-1.19.0/AndroidManifest.xml:25:5-27:41
+MERGED from [com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/73b98a6fb30a6e9ec5210b81e6fad72a/jetified-core-1.19.0/AndroidManifest.xml:25:5-27:41
+MERGED from [com.google.ar.sceneform:assets:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/c299e98897dabf0c609b74d98951581e/jetified-assets-1.17.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.ar.sceneform:assets:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/c299e98897dabf0c609b74d98951581e/jetified-assets-1.17.1/AndroidManifest.xml:5:5-44
 MERGED from [com.github.warkiz.widget:indicatorseekbar:2.1.2] /home/arikzil/.gradle/caches/transforms-2/files-2.1/77f1cea958e31ae32ed7c174974d8989/jetified-indicatorseekbar-2.1.2/AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.warkiz.widget:indicatorseekbar:2.1.2] /home/arikzil/.gradle/caches/transforms-2/files-2.1/77f1cea958e31ae32ed7c174974d8989/jetified-indicatorseekbar-2.1.2/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/404d6b853b1f32cc93a7126ebea73460/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
@@ -211,10 +211,10 @@ MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/arikzil/.gradle/caches
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/ac91a101c17d6746f14fb898434e5b89/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/c926da3625af602d183147d360fef55d/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/c926da3625af602d183147d360fef55d/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.ar.sceneform:sceneform-base:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/97f0e2f3f5d47aa88d2278b8f5d9f416/jetified-sceneform-base-1.15.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.ar.sceneform:sceneform-base:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/97f0e2f3f5d47aa88d2278b8f5d9f416/jetified-sceneform-base-1.15.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.ar.sceneform:filament-android:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/ffca094129871e54e65be078f35d79ee/jetified-filament-android-1.15.0/AndroidManifest.xml:7:5-9:41
-MERGED from [com.google.ar.sceneform:filament-android:1.15.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/ffca094129871e54e65be078f35d79ee/jetified-filament-android-1.15.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.ar.sceneform:sceneform-base:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/ee41773a307d0522077b2b43c00fd85e/jetified-sceneform-base-1.17.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.ar.sceneform:sceneform-base:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/ee41773a307d0522077b2b43c00fd85e/jetified-sceneform-base-1.17.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.ar.sceneform:filament-android:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/81709c0a9cd03a039cab6e90dae2dfb7/jetified-filament-android-1.17.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.ar.sceneform:filament-android:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/81709c0a9cd03a039cab6e90dae2dfb7/jetified-filament-android-1.17.1/AndroidManifest.xml:7:5-9:41
 INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
 INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
@@ -225,23 +225,29 @@ INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
 		INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
 		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
 		INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
+queries
+ADDED from [com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/73b98a6fb30a6e9ec5210b81e6fad72a/jetified-core-1.19.0/AndroidManifest.xml:29:5-31:15
+package#com.google.ar.core
+ADDED from [com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/73b98a6fb30a6e9ec5210b81e6fad72a/jetified-core-1.19.0/AndroidManifest.xml:30:9-54
+	android:name
+		ADDED from [com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/73b98a6fb30a6e9ec5210b81e6fad72a/jetified-core-1.19.0/AndroidManifest.xml:30:18-51
 meta-data#com.google.ar.core.min_apk_version
-ADDED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:33:9-35:41
+ADDED from [com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/73b98a6fb30a6e9ec5210b81e6fad72a/jetified-core-1.19.0/AndroidManifest.xml:36:9-38:41
 	android:value
-		ADDED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:35:13-38
+		ADDED from [com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/73b98a6fb30a6e9ec5210b81e6fad72a/jetified-core-1.19.0/AndroidManifest.xml:38:13-38
 	android:name
-		ADDED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:34:13-62
+		ADDED from [com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/73b98a6fb30a6e9ec5210b81e6fad72a/jetified-core-1.19.0/AndroidManifest.xml:37:13-62
 activity#com.google.ar.core.InstallActivity
-ADDED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:37:9-43:80
+ADDED from [com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/73b98a6fb30a6e9ec5210b81e6fad72a/jetified-core-1.19.0/AndroidManifest.xml:40:9-46:80
 	android:excludeFromRecents
-		ADDED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:40:13-46
+		ADDED from [com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/73b98a6fb30a6e9ec5210b81e6fad72a/jetified-core-1.19.0/AndroidManifest.xml:43:13-46
 	android:launchMode
-		ADDED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:42:13-43
+		ADDED from [com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/73b98a6fb30a6e9ec5210b81e6fad72a/jetified-core-1.19.0/AndroidManifest.xml:45:13-43
 	android:exported
-		ADDED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:41:13-37
+		ADDED from [com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/73b98a6fb30a6e9ec5210b81e6fad72a/jetified-core-1.19.0/AndroidManifest.xml:44:13-37
 	android:configChanges
-		ADDED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:39:13-74
+		ADDED from [com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/73b98a6fb30a6e9ec5210b81e6fad72a/jetified-core-1.19.0/AndroidManifest.xml:42:13-74
 	android:theme
-		ADDED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:43:13-77
+		ADDED from [com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/73b98a6fb30a6e9ec5210b81e6fad72a/jetified-core-1.19.0/AndroidManifest.xml:46:13-77
 	android:name
-		ADDED from [com.google.ar:core:1.16.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/57a4cc1600c4aad68a6c5afb194410b3/jetified-core-1.16.0/AndroidManifest.xml:38:13-62
+		ADDED from [com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/73b98a6fb30a6e9ec5210b81e6fad72a/jetified-core-1.19.0/AndroidManifest.xml:41:13-62
