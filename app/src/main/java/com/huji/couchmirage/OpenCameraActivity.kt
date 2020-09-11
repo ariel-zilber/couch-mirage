@@ -15,29 +15,30 @@ import android.provider.MediaStore
 import android.provider.Settings
 import android.util.Log
 import android.view.View
-import android.widget.Button
+import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
+import androidx.core.content.res.ResourcesCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.ar.core.HitResult
-import com.google.ar.sceneform.AnchorNode
-import com.google.ar.sceneform.Camera
-import com.google.ar.sceneform.Sun
+import com.google.ar.core.Plane
+import com.google.ar.core.TrackingState
+import com.google.ar.sceneform.*
 import com.google.ar.sceneform.rendering.Color
 import com.google.ar.sceneform.ux.ArFragment
 import com.warkiz.widget.IndicatorSeekBar
 import com.warkiz.widget.IndicatorStayLayout
 import com.warkiz.widget.OnSeekChangeListener
 import com.warkiz.widget.SeekParams
-import es.dmoral.toasty.Toasty
+import www.sanju.motiontoast.MotionToast
 import java.text.SimpleDateFormat
 import java.util.*
 
 class OpenCameraActivity : AppCompatActivity() {
-    // https://github.com/GrenderG/Toasty
-
 
     //
     val TAG = OpenCameraActivity::class.simpleName
@@ -54,10 +55,12 @@ class OpenCameraActivity : AppCompatActivity() {
 
     // square related
 
-    lateinit var arFragment: ArFragment
+    lateinit var arFragment: MyArFragment
+    private var arSceneView: ArSceneView? = null
 
 
     private lateinit var box: Box
+    private var userMeasurements: BoxMeasurements? = null
 
     var photoSaver = PhotoSaver(this)
     var videoSaver = VideoRecorder()    // todo fix video recorder
@@ -66,6 +69,7 @@ class OpenCameraActivity : AppCompatActivity() {
     lateinit var minus: ImageView
     lateinit var plus: ImageView
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.open_camera)
@@ -73,8 +77,8 @@ class OpenCameraActivity : AppCompatActivity() {
         if (!checkIsSupportedDeviceOrFinish(this)) {
             return
         }
-
         setARFragment()
+
         setBox()
         setARFragmentAction()
         setBottomPanel()
@@ -109,16 +113,6 @@ class OpenCameraActivity : AppCompatActivity() {
     }
 
 
-    private fun setToasty() {
-//        Toasty.Config.getInstance()
-//            .tintIcon(boolean tintIcon) // optional (apply textColor also to the icon)
-//            .setToastTypeface(@NonNull Typeface typeface) // optional
-//            .setTextSize(int sizeInSp) // optional
-//            .allowQueue(boolean allowQueue) // optional (prevents several Toastys from queuing)
-//            .apply(); // required
-    }
-
-
     private fun setSeekBar() {
 
 
@@ -136,17 +130,14 @@ class OpenCameraActivity : AppCompatActivity() {
                     box.setBoxHeight(seekParams!!.progress.toFloat())
 
                 }
-                //   TODO("Not yet implemented")
             }
 
             override fun onStartTrackingTouch(seekBar: IndicatorSeekBar?) {
-//                TODO("Not yet implemented")
                 isSeeking = true
 
             }
 
             override fun onStopTrackingTouch(seekBar: IndicatorSeekBar?) {
-                //    TODO("Not yet implemented")
                 isSeeking = false
 
             }
@@ -228,6 +219,25 @@ class OpenCameraActivity : AppCompatActivity() {
         } else {
             vibrator.vibrate(500)
         }
+
+    }
+
+
+    private fun setUpLoadingAnimation() {
+
+        // Get AR fragment from layout
+
+        // Get AR fragment from layout
+
+        // Disable plane discovery hand motion animation
+        arFragment.planeDiscoveryController.hide()
+
+        val container: ViewGroup = findViewById(R.id.sceneform_hand_layout)
+        container.removeAllViews()
+
+        // Set the instructions view in the plane discovery controller.
+        arFragment.planeDiscoveryController.setInstructionView(null)
+        arSceneView = arFragment.arSceneView
 
     }
 
@@ -362,6 +372,9 @@ class OpenCameraActivity : AppCompatActivity() {
                 changeIconAnimated(measurement, 180f, R.drawable.done_green_32)
                 clear.visibility = View.VISIBLE
 
+                //
+
+
             } else if (measureSelected && box.getMeasurementStage() == MeasurementStage.HEIGHT) {
                 measureSelected = false
                 onClear()
@@ -369,6 +382,9 @@ class OpenCameraActivity : AppCompatActivity() {
                 vibrate()
                 changeIconAnimated(measurement, 180f, R.drawable.ruler_green_32)
                 clear.visibility = View.GONE
+
+                userMeasurements = box.getBoxMeasurements()
+                showShapedMeasuredDialog()
 
 
             }
@@ -378,12 +394,46 @@ class OpenCameraActivity : AppCompatActivity() {
 
     }
 
+    private fun showShapedMeasuredDialog() {
+        MotionToast.createToast(
+            this, "Shape was measured!",
+            MotionToast.TOAST_SUCCESS,
+            MotionToast.GRAVITY_BOTTOM,
+            MotionToast.LONG_DURATION,
+            ResourcesCompat.getFont(this, R.font.helvetica_regular)
+        )
+
+    }
+
+    private fun showNoShapeWashMeasuredDialog() {
+        MotionToast.createToast(
+            this, "Error:no shape was measured",
+            MotionToast.TOAST_ERROR,
+            MotionToast.GRAVITY_BOTTOM,
+            MotionToast.LONG_DURATION,
+            ResourcesCompat.getFont(this, R.font.helvetica_regular)
+        )
+
+    }
+
+    private fun searchItem() {
+        //TODO
+    }
+
     private fun setupSearchButton() {
-        val search: View = findViewById(R.id.fab_search)
+
+        val search: FloatingActionButton = findViewById(R.id.fab_search)
         search.setOnClickListener { view ->
+
+            if (userMeasurements == null) {
+                showNoShapeWashMeasuredDialog()
+            } else {
+                searchItem()
+            }
+
+
         }
 
-        search.isEnabled = false
 
     }
 
@@ -431,7 +481,9 @@ class OpenCameraActivity : AppCompatActivity() {
     }
 
     private fun setARFragment() {
-        arFragment = supportFragmentManager.findFragmentById(R.id.fragment) as ArFragment
+        arFragment = supportFragmentManager.findFragmentById(R.id.fragment) as MyArFragment
+        arFragment.activity = this
+        arFragment.animationLayout = this.findViewById(R.id.animation)
 
     }
 

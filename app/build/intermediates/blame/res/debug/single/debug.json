@@ -44,12 +44,12 @@
         "source": "/home/arikzil/couch-mirage/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "/home/arikzil/couch-mirage/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
-    },
-    {
         "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/drawable_ic_videocam_white_24dp.png.flat",
         "source": "/home/arikzil/couch-mirage/app/src/main/res/drawable/ic_videocam_white_24dp.png"
+    },
+    {
+        "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/arikzil/couch-mirage/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
         "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/raw_andy.sfb.flat",
@@ -120,6 +120,10 @@
         "source": "/home/arikzil/couch-mirage/app/src/main/res/drawable/ic_arrow_back_white_24dp.png"
     },
     {
+        "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/drawable_ic_info_gray.xml.flat",
+        "source": "/home/arikzil/couch-mirage/app/src/main/res/drawable/ic_info_gray.xml"
+    },
+    {
         "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/drawable_ruler_white_24.png.flat",
         "source": "/home/arikzil/couch-mirage/app/src/main/res/drawable/ruler_white_24.png"
     },
@@ -130,6 +134,10 @@
     {
         "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/layout_height_distance_card_layout.xml.flat",
         "source": "/home/arikzil/couch-mirage/app/src/main/res/layout/height_distance_card_layout.xml"
+    },
+    {
+        "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/layout_hand_layout.xml.flat",
+        "source": "/home/arikzil/couch-mirage/app/src/main/res/layout/hand_layout.xml"
     },
     {
         "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/drawable_ruler_24.png.flat",
@@ -172,8 +180,20 @@
         "source": "/home/arikzil/couch-mirage/app/src/main/res/drawable/ruler_white_32.png"
     },
     {
+        "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/drawable_info_32_white.png.flat",
+        "source": "/home/arikzil/couch-mirage/app/src/main/res/drawable/info_32_white.png"
+    },
+    {
         "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
         "source": "/home/arikzil/couch-mirage/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/drawable_info_32_black.png.flat",
+        "source": "/home/arikzil/couch-mirage/app/src/main/res/drawable/info_32_black.png"
+    },
+    {
+        "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/raw_layer_2.json.flat",
+        "source": "/home/arikzil/couch-mirage/app/src/main/res/raw/layer_2.json"
     },
     {
         "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_foreground.png.flat",

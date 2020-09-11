@@ -30,6 +30,7 @@ anim design_snackbar_out
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
+anim pulse
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -536,6 +537,22 @@ attr listPreferredItemPaddingRight
 attr listPreferredItemPaddingStart
 attr logo
 attr logoDescription
+attr lottie_autoPlay
+attr lottie_cacheComposition
+attr lottie_colorFilter
+attr lottie_enableMergePathsForKitKatAndAbove
+attr lottie_fallbackRes
+attr lottie_fileName
+attr lottie_imageAssetsFolder
+attr lottie_loop
+attr lottie_progress
+attr lottie_rawRes
+attr lottie_renderMode
+attr lottie_repeatCount
+attr lottie_repeatMode
+attr lottie_scale
+attr lottie_speed
+attr lottie_url
 attr materialAlertDialogBodyTextStyle
 attr materialAlertDialogTheme
 attr materialAlertDialogTitleIconStyle
@@ -857,6 +874,9 @@ color checkbox_themeable_attribute_color
 color colorAccent
 color colorPrimary
 color colorPrimaryDark
+color dark_bg_color
+color delete_bg_color
+color delete_color
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -899,6 +919,8 @@ color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
 color dim_foreground_material_light
+color error_bg_color
+color error_color
 color error_color_material_dark
 color error_color_material_light
 color fab_color_pressed
@@ -908,6 +930,8 @@ color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color ic_launcher_background
+color info_bg_color
+color info_color
 color isb_selector_tick_marks_color
 color isb_selector_tick_texts_color
 color material_blue_grey_800
@@ -1006,6 +1030,9 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color success_bg_color
+color success_color
+color success_title_color
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -1017,6 +1044,8 @@ color test_mtrl_calendar_day_selected
 color text_like_counter
 color tooltip_background_dark
 color tooltip_background_light
+color warning_bg_color
+color warning_color
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -1472,6 +1501,7 @@ drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable button_background
+drawable color_view_background
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1484,20 +1514,31 @@ drawable ic_arrow_back_white_24dp
 drawable ic_arrow_forward_white_24dp
 drawable ic_camera
 drawable ic_camera_rear_white_24dp
+drawable ic_check_green
 drawable ic_close_white_24dp
+drawable ic_cloud_yellow
 drawable ic_collections_white_24dp
+drawable ic_delete_
 drawable ic_edit_white_24dp
+drawable ic_error_
 drawable ic_grid_on_white
 drawable ic_grid_on_white_24dp
+drawable ic_info_blue
+drawable ic_info_gray
+drawable ic_info_yellow
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_no_internet
 drawable ic_question
 drawable ic_videocam
 drawable ic_videocam_white_24dp
+drawable ic_warning_yellow
+drawable info_32_black
+drawable info_32_white
 drawable isb_indicator_rounded_corners
 drawable isb_indicator_square_corners
 drawable line_small_12
@@ -1546,8 +1587,11 @@ drawable search_green_32
 drawable shape_rect_blue
 drawable shape_rect_white
 drawable test_custom_background
+drawable toast_round_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+font helvetica_regular
+font helveticabold
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -1617,8 +1661,11 @@ id add
 id alertTitle
 id all
 id always
+id animation
+id animationView
 id async
 id auto
+id automatic
 id barrier
 id beginning
 id blocking
@@ -1644,6 +1691,11 @@ id clear_text
 id clip_horizontal
 id clip_vertical
 id collapseActionView
+id colorView
+id color_toast_description
+id color_toast_image
+id color_toast_text
+id color_toast_view
 id confirm_button
 id container
 id content
@@ -1651,6 +1703,9 @@ id contentPanel
 id coordinator
 id custom
 id customPanel
+id custom_toast_description
+id custom_toast_image
+id custom_toast_text
 id cut
 id date_picker_actions
 id dec_height
@@ -1675,6 +1730,7 @@ id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id fab_camera
+id fab_info
 id fab_measurement
 id fab_search
 id fade
@@ -1692,6 +1748,7 @@ id ghost_view_holder
 id gone
 id group_divider
 id groups
+id hardware
 id hideable
 id home
 id homeAsUp
@@ -1715,6 +1772,7 @@ id line1
 id line3
 id listMode
 id list_item
+id lottie_layer_name
 id masked
 id message
 id middle
@@ -1726,6 +1784,7 @@ id month_navigation_fragment_toggle
 id month_navigation_next
 id month_navigation_previous
 id month_title
+id motion_toast_view
 id mtrl_calendar_day_selector_frame
 id mtrl_calendar_days_of_week
 id mtrl_calendar_frame
@@ -1773,6 +1832,8 @@ id progress_circular
 id progress_horizontal
 id radio
 id rectangle
+id restart
+id reverse
 id right
 id right_icon
 id right_side
@@ -1818,6 +1879,7 @@ id snackbar_action
 id snackbar_text
 id snap
 id snapMargins
+id software
 id spacer
 id split_action_bar
 id spread
@@ -1850,6 +1912,7 @@ id textEnd
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textView
 id text_input_end_icon
 id text_input_start_icon
 id textinput_counter
@@ -1962,9 +2025,12 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout distance_card_layout
 layout frame_layout
+layout full_color_toast
+layout hand_layout
 layout height_distance_card_layout
 layout isb_indicator
 layout measurment_item_model
+layout motion_toast
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title
@@ -2027,6 +2093,7 @@ plurals likes_count
 plurals mtrl_badge_content_description
 raw andy
 raw keep_arcore
+raw layer_2
 raw sceneform_camera_material
 raw sceneform_default_light_probe
 raw sceneform_face_mesh
@@ -2885,6 +2952,7 @@ styleable LinearConstraintLayout android_orientation
 styleable LinearLayoutCompat android_gravity android_orientation android_baselineAligned android_baselineAlignedChildIndex android_weightSum divider dividerPadding measureWithLargestChild showDividers
 styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width android_layout_height android_layout_weight
 styleable ListPopupWindow android_dropDownHorizontalOffset android_dropDownVerticalOffset
+styleable LottieAnimationView lottie_autoPlay lottie_cacheComposition lottie_colorFilter lottie_enableMergePathsForKitKatAndAbove lottie_fallbackRes lottie_fileName lottie_imageAssetsFolder lottie_loop lottie_progress lottie_rawRes lottie_renderMode lottie_repeatCount lottie_repeatMode lottie_scale lottie_speed lottie_url
 styleable MaterialAlertDialog backgroundInsetBottom backgroundInsetEnd backgroundInsetStart backgroundInsetTop
 styleable MaterialAlertDialogTheme materialAlertDialogBodyTextStyle materialAlertDialogTheme materialAlertDialogTitleIconStyle materialAlertDialogTitlePanelStyle materialAlertDialogTitleTextStyle
 styleable MaterialAutoCompleteTextView android_inputType

@@ -198,6 +198,8 @@ class Box(
 
     }
 
+
+
     private fun drawFrame(position: Vector3, rotation: Quaternion, dist1: Float, dist2: Float) {
         // add horizontal lines ---------------------------------------------------------------
 
@@ -571,6 +573,9 @@ class Box(
         )
     }
 
+      fun getBoxMeasurements(): BoxMeasurements {
+        return boxMeasurements
+    }
 
     private fun addTextBox(
         node: Node,

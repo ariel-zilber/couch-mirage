@@ -4,8 +4,10 @@ ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-43:12
 INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-43:12
 INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-43:12
 INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-43:12
+MERGED from [com.github.Spikeysanju:MotionToast:1.3.2] /home/arikzil/.gradle/caches/transforms-2/files-2.1/d11ea40f2213b0fc2d7ff28286ce3b5b/jetified-MotionToast-1.3.2/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.core:core-ktx:1.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f5c377fe6b8e93fb379cfc3f4d6f2e82/jetified-core-ktx-1.3.1/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.material:material:1.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/545bb05f8cd8812a6c9d5dcfcc1c1017/material-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.airbnb.android:lottie:3.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/e29092f5eed8ba704b055f8e2210b8db/jetified-lottie-3.4.0/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f69a628eaaf91940e7a1f610b7836c95/appcompat-1.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f218e8e9835316d8e1e6d052f41c77b9/constraintlayout-1.1.3/AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.ar.sceneform.ux:sceneform-ux:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/bbf78ad7c4e60724cb551c208c49f117/jetified-sceneform-ux-1.17.1/AndroidManifest.xml:17:1-22:12
@@ -93,6 +95,8 @@ application
 ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:20:5-41:19
 MERGED from [com.google.android.material:material:1.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/545bb05f8cd8812a6c9d5dcfcc1c1017/material-1.2.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/545bb05f8cd8812a6c9d5dcfcc1c1017/material-1.2.0/AndroidManifest.xml:22:5-20
+MERGED from [com.airbnb.android:lottie:3.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/e29092f5eed8ba704b055f8e2210b8db/jetified-lottie-3.4.0/AndroidManifest.xml:9:5-20
+MERGED from [com.airbnb.android:lottie:3.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/e29092f5eed8ba704b055f8e2210b8db/jetified-lottie-3.4.0/AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f218e8e9835316d8e1e6d052f41c77b9/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f218e8e9835316d8e1e6d052f41c77b9/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
 MERGED from [com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/73b98a6fb30a6e9ec5210b81e6fad72a/jetified-core-1.19.0/AndroidManifest.xml:33:5-47:19
@@ -139,10 +143,14 @@ uses-sdk
 INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
 INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
+MERGED from [com.github.Spikeysanju:MotionToast:1.3.2] /home/arikzil/.gradle/caches/transforms-2/files-2.1/d11ea40f2213b0fc2d7ff28286ce3b5b/jetified-MotionToast-1.3.2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.Spikeysanju:MotionToast:1.3.2] /home/arikzil/.gradle/caches/transforms-2/files-2.1/d11ea40f2213b0fc2d7ff28286ce3b5b/jetified-MotionToast-1.3.2/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.core:core-ktx:1.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f5c377fe6b8e93fb379cfc3f4d6f2e82/jetified-core-ktx-1.3.1/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.core:core-ktx:1.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f5c377fe6b8e93fb379cfc3f4d6f2e82/jetified-core-ktx-1.3.1/AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.material:material:1.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/545bb05f8cd8812a6c9d5dcfcc1c1017/material-1.2.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/545bb05f8cd8812a6c9d5dcfcc1c1017/material-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [com.airbnb.android:lottie:3.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/e29092f5eed8ba704b055f8e2210b8db/jetified-lottie-3.4.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.airbnb.android:lottie:3.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/e29092f5eed8ba704b055f8e2210b8db/jetified-lottie-3.4.0/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.appcompat:appcompat:1.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f69a628eaaf91940e7a1f610b7836c95/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f69a628eaaf91940e7a1f610b7836c95/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f218e8e9835316d8e1e6d052f41c77b9/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41

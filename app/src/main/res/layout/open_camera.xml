@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".OpenCameraActivity">
 
+
     <Button
         android:id="@+id/clear"
         android:layout_width="100dp"
@@ -18,20 +19,20 @@
 
     <fragment
         android:id="@+id/fragment"
-        android:name="com.google.ar.sceneform.ux.ArFragment"
+        android:name="com.huji.couchmirage.MyArFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
 
         android:layout_above="@+id/bottomPanel"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
         android:layout_gravity="center"
+        android:layout_marginStart="-11dp"
+        android:layout_marginBottom="-107dp"
         app:layout_anchorGravity="bottom|right|end"
         app:layout_constraintBottom_toTopOf="@+id/bottomPanel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/size_changer"
@@ -200,5 +201,66 @@
         </FrameLayout>
     </LinearLayout>
 
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+
+        android:layout_marginEnd="113dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#ABFFFFFF"
+        android:gravity="top"
+        android:src="@drawable/info_32_white"
+        app:borderWidth="0dp"
+        app:fabCustomSize="32dp"
+        app:rippleColor="#ABCAC3C3" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/animation"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+
+        android:layout_above="@+id/size_changer"
+        android:layout_below="@+id/clear"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="189dp"
+        android:layout_marginBottom="189dp"
+        android:foregroundGravity="center"
+        android:visibility="invisible">
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/layer_2" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Move phone to start"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/animationView"
+            app:layout_constraintStart_toStartOf="@+id/animationView"
+            app:layout_constraintTop_toBottomOf="@+id/animationView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </RelativeLayout>
