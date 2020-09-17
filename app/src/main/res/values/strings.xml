@@ -34,4 +34,22 @@
     <string name="user_profile_photo">http://igcdn-photos-f-a.akamaihd.net/hphotos-ak-xpa1/t51.2885-19/929118_455075441302693_1605108410_a.jpg</string>
     <string name="bottom_transient_bar_behavior">com.tunjid.androidx.material.behavior.BottomTransientBarBehavior</string>
     <string name="clear">clear</string>
+
+
+    <string name="red_advise_1">Aim the camera on a textured surface (either horizontal or vertical)</string>
+    <string name="red_advise_2">"Select appropriate distance
+ (0.5m - 3m)"</string>
+    <string name="red_advise_3">Make sure the lighting is good</string>
+    <string name="red_advise_4">Move the camera farther / closer to the surface</string>
+    <string name="red_advise_5">Try to change the viewing angle</string>
+    <string name="red_advise_6">Try to recognize another surface</string>
+
+    <string name="yellow_advise_1">Press the Ruler button</string>
+    <string name="yellow_advise_2">Select 3 points on the ground</string>
+    <string name="yellow_advise_3">Select height</string>
+    <string name="yellow_advise_4">Confirm shape</string>
+
+    <string name="green_advise_1">Press the Search button</string>
+
+
 </resources>

@@ -19,4 +19,13 @@
     <color name="text_like_counter">#2b5a83</color>
 
     <color name="bg_comments">#ffffff</color>
+
+    <color name="info_ripple_green">#AB76FF03</color>
+    <color name="info_ripple_yellow">#FFFF8D</color>
+    <color name="info_ripple_red">#EF5350</color>
+
+    <color name="info_background_green">#AB76FF03</color>
+    <color name="info_background_yellow">#A9FBEE76</color>
+    <color name="info_background_red">#57D50000</color>
+
 </resources>

@@ -56,6 +56,10 @@
         "source": "/home/arikzil/couch-mirage/app/src/main/res/raw/andy.sfb"
     },
     {
+        "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/drawable_ic_info_second_stage.xml.flat",
+        "source": "/home/arikzil/couch-mirage/app/src/main/res/drawable/ic_info_second_stage.xml"
+    },
+    {
         "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_foreground.png.flat",
         "source": "/home/arikzil/couch-mirage/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png"
     },
@@ -114,6 +118,14 @@
     {
         "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/drawable_ic_collections_white_24dp.png.flat",
         "source": "/home/arikzil/couch-mirage/app/src/main/res/drawable/ic_collections_white_24dp.png"
+    },
+    {
+        "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/drawable_ic_info_third_stage.xml.flat",
+        "source": "/home/arikzil/couch-mirage/app/src/main/res/drawable/ic_info_third_stage.xml"
+    },
+    {
+        "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/layout_test_store.xml.flat",
+        "source": "/home/arikzil/couch-mirage/app/src/main/res/layout/test_store.xml"
     },
     {
         "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/drawable_ic_arrow_back_white_24dp.png.flat",
@@ -224,6 +236,10 @@
         "source": "/home/arikzil/couch-mirage/app/src/main/res/drawable/ic_arrow_forward_white_24dp.png"
     },
     {
+        "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/drawable_desk.jpg.flat",
+        "source": "/home/arikzil/couch-mirage/app/src/main/res/drawable/desk.jpg"
+    },
+    {
         "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/drawable_minus_48.png.flat",
         "source": "/home/arikzil/couch-mirage/app/src/main/res/drawable/minus_48.png"
     },
@@ -246,6 +262,14 @@
     {
         "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/drawable_plus_green_48.png.flat",
         "source": "/home/arikzil/couch-mirage/app/src/main/res/drawable/plus_green_48.png"
+    },
+    {
+        "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/drawable_ic_info.xml.flat",
+        "source": "/home/arikzil/couch-mirage/app/src/main/res/drawable/ic_info.xml"
+    },
+    {
+        "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/drawable_ic_info_first_stage.xml.flat",
+        "source": "/home/arikzil/couch-mirage/app/src/main/res/drawable/ic_info_first_stage.xml"
     },
     {
         "merged": "/home/arikzil/couch-mirage/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",

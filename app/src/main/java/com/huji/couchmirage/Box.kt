@@ -50,7 +50,7 @@ class Box(
 
     private var vertices: ArrayList<Node> = ArrayList()
     private var verticalVertices: ArrayList<Node> = ArrayList()
-    private var anchorNodeList: ArrayList<AnchorNode> = ArrayList()
+     var anchorNodeList: ArrayList<AnchorNode> = ArrayList()
     private var upperFrameVertices: ArrayList<Node> = ArrayList()
     private var lowerFrameVertices: ArrayList<Node> = ArrayList()
 
@@ -433,7 +433,7 @@ class Box(
                         node2,
                         0f,
                         position = Vector3.add(
-                            toAdd, Vector3(LINE_DEFAULT, LINE_DEFAULT * 16, LINE_DEFAULT)
+                            toAdd, Vector3(LINE_DEFAULT, LINE_DEFAULT * 32, LINE_DEFAULT)
                         ),
                         measurement = "cm",
                         startUnit = "H=",

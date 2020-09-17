@@ -15,7 +15,8 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/button_background"
         android:gravity="center"
-        android:text="@string/clear" />
+        android:text="@string/clear"
+        android:textColor="#69E781" />
 
     <fragment
         android:id="@+id/fragment"
@@ -202,7 +203,7 @@
     </LinearLayout>
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <com.huji.couchmirage.InfoFAB
         android:id="@+id/fab_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -212,12 +213,12 @@
 
         android:layout_marginEnd="113dp"
         android:layout_marginBottom="24dp"
-        android:backgroundTint="#ABFFFFFF"
         android:gravity="top"
-        android:src="@drawable/info_32_white"
+        android:src="@drawable/ic_info_first_stage"
+        app:backgroundTint="@color/info_background_red"
         app:borderWidth="0dp"
         app:fabCustomSize="32dp"
-        app:rippleColor="#ABCAC3C3" />
+        app:rippleColor="@color/info_ripple_red" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/animation"

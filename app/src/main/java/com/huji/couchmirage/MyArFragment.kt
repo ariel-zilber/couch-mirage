@@ -1,5 +1,6 @@
 package com.huji.couchmirage
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,12 +17,6 @@ class MyArFragment : ArFragment(), Scene.OnUpdateListener {
     var activity: OpenCameraActivity? = null
     var animationLayout: ConstraintLayout? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        //
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -54,6 +49,7 @@ class MyArFragment : ArFragment(), Scene.OnUpdateListener {
         for (plane in frame.getUpdatedTrackables(Plane::class.java)) {
             if (plane.trackingState == TrackingState.TRACKING) {
                 hideLoadingMessage()
+                activity!!.changeInfoStageToYellow()
             }
         }
 
@@ -90,6 +86,7 @@ class MyArFragment : ArFragment(), Scene.OnUpdateListener {
 
         if (arSceneView!!.session != null) {
             showLoadingMessage()
+            activity!!.changeInfoStageToRed()
         }
     }
 

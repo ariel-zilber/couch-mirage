@@ -14,27 +14,27 @@ import android.os.*
 import android.provider.MediaStore
 import android.provider.Settings
 import android.util.Log
+import android.view.MotionEvent
 import android.view.View
-import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
-import androidx.core.content.res.ResourcesCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.ar.core.HitResult
 import com.google.ar.core.Plane
-import com.google.ar.core.TrackingState
-import com.google.ar.sceneform.*
+import com.google.ar.sceneform.AnchorNode
+import com.google.ar.sceneform.ArSceneView
+import com.google.ar.sceneform.Camera
+import com.google.ar.sceneform.Sun
 import com.google.ar.sceneform.rendering.Color
-import com.google.ar.sceneform.ux.ArFragment
+import com.google.ar.sceneform.rendering.Renderable
+import com.google.ar.sceneform.ux.TransformableNode
 import com.warkiz.widget.IndicatorSeekBar
 import com.warkiz.widget.IndicatorStayLayout
 import com.warkiz.widget.OnSeekChangeListener
 import com.warkiz.widget.SeekParams
-import www.sanju.motiontoast.MotionToast
+import es.dmoral.toasty.Toasty
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -77,15 +77,138 @@ class OpenCameraActivity : AppCompatActivity() {
         if (!checkIsSupportedDeviceOrFinish(this)) {
             return
         }
+        configToast()
         setARFragment()
 
         setBox()
         setARFragmentAction()
         setBottomPanel()
+        setUpInfoButton()
         setSeekBar()
     }
 
     private var isSeeking = false
+
+    private fun configToast() {
+        Toasty.Config.getInstance()
+            .allowQueue(false) // optional (prevents several Toastys from queuing)
+            .apply();
+    }
+
+    private fun setUpInfoButton() {
+        val infoBtn = findViewById<InfoFAB>(R.id.fab_info)
+
+        findViewById<InfoFAB>(R.id.fab_info).setOnClickListener() {
+
+
+            when (infoBtn.getStage()) {
+                InfoStage.RED -> {
+                    messageInfoButtonRedStage()
+                }
+                InfoStage.YELLOW -> {
+                    messageInfoButtonYellowStage()
+                }
+                InfoStage.GREEN -> {
+                    messageInfoButtonGreenStage()
+                }
+            }
+
+        }
+
+    }
+
+    private fun messageInfoButtonRedStage() {
+        val handler = Handler()
+
+        var infoFab = findViewById<InfoFAB>(R.id.fab_info)
+        val MESSAGE_1 = "1. " + resources.getString(R.string.red_advise_1)
+        val MESSAGE_2 = "2. " + resources.getString(R.string.red_advise_2)
+        val MESSAGE_3 = "3. " + resources.getString(R.string.red_advise_3)
+        val MESSAGE_4 = "4. " + resources.getString(R.string.red_advise_4)
+        val MESSAGE_5 = "5. " + resources.getString(R.string.red_advise_5)
+        infoFab.isEnabled = false
+
+        infoMessage(MESSAGE_1, Toast.LENGTH_SHORT)
+
+        handler.postDelayed({
+            // xxx
+        }, 2000)
+
+
+
+        handler.postDelayed({
+            infoMessage(MESSAGE_2, Toast.LENGTH_SHORT)
+        }, 2000)
+
+        handler.postDelayed({
+            infoMessage(MESSAGE_3, Toast.LENGTH_SHORT)
+        }, 4000)
+
+        handler.postDelayed({
+            infoMessage(MESSAGE_4, Toast.LENGTH_SHORT)
+        }, 6000)
+
+        handler.postDelayed({
+            infoMessage(MESSAGE_5, Toast.LENGTH_SHORT)
+            infoFab.isEnabled = true
+
+        }, 8000)
+
+
+    }
+
+    private fun messageInfoButtonYellowStage() {
+        val handler = Handler()
+
+        val MESSAGE_1 = "1. " + resources.getString(R.string.yellow_advise_1)
+        val MESSAGE_2 = "2. " + resources.getString(R.string.yellow_advise_2)
+        val MESSAGE_3 = "3. " + resources.getString(R.string.yellow_advise_3)
+        val MESSAGE_4 = "4. " + resources.getString(R.string.yellow_advise_4)
+        var infoFab = findViewById<InfoFAB>(R.id.fab_info)
+        infoFab.isEnabled = false
+
+        infoMessage(MESSAGE_1, Toast.LENGTH_SHORT)
+
+        handler.postDelayed({
+            infoMessage(MESSAGE_2, Toast.LENGTH_SHORT)
+        }, 2000)
+
+        handler.postDelayed({
+            infoMessage(MESSAGE_3, Toast.LENGTH_SHORT)
+        }, 4000)
+
+        handler.postDelayed({
+            infoMessage(MESSAGE_4, Toast.LENGTH_SHORT)
+            infoFab.isEnabled = true
+
+        }, 6000)
+
+
+    }
+
+    private fun messageInfoButtonGreenStage() {
+
+        val MESSAGE_1 = resources.getString(R.string.yellow_advise_1)
+
+        infoMessage(MESSAGE_1, Toast.LENGTH_SHORT)
+
+
+    }
+
+    private fun infoMessage(message: String, length: Int) {
+        var toast = Toasty.info(
+            this,
+            message,
+            length,
+            true
+        )
+
+        toast.setGravity(toast.gravity, toast.xOffset, toast.yOffset + 80)
+        toast.show()
+
+
+    }
+
 
     private fun setBox() {
         //
@@ -222,25 +345,6 @@ class OpenCameraActivity : AppCompatActivity() {
 
     }
 
-
-    private fun setUpLoadingAnimation() {
-
-        // Get AR fragment from layout
-
-        // Get AR fragment from layout
-
-        // Disable plane discovery hand motion animation
-        arFragment.planeDiscoveryController.hide()
-
-        val container: ViewGroup = findViewById(R.id.sceneform_hand_layout)
-        container.removeAllViews()
-
-        // Set the instructions view in the plane discovery controller.
-        arFragment.planeDiscoveryController.setInstructionView(null)
-        arSceneView = arFragment.arSceneView
-
-    }
-
     private fun setBottomPanel() {
 
 
@@ -370,6 +474,7 @@ class OpenCameraActivity : AppCompatActivity() {
                 }
 
                 changeIconAnimated(measurement, 180f, R.drawable.done_green_32)
+
                 clear.visibility = View.VISIBLE
 
                 //
@@ -377,7 +482,7 @@ class OpenCameraActivity : AppCompatActivity() {
 
             } else if (measureSelected && box.getMeasurementStage() == MeasurementStage.HEIGHT) {
                 measureSelected = false
-                onClear()
+                //  onClear()
 
                 vibrate()
                 changeIconAnimated(measurement, 180f, R.drawable.ruler_green_32)
@@ -387,6 +492,10 @@ class OpenCameraActivity : AppCompatActivity() {
                 showShapedMeasuredDialog()
 
 
+                // xxx
+                // xxx
+                var infoBtn = findViewById<InfoFAB>(R.id.fab_info)
+                changeInfoStageToGreen()
             }
 
 
@@ -394,30 +503,90 @@ class OpenCameraActivity : AppCompatActivity() {
 
     }
 
-    private fun showShapedMeasuredDialog() {
-        MotionToast.createToast(
-            this, "Shape was measured!",
-            MotionToast.TOAST_SUCCESS,
-            MotionToast.GRAVITY_BOTTOM,
-            MotionToast.LONG_DURATION,
-            ResourcesCompat.getFont(this, R.font.helvetica_regular)
-        )
 
+    @SuppressLint("ResourceAsColor")
+    fun changeInfoStageToRed() {
+        var infoFab = findViewById<InfoFAB>(R.id.fab_info)
+
+
+        infoFab.setStage(InfoStage.RED)
+        infoFab.setRippleColor(R.color.info_ripple_red)
+        infoFab.setBackgroundColor(R.color.info_background_red)
+        infoFab.setBackgroundTintList(getResources().getColorStateList(R.color.info_background_red));
+
+        infoFab.setImageResource(R.drawable.ic_info_first_stage)
+
+
+    }
+
+    @SuppressLint("ResourceAsColor")
+    fun changeInfoStageToYellow() {
+        var infoFab = findViewById<InfoFAB>(R.id.fab_info)
+
+
+        infoFab.setStage(InfoStage.YELLOW)
+        infoFab.setRippleColor(R.color.info_ripple_yellow)
+        infoFab.setBackgroundColor(R.color.info_background_yellow)
+        infoFab.setBackgroundTintList(getResources().getColorStateList(R.color.info_background_yellow));
+        infoFab.setImageResource(R.drawable.ic_info_second_stage)
+
+
+    }
+
+    @SuppressLint("ResourceAsColor")
+    private fun changeInfoStageToGreen() {
+        var infoFab = findViewById<InfoFAB>(R.id.fab_info)
+
+
+        infoFab.setStage(InfoStage.GREEN)
+        infoFab.setRippleColor(R.color.info_ripple_green)
+        infoFab.setBackgroundColor(R.color.info_background_green)
+        infoFab.setBackgroundTintList(getResources().getColorStateList(R.color.info_background_green));
+
+        infoFab.setImageResource(R.drawable.ic_info_third_stage)
+
+
+    }
+
+    private fun showShapedMeasuredDialog() {
+        var toast = Toasty.success(this, "Shape was measured!", Toast.LENGTH_SHORT, true)
+
+        toast.setGravity(toast.gravity, toast.xOffset, toast.yOffset + 70)
+
+        toast.show();
     }
 
     private fun showNoShapeWashMeasuredDialog() {
-        MotionToast.createToast(
-            this, "Error:no shape was measured",
-            MotionToast.TOAST_ERROR,
-            MotionToast.GRAVITY_BOTTOM,
-            MotionToast.LONG_DURATION,
-            ResourcesCompat.getFont(this, R.font.helvetica_regular)
-        )
+        var toast = Toasty.error(this, "Error:no shape was measured", Toast.LENGTH_SHORT, true)
+        Log.d("toast.yOffset", toast.yOffset.toString())
+        toast.setGravity(toast.gravity, toast.xOffset, toast.yOffset + 70)
+        toast.show()
 
     }
 
+
+    // TODO:: finish it
     private fun searchItem() {
-        //TODO
+        // search
+        //TODO:
+
+
+        isSearching=true
+//
+//
+//        // get url link
+//        val url: Uri = Uri.parse(
+//            "https://storage.googleapis.com/ar-answers-in-search-models/static/Tiger/model.glb"
+//        )
+//
+//        var furniture = Furniture(arFragment, url, this)
+//
+//        // download module
+//
+//        box.anchorNodeList[0].anchor?.let { furniture.spawnObject(it) }
+//        onClear()
+
+
     }
 
     private fun setupSearchButton() {
@@ -487,46 +656,50 @@ class OpenCameraActivity : AppCompatActivity() {
 
     }
 
+    private var renderable: Renderable? = null
+    private var isSearching = false
+
     private fun setARFragmentAction() {
         minus = findViewById<ImageView>(R.id.dec_height)
         plus = findViewById<ImageView>(R.id.inc_height)
 
-        arFragment.setOnTapArPlaneListener { hitResult, plane, motionEvent ->
+        if (!isSearching) {
+            arFragment.setOnTapArPlaneListener { hitResult, plane, motionEvent ->
 
 
-            if (measureSelected && box.getMeasurementStage() < MeasurementStage.LENGTH) {
+                if (measureSelected && box.getMeasurementStage() < MeasurementStage.LENGTH) {
 
-                val anchorNode = createAnchorNode(hitResult)
-                box.addAnchorNode(anchorNode)
+                    val anchorNode = createAnchorNode(hitResult)
+                    box.addAnchorNode(anchorNode)
 
-                if (box.getAnchorListSize() < 3) {
-                    box.addVertex(anchorNode)
+                    if (box.getAnchorListSize() < 3) {
+                        box.addVertex(anchorNode)
+                    }
+
+                    if (box.getMeasurementStage() == MeasurementStage.WIDTH) {
+                        box.drawLine(box.getAnchorNode(box.PT_1), box.getAnchorNode(box.PT_2))
+                    }
+
+                    if (box.getAnchorListSize() == 3) {
+                        // TODO:: delete line
+                        box.drawSquare()
+
+
+
+                        seekBar.visibility = View.VISIBLE
+                        minus.visibility = View.VISIBLE
+                        plus.visibility = View.VISIBLE
+                        findViewById<IndicatorStayLayout>(R.id.indicator_container).visibility =
+                            View.VISIBLE
+
+
+                    }
+
                 }
 
-                if (box.getMeasurementStage() == MeasurementStage.WIDTH) {
-                    box.drawLine(box.getAnchorNode(box.PT_1), box.getAnchorNode(box.PT_2))
-                }
-
-                if (box.getAnchorListSize() == 3) {
-                    // TODO:: delete line
-                    box.drawSquare()
-
-
-
-                    seekBar.visibility = View.VISIBLE
-                    minus.visibility = View.VISIBLE
-                    plus.visibility = View.VISIBLE
-                    findViewById<IndicatorStayLayout>(R.id.indicator_container).visibility =
-                        View.VISIBLE
-
-
-                }
 
             }
-
-
         }
-
         box.arFragment = arFragment
 
     }
