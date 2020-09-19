@@ -4,7 +4,7 @@
             "outputFile": "/home/arikzil/couch-mirage/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-es-rPY/values-es-rPY.xml",
             "map": [
                 {
-                    "source": "/home/arikzil/.gradle/caches/transforms-2/files-2.1/73b98a6fb30a6e9ec5210b81e6fad72a/jetified-core-1.19.0/res/values-es-rPY/values.xml",
+                    "source": "/home/arikzil/.gradle/caches/transforms-2/files-2.1/9cdc78d7f8414118ef255956bbff5857/jetified-core-1.19.0/res/values-es-rPY/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8",
                         "startColumns": "0,0,0,0,0",

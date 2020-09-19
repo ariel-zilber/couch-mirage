@@ -222,16 +222,16 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/animation"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
 
         android:layout_above="@+id/size_changer"
         android:layout_below="@+id/clear"
         android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="189dp"
-        android:layout_marginBottom="189dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
         android:foregroundGravity="center"
         android:visibility="invisible">
 
@@ -240,12 +240,11 @@
             android:id="@+id/animationView"
             android:layout_width="300dp"
             android:layout_height="150dp"
+            android:foregroundGravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
             app:lottie_rawRes="@raw/layer_2" />
@@ -260,7 +259,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/animationView"
             app:layout_constraintStart_toStartOf="@+id/animationView"
-            app:layout_constraintTop_toBottomOf="@+id/animationView" />
+            app:layout_constraintTop_toBottomOf="@+id/animationView"
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

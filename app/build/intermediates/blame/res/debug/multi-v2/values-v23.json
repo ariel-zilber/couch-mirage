@@ -4,7 +4,7 @@
             "outputFile": "/home/arikzil/couch-mirage/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "/home/arikzil/.gradle/caches/transforms-2/files-2.1/5154d1a7fc3ca3d67bfe14a67960781c/cardview-1.0.0/res/values-v23/values-v23.xml",
+                    "source": "/home/arikzil/.gradle/caches/transforms-2/files-2.1/d8be920b08c8e790b4eeaf94813dc62d/cardview-1.0.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/home/arikzil/.gradle/caches/transforms-2/files-2.1/545bb05f8cd8812a6c9d5dcfcc1c1017/material-1.2.0/res/values-v23/values-v23.xml",
+                    "source": "/home/arikzil/.gradle/caches/transforms-2/files-2.1/addbdd722e5d593b58fb1fd3060343e2/material-1.2.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,6",
                         "startColumns": "4,4",
@@ -42,7 +42,7 @@
                     }
                 },
                 {
-                    "source": "/home/arikzil/.gradle/caches/transforms-2/files-2.1/f69a628eaaf91940e7a1f610b7836c95/appcompat-1.2.0/res/values-v23/values-v23.xml",
+                    "source": "/home/arikzil/.gradle/caches/transforms-2/files-2.1/e82c8486d3cc4f883b53aa73dea553e6/appcompat-1.2.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",

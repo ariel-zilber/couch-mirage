@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1091916624613",
+    "firebase_url": "https://couchmirage-74314.firebaseio.com",
+    "project_id": "couchmirage-74314",
+    "storage_bucket": "couchmirage-74314.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091916624613:android:1492aba6ada2bae50dda0c",
+        "android_client_info": {
+          "package_name": "com.huji.couchmirage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1091916624613-ago1veq9vt3e7o3hiarluh4nsiuqh6k2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtKZ6_tq-3XiRIAuvFC8b8f11WG7eh5Es"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1091916624613-ago1veq9vt3e7o3hiarluh4nsiuqh6k2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

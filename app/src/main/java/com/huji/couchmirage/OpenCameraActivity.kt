@@ -14,27 +14,33 @@ import android.os.*
 import android.provider.MediaStore
 import android.provider.Settings
 import android.util.Log
-import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.ar.core.Anchor
 import com.google.ar.core.HitResult
-import com.google.ar.core.Plane
 import com.google.ar.sceneform.AnchorNode
-import com.google.ar.sceneform.ArSceneView
 import com.google.ar.sceneform.Camera
+import com.google.ar.sceneform.Node
 import com.google.ar.sceneform.Sun
-import com.google.ar.sceneform.rendering.Color
-import com.google.ar.sceneform.rendering.Renderable
+import com.google.ar.sceneform.assets.RenderableSource
+import com.google.ar.sceneform.collision.Box
+import com.google.ar.sceneform.math.Vector3
+import com.google.ar.sceneform.rendering.*
 import com.google.ar.sceneform.ux.TransformableNode
+import com.google.firebase.FirebaseApp
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import com.warkiz.widget.IndicatorSeekBar
 import com.warkiz.widget.IndicatorStayLayout
 import com.warkiz.widget.OnSeekChangeListener
 import com.warkiz.widget.SeekParams
 import es.dmoral.toasty.Toasty
+import java.io.File
+import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -48,6 +54,10 @@ class OpenCameraActivity : AppCompatActivity() {
     var measureSelected: Boolean = false
 
 
+    private var renderable: Renderable? = null
+    private var isSearching = false
+
+
     // renderable constants
     val CUBE_RENDABLE_RADIUS = 0.01f
     val CUBE_RENDABLE_COLOR = Color(0F, 255F, 0F, 0F)
@@ -56,10 +66,9 @@ class OpenCameraActivity : AppCompatActivity() {
     // square related
 
     lateinit var arFragment: MyArFragment
-    private var arSceneView: ArSceneView? = null
 
 
-    private lateinit var box: Box
+    private lateinit var box: MeasurmentBox
     private var userMeasurements: BoxMeasurements? = null
 
     var photoSaver = PhotoSaver(this)
@@ -78,6 +87,7 @@ class OpenCameraActivity : AppCompatActivity() {
             return
         }
         configToast()
+        setupFireBase()
         setARFragment()
 
         setBox()
@@ -225,7 +235,7 @@ class OpenCameraActivity : AppCompatActivity() {
             heightCardLayout = R.layout.height_distance_card_layout
         )
 
-        box = Box(
+        box = MeasurmentBox(
             boxRenderData = boxRenderData,
             boxInfoCardLayouts = boxInfoCardLayouts,
             applicationContext = this,
@@ -571,21 +581,24 @@ class OpenCameraActivity : AppCompatActivity() {
         //TODO:
 
 
-        isSearching=true
-//
-//
-//        // get url link
-//        val url: Uri = Uri.parse(
-//            "https://storage.googleapis.com/ar-answers-in-search-models/static/Tiger/model.glb"
-//        )
-//
-//        var furniture = Furniture(arFragment, url, this)
-//
-//        // download module
-//
-//        box.anchorNodeList[0].anchor?.let { furniture.spawnObject(it) }
-//        onClear()
+        isSearching = true
 
+
+        // open activity
+
+
+        // close activity
+        var modelPath = "models/desk_1_1.glb"
+
+        getFireBaseModel(
+            pathString = modelPath,
+            modelWidth = userMeasurements!!.boxWidth,
+            modelLength = userMeasurements!!.boxLength,
+            modelHeight = (userMeasurements!!.boxHeight / 100f)
+        )
+
+
+        isSearching = false
 
     }
 
@@ -649,6 +662,34 @@ class OpenCameraActivity : AppCompatActivity() {
         plus.visibility = View.GONE
     }
 
+    internal fun onClear2() {
+        val children = ArrayList(arFragment.arSceneView.scene.children)
+
+        for (node in children) {
+            if (node.parent != furnitureAnchor) {
+
+                if (node is AnchorNode) {
+                    if (node.anchor != null) {
+                        node.anchor!!.detach()
+                    }
+
+                }
+                if (node !is Camera && node !is Sun) {
+                    node.setParent(null)
+                }
+            } else {
+                Log.d("wtf", "")
+            }
+        }
+        box.clear()
+        findViewById<IndicatorStayLayout>(R.id.indicator_container).visibility = View.GONE
+        seekBar.setProgress(0f)
+
+        seekBar.visibility = View.GONE
+        minus.visibility = View.GONE
+        plus.visibility = View.GONE
+    }
+
     private fun setARFragment() {
         arFragment = supportFragmentManager.findFragmentById(R.id.fragment) as MyArFragment
         arFragment.activity = this
@@ -656,20 +697,28 @@ class OpenCameraActivity : AppCompatActivity() {
 
     }
 
-    private var renderable: Renderable? = null
-    private var isSearching = false
+
+    var furnitureAnchor: Anchor? = null
 
     private fun setARFragmentAction() {
         minus = findViewById<ImageView>(R.id.dec_height)
         plus = findViewById<ImageView>(R.id.inc_height)
 
-        if (!isSearching) {
-            arFragment.setOnTapArPlaneListener { hitResult, plane, motionEvent ->
+        // test
 
+        arFragment.setOnTapArPlaneListener { hitResult, plane, motionEvent ->
 
+            if (!isSearching) {
                 if (measureSelected && box.getMeasurementStage() < MeasurementStage.LENGTH) {
 
                     val anchorNode = createAnchorNode(hitResult)
+
+
+                    if (box.getAnchorListSize() == 0) {
+                        furnitureAnchor = hitResult.createAnchor()
+                    }
+
+
                     box.addAnchorNode(anchorNode)
 
                     if (box.getAnchorListSize() < 3) {
@@ -696,10 +745,10 @@ class OpenCameraActivity : AppCompatActivity() {
                     }
 
                 }
-
-
             }
+
         }
+
         box.arFragment = arFragment
 
     }
@@ -740,5 +789,82 @@ class OpenCameraActivity : AppCompatActivity() {
         return true
     }
 
+
+    private fun setupFireBase() {
+        FirebaseApp.initializeApp(this);
+    }
+
+
+    private fun getFireBaseModel(
+        pathString: String,
+        modelLength: Float,
+        modelWidth: Float,
+        modelHeight: Float
+    ) {
+
+        val storage: FirebaseStorage = FirebaseStorage.getInstance()
+        val modelRef: StorageReference = storage.getReference().child(pathString)
+        try {
+            val file = File.createTempFile("out", "glb")
+            modelRef.getFile(file).addOnSuccessListener {
+
+                buildModel(file, modelLength, modelWidth, modelHeight)
+
+            }
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+
+    }
+
+    private fun buildModel(file: File, modelLength: Float, modelWidth: Float, modelHeight: Float) {
+        val renderableSource = RenderableSource
+            .builder()
+            .setSource(this, Uri.parse(file.path), RenderableSource.SourceType.GLB)
+            .setRecenterMode(RenderableSource.RecenterMode.ROOT)
+
+            .build()
+
+
+        ModelRenderable
+            .builder()
+            .setSource(this, renderableSource)
+            .setRegistryId(file.path)
+
+            .build()
+            .thenAccept { modelRenderable: ModelRenderable ->
+                renderable = modelRenderable
+
+                Toast.makeText(this, "Model built", Toast.LENGTH_SHORT).show()
+
+                // create anchor node
+                val anchorNode = AnchorNode(furnitureAnchor)
+
+                // create node
+                val node = TransformableNode(arFragment.transformationSystem)
+                node.scaleController.isEnabled = false
+                node.getTranslationController().setEnabled(false);
+                node.setParent(anchorNode)
+                node.renderable = modelRenderable
+                node.worldPosition = box.worldLocation()
+                node.worldRotation = box.getRotation()
+
+
+                val boundingBox: Box = modelRenderable.getCollisionShape() as Box
+                val renderableSize: Vector3 = boundingBox.getSize()
+
+                // update world scale
+                node.worldScale = Vector3(
+                    modelWidth * 1 / renderableSize.x,
+                    modelHeight * 1 / renderableSize.y,
+                    modelLength * 1 / renderableSize.z
+                )
+                onClear2()
+
+                arFragment.arSceneView.scene.addChild(anchorNode)
+            }
+
+
+    }
 
 }
