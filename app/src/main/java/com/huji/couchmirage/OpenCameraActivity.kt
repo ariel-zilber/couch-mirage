@@ -66,18 +66,15 @@ class OpenCameraActivity : AppCompatActivity() {
     // ar fragment related
     lateinit var arFragment: MyArFragment
 
-
     // seekbar related
     private var isSeeking = false
     lateinit var seekBar: IndicatorSeekBar
     lateinit var minus: ImageView
     lateinit var plus: ImageView
 
-
     // measuremnt related
     private lateinit var box: MeasurmentBox
     private var userMeasurements: BoxMeasurements? = null
-
 
     // furniture module related
     private var furnitureRenderable: Renderable? = null
@@ -530,7 +527,6 @@ class OpenCameraActivity : AppCompatActivity() {
         }
     }
 
-
     /***
      * Displays message to user
      */
@@ -725,7 +721,6 @@ class OpenCameraActivity : AppCompatActivity() {
 
     }
 
-
     // TODO:: finish it
     private fun searchItem() {
         // search
@@ -752,7 +747,6 @@ class OpenCameraActivity : AppCompatActivity() {
         isSearching = false
 
     }
-
 
     internal fun onClear() {
         val children = ArrayList(arFragment.arSceneView.scene.children)
@@ -804,6 +798,9 @@ class OpenCameraActivity : AppCompatActivity() {
     }
 
 
+    /**
+     * Creates achor node
+     */
     private fun createAnchorNode(hitResult: HitResult): AnchorNode {
         val anchor = hitResult.createAnchor()
         val anchorNode = AnchorNode(anchor)
@@ -842,6 +839,9 @@ class OpenCameraActivity : AppCompatActivity() {
 
     // fire base relateed
 
+    /**
+     * Returns firebase model from firebase storage
+     */
     private fun getFireBaseModel(
         pathString: String,
         modelLength: Float,
@@ -864,14 +864,15 @@ class OpenCameraActivity : AppCompatActivity() {
 
     }
 
+    /***
+     * Builds the model
+     */
     private fun buildModel(file: File, modelLength: Float, modelWidth: Float, modelHeight: Float) {
         val renderableSource = RenderableSource
             .builder()
             .setSource(this, Uri.parse(file.path), RenderableSource.SourceType.GLB)
             .setRecenterMode(RenderableSource.RecenterMode.ROOT)
-
             .build()
-
 
         ModelRenderable
             .builder()
