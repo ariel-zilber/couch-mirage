@@ -1,6 +1,6 @@
 # Couch Mirage
 
-<img src="https://github.com/arikzilWork/couch-mirage/blob/ruler/docs/images/logo.png" width="150" align="right" />
+<img src="https://github.com/arikzilWork/couch-mirage/blob/ruler/docs/images/logo.png" width="200" align="right" />
 
 Welcome to Couch Mirage!
 Couch mirage is an augmented reality app similar to [IKEA Place!](https://play.google.com/store/apps/details?id=com.inter_ikea.place&hl=en_US).
