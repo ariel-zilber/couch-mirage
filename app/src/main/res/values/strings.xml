@@ -50,6 +50,7 @@
     <string name="yellow_advise_4">Confirm shape</string>
 
     <string name="green_advise_1">Press the Search button</string>
+    <string name="camera_load_animation_text">Move phone to start</string>
 
 
 </resources>

@@ -24,7 +24,6 @@ import com.google.ar.core.Anchor
 import com.google.ar.core.HitResult
 import com.google.ar.sceneform.AnchorNode
 import com.google.ar.sceneform.Camera
-import com.google.ar.sceneform.Node
 import com.google.ar.sceneform.Sun
 import com.google.ar.sceneform.assets.RenderableSource
 import com.google.ar.sceneform.collision.Box
@@ -44,39 +43,49 @@ import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
+/****
+ * Camera activity
+ */
 class OpenCameraActivity : AppCompatActivity() {
 
     //
     val TAG = OpenCameraActivity::class.simpleName
     val MIN_OPENGL_VERSION: Double = 3.0
 
-    //
-    var measureSelected: Boolean = false
-
-
-    private var renderable: Renderable? = null
-    private var isSearching = false
-
-
     // renderable constants
     val CUBE_RENDABLE_RADIUS = 0.01f
     val CUBE_RENDABLE_COLOR = Color(0F, 255F, 0F, 0F)
     val CUBE_RENDABLE_SQUARE_COLOR = Color(0F, 0.05F, 0F, 0.9F)
 
-    // square related
+    //
+    var measureSelected: Boolean = false
 
+    //
+    private var isSearching = false
+
+    // ar fragment related
     lateinit var arFragment: MyArFragment
 
 
-    private lateinit var box: MeasurmentBox
-    private var userMeasurements: BoxMeasurements? = null
-
-    var photoSaver = PhotoSaver(this)
-    var videoSaver = VideoRecorder()    // todo fix video recorder
-
+    // seekbar related
+    private var isSeeking = false
     lateinit var seekBar: IndicatorSeekBar
     lateinit var minus: ImageView
     lateinit var plus: ImageView
+
+
+    // measuremnt related
+    private lateinit var box: MeasurmentBox
+    private var userMeasurements: BoxMeasurements? = null
+
+
+    // furniture module related
+    private var furnitureRenderable: Renderable? = null
+    var furnitureAnchor: Anchor? = null
+
+    // media saves
+    var photoSaver = PhotoSaver(this)
+    var videoSaver = VideoRecorder()    // todo fix video recorder
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -86,26 +95,26 @@ class OpenCameraActivity : AppCompatActivity() {
         if (!checkIsSupportedDeviceOrFinish(this)) {
             return
         }
-        configToast()
+
+        // setup
+        setupToast()
         setupFireBase()
         setARFragment()
 
-        setBox()
+        setupBox()
         setARFragmentAction()
-        setBottomPanel()
-        setUpInfoButton()
-        setSeekBar()
+        setupRulerButton()
+        setupClearButton()
+        setupSearchButton()
+        setupCameraButton()
+        setupUpInfoButton()
+        setupSeekBar()
     }
 
-    private var isSeeking = false
-
-    private fun configToast() {
-        Toasty.Config.getInstance()
-            .allowQueue(false) // optional (prevents several Toastys from queuing)
-            .apply();
-    }
-
-    private fun setUpInfoButton() {
+    /***
+     * Inits the info button
+     */
+    private fun setupUpInfoButton() {
         val infoBtn = findViewById<InfoFAB>(R.id.fab_info)
 
         findViewById<InfoFAB>(R.id.fab_info).setOnClickListener() {
@@ -127,100 +136,10 @@ class OpenCameraActivity : AppCompatActivity() {
 
     }
 
-    private fun messageInfoButtonRedStage() {
-        val handler = Handler()
-
-        var infoFab = findViewById<InfoFAB>(R.id.fab_info)
-        val MESSAGE_1 = "1. " + resources.getString(R.string.red_advise_1)
-        val MESSAGE_2 = "2. " + resources.getString(R.string.red_advise_2)
-        val MESSAGE_3 = "3. " + resources.getString(R.string.red_advise_3)
-        val MESSAGE_4 = "4. " + resources.getString(R.string.red_advise_4)
-        val MESSAGE_5 = "5. " + resources.getString(R.string.red_advise_5)
-        infoFab.isEnabled = false
-
-        infoMessage(MESSAGE_1, Toast.LENGTH_SHORT)
-
-        handler.postDelayed({
-            // xxx
-        }, 2000)
-
-
-
-        handler.postDelayed({
-            infoMessage(MESSAGE_2, Toast.LENGTH_SHORT)
-        }, 2000)
-
-        handler.postDelayed({
-            infoMessage(MESSAGE_3, Toast.LENGTH_SHORT)
-        }, 4000)
-
-        handler.postDelayed({
-            infoMessage(MESSAGE_4, Toast.LENGTH_SHORT)
-        }, 6000)
-
-        handler.postDelayed({
-            infoMessage(MESSAGE_5, Toast.LENGTH_SHORT)
-            infoFab.isEnabled = true
-
-        }, 8000)
-
-
-    }
-
-    private fun messageInfoButtonYellowStage() {
-        val handler = Handler()
-
-        val MESSAGE_1 = "1. " + resources.getString(R.string.yellow_advise_1)
-        val MESSAGE_2 = "2. " + resources.getString(R.string.yellow_advise_2)
-        val MESSAGE_3 = "3. " + resources.getString(R.string.yellow_advise_3)
-        val MESSAGE_4 = "4. " + resources.getString(R.string.yellow_advise_4)
-        var infoFab = findViewById<InfoFAB>(R.id.fab_info)
-        infoFab.isEnabled = false
-
-        infoMessage(MESSAGE_1, Toast.LENGTH_SHORT)
-
-        handler.postDelayed({
-            infoMessage(MESSAGE_2, Toast.LENGTH_SHORT)
-        }, 2000)
-
-        handler.postDelayed({
-            infoMessage(MESSAGE_3, Toast.LENGTH_SHORT)
-        }, 4000)
-
-        handler.postDelayed({
-            infoMessage(MESSAGE_4, Toast.LENGTH_SHORT)
-            infoFab.isEnabled = true
-
-        }, 6000)
-
-
-    }
-
-    private fun messageInfoButtonGreenStage() {
-
-        val MESSAGE_1 = resources.getString(R.string.yellow_advise_1)
-
-        infoMessage(MESSAGE_1, Toast.LENGTH_SHORT)
-
-
-    }
-
-    private fun infoMessage(message: String, length: Int) {
-        var toast = Toasty.info(
-            this,
-            message,
-            length,
-            true
-        )
-
-        toast.setGravity(toast.gravity, toast.xOffset, toast.yOffset + 80)
-        toast.show()
-
-
-    }
-
-
-    private fun setBox() {
+    /***
+     * Inits the setupbox
+     */
+    private fun setupBox() {
         //
         var boxRenderData = BoxRenderData(
             pointRenderableRadius = CUBE_RENDABLE_RADIUS,
@@ -245,8 +164,10 @@ class OpenCameraActivity : AppCompatActivity() {
         box.setUI()
     }
 
-
-    private fun setSeekBar() {
+    /**
+     * Inits the seekbase
+     */
+    private fun setupSeekBar() {
 
 
         seekBar = findViewById<IndicatorSeekBar>(R.id.slider)
@@ -310,63 +231,9 @@ class OpenCameraActivity : AppCompatActivity() {
 
     }
 
-    // todo:: model loader
-
-
-    private fun changeIconAnimated(measurement: FloatingActionButton, rotation: Float, icon: Int) {
-        //Rise
-        measurement.animate()
-            .rotationBy(rotation)
-            .setDuration(100)
-            .scaleX(1.1f) //Scaling to 110%
-            .scaleY(1.1f)
-            .withEndAction(Runnable {
-                measurement.setImageResource(icon)
-
-                //Shrink Animation
-                measurement.animate()
-                    .rotationBy(rotation)
-                    .setDuration(100)
-                    .scaleX(1f) //Scaling back to what it was
-                    .scaleY(1f)
-                    .start()
-
-            })
-            .start()
-
-
-    }
-
-    private fun vibrate() {
-
-        // vibrate phone
-        val vibrator: Vibrator =
-            getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            vibrator.vibrate(
-                VibrationEffect.createOneShot(
-                    500,
-                    VibrationEffect.DEFAULT_AMPLITUDE
-                )
-            )
-        } else {
-            vibrator.vibrate(500)
-        }
-
-    }
-
-    private fun setBottomPanel() {
-
-
-        setupRulerButton()
-        setupClearButton()
-        setupSearchButton()
-
-        setupCameraButton()
-
-
-    }
-
+    /**
+     * Inits the camera button
+     */
     private fun setupCameraButton() {
 
         val camera: View = findViewById(R.id.fab_camera)
@@ -400,71 +267,10 @@ class OpenCameraActivity : AppCompatActivity() {
 
     }
 
-    fun hasWritePermission(): Boolean {
-        return (ActivityCompat.checkSelfPermission(
-            arFragment.requireActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE
-        )
-                === PackageManager.PERMISSION_GRANTED)
-    }
-
-    /** Launch Application Setting to grant permissions.  */
-    fun launchPermissionSettings() {
-        val intent = Intent()
-        intent.action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
-        intent.data = Uri.fromParts(
-            "package",
-            arFragment.requireActivity().getPackageName(),
-            null
-        )
-        arFragment.requireActivity().startActivity(intent)
-    }
 
     /*
    * Used as a handler for onClick, so the signature must match onClickListener.
    */
-    private fun toggleRecording() {
-        val recordButton: FloatingActionButton =
-            findViewById(R.id.fab_camera) as FloatingActionButton
-
-        if (!hasWritePermission()) {
-
-            Toast.makeText(
-                this,
-                "Video recording requires the WRITE_EXTERNAL_STORAGE permission",
-                Toast.LENGTH_LONG
-            )
-                .show()
-            launchPermissionSettings()
-            return
-        }
-        val recording: Boolean = videoSaver.onToggleRecord()
-        if (recording) {
-
-            recordButton.setImageResource(R.drawable.ic_videocam)
-        } else {
-            recordButton.setImageResource(R.drawable.ic_camera)
-            vibrate()
-
-            val videoPath: String = videoSaver.getVideoPath().getAbsolutePath()
-            Toast.makeText(this, "Video saved: $videoPath", Toast.LENGTH_SHORT).show()
-
-
-            // Send  notification of updated content.
-
-
-            val date = SimpleDateFormat("yyyyMMddHHmmss", Locale.getDefault()).format(Date())
-
-            var name = getExternalFilesDir(Environment.DIRECTORY_PICTURES)?.absolutePath +
-                    "/${date}_screenshot.jpg"
-
-            val values = ContentValues()
-            values.put(MediaStore.Video.Media.TITLE, "Sceneform Video")
-            values.put(MediaStore.Video.Media.MIME_TYPE, "video/mp4")
-            values.put(MediaStore.Video.Media.DATA, videoPath)
-            contentResolver.insert(MediaStore.Video.Media.EXTERNAL_CONTENT_URI, values)
-        }
-    }
-
     private fun setupRulerButton() {
         val clear: View = findViewById(R.id.clear)
 
@@ -513,95 +319,9 @@ class OpenCameraActivity : AppCompatActivity() {
 
     }
 
-
-    @SuppressLint("ResourceAsColor")
-    fun changeInfoStageToRed() {
-        var infoFab = findViewById<InfoFAB>(R.id.fab_info)
-
-
-        infoFab.setStage(InfoStage.RED)
-        infoFab.setRippleColor(R.color.info_ripple_red)
-        infoFab.setBackgroundColor(R.color.info_background_red)
-        infoFab.setBackgroundTintList(getResources().getColorStateList(R.color.info_background_red));
-
-        infoFab.setImageResource(R.drawable.ic_info_first_stage)
-
-
-    }
-
-    @SuppressLint("ResourceAsColor")
-    fun changeInfoStageToYellow() {
-        var infoFab = findViewById<InfoFAB>(R.id.fab_info)
-
-
-        infoFab.setStage(InfoStage.YELLOW)
-        infoFab.setRippleColor(R.color.info_ripple_yellow)
-        infoFab.setBackgroundColor(R.color.info_background_yellow)
-        infoFab.setBackgroundTintList(getResources().getColorStateList(R.color.info_background_yellow));
-        infoFab.setImageResource(R.drawable.ic_info_second_stage)
-
-
-    }
-
-    @SuppressLint("ResourceAsColor")
-    private fun changeInfoStageToGreen() {
-        var infoFab = findViewById<InfoFAB>(R.id.fab_info)
-
-
-        infoFab.setStage(InfoStage.GREEN)
-        infoFab.setRippleColor(R.color.info_ripple_green)
-        infoFab.setBackgroundColor(R.color.info_background_green)
-        infoFab.setBackgroundTintList(getResources().getColorStateList(R.color.info_background_green));
-
-        infoFab.setImageResource(R.drawable.ic_info_third_stage)
-
-
-    }
-
-    private fun showShapedMeasuredDialog() {
-        var toast = Toasty.success(this, "Shape was measured!", Toast.LENGTH_SHORT, true)
-
-        toast.setGravity(toast.gravity, toast.xOffset, toast.yOffset + 70)
-
-        toast.show();
-    }
-
-    private fun showNoShapeWashMeasuredDialog() {
-        var toast = Toasty.error(this, "Error:no shape was measured", Toast.LENGTH_SHORT, true)
-        Log.d("toast.yOffset", toast.yOffset.toString())
-        toast.setGravity(toast.gravity, toast.xOffset, toast.yOffset + 70)
-        toast.show()
-
-    }
-
-
-    // TODO:: finish it
-    private fun searchItem() {
-        // search
-        //TODO:
-
-
-        isSearching = true
-
-
-        // open activity
-
-
-        // close activity
-        var modelPath = "models/desk_1_1.glb"
-
-        getFireBaseModel(
-            pathString = modelPath,
-            modelWidth = userMeasurements!!.boxWidth,
-            modelLength = userMeasurements!!.boxLength,
-            modelHeight = (userMeasurements!!.boxHeight / 100f)
-        )
-
-
-        isSearching = false
-
-    }
-
+    /***
+     * Inits hte search button
+     */
     private fun setupSearchButton() {
 
         val search: FloatingActionButton = findViewById(R.id.fab_search)
@@ -613,12 +333,12 @@ class OpenCameraActivity : AppCompatActivity() {
                 searchItem()
             }
 
-
         }
-
-
     }
 
+    /**
+     * Inits the clear button
+     */
     private fun setupClearButton() {
         val clear: View = findViewById(R.id.clear)
         val measurement: FloatingActionButton = findViewById(R.id.fab_measurement)
@@ -640,54 +360,20 @@ class OpenCameraActivity : AppCompatActivity() {
 
     }
 
-
-    internal fun onClear() {
-        val children = ArrayList(arFragment.arSceneView.scene.children)
-        for (node in children) {
-            if (node is AnchorNode) {
-                if (node.anchor != null) {
-                    node.anchor!!.detach()
-                }
-            }
-            if (node !is Camera && node !is Sun) {
-                node.setParent(null)
-            }
-        }
-        box.clear()
-        findViewById<IndicatorStayLayout>(R.id.indicator_container).visibility = View.GONE
-        seekBar.setProgress(0f)
-
-        seekBar.visibility = View.GONE
-        minus.visibility = View.GONE
-        plus.visibility = View.GONE
+    /**
+     * Inits firebase
+     */
+    private fun setupFireBase() {
+        FirebaseApp.initializeApp(this);
     }
 
-    internal fun onClear2() {
-        val children = ArrayList(arFragment.arSceneView.scene.children)
-
-        for (node in children) {
-            if (node.parent != furnitureAnchor) {
-
-                if (node is AnchorNode) {
-                    if (node.anchor != null) {
-                        node.anchor!!.detach()
-                    }
-
-                }
-                if (node !is Camera && node !is Sun) {
-                    node.setParent(null)
-                }
-            } else {
-                Log.d("wtf", "")
-            }
-        }
-        box.clear()
-        findViewById<IndicatorStayLayout>(R.id.indicator_container).visibility = View.GONE
-        seekBar.setProgress(0f)
-
-        seekBar.visibility = View.GONE
-        minus.visibility = View.GONE
-        plus.visibility = View.GONE
+    /**
+     * inits toast
+     */
+    private fun setupToast() {
+        Toasty.Config.getInstance()
+            .allowQueue(false) // optional (prevents several Toastys from queuing)
+            .apply();
     }
 
     private fun setARFragment() {
@@ -696,9 +382,6 @@ class OpenCameraActivity : AppCompatActivity() {
         arFragment.animationLayout = this.findViewById(R.id.animation)
 
     }
-
-
-    var furnitureAnchor: Anchor? = null
 
     private fun setARFragmentAction() {
         minus = findViewById<ImageView>(R.id.dec_height)
@@ -753,6 +436,374 @@ class OpenCameraActivity : AppCompatActivity() {
 
     }
 
+    /***
+     * Vibeates the phone
+     */
+    private fun vibrate() {
+
+        // vibrate phone
+        val vibrator: Vibrator =
+            getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            vibrator.vibrate(
+                VibrationEffect.createOneShot(
+                    500,
+                    VibrationEffect.DEFAULT_AMPLITUDE
+                )
+            )
+        } else {
+            vibrator.vibrate(500)
+        }
+
+    }
+
+    /***
+     * Changes the icon
+     */
+    private fun changeIconAnimated(measurement: FloatingActionButton, rotation: Float, icon: Int) {
+        //Rise
+        measurement.animate()
+            .rotationBy(rotation)
+            .setDuration(100)
+            .scaleX(1.1f) //Scaling to 110%
+            .scaleY(1.1f)
+            .withEndAction(Runnable {
+                measurement.setImageResource(icon)
+
+                //Shrink Animation
+                measurement.animate()
+                    .rotationBy(rotation)
+                    .setDuration(100)
+                    .scaleX(1f) //Scaling back to what it was
+                    .scaleY(1f)
+                    .start()
+
+            })
+            .start()
+
+
+    }
+
+    /***
+     * Toggles recording mode
+     */
+    private fun toggleRecording() {
+        val recordButton: FloatingActionButton =
+            findViewById(R.id.fab_camera) as FloatingActionButton
+
+        if (!hasWritePermission()) {
+
+            Toast.makeText(
+                this,
+                "Video recording requires the WRITE_EXTERNAL_STORAGE permission",
+                Toast.LENGTH_LONG
+            )
+                .show()
+            launchPermissionSettings()
+            return
+        }
+        val recording: Boolean = videoSaver.onToggleRecord()
+        if (recording) {
+
+            recordButton.setImageResource(R.drawable.ic_videocam)
+        } else {
+            recordButton.setImageResource(R.drawable.ic_camera)
+            vibrate()
+
+            val videoPath: String = videoSaver.getVideoPath().getAbsolutePath()
+            Toast.makeText(this, "Video saved: $videoPath", Toast.LENGTH_SHORT).show()
+
+
+            // Send  notification of updated content.
+
+
+            val date = SimpleDateFormat("yyyyMMddHHmmss", Locale.getDefault()).format(Date())
+
+            var name = getExternalFilesDir(Environment.DIRECTORY_PICTURES)?.absolutePath +
+                    "/${date}_screenshot.jpg"
+
+            val values = ContentValues()
+            values.put(MediaStore.Video.Media.TITLE, "Sceneform Video")
+            values.put(MediaStore.Video.Media.MIME_TYPE, "video/mp4")
+            values.put(MediaStore.Video.Media.DATA, videoPath)
+            contentResolver.insert(MediaStore.Video.Media.EXTERNAL_CONTENT_URI, values)
+        }
+    }
+
+
+    /***
+     * Displays message to user
+     */
+    private fun infoMessage(message: String, length: Int) {
+        var toast = Toasty.info(
+            this,
+            message,
+            length,
+            true
+        )
+
+        toast.setGravity(toast.gravity, toast.xOffset, toast.yOffset + 80)
+        toast.show()
+
+
+    }
+
+    /***
+     * Cheks writing permission
+     */
+    fun hasWritePermission(): Boolean {
+        return (ActivityCompat.checkSelfPermission(
+            arFragment.requireActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE
+        )
+                === PackageManager.PERMISSION_GRANTED)
+    }
+
+    /** Launch Application Setting to grant permissions.  */
+    fun launchPermissionSettings() {
+        val intent = Intent()
+        intent.action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
+        intent.data = Uri.fromParts(
+            "package",
+            arFragment.requireActivity().getPackageName(),
+            null
+        )
+        arFragment.requireActivity().startActivity(intent)
+    }
+
+    /**
+     * Info button is found in 3 stages(red,yellow,green)
+     * Changes mode to red stage
+     */
+    @SuppressLint("ResourceAsColor")
+    fun changeInfoStageToRed() {
+        var infoFab = findViewById<InfoFAB>(R.id.fab_info)
+
+
+        infoFab.setStage(InfoStage.RED)
+        infoFab.setRippleColor(R.color.info_ripple_red)
+        infoFab.setBackgroundColor(R.color.info_background_red)
+        infoFab.setBackgroundTintList(getResources().getColorStateList(R.color.info_background_red));
+
+        infoFab.setImageResource(R.drawable.ic_info_first_stage)
+
+
+    }
+
+    /**
+     * Displays message in red stage
+     */
+    private fun messageInfoButtonRedStage() {
+        val handler = Handler()
+
+        var infoFab = findViewById<InfoFAB>(R.id.fab_info)
+        val MESSAGE_1 = "1. " + resources.getString(R.string.red_advise_1)
+        val MESSAGE_2 = "2. " + resources.getString(R.string.red_advise_2)
+        val MESSAGE_3 = "3. " + resources.getString(R.string.red_advise_3)
+        val MESSAGE_4 = "4. " + resources.getString(R.string.red_advise_4)
+        val MESSAGE_5 = "5. " + resources.getString(R.string.red_advise_5)
+        infoFab.isEnabled = false
+
+        infoMessage(MESSAGE_1, Toast.LENGTH_SHORT)
+
+        handler.postDelayed({
+            // xxx
+        }, 2000)
+
+
+
+        handler.postDelayed({
+            infoMessage(MESSAGE_2, Toast.LENGTH_SHORT)
+        }, 2000)
+
+        handler.postDelayed({
+            infoMessage(MESSAGE_3, Toast.LENGTH_SHORT)
+        }, 4000)
+
+        handler.postDelayed({
+            infoMessage(MESSAGE_4, Toast.LENGTH_SHORT)
+        }, 6000)
+
+        handler.postDelayed({
+            infoMessage(MESSAGE_5, Toast.LENGTH_SHORT)
+            infoFab.isEnabled = true
+
+        }, 8000)
+
+
+    }
+
+    /**
+     * Info button is found in 3 stages(red,yellow,green)
+     * Changes mode to yellow stage
+     */
+    @SuppressLint("ResourceAsColor")
+    fun changeInfoStageToYellow() {
+        var infoFab = findViewById<InfoFAB>(R.id.fab_info)
+
+
+        infoFab.setStage(InfoStage.YELLOW)
+        infoFab.setRippleColor(R.color.info_ripple_yellow)
+        infoFab.setBackgroundColor(R.color.info_background_yellow)
+        infoFab.setBackgroundTintList(getResources().getColorStateList(R.color.info_background_yellow));
+        infoFab.setImageResource(R.drawable.ic_info_second_stage)
+
+
+    }
+
+    /**
+     * Displays message in yellow stage
+     */
+    private fun messageInfoButtonYellowStage() {
+        val handler = Handler()
+
+        val MESSAGE_1 = "1. " + resources.getString(R.string.yellow_advise_1)
+        val MESSAGE_2 = "2. " + resources.getString(R.string.yellow_advise_2)
+        val MESSAGE_3 = "3. " + resources.getString(R.string.yellow_advise_3)
+        val MESSAGE_4 = "4. " + resources.getString(R.string.yellow_advise_4)
+        var infoFab = findViewById<InfoFAB>(R.id.fab_info)
+        infoFab.isEnabled = false
+
+        infoMessage(MESSAGE_1, Toast.LENGTH_SHORT)
+
+        handler.postDelayed({
+            infoMessage(MESSAGE_2, Toast.LENGTH_SHORT)
+        }, 2000)
+
+        handler.postDelayed({
+            infoMessage(MESSAGE_3, Toast.LENGTH_SHORT)
+        }, 4000)
+
+        handler.postDelayed({
+            infoMessage(MESSAGE_4, Toast.LENGTH_SHORT)
+            infoFab.isEnabled = true
+
+        }, 6000)
+
+
+    }
+
+    /**
+     * Info button is found in 3 stages(red,yellow,green)
+     * Changes mode to green stage
+     */
+    @SuppressLint("ResourceAsColor")
+    private fun changeInfoStageToGreen() {
+        var infoFab = findViewById<InfoFAB>(R.id.fab_info)
+
+
+        infoFab.setStage(InfoStage.GREEN)
+        infoFab.setRippleColor(R.color.info_ripple_green)
+        infoFab.setBackgroundColor(R.color.info_background_green)
+        infoFab.setBackgroundTintList(getResources().getColorStateList(R.color.info_background_green));
+
+        infoFab.setImageResource(R.drawable.ic_info_third_stage)
+
+
+    }
+
+    /**
+     * Displays message in green stage
+     */
+    private fun messageInfoButtonGreenStage() {
+        val MESSAGE_1 = resources.getString(R.string.yellow_advise_1)
+        infoMessage(MESSAGE_1, Toast.LENGTH_SHORT)
+    }
+
+    private fun showShapedMeasuredDialog() {
+        var toast = Toasty.success(this, "Shape was measured!", Toast.LENGTH_SHORT, true)
+
+        toast.setGravity(toast.gravity, toast.xOffset, toast.yOffset + 70)
+
+        toast.show();
+    }
+
+    private fun showNoShapeWashMeasuredDialog() {
+        var toast = Toasty.error(this, "Error:no shape was measured", Toast.LENGTH_SHORT, true)
+        Log.d("toast.yOffset", toast.yOffset.toString())
+        toast.setGravity(toast.gravity, toast.xOffset, toast.yOffset + 70)
+        toast.show()
+
+    }
+
+
+    // TODO:: finish it
+    private fun searchItem() {
+        // search
+        //TODO:
+
+
+        isSearching = true
+
+
+        // open activity
+
+
+        // close activity
+        var modelPath = "models/desk_1.glb"
+
+        getFireBaseModel(
+            pathString = modelPath,
+            modelWidth = userMeasurements!!.boxWidth,
+            modelLength = userMeasurements!!.boxLength,
+            modelHeight = (userMeasurements!!.boxHeight / 100f)
+        )
+
+
+        isSearching = false
+
+    }
+
+
+    internal fun onClear() {
+        val children = ArrayList(arFragment.arSceneView.scene.children)
+        for (node in children) {
+            if (node is AnchorNode) {
+                if (node.anchor != null) {
+                    node.anchor!!.detach()
+                }
+            }
+            if (node !is Camera && node !is Sun) {
+                node.setParent(null)
+            }
+        }
+        box.clear()
+        findViewById<IndicatorStayLayout>(R.id.indicator_container).visibility = View.GONE
+        seekBar.setProgress(0f)
+
+        seekBar.visibility = View.GONE
+        minus.visibility = View.GONE
+        plus.visibility = View.GONE
+    }
+
+    internal fun onClear2() {
+        val children = ArrayList(arFragment.arSceneView.scene.children)
+
+        for (node in children) {
+            if (node.parent != furnitureAnchor) {
+
+                if (node is AnchorNode) {
+                    if (node.anchor != null) {
+                        node.anchor!!.detach()
+                    }
+
+                }
+                if (node !is Camera && node !is Sun) {
+                    node.setParent(null)
+                }
+            } else {
+                Log.d("wtf", "")
+            }
+        }
+        box.clear()
+        findViewById<IndicatorStayLayout>(R.id.indicator_container).visibility = View.GONE
+        seekBar.setProgress(0f)
+
+        seekBar.visibility = View.GONE
+        minus.visibility = View.GONE
+        plus.visibility = View.GONE
+    }
+
+
     private fun createAnchorNode(hitResult: HitResult): AnchorNode {
         val anchor = hitResult.createAnchor()
         val anchorNode = AnchorNode(anchor)
@@ -789,11 +840,7 @@ class OpenCameraActivity : AppCompatActivity() {
         return true
     }
 
-
-    private fun setupFireBase() {
-        FirebaseApp.initializeApp(this);
-    }
-
+    // fire base relateed
 
     private fun getFireBaseModel(
         pathString: String,
@@ -833,7 +880,7 @@ class OpenCameraActivity : AppCompatActivity() {
 
             .build()
             .thenAccept { modelRenderable: ModelRenderable ->
-                renderable = modelRenderable
+                furnitureRenderable = modelRenderable
 
                 Toast.makeText(this, "Model built", Toast.LENGTH_SHORT).show()
 

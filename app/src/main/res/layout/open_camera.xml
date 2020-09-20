@@ -16,15 +16,13 @@
         android:background="@drawable/button_background"
         android:gravity="center"
         android:text="@string/clear"
-        android:textColor="#69E781" />
+        android:textColor="@color/clear_btn_text" />
 
     <fragment
         android:id="@+id/fragment"
         android:name="com.huji.couchmirage.MyArFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
-
         android:layout_above="@+id/bottomPanel"
         android:layout_alignParentStart="true"
         android:layout_gravity="center"
@@ -35,172 +33,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/size_changer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/bottomPanel"
 
-        android:orientation="horizontal">
+    <include layout="@layout/camera_bottom_scale" />
 
-
-        <ImageView
-            android:id="@+id/dec_height"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:layout_marginEnd="325dp"
-            android:backgroundTint="#B3B3B3"
-
-            android:foregroundGravity="center"
-
-            android:src="@drawable/minus_green_48"
-            app:backgroundTint="#80D5D5D5"
-            app:borderWidth="0.1dp"
-            app:fabCustomSize="40dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:rippleColor="#F2FFFFFF" />
-
-        <com.warkiz.widget.IndicatorStayLayout
-            android:id="@+id/indicator_container"
-            android:layout_width="wrap_content"
-            android:layout_height="70dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/inc_height"
-            app:layout_constraintStart_toEndOf="@+id/dec_height"
-            app:layout_constraintTop_toTopOf="parent">
-            <!--your layout-->
-            <com.warkiz.widget.IndicatorSeekBar
-                android:id="@+id/slider"
-                android:layout_width="270dp"
-                android:layout_height="34dp"
-                android:layout_marginBottom="40dp"
-                app:isb_indicator_color="#CC787878"
-                app:isb_indicator_text_color="#69E781"
-                app:isb_indicator_text_size="18sp"
-                app:isb_max="300"
-                app:isb_min="00"
-                app:isb_only_thumb_draggable="false"
-                app:isb_progress="0"
-                app:isb_seek_smoothly="true"
-                app:isb_show_indicator="rounded_rectangle"
-                app:isb_show_tick_marks_type="oval"
-                app:isb_show_tick_texts="true"
-                app:isb_thumb_color="@android:color/darker_gray"
-                app:isb_thumb_size="20dp"
-                app:isb_tick_marks_drawable="@mipmap/ic_launcher"
-                app:isb_tick_marks_size="13dp"
-                app:isb_tick_texts_color="@color/btn_send_normal"
-                app:isb_tick_texts_size="15dp"
-                app:isb_ticks_count="0"
-                app:isb_track_background_color="@color/fab_color_shadow"
-                app:isb_track_background_size="2dp"
-                app:isb_track_progress_color="#69E781"
-                app:isb_track_progress_size="4dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <!--your layout-->
-        </com.warkiz.widget.IndicatorStayLayout>
-
-        <ImageView
-            android:id="@+id/inc_height"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_margin="10dp"
-
-
-            android:backgroundTint="#B3B3B3"
-            android:foregroundGravity="center"
-            android:src="@drawable/plus_green_48"
-            app:backgroundTint="#80D5D5D5"
-            app:borderWidth="0.1dp"
-            app:fabCustomSize="40dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:rippleColor="#F2FFFFFF" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <LinearLayout
-        android:id="@+id/bottomPanel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:background="#111111"
-
-        >
-
-        <FrameLayout
-            android:layout_width="64dp"
-            android:layout_height="96dp"
-            android:layout_weight="1">
-
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab_search"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:backgroundTint="@color/design_default_color_on_secondary"
-                android:src="@drawable/search_green_32"
-                app:backgroundTint="#69E781"
-                app:borderWidth="1dp" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:layout_width="64dp"
-            android:layout_height="96dp"
-            android:layout_weight="1">
-
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab_camera"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:backgroundTint="@color/design_default_color_on_secondary"
-                android:src="@drawable/ic_camera"
-
-                app:backgroundTint="#69E781"
-                app:borderWidth="1dp"
-                app:rippleColor="#F29FF8B0" />
-        </FrameLayout>
-
-
-        <FrameLayout
-            android:layout_width="64dp"
-            android:layout_height="96dp"
-            android:layout_weight="1">
-
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab_measurement"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-
-                android:layout_margin="10dp"
-                android:backgroundTint="@color/design_default_color_on_secondary"
-                android:src="@drawable/ruler_green_32"
-                app:backgroundTint="#69E781"
-                app:borderWidth="1dp"
-                app:rippleColor="#F29FF8B0" />
-        </FrameLayout>
-    </LinearLayout>
+    <include layout="@layout/camera_bottom_panel" />
 
 
     <com.huji.couchmirage.InfoFAB
@@ -210,7 +46,6 @@
         android:layout_gravity="top"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-
         android:layout_marginEnd="113dp"
         android:layout_marginBottom="24dp"
         android:gravity="top"
@@ -220,48 +55,7 @@
         app:fabCustomSize="32dp"
         app:rippleColor="@color/info_ripple_red" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/animation"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <include layout="@layout/camera_loading_animation" />
 
-        android:layout_above="@+id/size_changer"
-        android:layout_below="@+id/clear"
-        android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="0dp"
-        android:foregroundGravity="center"
-        android:visibility="invisible">
-
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/animationView"
-            android:layout_width="300dp"
-            android:layout_height="150dp"
-            android:foregroundGravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            app:lottie_rawRes="@raw/layer_2" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Move phone to start"
-            android:textColor="#FFFFFF"
-            android:textSize="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/animationView"
-            app:layout_constraintStart_toStartOf="@+id/animationView"
-            app:layout_constraintTop_toBottomOf="@+id/animationView"
-            app:layout_constraintVertical_bias="0.0" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </RelativeLayout>

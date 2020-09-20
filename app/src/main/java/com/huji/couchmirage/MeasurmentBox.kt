@@ -564,10 +564,6 @@ class MeasurmentBox(
     }
 
 
-    fun removeDrawables(){
-
-    }
-
     fun setBoxHeight(foundHeight: Float) {
 
         var height = foundHeight

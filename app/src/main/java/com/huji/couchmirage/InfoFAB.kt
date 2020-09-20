@@ -4,11 +4,17 @@ import android.content.Context
 import android.util.AttributeSet
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-
+/***
+ * UI stage of InfoFAB
+ */
 enum class InfoStage {
     RED, YELLOW, GREEN
 }
 
+/***
+ * Floating action button displays information to user.
+ * Has 3 UI stages
+ */
 class InfoFAB : FloatingActionButton {
     constructor(context: Context) : super(context) {}
     constructor(
