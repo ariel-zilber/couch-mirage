@@ -21,16 +21,13 @@ class DepartmentRecyclerAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.layout_department_list_item, parent, false)
         )
-
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
-
             is DepartmentViewHolder -> {
                 holder.bind(items.get(position))
             }
-
         }
     }
 
@@ -56,9 +53,30 @@ class DepartmentRecyclerAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder
                     .placeholder(R.drawable.ic_launcher_background)
                     .error(R.drawable.ic_launcher_background)
 
-            Glide.with(itemView.context)
+            Glide.with(itemView.context).applyDefaultRequestOptions(requestOptions)
                 .load(department.departmentImg)
                 .into(department_img)
+        }
+    }
+
+    class DepartmentListGridRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+        private var items: List<Department> = ArrayList()
+
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+            return DepartmentViewHolder(
+                LayoutInflater.from(parent.context)
+                    .inflate(R.layout.layout_department_list_item, parent, false)
+            )
+        }
+
+        override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+            val departmentViewHolder = holder as DepartmentViewHolder
+            departmentViewHolder.bind(items[position])
+        }
+
+
+        override fun getItemCount(): Int {
+            return items.size
         }
     }
 }
