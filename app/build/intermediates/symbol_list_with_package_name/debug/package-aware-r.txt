@@ -857,6 +857,7 @@ color checkbox_themeable_attribute_color
 color colorAccent
 color colorPrimary
 color colorPrimaryDark
+color defaultTextColor
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -899,6 +900,7 @@ color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
 color dim_foreground_material_light
+color errorColor
 color error_color_material_dark
 color error_color_material_light
 color fab_color_pressed
@@ -908,6 +910,7 @@ color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color ic_launcher_background
+color infoColor
 color isb_selector_tick_marks_color
 color isb_selector_tick_texts_color
 color material_blue_grey_800
@@ -989,6 +992,7 @@ color mtrl_textinput_disabled_color
 color mtrl_textinput_filled_box_default_background_color
 color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
+color normalColor
 color notification_action_color_filter
 color notification_icon_bg_color
 color primary_dark_material_dark
@@ -1006,6 +1010,7 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color successColor
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -1017,6 +1022,7 @@ color test_mtrl_calendar_day_selected
 color text_like_counter
 color tooltip_background_dark
 color tooltip_background_light
+color warningColor
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -1484,11 +1490,15 @@ drawable ic_arrow_back_white_24dp
 drawable ic_arrow_forward_white_24dp
 drawable ic_camera
 drawable ic_camera_rear_white_24dp
+drawable ic_check_white_24dp
+drawable ic_clear_white_24dp
 drawable ic_close_white_24dp
 drawable ic_collections_white_24dp
 drawable ic_edit_white_24dp
+drawable ic_error_outline_white_24dp
 drawable ic_grid_on_white
 drawable ic_grid_on_white_24dp
+drawable ic_info_outline_white_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mtrl_checked_circle
@@ -1546,6 +1556,7 @@ drawable search_green_32
 drawable shape_rect_blue
 drawable shape_rect_white
 drawable test_custom_background
+drawable toast_frame
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
@@ -1622,6 +1633,7 @@ id auto
 id barrier
 id beginning
 id blocking
+id blog_author
 id bottom
 id bottomPanel
 id buttonPanel
@@ -1646,6 +1658,7 @@ id clip_vertical
 id collapseActionView
 id confirm_button
 id container
+id container1
 id content
 id contentPanel
 id coordinator
@@ -1656,6 +1669,8 @@ id date_picker_actions
 id dec_height
 id decor_content_parent
 id default_activity_button
+id department_img
+id department_name
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1689,6 +1704,7 @@ id forever
 id fragment
 id ghost_view
 id ghost_view_holder
+id glide_custom_view_target_tag
 id gone
 id group_divider
 id groups
@@ -1773,6 +1789,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id rectangle
+id recycler_view
 id right
 id right_icon
 id right_side
@@ -1862,6 +1879,9 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id toast_icon
+id toast_root
+id toast_text
 id top
 id topPanel
 id touch_outside
@@ -1944,6 +1964,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_main
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -1964,6 +1985,7 @@ layout distance_card_layout
 layout frame_layout
 layout height_distance_card_layout
 layout isb_indicator
+layout layout_department_list_item
 layout measurment_item_model
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
@@ -2020,6 +2042,7 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+layout toast_layout
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
@@ -2136,6 +2159,7 @@ string path_password_strike_through
 string search_menu_title
 string square_measurments
 string status_bar_notification_info_overflow
+string toast_message
 string user_profile_photo
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light

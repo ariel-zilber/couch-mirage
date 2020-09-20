@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="24"
-        android:targetSdkVersion="29" />
+        android:targetSdkVersion="30" />
 
     <!-- ARCODE REQUIRED -->
     <uses-permission android:name="android.permission.CAMERA" />
@@ -37,7 +37,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.huji.couchmirage.OpenCameraActivity" >
+        <activity android:name="com.huji.couchmirage.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

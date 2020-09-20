@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/arikzil/couch-mirage/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rZA/values-en-rZA.xml",
+            "outputFile": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rZA\\values-en-rZA.xml",
             "map": [
                 {
-                    "source": "/home/arikzil/.gradle/caches/transforms-2/files-2.1/73b98a6fb30a6e9ec5210b81e6fad72a/jetified-core-1.19.0/res/values-en-rZA/values.xml",
+                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-2\\files-2.1\\73b98a6fb30a6e9ec5210b81e6fad72a\\jetified-core-1.19.0\\res\\values-en-rZA\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8",
                         "startColumns": "0,0,0,0,0",
