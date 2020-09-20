@@ -1,5 +1,17 @@
 # Couch Mirage
 
+[!](/docs/images/logo.png)
+Welcome to Couch Mirage!
+ 
+Couch mirage is an augmented reality app similar to [IKEA Place!](https://play.google.com/store/apps/details?id=com.inter_ikea.place&hl=en_US).
+
+
+ 
+Couch Mirage is the final project in the university course #67625 at The Hebrew University in Jerusalem.
+See : https://shnaton.huji.ac.il/index.php/NewSyl/67625/2/2020/
+
+
+
 Augmented Reality furniture design planner
 
 
