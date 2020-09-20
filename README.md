@@ -1,7 +1,8 @@
 # Couch Mirage
 
-![Welcome to Couch Mirage!](/docs/images/logo.png)
- 
+<img src="https://github.com/arikzilWork/couch-mirage/blob/ruler/docs/images/logo.png" width="150" align="right" />
+
+Welcome to Couch Mirage!
 Couch mirage is an augmented reality app similar to [IKEA Place!](https://play.google.com/store/apps/details?id=com.inter_ikea.place&hl=en_US).
  
 Couch Mirage is the final project in the university course #67625 at The Hebrew University in Jerusalem.
