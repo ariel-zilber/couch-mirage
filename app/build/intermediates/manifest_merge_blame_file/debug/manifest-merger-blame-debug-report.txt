@@ -60,7 +60,7 @@
 32-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:26:22-107
 33
 34    <application
-34-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:21:5-47:19
+34-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:21:5-57:19
 35        android:allowBackup="true"
 35-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:22:9-35
 36        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -78,150 +78,164 @@
 43        android:testOnly="true"
 44        android:theme="@style/AppTheme" >
 44-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:27:9-40
-45        <activity
-45-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:28:9-39:20
-46            android:name="com.huji.couchmirage.OpenCameraActivity"
-46-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:29:13-47
-47            android:screenOrientation="portrait" >
-47-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:30:13-49
-48            <intent-filter>
-48-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:34:13-38:29
-49                <action android:name="android.intent.action.MAIN" />
-49-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:35:17-69
-49-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:35:25-66
-50
-51                <category android:name="android.intent.category.LAUNCHER" />
-51-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:37:17-77
-51-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:37:27-74
-52            </intent-filter>
-53        </activity>
-54
-55        <!-- ARCODE REQUIRED -->
-56
-57        <meta-data
-57-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:43:9-45:40
-58            android:name="com.google.ar.core"
-58-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:44:13-46
-59            android:value="required" />
-59-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:45:13-37
-60
-61        <service
-61-->[com.google.firebase:firebase-storage-ktx:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/0e4ec124ff6f01884b9e96b71d5eb8a6/jetified-firebase-storage-ktx-19.2.0/AndroidManifest.xml:12:9-18:19
-62            android:name="com.google.firebase.components.ComponentDiscoveryService"
-62-->[com.google.firebase:firebase-storage-ktx:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/0e4ec124ff6f01884b9e96b71d5eb8a6/jetified-firebase-storage-ktx-19.2.0/AndroidManifest.xml:13:13-84
-63            android:directBootAware="true"
-63-->[com.google.firebase:firebase-common:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5ad83460d584eee98c0d9efe22603e35/jetified-firebase-common-19.3.1/AndroidManifest.xml:35:13-43
-64            android:exported="false" >
-64-->[com.google.firebase:firebase-storage-ktx:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/0e4ec124ff6f01884b9e96b71d5eb8a6/jetified-firebase-storage-ktx-19.2.0/AndroidManifest.xml:14:13-37
-65            <meta-data
-65-->[com.google.firebase:firebase-storage-ktx:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/0e4ec124ff6f01884b9e96b71d5eb8a6/jetified-firebase-storage-ktx-19.2.0/AndroidManifest.xml:15:13-17:85
-66                android:name="com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageKtxRegistrar"
-66-->[com.google.firebase:firebase-storage-ktx:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/0e4ec124ff6f01884b9e96b71d5eb8a6/jetified-firebase-storage-ktx-19.2.0/AndroidManifest.xml:16:17-122
-67                android:value="com.google.firebase.components.ComponentRegistrar" />
-67-->[com.google.firebase:firebase-storage-ktx:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/0e4ec124ff6f01884b9e96b71d5eb8a6/jetified-firebase-storage-ktx-19.2.0/AndroidManifest.xml:17:17-82
-68            <meta-data
-68-->[com.google.firebase:firebase-common-ktx:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3cbd29216ac7f218df558e9362c2cf88/jetified-firebase-common-ktx-19.3.1/AndroidManifest.xml:15:13-17:85
-69                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
-69-->[com.google.firebase:firebase-common-ktx:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3cbd29216ac7f218df558e9362c2cf88/jetified-firebase-common-ktx-19.3.1/AndroidManifest.xml:16:17-113
-70                android:value="com.google.firebase.components.ComponentRegistrar" />
-70-->[com.google.firebase:firebase-common-ktx:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3cbd29216ac7f218df558e9362c2cf88/jetified-firebase-common-ktx-19.3.1/AndroidManifest.xml:17:17-82
-71            <meta-data
-71-->[com.google.firebase:firebase-storage:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/15c7b565a6d641c5447020fd8ebadfe5/jetified-firebase-storage-19.2.0/AndroidManifest.xml:33:13-35:85
-72                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-72-->[com.google.firebase:firebase-storage:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/15c7b565a6d641c5447020fd8ebadfe5/jetified-firebase-storage-19.2.0/AndroidManifest.xml:34:17-107
-73                android:value="com.google.firebase.components.ComponentRegistrar" />
-73-->[com.google.firebase:firebase-storage:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/15c7b565a6d641c5447020fd8ebadfe5/jetified-firebase-storage-19.2.0/AndroidManifest.xml:35:17-82
-74            <meta-data
-74-->[com.google.android.gms:play-services-measurement-api:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/96661ef1c479879a63c69d6e5cfab331/jetified-play-services-measurement-api-17.5.0/AndroidManifest.xml:30:13-32:85
-75                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-75-->[com.google.android.gms:play-services-measurement-api:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/96661ef1c479879a63c69d6e5cfab331/jetified-play-services-measurement-api-17.5.0/AndroidManifest.xml:31:17-139
-76                android:value="com.google.firebase.components.ComponentRegistrar" />
-76-->[com.google.android.gms:play-services-measurement-api:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/96661ef1c479879a63c69d6e5cfab331/jetified-play-services-measurement-api-17.5.0/AndroidManifest.xml:32:17-82
-77            <meta-data
-77-->[com.google.firebase:firebase-installations:16.3.2] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f0b00889921a96d4f9e7092a239bf26d/jetified-firebase-installations-16.3.2/AndroidManifest.xml:17:13-19:85
-78                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-78-->[com.google.firebase:firebase-installations:16.3.2] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f0b00889921a96d4f9e7092a239bf26d/jetified-firebase-installations-16.3.2/AndroidManifest.xml:18:17-127
-79                android:value="com.google.firebase.components.ComponentRegistrar" />
-79-->[com.google.firebase:firebase-installations:16.3.2] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f0b00889921a96d4f9e7092a239bf26d/jetified-firebase-installations-16.3.2/AndroidManifest.xml:19:17-82
-80        </service> <!-- The minimal version code of ARCore APK required for an app using this SDK. -->
-81        <meta-data
-81-->[com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cdc78d7f8414118ef255956bbff5857/jetified-core-1.19.0/AndroidManifest.xml:36:9-38:41
-82            android:name="com.google.ar.core.min_apk_version"
-82-->[com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cdc78d7f8414118ef255956bbff5857/jetified-core-1.19.0/AndroidManifest.xml:37:13-62
-83            android:value="201750000" /> <!-- This activity is critical for installing ARCore when it is not already present. -->
-83-->[com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cdc78d7f8414118ef255956bbff5857/jetified-core-1.19.0/AndroidManifest.xml:38:13-38
-84        <activity
-84-->[com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cdc78d7f8414118ef255956bbff5857/jetified-core-1.19.0/AndroidManifest.xml:40:9-46:80
-85            android:name="com.google.ar.core.InstallActivity"
-85-->[com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cdc78d7f8414118ef255956bbff5857/jetified-core-1.19.0/AndroidManifest.xml:41:13-62
-86            android:configChanges="keyboardHidden|orientation|screenSize"
-86-->[com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cdc78d7f8414118ef255956bbff5857/jetified-core-1.19.0/AndroidManifest.xml:42:13-74
-87            android:excludeFromRecents="true"
-87-->[com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cdc78d7f8414118ef255956bbff5857/jetified-core-1.19.0/AndroidManifest.xml:43:13-46
-88            android:exported="false"
-88-->[com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cdc78d7f8414118ef255956bbff5857/jetified-core-1.19.0/AndroidManifest.xml:44:13-37
-89            android:launchMode="singleTop"
-89-->[com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cdc78d7f8414118ef255956bbff5857/jetified-core-1.19.0/AndroidManifest.xml:45:13-43
-90            android:theme="@android:style/Theme.Material.Light.Dialog.Alert" />
-90-->[com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cdc78d7f8414118ef255956bbff5857/jetified-core-1.19.0/AndroidManifest.xml:46:13-77
-91
-92        <provider
-92-->[com.google.firebase:firebase-common:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5ad83460d584eee98c0d9efe22603e35/jetified-firebase-common-19.3.1/AndroidManifest.xml:26:9-31:39
-93            android:name="com.google.firebase.provider.FirebaseInitProvider"
-93-->[com.google.firebase:firebase-common:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5ad83460d584eee98c0d9efe22603e35/jetified-firebase-common-19.3.1/AndroidManifest.xml:27:13-77
-94            android:authorities="com.huji.couchmirage.firebaseinitprovider"
-94-->[com.google.firebase:firebase-common:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5ad83460d584eee98c0d9efe22603e35/jetified-firebase-common-19.3.1/AndroidManifest.xml:28:13-72
-95            android:directBootAware="true"
-95-->[com.google.firebase:firebase-common:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5ad83460d584eee98c0d9efe22603e35/jetified-firebase-common-19.3.1/AndroidManifest.xml:29:13-43
-96            android:exported="false"
-96-->[com.google.firebase:firebase-common:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5ad83460d584eee98c0d9efe22603e35/jetified-firebase-common-19.3.1/AndroidManifest.xml:30:13-37
-97            android:initOrder="100" />
-97-->[com.google.firebase:firebase-common:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5ad83460d584eee98c0d9efe22603e35/jetified-firebase-common-19.3.1/AndroidManifest.xml:31:13-36
+45        <activity android:name="com.huji.couchmirage.MainActivity" >
+45-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:29:9-35:20
+45-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:29:19-47
+46            <intent-filter>
+46-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:30:13-34:29
+47                <action android:name="transparent.text.SECONDACTIVITY" />
+47-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:31:17-74
+47-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:31:25-71
+48
+49                <category android:name="android.intent.category.DEFAULT" />
+49-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:33:17-76
+49-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:33:27-73
+50            </intent-filter>
+51        </activity>
+52        <activity
+52-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:38:9-49:20
+53            android:name="com.huji.couchmirage.OpenCameraActivity"
+53-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:39:13-47
+54            android:screenOrientation="portrait" >
+54-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:40:13-49
+55            <intent-filter>
+55-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:44:13-48:29
+56                <action android:name="android.intent.action.MAIN" />
+56-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:45:17-69
+56-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:45:25-66
+57
+58                <category android:name="android.intent.category.LAUNCHER" />
+58-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:47:17-77
+58-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:47:27-74
+59            </intent-filter>
+60        </activity>
+61
+62        <!-- ARCODE REQUIRED -->
+63
+64        <meta-data
+64-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:53:9-55:40
+65            android:name="com.google.ar.core"
+65-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:54:13-46
+66            android:value="required" />
+66-->/home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:55:13-37
+67
+68        <service
+68-->[com.google.firebase:firebase-storage-ktx:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/0e4ec124ff6f01884b9e96b71d5eb8a6/jetified-firebase-storage-ktx-19.2.0/AndroidManifest.xml:12:9-18:19
+69            android:name="com.google.firebase.components.ComponentDiscoveryService"
+69-->[com.google.firebase:firebase-storage-ktx:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/0e4ec124ff6f01884b9e96b71d5eb8a6/jetified-firebase-storage-ktx-19.2.0/AndroidManifest.xml:13:13-84
+70            android:directBootAware="true"
+70-->[com.google.firebase:firebase-common:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5ad83460d584eee98c0d9efe22603e35/jetified-firebase-common-19.3.1/AndroidManifest.xml:35:13-43
+71            android:exported="false" >
+71-->[com.google.firebase:firebase-storage-ktx:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/0e4ec124ff6f01884b9e96b71d5eb8a6/jetified-firebase-storage-ktx-19.2.0/AndroidManifest.xml:14:13-37
+72            <meta-data
+72-->[com.google.firebase:firebase-storage-ktx:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/0e4ec124ff6f01884b9e96b71d5eb8a6/jetified-firebase-storage-ktx-19.2.0/AndroidManifest.xml:15:13-17:85
+73                android:name="com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageKtxRegistrar"
+73-->[com.google.firebase:firebase-storage-ktx:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/0e4ec124ff6f01884b9e96b71d5eb8a6/jetified-firebase-storage-ktx-19.2.0/AndroidManifest.xml:16:17-122
+74                android:value="com.google.firebase.components.ComponentRegistrar" />
+74-->[com.google.firebase:firebase-storage-ktx:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/0e4ec124ff6f01884b9e96b71d5eb8a6/jetified-firebase-storage-ktx-19.2.0/AndroidManifest.xml:17:17-82
+75            <meta-data
+75-->[com.google.firebase:firebase-common-ktx:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3cbd29216ac7f218df558e9362c2cf88/jetified-firebase-common-ktx-19.3.1/AndroidManifest.xml:15:13-17:85
+76                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
+76-->[com.google.firebase:firebase-common-ktx:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3cbd29216ac7f218df558e9362c2cf88/jetified-firebase-common-ktx-19.3.1/AndroidManifest.xml:16:17-113
+77                android:value="com.google.firebase.components.ComponentRegistrar" />
+77-->[com.google.firebase:firebase-common-ktx:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3cbd29216ac7f218df558e9362c2cf88/jetified-firebase-common-ktx-19.3.1/AndroidManifest.xml:17:17-82
+78            <meta-data
+78-->[com.google.firebase:firebase-storage:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/15c7b565a6d641c5447020fd8ebadfe5/jetified-firebase-storage-19.2.0/AndroidManifest.xml:33:13-35:85
+79                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+79-->[com.google.firebase:firebase-storage:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/15c7b565a6d641c5447020fd8ebadfe5/jetified-firebase-storage-19.2.0/AndroidManifest.xml:34:17-107
+80                android:value="com.google.firebase.components.ComponentRegistrar" />
+80-->[com.google.firebase:firebase-storage:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/15c7b565a6d641c5447020fd8ebadfe5/jetified-firebase-storage-19.2.0/AndroidManifest.xml:35:17-82
+81            <meta-data
+81-->[com.google.android.gms:play-services-measurement-api:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/96661ef1c479879a63c69d6e5cfab331/jetified-play-services-measurement-api-17.5.0/AndroidManifest.xml:30:13-32:85
+82                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+82-->[com.google.android.gms:play-services-measurement-api:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/96661ef1c479879a63c69d6e5cfab331/jetified-play-services-measurement-api-17.5.0/AndroidManifest.xml:31:17-139
+83                android:value="com.google.firebase.components.ComponentRegistrar" />
+83-->[com.google.android.gms:play-services-measurement-api:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/96661ef1c479879a63c69d6e5cfab331/jetified-play-services-measurement-api-17.5.0/AndroidManifest.xml:32:17-82
+84            <meta-data
+84-->[com.google.firebase:firebase-installations:16.3.2] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f0b00889921a96d4f9e7092a239bf26d/jetified-firebase-installations-16.3.2/AndroidManifest.xml:17:13-19:85
+85                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+85-->[com.google.firebase:firebase-installations:16.3.2] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f0b00889921a96d4f9e7092a239bf26d/jetified-firebase-installations-16.3.2/AndroidManifest.xml:18:17-127
+86                android:value="com.google.firebase.components.ComponentRegistrar" />
+86-->[com.google.firebase:firebase-installations:16.3.2] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f0b00889921a96d4f9e7092a239bf26d/jetified-firebase-installations-16.3.2/AndroidManifest.xml:19:17-82
+87        </service> <!-- The minimal version code of ARCore APK required for an app using this SDK. -->
+88        <meta-data
+88-->[com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cdc78d7f8414118ef255956bbff5857/jetified-core-1.19.0/AndroidManifest.xml:36:9-38:41
+89            android:name="com.google.ar.core.min_apk_version"
+89-->[com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cdc78d7f8414118ef255956bbff5857/jetified-core-1.19.0/AndroidManifest.xml:37:13-62
+90            android:value="201750000" /> <!-- This activity is critical for installing ARCore when it is not already present. -->
+90-->[com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cdc78d7f8414118ef255956bbff5857/jetified-core-1.19.0/AndroidManifest.xml:38:13-38
+91        <activity
+91-->[com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cdc78d7f8414118ef255956bbff5857/jetified-core-1.19.0/AndroidManifest.xml:40:9-46:80
+92            android:name="com.google.ar.core.InstallActivity"
+92-->[com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cdc78d7f8414118ef255956bbff5857/jetified-core-1.19.0/AndroidManifest.xml:41:13-62
+93            android:configChanges="keyboardHidden|orientation|screenSize"
+93-->[com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cdc78d7f8414118ef255956bbff5857/jetified-core-1.19.0/AndroidManifest.xml:42:13-74
+94            android:excludeFromRecents="true"
+94-->[com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cdc78d7f8414118ef255956bbff5857/jetified-core-1.19.0/AndroidManifest.xml:43:13-46
+95            android:exported="false"
+95-->[com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cdc78d7f8414118ef255956bbff5857/jetified-core-1.19.0/AndroidManifest.xml:44:13-37
+96            android:launchMode="singleTop"
+96-->[com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cdc78d7f8414118ef255956bbff5857/jetified-core-1.19.0/AndroidManifest.xml:45:13-43
+97            android:theme="@android:style/Theme.Material.Light.Dialog.Alert" />
+97-->[com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cdc78d7f8414118ef255956bbff5857/jetified-core-1.19.0/AndroidManifest.xml:46:13-77
 98
-99        <activity
-99-->[com.google.android.gms:play-services-base:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3651a3ec2d53ef1d9bab0b7938b8d877/jetified-play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
-100            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-100-->[com.google.android.gms:play-services-base:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3651a3ec2d53ef1d9bab0b7938b8d877/jetified-play-services-base-17.0.0/AndroidManifest.xml:24:13-79
-101            android:exported="false"
-101-->[com.google.android.gms:play-services-base:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3651a3ec2d53ef1d9bab0b7938b8d877/jetified-play-services-base-17.0.0/AndroidManifest.xml:25:13-37
-102            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-102-->[com.google.android.gms:play-services-base:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3651a3ec2d53ef1d9bab0b7938b8d877/jetified-play-services-base-17.0.0/AndroidManifest.xml:26:13-72
-103
-104        <receiver
-104-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:29:9-33:20
-105            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-105-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:30:13-85
-106            android:enabled="true"
-106-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:31:13-35
-107            android:exported="false" >
-107-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:32:13-37
-108        </receiver>
-109
-110        <service
-110-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:35:9-38:40
-111            android:name="com.google.android.gms.measurement.AppMeasurementService"
-111-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:36:13-84
-112            android:enabled="true"
-112-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:37:13-35
-113            android:exported="false" />
-113-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:38:13-37
-114        <service
-114-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:39:9-43:72
-115            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-115-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:40:13-87
-116            android:enabled="true"
-116-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:41:13-35
-117            android:exported="false"
-117-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:42:13-37
-118            android:permission="android.permission.BIND_JOB_SERVICE" />
-118-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:43:13-69
-119
-120        <meta-data
-120-->[com.google.android.gms:play-services-basement:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/52faba9891f7b60cb957d5c7a38d4e31/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
-121            android:name="com.google.android.gms.version"
-121-->[com.google.android.gms:play-services-basement:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/52faba9891f7b60cb957d5c7a38d4e31/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
-122            android:value="@integer/google_play_services_version" />
-122-->[com.google.android.gms:play-services-basement:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/52faba9891f7b60cb957d5c7a38d4e31/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
-123    </application>
-124
-125</manifest>
+99        <provider
+99-->[com.google.firebase:firebase-common:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5ad83460d584eee98c0d9efe22603e35/jetified-firebase-common-19.3.1/AndroidManifest.xml:26:9-31:39
+100            android:name="com.google.firebase.provider.FirebaseInitProvider"
+100-->[com.google.firebase:firebase-common:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5ad83460d584eee98c0d9efe22603e35/jetified-firebase-common-19.3.1/AndroidManifest.xml:27:13-77
+101            android:authorities="com.huji.couchmirage.firebaseinitprovider"
+101-->[com.google.firebase:firebase-common:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5ad83460d584eee98c0d9efe22603e35/jetified-firebase-common-19.3.1/AndroidManifest.xml:28:13-72
+102            android:directBootAware="true"
+102-->[com.google.firebase:firebase-common:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5ad83460d584eee98c0d9efe22603e35/jetified-firebase-common-19.3.1/AndroidManifest.xml:29:13-43
+103            android:exported="false"
+103-->[com.google.firebase:firebase-common:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5ad83460d584eee98c0d9efe22603e35/jetified-firebase-common-19.3.1/AndroidManifest.xml:30:13-37
+104            android:initOrder="100" />
+104-->[com.google.firebase:firebase-common:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5ad83460d584eee98c0d9efe22603e35/jetified-firebase-common-19.3.1/AndroidManifest.xml:31:13-36
+105
+106        <activity
+106-->[com.google.android.gms:play-services-base:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3651a3ec2d53ef1d9bab0b7938b8d877/jetified-play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+107            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+107-->[com.google.android.gms:play-services-base:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3651a3ec2d53ef1d9bab0b7938b8d877/jetified-play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+108            android:exported="false"
+108-->[com.google.android.gms:play-services-base:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3651a3ec2d53ef1d9bab0b7938b8d877/jetified-play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+109            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+109-->[com.google.android.gms:play-services-base:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3651a3ec2d53ef1d9bab0b7938b8d877/jetified-play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+110
+111        <receiver
+111-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:29:9-33:20
+112            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+112-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:30:13-85
+113            android:enabled="true"
+113-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:31:13-35
+114            android:exported="false" >
+114-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:32:13-37
+115        </receiver>
+116
+117        <service
+117-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:35:9-38:40
+118            android:name="com.google.android.gms.measurement.AppMeasurementService"
+118-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:36:13-84
+119            android:enabled="true"
+119-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:37:13-35
+120            android:exported="false" />
+120-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:38:13-37
+121        <service
+121-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:39:9-43:72
+122            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+122-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:40:13-87
+123            android:enabled="true"
+123-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:41:13-35
+124            android:exported="false"
+124-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:42:13-37
+125            android:permission="android.permission.BIND_JOB_SERVICE" />
+125-->[com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:43:13-69
+126
+127        <meta-data
+127-->[com.google.android.gms:play-services-basement:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/52faba9891f7b60cb957d5c7a38d4e31/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+128            android:name="com.google.android.gms.version"
+128-->[com.google.android.gms:play-services-basement:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/52faba9891f7b60cb957d5c7a38d4e31/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+129            android:value="@integer/google_play_services_version" />
+129-->[com.google.android.gms:play-services-basement:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/52faba9891f7b60cb957d5c7a38d4e31/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+130    </application>
+131
+132</manifest>

@@ -19,6 +19,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.ar.core.Anchor
 import com.google.ar.core.HitResult
@@ -28,7 +29,9 @@ import com.google.ar.sceneform.Sun
 import com.google.ar.sceneform.assets.RenderableSource
 import com.google.ar.sceneform.collision.Box
 import com.google.ar.sceneform.math.Vector3
-import com.google.ar.sceneform.rendering.*
+import com.google.ar.sceneform.rendering.Color
+import com.google.ar.sceneform.rendering.ModelRenderable
+import com.google.ar.sceneform.rendering.Renderable
 import com.google.ar.sceneform.ux.TransformableNode
 import com.google.firebase.FirebaseApp
 import com.google.firebase.storage.FirebaseStorage
@@ -732,6 +735,14 @@ class OpenCameraActivity : AppCompatActivity() {
 
     }
 
+
+    private fun openSearchDialog() {
+
+        val dialog = FullScreenDialog()
+        val ft: FragmentTransaction = supportFragmentManager.beginTransaction()
+        dialog.show(ft, FullScreenDialog.TAG)
+    }
+
     // TODO:: finish it
     private fun searchItem() {
         // search
@@ -740,22 +751,21 @@ class OpenCameraActivity : AppCompatActivity() {
 
         isSearching = true
 
-
         // open activity
-
-
-        // close activity
-        var modelPath = "models/desk_1.glb"
-
-        getFireBaseModel(
-            pathString = modelPath,
-            modelWidth = userMeasurements!!.boxWidth,
-            modelLength = userMeasurements!!.boxLength,
-            modelHeight = (userMeasurements!!.boxHeight / 100f)
-        )
-
-
-        isSearching = false
+        openSearchDialog()
+//
+//        // close activity
+//        var modelPath = "models/desk_1.glb"
+//
+//        getFireBaseModel(
+//            pathString = modelPath,
+//            modelWidth = userMeasurements!!.boxWidth,
+//            modelLength = userMeasurements!!.boxLength,
+//            modelHeight = (userMeasurements!!.boxHeight / 100f)
+//        )
+//
+//
+//        isSearching = false
 
     }
 

@@ -42,6 +42,13 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.huji.couchmirage.MainActivity" >
+            <intent-filter>
+                <action android:name="transparent.text.SECONDACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.huji.couchmirage.OpenCameraActivity"
             android:screenOrientation="portrait" >

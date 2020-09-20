@@ -1605,6 +1605,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable plus_green_48
+drawable popup_background
 drawable question_black
 drawable ruler_green_32
 drawable sceneform_hand_phone
@@ -1720,6 +1721,7 @@ id clip_vertical
 id collapseActionView
 id confirm_button
 id container
+id container1
 id content
 id contentPanel
 id coordinator
@@ -1731,6 +1733,8 @@ id date_picker_actions
 id dec_height
 id decor_content_parent
 id default_activity_button
+id department_img
+id department_name
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1765,6 +1769,7 @@ id forever
 id fragment
 id ghost_view
 id ghost_view_holder
+id glide_custom_view_target_tag
 id gone
 id group_divider
 id groups
@@ -1854,6 +1859,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id rectangle
+id recycler_view
 id relativeLayout
 id restart
 id reverse
@@ -2036,6 +2042,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_main
 layout camera_bottom_panel
 layout camera_bottom_scale
 layout camera_loading_animation
@@ -2056,11 +2063,13 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout dialog_layout
 layout distance_card_layout
 layout frame_layout
 layout hand_layout
 layout height_distance_card_layout
 layout isb_indicator
+layout layout_department_list_item
 layout measurment_item_model
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
@@ -2286,6 +2295,7 @@ style Animation_AppCompat_Tooltip
 style Animation_Design_BottomSheetDialog
 style Animation_MaterialComponents_BottomSheetDialog
 style AppTheme
+style AppTheme_Transparent
 style AppTheme_TransparentActivity
 style AppTheme_TransparentActivity_FullScreen
 style Base_AlertDialog_AppCompat
@@ -2508,7 +2518,9 @@ style CardView
 style CardView_Dark
 style CardView_Light
 style ContextMenuButton
+style CustomAlertDialog
 style EmptyTheme
+style FullScreenDialogStyle
 style MaterialAlertDialog_MaterialComponents
 style MaterialAlertDialog_MaterialComponents_Body_Text
 style MaterialAlertDialog_MaterialComponents_Picker_Date_Calendar
