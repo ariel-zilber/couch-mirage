@@ -1,4 +1,4 @@
-#Sun Sep 20 12:34:38 IDT 2020
+#Sun Sep 20 17:15:35 IDT 2020
 base.0=/home/arikzil/couch-mirage/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex

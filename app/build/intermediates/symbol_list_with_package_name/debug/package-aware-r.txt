@@ -1524,6 +1524,7 @@ drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable button_background
+drawable button_background_white
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -2038,6 +2039,7 @@ layout abc_tooltip
 layout camera_bottom_panel
 layout camera_bottom_scale
 layout camera_loading_animation
+layout camera_top_panel
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2211,6 +2213,7 @@ string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
 string green_advise_1
+string green_advise_2
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description

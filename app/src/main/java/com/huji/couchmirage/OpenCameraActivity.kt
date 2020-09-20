@@ -274,6 +274,9 @@ class OpenCameraActivity : AppCompatActivity() {
         val measurement: FloatingActionButton = findViewById(R.id.fab_measurement)
         measurement.setOnClickListener { view ->
             vibrate()
+            var infoFab = findViewById<InfoFAB>(R.id.fab_info)
+
+            Log.d("infoFab", infoFab.getStage().toString())
 
             // todo
             if (!measureSelected) {
@@ -307,7 +310,6 @@ class OpenCameraActivity : AppCompatActivity() {
 
                 // xxx
                 // xxx
-                var infoBtn = findViewById<InfoFAB>(R.id.fab_info)
                 changeInfoStageToGreen()
             }
 
@@ -370,6 +372,7 @@ class OpenCameraActivity : AppCompatActivity() {
     private fun setupToast() {
         Toasty.Config.getInstance()
             .allowQueue(false) // optional (prevents several Toastys from queuing)
+
             .apply();
     }
 
@@ -701,8 +704,16 @@ class OpenCameraActivity : AppCompatActivity() {
      * Displays message in green stage
      */
     private fun messageInfoButtonGreenStage() {
-        val MESSAGE_1 = resources.getString(R.string.yellow_advise_1)
-        infoMessage(MESSAGE_1, Toast.LENGTH_SHORT)
+        val MESSAGE_1 = resources.getString(R.string.green_advise_1)
+        val MESSAGE_2 = resources.getString(R.string.green_advise_2)
+
+        if (furnitureRenderable == null) {
+            infoMessage(MESSAGE_1, Toast.LENGTH_SHORT)
+
+        } else {
+            infoMessage(MESSAGE_2, Toast.LENGTH_SHORT)
+
+        }
     }
 
     private fun showShapedMeasuredDialog() {
@@ -764,6 +775,10 @@ class OpenCameraActivity : AppCompatActivity() {
         findViewById<IndicatorStayLayout>(R.id.indicator_container).visibility = View.GONE
         seekBar.setProgress(0f)
 
+        //
+        changeInfoStageToYellow()
+
+        //
         seekBar.visibility = View.GONE
         minus.visibility = View.GONE
         plus.visibility = View.GONE

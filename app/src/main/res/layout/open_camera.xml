@@ -6,17 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".OpenCameraActivity">
 
-
-    <Button
-        android:id="@+id/clear"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/button_background"
-        android:gravity="center"
-        android:text="@string/clear"
-        android:textColor="@color/clear_btn_text" />
+    <include layout="@layout/camera_top_panel" />
 
     <fragment
         android:id="@+id/fragment"
@@ -24,6 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/bottomPanel"
+        android:layout_below="@+id/topPanel"
         android:layout_alignParentStart="true"
         android:layout_gravity="center"
         android:layout_marginStart="-11dp"
@@ -38,22 +29,6 @@
 
     <include layout="@layout/camera_bottom_panel" />
 
-
-    <com.huji.couchmirage.InfoFAB
-        android:id="@+id/fab_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="113dp"
-        android:layout_marginBottom="24dp"
-        android:gravity="top"
-        android:src="@drawable/ic_info_first_stage"
-        app:backgroundTint="@color/info_background_red"
-        app:borderWidth="0dp"
-        app:fabCustomSize="32dp"
-        app:rippleColor="@color/info_ripple_red" />
 
     <include layout="@layout/camera_loading_animation" />
 
