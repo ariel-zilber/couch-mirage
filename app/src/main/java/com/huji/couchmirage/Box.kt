@@ -170,7 +170,6 @@ class Box(
             val rotationFromAToB =
                 Quaternion.lookRotation(directionFromTopToBottom, Vector3.up())
 
-
             // add line
             MaterialFactory.makeOpaqueWithColor(
                 applicationContext,

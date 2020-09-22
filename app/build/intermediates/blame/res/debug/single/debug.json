@@ -12,16 +12,20 @@
         "source": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\src\\main\\res\\raw\\andy.sfb"
     },
     {
-        "merged": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\build\\intermediates\\res\\merged\\debug\\layout_layout_department_list_item.xml.flat",
-        "source": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\src\\main\\res\\layout\\layout_department_list_item.xml"
-    },
-    {
         "merged": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\build\\intermediates\\res\\merged\\debug\\layout_frame_layout.xml.flat",
         "source": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\src\\main\\res\\layout\\frame_layout.xml"
     },
     {
+        "merged": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\build\\intermediates\\res\\merged\\debug\\layout_departement_items_gallery_layout.xml.flat",
+        "source": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\src\\main\\res\\layout\\departement_items_gallery_layout.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
         "source": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\build\\intermediates\\res\\merged\\debug\\layout_layout_department_single_list_item.xml.flat",
+        "source": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\src\\main\\res\\layout\\layout_department_single_list_item.xml"
     },
     {
         "merged": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\build\\intermediates\\res\\merged\\debug\\drawable_search_green_32.png.flat",

@@ -1965,6 +1965,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
 layout custom_dialog
+layout departement_items_gallery_layout
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1984,7 +1985,7 @@ layout distance_card_layout
 layout frame_layout
 layout height_distance_card_layout
 layout isb_indicator
-layout layout_department_list_item
+layout layout_department_single_list_item
 layout measurment_item_model
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions

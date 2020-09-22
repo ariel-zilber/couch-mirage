@@ -1,4 +1,4 @@
-#Sun Sep 20 20:16:15 IDT 2020
+#Tue Sep 22 13:28:26 IDT 2020
 base.0=C\:\\Users\\User\\StudioProjects\\couch-mirage\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
