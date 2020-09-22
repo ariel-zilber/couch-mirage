@@ -1721,6 +1721,8 @@ id info
 id invisible
 id isb_progress
 id italic
+id item_img
+id item_name
 id item_touch_helper_previous_elevation
 id ivThumbnail
 id labeled
@@ -1986,6 +1988,7 @@ layout frame_layout
 layout height_distance_card_layout
 layout isb_indicator
 layout layout_department_single_list_item
+layout layout_single_list_item
 layout measurment_item_model
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions

@@ -132,6 +132,10 @@
         "source": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\src\\main\\res\\drawable\\btn_capture_options.xml"
     },
     {
+        "merged": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\build\\intermediates\\res\\merged\\debug\\layout_layout_single_list_item.xml.flat",
+        "source": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\src\\main\\res\\layout\\layout_single_list_item.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\build\\intermediates\\res\\merged\\debug\\layout_measurment_item_model.xml.flat",
         "source": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\src\\main\\res\\layout\\measurment_item_model.xml"
     },
