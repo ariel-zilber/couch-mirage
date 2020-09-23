@@ -14,8 +14,13 @@ import kotlinx.android.synthetic.main.layout_single_list_item.view.*
 
 class ItemRecyclerAdapter (private var listener: OnItemClickListen
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
-    private var items: List<SingleItem> = ArrayList()
+     var items: MutableList<SingleItem> = ArrayList()
+    fun getItemList(): List<SingleItem> {
+        return items
+    }
+    override fun getItemCount(): Int {
+        return items.size
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val textView = LayoutInflater.from(parent.context)
             .inflate(R.layout.layout_single_list_item, parent, false)
@@ -39,11 +44,9 @@ class ItemRecyclerAdapter (private var listener: OnItemClickListen
         }
     }
 
-    override fun getItemCount(): Int {
-        return items.size
-    }
 
-    fun submitList(itemList: List<SingleItem>) {
+
+    fun setItemList(itemList: MutableList<SingleItem>) {
         items = itemList
     }
 
@@ -54,13 +57,13 @@ class ItemRecyclerAdapter (private var listener: OnItemClickListen
         private val itemName: TextView = itemView.item_name
 
         fun bind(item: SingleItem) {
-            itemName.text = item.itemName
+            itemName.text = item.model
             val requestOptions = RequestOptions()
                 .placeholder(R.drawable.ic_launcher_background)
                 .error(R.drawable.ic_launcher_background)
 
             Glide.with(itemView.context).applyDefaultRequestOptions(requestOptions)
-                .load(item.itemImg)
+                .load(item.images[0])
                 .into(itemImg)
 
         }

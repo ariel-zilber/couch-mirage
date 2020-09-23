@@ -19,12 +19,12 @@ class DepartmentSourceData {
                 )
             )
 
-//            list.add(
-//                Department(
-//                    "BEDS & MATTRESSES",
-//                    "https://www.flaticon.com/premium-icon/icons/svg/2924/2924432.svg"
-//                )
-//            )
+            list.add(
+                Department(
+                    "BEDS & MATTRESSES",
+                    "https://www.flaticon.com/premium-icon/icons/svg/2924/2924432.svg"
+                )
+            )
 
             list.add(
                 Department(

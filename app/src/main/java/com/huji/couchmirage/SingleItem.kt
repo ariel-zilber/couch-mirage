@@ -1,23 +1,24 @@
 package com.huji.couchmirage
 
+import android.app.Application
+
 data class SingleItem(
-    var itemCategory: String?,
-    var itemColor: String?,
-    var ItemDetails: Map<String?,String?>,
-    var itemImg: Array<String?>,
-    var itemName: String?,
-    var itemPrice: Int?,
-    var itemSize: Array<String?>
+    var category: String?,
+    var color: String?,
+    var details: Map<String?,String?>,
+    var images: List<String?>,
+    var model: String?,
+    var price: Int?,
+    var sizes: List<Long?>
 ) {
     constructor() : this(
-        itemCategory = null,
-        itemColor = null,
-        ItemDetails = emptyMap<String?, String?>(),
-        itemImg = arrayOf<String?>()
-
-        ,
-        itemName = null,
-        itemPrice = null,
-        itemSize = arrayOf<String?>()
+        category = null,
+        color = null,
+        details = emptyMap<String?, String?>(),
+        images = listOf<String?>(),
+        model = null,
+        price = null,
+        sizes = listOf<Long?>()
     )
 }
+

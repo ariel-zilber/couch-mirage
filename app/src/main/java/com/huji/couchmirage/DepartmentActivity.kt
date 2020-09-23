@@ -5,29 +5,35 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import com.huji.couchmirage.DepartmentSourceData.Companion.createDataSet
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.layout_department_single_list_item.*
 import kotlinx.android.synthetic.main.layout_department_single_list_item.view.*
 
 class DepartmentActivity : AppCompatActivity() {
-    private lateinit var itemAdapter: ItemRecyclerAdapter
-
+    companion object {
+        lateinit var itemAdapter: ItemRecyclerAdapter
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.departement_items_gallery_layout)
         initRecyclerView()
         Toast.makeText(this, "clicked1", Toast.LENGTH_SHORT).show()
-        Toast.makeText(this, intent.extras!!.getString("DEPARTMENT NAME"), Toast.LENGTH_SHORT).show()
-        addDataSet(intent.extras!!.getString("DEPARTMENT NAME"))
+        Toast.makeText(this, intent.extras!!.getString("DEPARTMENT NAME"), Toast.LENGTH_SHORT)
+            .show()
+        ItemDataSource.createDepartmentGallery(intent.extras!!.getString("DEPARTMENT NAME"))
+        Toast.makeText(this, ""+ itemAdapter.getItemList().size, Toast.LENGTH_SHORT).show()
         Toast.makeText(this, "clicked end", Toast.LENGTH_SHORT).show()
 
     }
 
-    private fun addDataSet(department: String?) {
-        val data = ItemDataSource.createDataSet(department)
-        Toast.makeText(this, ""+data.size, Toast.LENGTH_SHORT).show()
-        itemAdapter.submitList(data)
-    }
+//    private fun addDataSet(department: String?) {
+////        val data = ItemDataSource.createDataSet(department)
+//        while (!ItemDataSource.miniBarrier){}
+//            itemAdapter.submitList(ItemDataSource.createDataSet(department))
+//
+////        Toast.makeText(this, ""+ItemDataSource.createDataSet(department).size, Toast.LENGTH_SHORT).show()
+//    }
 
     private fun initRecyclerView() {
         recycler_view.apply {
