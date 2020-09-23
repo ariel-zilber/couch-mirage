@@ -1,11 +1,13 @@
 package com.huji.couchmirage
 
 data class SingleItem(
-    var itemName: String,
-    var itemImg: String,
-    var itemDescription: String,
-    var itemCategory: String,
-    var itemSize: String
+    var itemCategory: String?,
+    var itemColor: String?,
+    var ItemDetails: Map<String?,String?>,
+    var itemImg: Array<String?>,
+    var itemName: String?,
+    var itemPrice: Int?,
+    var itemSize: Array<String?>
 ) {
 
 }

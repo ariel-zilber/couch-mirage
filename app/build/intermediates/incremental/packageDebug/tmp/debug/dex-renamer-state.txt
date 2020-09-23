@@ -1,7 +1,10 @@
-#Tue Sep 22 13:46:45 IDT 2020
-base.0=C\:\\Users\\User\\StudioProjects\\couch-mirage\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+#Wed Sep 23 18:23:37 IDT 2020
+path.2=classes2.dex
 path.1=classes.dex
-renamed.1=classes2.dex
 path.0=classes.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
 renamed.0=classes.dex
+base.2=C\:\\Users\\User\\StudioProjects\\couch-mirage\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 base.1=C\:\\Users\\User\\StudioProjects\\couch-mirage\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\classes.dex
+base.0=C\:\\Users\\User\\StudioProjects\\couch-mirage\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex

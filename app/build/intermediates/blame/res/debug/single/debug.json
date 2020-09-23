@@ -56,12 +56,12 @@
         "source": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\src\\main\\res\\drawable\\minus_48.png"
     },
     {
-        "merged": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_videocam.xml.flat",
-        "source": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\src\\main\\res\\drawable\\ic_videocam.xml"
-    },
-    {
         "merged": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_question.xml.flat",
         "source": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\src\\main\\res\\drawable\\ic_question.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_videocam.xml.flat",
+        "source": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\src\\main\\res\\drawable\\ic_videocam.xml"
     },
     {
         "merged": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\build\\intermediates\\res\\merged\\debug\\layout_open_camera.xml.flat",
@@ -80,12 +80,12 @@
         "source": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ruler_white_32.png.flat",
-        "source": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\src\\main\\res\\drawable\\ruler_white_32.png"
-    },
-    {
         "merged": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ruler_white_32.png.flat",
+        "source": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\src\\main\\res\\drawable\\ruler_white_32.png"
     },
     {
         "merged": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_collections_white_24dp.png.flat",
@@ -232,12 +232,12 @@
         "source": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\src\\main\\res\\drawable\\btn_capture.xml"
     },
     {
-        "merged": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
-    },
-    {
         "merged": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
         "merged": "C:\\Users\\User\\StudioProjects\\couch-mirage\\app\\build\\intermediates\\res\\merged\\debug\\drawable_btn_context_menu.xml.flat",
