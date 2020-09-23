@@ -14,7 +14,7 @@ class DepartmentRecyclerAdapter(
     private var listener: OnDepartmentClickListen
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private var items: List<Department> = ArrayList()
+     var items: List<Department> = ArrayList()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val textView = LayoutInflater.from(parent.context)
             .inflate(R.layout.layout_department_single_list_item, parent, false)

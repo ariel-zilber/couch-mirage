@@ -38,10 +38,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
     fun openDepartmentPage(view: View, position: Int) {
-        val editText = findViewById<TextView>(R.id.department_name)
-        val name = editText.text.toString()
+//        val editText = findViewById<TextView>(R.id.department_name)
+//        val name = editText.text.toString()
         val intent = Intent(this, DepartmentActivity::class.java).apply {
-            putExtra("DEPARTMENT NAME", name)
+            putExtra("DEPARTMENT NAME", departmentAdapter.items[position].departmentName)
         }
         startActivity(intent)
     }

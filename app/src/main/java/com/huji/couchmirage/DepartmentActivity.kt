@@ -17,6 +17,7 @@ class DepartmentActivity : AppCompatActivity() {
         setContentView(R.layout.departement_items_gallery_layout)
         initRecyclerView()
         Toast.makeText(this, "clicked1", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, intent.extras!!.getString("DEPARTMENT NAME"), Toast.LENGTH_SHORT).show()
         addDataSet(intent.extras!!.getString("DEPARTMENT NAME"))
         Toast.makeText(this, "clicked end", Toast.LENGTH_SHORT).show()
 
@@ -24,6 +25,7 @@ class DepartmentActivity : AppCompatActivity() {
 
     private fun addDataSet(department: String?) {
         val data = ItemDataSource.createDataSet(department)
+        Toast.makeText(this, ""+data.size, Toast.LENGTH_SHORT).show()
         itemAdapter.submitList(data)
     }
 
