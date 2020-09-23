@@ -9,5 +9,15 @@ data class SingleItem(
     var itemPrice: Int?,
     var itemSize: Array<String?>
 ) {
+    constructor() : this(
+        itemCategory = null,
+        itemColor = null,
+        ItemDetails = emptyMap<String?, String?>(),
+        itemImg = arrayOf<String?>()
 
+        ,
+        itemName = null,
+        itemPrice = null,
+        itemSize = arrayOf<String?>()
+    )
 }
