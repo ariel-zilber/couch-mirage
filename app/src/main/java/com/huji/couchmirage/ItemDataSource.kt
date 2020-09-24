@@ -8,38 +8,31 @@ import com.huji.couchmirage.DepartmentActivity.Companion.itemAdapter
 
 
 class ItemDataSource {
-    companion object{
-         var miniBarrier:Boolean = false
+    companion object {
         private var db = FirebaseFirestore.getInstance()
-        fun createDepartmentGallery(department: String?){
+        fun createDepartmentGallery(department: String?) {
             val list = ArrayList<SingleItem>()
-
             if (department != null) {
                 db.collection(department).get()
-                    .addOnSuccessListener { documents -> //TODO the problem is here!!
+                    .addOnSuccessListener { documents ->
                         for (document in documents) {
                             val i = document.toObject(SingleItem::class.java)
-
                             list.add(i)
                         }
-                        Log.d("BEFORE", list.toString())
-                        DepartmentActivity.itemAdapter.setItemList(list)
-//                        for(i in 0..list.size){
-//                            itemAdapter.items.add(list[i])// = list[i]
-//                    }
+                        Log.d("DEPARTMENT NAME", department)
+                        Log.d("BEFORE0", list.toString())
+                        Log.d("BEFORE1", "" + list.size)
 
-                        Log.d("CHECK ", itemAdapter.getItemList().toString())
-                        miniBarrier =true
+                        for (i in 0 until list.size) {
+                            itemAdapter.addSingleItem(list[i])
+                            Log.d("DURING",
+                                "" + itemAdapter.getItemList()
+                                    .get(i)) //TODO: here the items are inside the itemAdapter List
+                        }
+//                        itemAdapter.getMutableLiveData().postValue() // TODO: what do we do with this?
                     }
-                if(department=="BEDS & MATTRESSES"){
-                    itemAdapter.items.add(SingleItem(        category = null,
-                        color = null,
-                        details = emptyMap<String?, String?>(),
-                        images = listOf<String?>(                    "https://as2.ftcdn.net/jpg/01/32/53/23/500_F_132532302_hp9DZ7y8BPTaRMMFME0aSysBThQCORCv.jpg"
-                        ),
-                        model = "blop blop ",
-                        price = null,
-                        sizes = listOf<Long?>()))// = list[i]
+                for (i in 0 until list.size) { // TODO : not reaching here!!
+                    Log.d("AFTER", "" + itemAdapter.getItemList().get(i))
                 }
             }
         }
@@ -61,3 +54,8 @@ class ItemDataSource {
 //document.getString("price"),
 //document.getString("sizes")
 ////)
+
+//
+//                        Log.d("BEFORE", list.toString())
+//                        itemAdapter.setItemList(list)
+//                        Log.d("CHECK ", itemAdapter.getItemList().toString())

@@ -5,26 +5,47 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import kotlinx.android.synthetic.main.layout_department_single_list_item.view.*
-import kotlinx.android.synthetic.main.layout_department_single_list_item.view.department_name
 import kotlinx.android.synthetic.main.layout_single_list_item.view.*
 
-class ItemRecyclerAdapter (private var listener: OnItemClickListen
+class ItemRecyclerAdapter(
+    private var listener: OnItemClickListen
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-     var items: MutableList<SingleItem> = ArrayList()
+    var items: ArrayList<SingleItem> = ArrayList()
+
+    private val liveDataList: MutableLiveData<ArrayList<SingleItem>> = MutableLiveData()
+
+    fun getLiveData(): LiveData<ArrayList<SingleItem>> {
+        return liveDataList
+    }
+    fun getMutableLiveData(): MutableLiveData<ArrayList<SingleItem>> {
+        return liveDataList
+    }
+
+    fun addSingleItem(singleItem: SingleItem) {
+        items.add(singleItem)
+        liveDataList.value = items
+    }
+
     fun getItemList(): List<SingleItem> {
         return items
     }
+
+    fun setItemList(itemList: ArrayList<SingleItem>) {
+        items = itemList
+    }
+
     override fun getItemCount(): Int {
         return items.size
     }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val textView = LayoutInflater.from(parent.context)
             .inflate(R.layout.layout_single_list_item, parent, false)
-
         val viewHol = ItemViewHolder(textView)
         textView.setOnClickListener { v ->
             listener.onItemClick(
@@ -45,11 +66,6 @@ class ItemRecyclerAdapter (private var listener: OnItemClickListen
     }
 
 
-
-    fun setItemList(itemList: MutableList<SingleItem>) {
-        items = itemList
-    }
-
     class ItemViewHolder
     constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -65,10 +81,7 @@ class ItemRecyclerAdapter (private var listener: OnItemClickListen
             Glide.with(itemView.context).applyDefaultRequestOptions(requestOptions)
                 .load(item.images[0])
                 .into(itemImg)
-
         }
-
-
     }
 
     class DepartmentListGridRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {

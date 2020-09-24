@@ -14,26 +14,21 @@ class DepartmentActivity : AppCompatActivity() {
     companion object {
         lateinit var itemAdapter: ItemRecyclerAdapter
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.departement_items_gallery_layout)
         initRecyclerView()
-        Toast.makeText(this, "clicked1", Toast.LENGTH_SHORT).show()
-        Toast.makeText(this, intent.extras!!.getString("DEPARTMENT NAME"), Toast.LENGTH_SHORT)
-            .show()
-        ItemDataSource.createDepartmentGallery(intent.extras!!.getString("DEPARTMENT NAME"))
-        Toast.makeText(this, ""+ itemAdapter.getItemList().size, Toast.LENGTH_SHORT).show()
-        Toast.makeText(this, "clicked end", Toast.LENGTH_SHORT).show()
-
+        addDataSet(intent.extras!!.getString("DEPARTMENT NAME"))
     }
 
-//    private fun addDataSet(department: String?) {
-////        val data = ItemDataSource.createDataSet(department)
-//        while (!ItemDataSource.miniBarrier){}
-//            itemAdapter.submitList(ItemDataSource.createDataSet(department))
-//
-////        Toast.makeText(this, ""+ItemDataSource.createDataSet(department).size, Toast.LENGTH_SHORT).show()
-//    }
+    private fun addDataSet(department: String?) {
+        Toast.makeText(this, "BEFORE " + itemAdapter.getItemList().size, Toast.LENGTH_SHORT).show()
+        ItemDataSource.createDepartmentGallery(department)
+//        itemAdapter.setItemList(data)
+        Toast.makeText(this, "AFTER " + itemAdapter.getItemList().size, Toast.LENGTH_SHORT).show()
+
+    }
 
     private fun initRecyclerView() {
         recycler_view.apply {
@@ -43,13 +38,12 @@ class DepartmentActivity : AppCompatActivity() {
                     TODO("Not yet implemented")
                 }
             })
-
             adapter = itemAdapter
 
         }
     }
-
 }
+
 //    if (intent.extras != null)
 //    {
 //        Toast.makeText(
@@ -66,3 +60,8 @@ class DepartmentActivity : AppCompatActivity() {
 //        }
 //        startActivity(intent)
 //    }
+
+//        Toast.makeText(this, "clicked1", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(this, intent.extras!!.getString("DEPARTMENT NAME"), Toast.LENGTH_SHORT).show()
+//        Toast.makeText(this, ""+ itemAdapter.getItemList().size, Toast.LENGTH_SHORT).show()
+//        Toast.makeText(this, "clicked end", Toast.LENGTH_SHORT).show()
