@@ -87,7 +87,12 @@ class ItemDetailsActivity : AppCompatActivity() {
         show3DModel.setOnClickListener() {
 
 
-            getFireBaseModel("", 0f, 0f, 0f)
+            getFireBaseModel(
+                currentItem.rendable!!,
+                currentItem.sizes[0]!!.toFloat(),
+                currentItem.sizes[1]!!.toFloat(),
+                currentItem.sizes[2]!!.toFloat()
+            )
         }
     }
 

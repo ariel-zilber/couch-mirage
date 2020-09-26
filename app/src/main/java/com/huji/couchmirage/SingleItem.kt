@@ -2,6 +2,7 @@ package com.huji.couchmirage
 
 import android.app.Application
 import android.os.Parcelable
+import com.google.ar.sceneform.rendering.Renderable
 import java.io.Serializable
 
 data class SingleItem(
@@ -11,6 +12,8 @@ data class SingleItem(
     var images: List<String?>,
     var model: String?,
     var price: Int?,
+    var rendable: String?,
+
     var sizes: List<Long?>,
     var source: String?
 ) : Serializable {
@@ -21,6 +24,7 @@ data class SingleItem(
         images = listOf<String?>(),
         model = null,
         price = null,
+        rendable = null,
         sizes = listOf<Long?>(),
         source = null
     )
