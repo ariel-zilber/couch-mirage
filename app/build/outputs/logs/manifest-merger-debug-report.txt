@@ -1,11 +1,15 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-59:12
-INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-59:12
-INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-59:12
-INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-59:12
+ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-61:12
+INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-61:12
+INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-61:12
+INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-61:12
 MERGED from [androidx.core:core-ktx:1.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/a4010491f719f444c7e652e4081999f0/jetified-core-ktx-1.3.1/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-storage-ktx:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/0e4ec124ff6f01884b9e96b71d5eb8a6/jetified-firebase-storage-ktx-19.2.0/AndroidManifest.xml:2:1-21:12
+MERGED from [com.github.denzcoskun:ImageSlideshow:0.0.7] /home/arikzil/.gradle/caches/transforms-2/files-2.1/8e5359601e4f9dd6d0bfbd048aa60374/jetified-ImageSlideshow-0.0.7/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.firebase:firebase-analytics-ktx:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3505da215a7373158e5644c60092d32a/jetified-firebase-analytics-ktx-17.5.0/AndroidManifest.xml:2:1-17:12
+MERGED from [com.google.firebase:firebase-auth-ktx:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/4ea8ba7030cea55b690eb44e89d760bc/jetified-firebase-auth-ktx-19.4.0/AndroidManifest.xml:2:1-17:12
+MERGED from [com.google.firebase:firebase-firestore-ktx:21.6.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9962b931acad1581312522741ff6eef2/jetified-firebase-firestore-ktx-21.6.0/AndroidManifest.xml:2:1-21:12
 MERGED from [com.google.firebase:firebase-common-ktx:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3cbd29216ac7f218df558e9362c2cf88/jetified-firebase-common-ktx-19.3.1/AndroidManifest.xml:2:1-21:12
 MERGED from [com.google.android.material:material:1.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/addbdd722e5d593b58fb1fd3060343e2/material-1.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.github.GrenderG:Toasty:1.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/14d88e2cc578a3b83f50e5e8493b7f74/jetified-Toasty-1.5.0/AndroidManifest.xml:2:1-11:12
@@ -19,15 +23,20 @@ MERGED from [com.google.ar.sceneform:rendering:1.17.1] /home/arikzil/.gradle/cac
 MERGED from [com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cdc78d7f8414118ef255956bbff5857/jetified-core-1.19.0/AndroidManifest.xml:17:1-49:12
 MERGED from [com.google.ar.sceneform:assets:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/b1a41ab0466565f989a6645dbe6c6748/jetified-assets-1.17.1/AndroidManifest.xml:2:1-7:12
 MERGED from [com.github.warkiz.widget:indicatorseekbar:2.1.2] /home/arikzil/.gradle/caches/transforms-2/files-2.1/e52a0d18fec493a1ca4084d20543ea8a/jetified-indicatorseekbar-2.1.2/AndroidManifest.xml:2:1-11:12
-MERGED from [com.google.firebase:firebase-analytics:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/58c0a7a60ca3e00a1f92619eb945e4a7/jetified-firebase-analytics-17.5.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.github.bumptech.glide:glide:4.8.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/765a5e54c6b41d2c7e37cb13b409243e/jetified-glide-4.8.0/AndroidManifest.xml:2:1-12:12
+MERGED from [com.firebaseui:firebase-ui-firestore:6.2.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/10d363963ca02ac668327eb02b8a5e23/jetified-firebase-ui-firestore-6.2.1/AndroidManifest.xml:2:1-13:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/95d57d9b3160429d076ef749d1b6eb7b/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-auth:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9a785c63d004be19866e8a0b8808a6d6/jetified-firebase-auth-19.4.0/AndroidManifest.xml:17:1-42:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/df1c6b2dd01bb2cf241c0ff118665357/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-storage:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/15c7b565a6d641c5447020fd8ebadfe5/jetified-firebase-storage-19.2.0/AndroidManifest.xml:15:1-39:12
+MERGED from [com.google.firebase:firebase-firestore:21.6.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/56b9d5f76d8c05d935c577515b8b4517/jetified-firebase-firestore-21.6.0/AndroidManifest.xml:2:1-26:12
+MERGED from [com.google.firebase:firebase-analytics:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/58c0a7a60ca3e00a1f92619eb945e4a7/jetified-firebase-analytics-17.5.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-measurement-api:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/96661ef1c479879a63c69d6e5cfab331/jetified-play-services-measurement-api-17.5.0/AndroidManifest.xml:17:1-36:12
-MERGED from [com.google.firebase:firebase-auth-interop:18.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/75b6407549afdd470099bc8214b3169d/jetified-firebase-auth-interop-18.0.0/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/1247f4468350022b2f656866791d6ee8/jetified-firebase-auth-interop-19.0.0/AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.firebase:firebase-installations:16.3.2] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f0b00889921a96d4f9e7092a239bf26d/jetified-firebase-installations-16.3.2/AndroidManifest.xml:2:1-23:12
 MERGED from [com.google.firebase:firebase-common:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5ad83460d584eee98c0d9efe22603e35/jetified-firebase-common-19.3.1/AndroidManifest.xml:15:1-40:12
-MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3651a3ec2d53ef1d9bab0b7938b8d877/jetified-play-services-base-17.0.0/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.firebase:firebase-database-collection:17.0.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/660c6df06c03c2d6d247e136c01e4695/jetified-firebase-database-collection-17.0.1/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-base:17.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/618a1efc5e11d464598ccb21967ea089/jetified-play-services-base-17.1.0/AndroidManifest.xml:17:1-29:12
 MERGED from [com.google.firebase:firebase-installations-interop:16.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/d01fa0ed986602e129295cee3def50bd/jetified-firebase-installations-interop-16.0.0/AndroidManifest.xml:15:1-23:12
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f5cb09b5c9732a776e78096f1b8bca96/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:17:1-46:12
@@ -41,6 +50,7 @@ MERGED from [com.google.firebase:firebase-measurement-connector:18.0.0] /home/ar
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/52faba9891f7b60cb957d5c7a38d4e31/jetified-play-services-basement-17.0.0/AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.fragment:fragment:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/1c94c2bf2df798aa5386207320ae15fa/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/ef807656b6fa8a4c6e325c59316681a6/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9abea4cbc974027e13f2b5bdcdcb35b8/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/cb7b51291297f70eb7a12bdfb0bae54c/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5db6fff49be7e6576513717a70705cd2/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.transition:transition:1.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f41ee636f85ded990dcbac4d1e44abe9/transition-1.2.0/AndroidManifest.xml:17:1-24:12
@@ -51,40 +61,49 @@ MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/arikzil/.gra
 MERGED from [androidx.loader:loader:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/1a2288038067e03d9d55ac60633fd275/loader-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f5d8f5f196b5a1a39490ff5fa88856c7/jetified-activity-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/12cc6b7f126f389c8fc0b5886ea018cc/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/8251b6cb57b37fb309d1cc86742f3af7/slidingpanelayout-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.customview:customview:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/c883d775ac60b905d11c019de031ec8f/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media:media:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/7b6af153456f815663ac74954cd31841/media-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/003bf4878feff5258679cce727a2dd65/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/69a04d0520cb9b3c86367c49e44facc5/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core:1.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/39cd6650910a623ebcaf416004637f6a/core-1.3.1/AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/becb8462140fc6875fb459cd36afaa51/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/d8be920b08c8e790b4eeaf94813dc62d/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-components:16.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/fec275e306654f04042d3b8c17fca90b/jetified-firebase-components-16.0.0/AndroidManifest.xml:15:1-23:12
 MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/fead61848d97343fd410cffe83d12077/jetified-gifdecoder-4.8.0/AndroidManifest.xml:2:1-11:12
+MERGED from [com.squareup.picasso:picasso:2.71828] /home/arikzil/.gradle/caches/transforms-2/files-2.1/281285e6a0b868425864396668808cda/jetified-picasso-2.71828/AndroidManifest.xml:2:1-14:12
+MERGED from [com.firebaseui:firebase-ui-common:6.2.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/158bc9ad6d87a2cd3c06b4c834bdb241/jetified-firebase-ui-common-6.2.1/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/63974e2c7516a1371e8e8c3d57a48a04/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/fbf97a8b835c0493500f0ad4130aaa5e/exifinterface-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f6314127f631e92461f3c37ffaa8d4f1/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/ee6924f11898543591c0cb6e47df09b0/lifecycle-runtime-2.1.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/58bd39fcda76819db7ca9b33587c8743/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/b9ff6ac6a42e41c7d82c3e03b094e82c/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/aae1e8d555fe1a35e4692f2ccc1bb4c5/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.documentfile:documentfile:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cb07ad8bfca9469c385cb8e8a54bc52/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f6314127f631e92461f3c37ffaa8d4f1/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.print:print:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/174ce77f93937bfb762eccd6e6fd35da/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f6a8296b4f34691eb6a04c73ec8962ed/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/0732d31f81900d38e6e6566654d5bce7/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f3fa14cd01467ba2759e31b6b34821e5/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cb07ad8bfca9469c385cb8e8a54bc52/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/174ce77f93937bfb762eccd6e6fd35da/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5a503d2422275b5aaaa43762687ddf41/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.ar.sceneform:sceneform-base:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/21efb959d4f7dab8db7a016e898683dc/jetified-sceneform-base-1.17.1/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.ar.sceneform:filament-android:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/4b183ac08355e0b72ed22c79e455a456/jetified-filament-android-1.17.1/AndroidManifest.xml:2:1-11:12
-INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-59:12
-INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-59:12
-INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-59:12
+MERGED from [com.google.firebase:protolite-well-known-types:17.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/e57f925dbed2da1e75fcd7f4c8a428b5/jetified-protolite-well-known-types-17.1.0/AndroidManifest.xml:2:1-11:12
+MERGED from [io.grpc:grpc-android:1.28.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/385d438f9fd6502f1320b333d50a6824/jetified-grpc-android-1.28.0/AndroidManifest.xml:2:1-13:12
+INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-61:12
+INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-61:12
+INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-61:12
 	package
 		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:3:5-35
 		INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
 		INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
-		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-59:12
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-61:12
 		INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
-		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-59:12
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:1-61:12
 		INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:2:11-69
@@ -94,8 +113,12 @@ ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:6:5-65
 		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:6:22-62
 uses-permission#android.permission.INTERNET
 ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:7:5-67
+MERGED from [com.firebaseui:firebase-ui-firestore:6.2.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/10d363963ca02ac668327eb02b8a5e23/jetified-firebase-ui-firestore-6.2.1/AndroidManifest.xml:11:5-67
+MERGED from [com.firebaseui:firebase-ui-firestore:6.2.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/10d363963ca02ac668327eb02b8a5e23/jetified-firebase-ui-firestore-6.2.1/AndroidManifest.xml:11:5-67
 MERGED from [com.google.firebase:firebase-storage:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/15c7b565a6d641c5447020fd8ebadfe5/jetified-firebase-storage-19.2.0/AndroidManifest.xml:27:5-67
 MERGED from [com.google.firebase:firebase-storage:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/15c7b565a6d641c5447020fd8ebadfe5/jetified-firebase-storage-19.2.0/AndroidManifest.xml:27:5-67
+MERGED from [com.google.firebase:firebase-firestore:21.6.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/56b9d5f76d8c05d935c577515b8b4517/jetified-firebase-firestore-21.6.0/AndroidManifest.xml:14:5-67
+MERGED from [com.google.firebase:firebase-firestore:21.6.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/56b9d5f76d8c05d935c577515b8b4517/jetified-firebase-firestore-21.6.0/AndroidManifest.xml:14:5-67
 MERGED from [com.google.android.gms:play-services-measurement-api:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/96661ef1c479879a63c69d6e5cfab331/jetified-play-services-measurement-api-17.5.0/AndroidManifest.xml:22:5-67
 MERGED from [com.google.android.gms:play-services-measurement-api:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/96661ef1c479879a63c69d6e5cfab331/jetified-play-services-measurement-api-17.5.0/AndroidManifest.xml:22:5-67
 MERGED from [com.google.firebase:firebase-installations:16.3.2] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f0b00889921a96d4f9e7092a239bf26d/jetified-firebase-installations-16.3.2/AndroidManifest.xml:11:5-67
@@ -131,9 +154,15 @@ ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:19:5-66
 	android:name
 		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:19:22-63
 application
-ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:21:5-57:19
+ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:21:5-59:19
 MERGED from [com.google.firebase:firebase-storage-ktx:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/0e4ec124ff6f01884b9e96b71d5eb8a6/jetified-firebase-storage-ktx-19.2.0/AndroidManifest.xml:11:5-19:19
 MERGED from [com.google.firebase:firebase-storage-ktx:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/0e4ec124ff6f01884b9e96b71d5eb8a6/jetified-firebase-storage-ktx-19.2.0/AndroidManifest.xml:11:5-19:19
+MERGED from [com.google.firebase:firebase-analytics-ktx:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3505da215a7373158e5644c60092d32a/jetified-firebase-analytics-ktx-17.5.0/AndroidManifest.xml:7:5-15:19
+MERGED from [com.google.firebase:firebase-analytics-ktx:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3505da215a7373158e5644c60092d32a/jetified-firebase-analytics-ktx-17.5.0/AndroidManifest.xml:7:5-15:19
+MERGED from [com.google.firebase:firebase-auth-ktx:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/4ea8ba7030cea55b690eb44e89d760bc/jetified-firebase-auth-ktx-19.4.0/AndroidManifest.xml:7:5-15:19
+MERGED from [com.google.firebase:firebase-auth-ktx:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/4ea8ba7030cea55b690eb44e89d760bc/jetified-firebase-auth-ktx-19.4.0/AndroidManifest.xml:7:5-15:19
+MERGED from [com.google.firebase:firebase-firestore-ktx:21.6.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9962b931acad1581312522741ff6eef2/jetified-firebase-firestore-ktx-21.6.0/AndroidManifest.xml:11:5-19:19
+MERGED from [com.google.firebase:firebase-firestore-ktx:21.6.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9962b931acad1581312522741ff6eef2/jetified-firebase-firestore-ktx-21.6.0/AndroidManifest.xml:11:5-19:19
 MERGED from [com.google.firebase:firebase-common-ktx:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3cbd29216ac7f218df558e9362c2cf88/jetified-firebase-common-ktx-19.3.1/AndroidManifest.xml:11:5-19:19
 MERGED from [com.google.firebase:firebase-common-ktx:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3cbd29216ac7f218df558e9362c2cf88/jetified-firebase-common-ktx-19.3.1/AndroidManifest.xml:11:5-19:19
 MERGED from [com.google.android.material:material:1.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/addbdd722e5d593b58fb1fd3060343e2/material-1.2.0/AndroidManifest.xml:22:5-20
@@ -144,22 +173,26 @@ MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/arikzil/.gr
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/arikzil/.gradle/caches/transforms-2/files-2.1/0ea986abcdaf2fb9f06d3df721615372/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
 MERGED from [com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cdc78d7f8414118ef255956bbff5857/jetified-core-1.19.0/AndroidManifest.xml:33:5-47:19
 MERGED from [com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cdc78d7f8414118ef255956bbff5857/jetified-core-1.19.0/AndroidManifest.xml:33:5-47:19
-MERGED from [com.google.firebase:firebase-analytics:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/58c0a7a60ca3e00a1f92619eb945e4a7/jetified-firebase-analytics-17.5.0/AndroidManifest.xml:7:5-20
-MERGED from [com.google.firebase:firebase-analytics:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/58c0a7a60ca3e00a1f92619eb945e4a7/jetified-firebase-analytics-17.5.0/AndroidManifest.xml:7:5-20
 MERGED from [com.github.bumptech.glide:glide:4.8.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/765a5e54c6b41d2c7e37cb13b409243e/jetified-glide-4.8.0/AndroidManifest.xml:10:5-20
 MERGED from [com.github.bumptech.glide:glide:4.8.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/765a5e54c6b41d2c7e37cb13b409243e/jetified-glide-4.8.0/AndroidManifest.xml:10:5-20
+MERGED from [com.google.firebase:firebase-auth:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9a785c63d004be19866e8a0b8808a6d6/jetified-firebase-auth-19.4.0/AndroidManifest.xml:23:5-40:19
+MERGED from [com.google.firebase:firebase-auth:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9a785c63d004be19866e8a0b8808a6d6/jetified-firebase-auth-19.4.0/AndroidManifest.xml:23:5-40:19
 MERGED from [com.google.firebase:firebase-storage:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/15c7b565a6d641c5447020fd8ebadfe5/jetified-firebase-storage-19.2.0/AndroidManifest.xml:29:5-37:19
 MERGED from [com.google.firebase:firebase-storage:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/15c7b565a6d641c5447020fd8ebadfe5/jetified-firebase-storage-19.2.0/AndroidManifest.xml:29:5-37:19
+MERGED from [com.google.firebase:firebase-firestore:21.6.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/56b9d5f76d8c05d935c577515b8b4517/jetified-firebase-firestore-21.6.0/AndroidManifest.xml:16:5-24:19
+MERGED from [com.google.firebase:firebase-firestore:21.6.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/56b9d5f76d8c05d935c577515b8b4517/jetified-firebase-firestore-21.6.0/AndroidManifest.xml:16:5-24:19
+MERGED from [com.google.firebase:firebase-analytics:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/58c0a7a60ca3e00a1f92619eb945e4a7/jetified-firebase-analytics-17.5.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-analytics:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/58c0a7a60ca3e00a1f92619eb945e4a7/jetified-firebase-analytics-17.5.0/AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-measurement-api:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/96661ef1c479879a63c69d6e5cfab331/jetified-play-services-measurement-api-17.5.0/AndroidManifest.xml:26:5-34:19
 MERGED from [com.google.android.gms:play-services-measurement-api:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/96661ef1c479879a63c69d6e5cfab331/jetified-play-services-measurement-api-17.5.0/AndroidManifest.xml:26:5-34:19
-MERGED from [com.google.firebase:firebase-auth-interop:18.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/75b6407549afdd470099bc8214b3169d/jetified-firebase-auth-interop-18.0.0/AndroidManifest.xml:7:5-8:19
-MERGED from [com.google.firebase:firebase-auth-interop:18.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/75b6407549afdd470099bc8214b3169d/jetified-firebase-auth-interop-18.0.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/1247f4468350022b2f656866791d6ee8/jetified-firebase-auth-interop-19.0.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/1247f4468350022b2f656866791d6ee8/jetified-firebase-auth-interop-19.0.0/AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.firebase:firebase-installations:16.3.2] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f0b00889921a96d4f9e7092a239bf26d/jetified-firebase-installations-16.3.2/AndroidManifest.xml:13:5-21:19
 MERGED from [com.google.firebase:firebase-installations:16.3.2] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f0b00889921a96d4f9e7092a239bf26d/jetified-firebase-installations-16.3.2/AndroidManifest.xml:13:5-21:19
 MERGED from [com.google.firebase:firebase-common:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5ad83460d584eee98c0d9efe22603e35/jetified-firebase-common-19.3.1/AndroidManifest.xml:25:5-38:19
 MERGED from [com.google.firebase:firebase-common:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5ad83460d584eee98c0d9efe22603e35/jetified-firebase-common-19.3.1/AndroidManifest.xml:25:5-38:19
-MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3651a3ec2d53ef1d9bab0b7938b8d877/jetified-play-services-base-17.0.0/AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3651a3ec2d53ef1d9bab0b7938b8d877/jetified-play-services-base-17.0.0/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:17.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/618a1efc5e11d464598ccb21967ea089/jetified-play-services-base-17.1.0/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:17.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/618a1efc5e11d464598ccb21967ea089/jetified-play-services-base-17.1.0/AndroidManifest.xml:22:5-27:19
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f5cb09b5c9732a776e78096f1b8bca96/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f5cb09b5c9732a776e78096f1b8bca96/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:28:5-44:19
@@ -182,6 +215,8 @@ MERGED from [androidx.core:core:1.3.1] /home/arikzil/.gradle/caches/transforms-2
 MERGED from [androidx.core:core:1.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/39cd6650910a623ebcaf416004637f6a/core-1.3.1/AndroidManifest.xml:24:5-89
 MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/fead61848d97343fd410cffe83d12077/jetified-gifdecoder-4.8.0/AndroidManifest.xml:9:5-20
 MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/fead61848d97343fd410cffe83d12077/jetified-gifdecoder-4.8.0/AndroidManifest.xml:9:5-20
+MERGED from [com.squareup.picasso:picasso:2.71828] /home/arikzil/.gradle/caches/transforms-2/files-2.1/281285e6a0b868425864396668808cda/jetified-picasso-2.71828/AndroidManifest.xml:7:5-12:19
+MERGED from [com.squareup.picasso:picasso:2.71828] /home/arikzil/.gradle/caches/transforms-2/files-2.1/281285e6a0b868425864396668808cda/jetified-picasso-2.71828/AndroidManifest.xml:7:5-12:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/63974e2c7516a1371e8e8c3d57a48a04/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/63974e2c7516a1371e8e8c3d57a48a04/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
 	android:appComponentFactory
@@ -212,28 +247,36 @@ category#android.intent.category.DEFAULT
 ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:33:17-76
 	android:name
 		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:33:27-73
+activity#com.huji.couchmirage.ItemDetailsActivity
+ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:36:9-57
+	android:name
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:36:19-54
+activity#com.huji.couchmirage.DepartmentActivity
+ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:37:9-56
+	android:name
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:37:19-53
 activity#com.huji.couchmirage.OpenCameraActivity
-ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:38:9-49:20
+ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:40:9-51:20
 	android:screenOrientation
-		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:40:13-49
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:42:13-49
 	android:name
-		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:39:13-47
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:41:13-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:44:13-48:29
+ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:46:13-50:29
 action#android.intent.action.MAIN
-ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:45:17-69
+ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:47:17-69
 	android:name
-		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:45:25-66
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:47:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:47:17-77
+ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:49:17-77
 	android:name
-		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:47:27-74
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:49:27-74
 meta-data#com.google.ar.core
-ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:53:9-55:40
+ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:55:9-57:40
 	android:value
-		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:55:13-37
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:57:13-37
 	android:name
-		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:54:13-46
+		ADDED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml:56:13-46
 uses-sdk
 INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
@@ -242,6 +285,14 @@ MERGED from [androidx.core:core-ktx:1.3.1] /home/arikzil/.gradle/caches/transfor
 MERGED from [androidx.core:core-ktx:1.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/a4010491f719f444c7e652e4081999f0/jetified-core-ktx-1.3.1/AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.firebase:firebase-storage-ktx:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/0e4ec124ff6f01884b9e96b71d5eb8a6/jetified-firebase-storage-ktx-19.2.0/AndroidManifest.xml:6:5-8:41
 MERGED from [com.google.firebase:firebase-storage-ktx:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/0e4ec124ff6f01884b9e96b71d5eb8a6/jetified-firebase-storage-ktx-19.2.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.denzcoskun:ImageSlideshow:0.0.7] /home/arikzil/.gradle/caches/transforms-2/files-2.1/8e5359601e4f9dd6d0bfbd048aa60374/jetified-ImageSlideshow-0.0.7/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.denzcoskun:ImageSlideshow:0.0.7] /home/arikzil/.gradle/caches/transforms-2/files-2.1/8e5359601e4f9dd6d0bfbd048aa60374/jetified-ImageSlideshow-0.0.7/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:firebase-analytics-ktx:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3505da215a7373158e5644c60092d32a/jetified-firebase-analytics-ktx-17.5.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-analytics-ktx:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3505da215a7373158e5644c60092d32a/jetified-firebase-analytics-ktx-17.5.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-ktx:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/4ea8ba7030cea55b690eb44e89d760bc/jetified-firebase-auth-ktx-19.4.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-ktx:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/4ea8ba7030cea55b690eb44e89d760bc/jetified-firebase-auth-ktx-19.4.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-firestore-ktx:21.6.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9962b931acad1581312522741ff6eef2/jetified-firebase-firestore-ktx-21.6.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-firestore-ktx:21.6.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9962b931acad1581312522741ff6eef2/jetified-firebase-firestore-ktx-21.6.0/AndroidManifest.xml:6:5-8:41
 MERGED from [com.google.firebase:firebase-common-ktx:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3cbd29216ac7f218df558e9362c2cf88/jetified-firebase-common-ktx-19.3.1/AndroidManifest.xml:6:5-8:41
 MERGED from [com.google.firebase:firebase-common-ktx:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3cbd29216ac7f218df558e9362c2cf88/jetified-firebase-common-ktx-19.3.1/AndroidManifest.xml:6:5-8:41
 MERGED from [com.google.android.material:material:1.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/addbdd722e5d593b58fb1fd3060343e2/material-1.2.0/AndroidManifest.xml:20:5-44
@@ -268,24 +319,34 @@ MERGED from [com.google.ar.sceneform:assets:1.17.1] /home/arikzil/.gradle/caches
 MERGED from [com.google.ar.sceneform:assets:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/b1a41ab0466565f989a6645dbe6c6748/jetified-assets-1.17.1/AndroidManifest.xml:5:5-44
 MERGED from [com.github.warkiz.widget:indicatorseekbar:2.1.2] /home/arikzil/.gradle/caches/transforms-2/files-2.1/e52a0d18fec493a1ca4084d20543ea8a/jetified-indicatorseekbar-2.1.2/AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.warkiz.widget:indicatorseekbar:2.1.2] /home/arikzil/.gradle/caches/transforms-2/files-2.1/e52a0d18fec493a1ca4084d20543ea8a/jetified-indicatorseekbar-2.1.2/AndroidManifest.xml:7:5-9:41
-MERGED from [com.google.firebase:firebase-analytics:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/58c0a7a60ca3e00a1f92619eb945e4a7/jetified-firebase-analytics-17.5.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-analytics:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/58c0a7a60ca3e00a1f92619eb945e4a7/jetified-firebase-analytics-17.5.0/AndroidManifest.xml:5:5-44
 MERGED from [com.github.bumptech.glide:glide:4.8.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/765a5e54c6b41d2c7e37cb13b409243e/jetified-glide-4.8.0/AndroidManifest.xml:6:5-8:41
 MERGED from [com.github.bumptech.glide:glide:4.8.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/765a5e54c6b41d2c7e37cb13b409243e/jetified-glide-4.8.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.firebaseui:firebase-ui-firestore:6.2.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/10d363963ca02ac668327eb02b8a5e23/jetified-firebase-ui-firestore-6.2.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.firebaseui:firebase-ui-firestore:6.2.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/10d363963ca02ac668327eb02b8a5e23/jetified-firebase-ui-firestore-6.2.1/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/95d57d9b3160429d076ef749d1b6eb7b/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/95d57d9b3160429d076ef749d1b6eb7b/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-auth:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9a785c63d004be19866e8a0b8808a6d6/jetified-firebase-auth-19.4.0/AndroidManifest.xml:21:5-44
+MERGED from [com.google.firebase:firebase-auth:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9a785c63d004be19866e8a0b8808a6d6/jetified-firebase-auth-19.4.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/df1c6b2dd01bb2cf241c0ff118665357/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/df1c6b2dd01bb2cf241c0ff118665357/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-storage:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/15c7b565a6d641c5447020fd8ebadfe5/jetified-firebase-storage-19.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-storage:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/15c7b565a6d641c5447020fd8ebadfe5/jetified-firebase-storage-19.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-firestore:21.6.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/56b9d5f76d8c05d935c577515b8b4517/jetified-firebase-firestore-21.6.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:firebase-firestore:21.6.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/56b9d5f76d8c05d935c577515b8b4517/jetified-firebase-firestore-21.6.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:firebase-analytics:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/58c0a7a60ca3e00a1f92619eb945e4a7/jetified-firebase-analytics-17.5.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-analytics:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/58c0a7a60ca3e00a1f92619eb945e4a7/jetified-firebase-analytics-17.5.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-measurement-api:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/96661ef1c479879a63c69d6e5cfab331/jetified-play-services-measurement-api-17.5.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-measurement-api:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/96661ef1c479879a63c69d6e5cfab331/jetified-play-services-measurement-api-17.5.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-auth-interop:18.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/75b6407549afdd470099bc8214b3169d/jetified-firebase-auth-interop-18.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-auth-interop:18.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/75b6407549afdd470099bc8214b3169d/jetified-firebase-auth-interop-18.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/1247f4468350022b2f656866791d6ee8/jetified-firebase-auth-interop-19.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:19.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/1247f4468350022b2f656866791d6ee8/jetified-firebase-auth-interop-19.0.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-installations:16.3.2] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f0b00889921a96d4f9e7092a239bf26d/jetified-firebase-installations-16.3.2/AndroidManifest.xml:6:5-8:41
 MERGED from [com.google.firebase:firebase-installations:16.3.2] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f0b00889921a96d4f9e7092a239bf26d/jetified-firebase-installations-16.3.2/AndroidManifest.xml:6:5-8:41
 MERGED from [com.google.firebase:firebase-common:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5ad83460d584eee98c0d9efe22603e35/jetified-firebase-common-19.3.1/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-common:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5ad83460d584eee98c0d9efe22603e35/jetified-firebase-common-19.3.1/AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3651a3ec2d53ef1d9bab0b7938b8d877/jetified-play-services-base-17.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3651a3ec2d53ef1d9bab0b7938b8d877/jetified-play-services-base-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-database-collection:17.0.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/660c6df06c03c2d6d247e136c01e4695/jetified-firebase-database-collection-17.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-database-collection:17.0.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/660c6df06c03c2d6d247e136c01e4695/jetified-firebase-database-collection-17.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-base:17.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/618a1efc5e11d464598ccb21967ea089/jetified-play-services-base-17.1.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:17.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/618a1efc5e11d464598ccb21967ea089/jetified-play-services-base-17.1.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-installations-interop:16.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/d01fa0ed986602e129295cee3def50bd/jetified-firebase-installations-interop-16.0.0/AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-installations-interop:16.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/d01fa0ed986602e129295cee3def50bd/jetified-firebase-installations-interop-16.0.0/AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f5cb09b5c9732a776e78096f1b8bca96/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
@@ -312,6 +373,8 @@ MERGED from [androidx.fragment:fragment:1.1.0] /home/arikzil/.gradle/caches/tran
 MERGED from [androidx.fragment:fragment:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/1c94c2bf2df798aa5386207320ae15fa/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/ef807656b6fa8a4c6e325c59316681a6/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/ef807656b6fa8a4c6e325c59316681a6/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9abea4cbc974027e13f2b5bdcdcb35b8/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9abea4cbc974027e13f2b5bdcdcb35b8/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/cb7b51291297f70eb7a12bdfb0bae54c/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/cb7b51291297f70eb7a12bdfb0bae54c/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5db6fff49be7e6576513717a70705cd2/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
@@ -332,8 +395,16 @@ MERGED from [androidx.activity:activity:1.0.0] /home/arikzil/.gradle/caches/tran
 MERGED from [androidx.activity:activity:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f5d8f5f196b5a1a39490ff5fa88856c7/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/12cc6b7f126f389c8fc0b5886ea018cc/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/12cc6b7f126f389c8fc0b5886ea018cc/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/8251b6cb57b37fb309d1cc86742f3af7/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/8251b6cb57b37fb309d1cc86742f3af7/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/c883d775ac60b905d11c019de031ec8f/customview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/c883d775ac60b905d11c019de031ec8f/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/7b6af153456f815663ac74954cd31841/media-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/7b6af153456f815663ac74954cd31841/media-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/003bf4878feff5258679cce727a2dd65/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/003bf4878feff5258679cce727a2dd65/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/69a04d0520cb9b3c86367c49e44facc5/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/69a04d0520cb9b3c86367c49e44facc5/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/39cd6650910a623ebcaf416004637f6a/core-1.3.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core:1.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/39cd6650910a623ebcaf416004637f6a/core-1.3.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/becb8462140fc6875fb459cd36afaa51/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
@@ -344,8 +415,16 @@ MERGED from [com.google.firebase:firebase-components:16.0.0] /home/arikzil/.grad
 MERGED from [com.google.firebase:firebase-components:16.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/fec275e306654f04042d3b8c17fca90b/jetified-firebase-components-16.0.0/AndroidManifest.xml:19:5-21:41
 MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/fead61848d97343fd410cffe83d12077/jetified-gifdecoder-4.8.0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/fead61848d97343fd410cffe83d12077/jetified-gifdecoder-4.8.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.squareup.picasso:picasso:2.71828] /home/arikzil/.gradle/caches/transforms-2/files-2.1/281285e6a0b868425864396668808cda/jetified-picasso-2.71828/AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.picasso:picasso:2.71828] /home/arikzil/.gradle/caches/transforms-2/files-2.1/281285e6a0b868425864396668808cda/jetified-picasso-2.71828/AndroidManifest.xml:5:5-44
+MERGED from [com.firebaseui:firebase-ui-common:6.2.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/158bc9ad6d87a2cd3c06b4c834bdb241/jetified-firebase-ui-common-6.2.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.firebaseui:firebase-ui-common:6.2.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/158bc9ad6d87a2cd3c06b4c834bdb241/jetified-firebase-ui-common-6.2.1/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/63974e2c7516a1371e8e8c3d57a48a04/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/63974e2c7516a1371e8e8c3d57a48a04/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/fbf97a8b835c0493500f0ad4130aaa5e/exifinterface-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/fbf97a8b835c0493500f0ad4130aaa5e/exifinterface-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f6314127f631e92461f3c37ffaa8d4f1/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f6314127f631e92461f3c37ffaa8d4f1/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/ee6924f11898543591c0cb6e47df09b0/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/ee6924f11898543591c0cb6e47df09b0/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/58bd39fcda76819db7ca9b33587c8743/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
@@ -354,24 +433,26 @@ MERGED from [androidx.savedstate:savedstate:1.0.0] /home/arikzil/.gradle/caches/
 MERGED from [androidx.savedstate:savedstate:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/b9ff6ac6a42e41c7d82c3e03b094e82c/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/aae1e8d555fe1a35e4692f2ccc1bb4c5/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/aae1e8d555fe1a35e4692f2ccc1bb4c5/interpolator-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.documentfile:documentfile:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cb07ad8bfca9469c385cb8e8a54bc52/documentfile-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.documentfile:documentfile:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cb07ad8bfca9469c385cb8e8a54bc52/documentfile-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f6314127f631e92461f3c37ffaa8d4f1/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f6314127f631e92461f3c37ffaa8d4f1/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.print:print:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/174ce77f93937bfb762eccd6e6fd35da/print-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.print:print:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/174ce77f93937bfb762eccd6e6fd35da/print-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f6a8296b4f34691eb6a04c73ec8962ed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f6a8296b4f34691eb6a04c73ec8962ed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/0732d31f81900d38e6e6566654d5bce7/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/0732d31f81900d38e6e6566654d5bce7/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f3fa14cd01467ba2759e31b6b34821e5/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f3fa14cd01467ba2759e31b6b34821e5/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cb07ad8bfca9469c385cb8e8a54bc52/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cb07ad8bfca9469c385cb8e8a54bc52/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/174ce77f93937bfb762eccd6e6fd35da/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/174ce77f93937bfb762eccd6e6fd35da/print-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5a503d2422275b5aaaa43762687ddf41/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5a503d2422275b5aaaa43762687ddf41/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.ar.sceneform:sceneform-base:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/21efb959d4f7dab8db7a016e898683dc/jetified-sceneform-base-1.17.1/AndroidManifest.xml:5:5-44
 MERGED from [com.google.ar.sceneform:sceneform-base:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/21efb959d4f7dab8db7a016e898683dc/jetified-sceneform-base-1.17.1/AndroidManifest.xml:5:5-44
 MERGED from [com.google.ar.sceneform:filament-android:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/4b183ac08355e0b72ed22c79e455a456/jetified-filament-android-1.17.1/AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.ar.sceneform:filament-android:1.17.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/4b183ac08355e0b72ed22c79e455a456/jetified-filament-android-1.17.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:protolite-well-known-types:17.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/e57f925dbed2da1e75fcd7f4c8a428b5/jetified-protolite-well-known-types-17.1.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:protolite-well-known-types:17.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/e57f925dbed2da1e75fcd7f4c8a428b5/jetified-protolite-well-known-types-17.1.0/AndroidManifest.xml:7:5-9:41
+MERGED from [io.grpc:grpc-android:1.28.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/385d438f9fd6502f1320b333d50a6824/jetified-grpc-android-1.28.0/AndroidManifest.xml:7:5-9:41
+MERGED from [io.grpc:grpc-android:1.28.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/385d438f9fd6502f1320b333d50a6824/jetified-grpc-android-1.28.0/AndroidManifest.xml:7:5-9:41
 INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
 INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
@@ -384,10 +465,20 @@ INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
 		INJECTED from /home/arikzil/couch-mirage/app/src/main/AndroidManifest.xml
 service#com.google.firebase.components.ComponentDiscoveryService
 ADDED from [com.google.firebase:firebase-storage-ktx:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/0e4ec124ff6f01884b9e96b71d5eb8a6/jetified-firebase-storage-ktx-19.2.0/AndroidManifest.xml:12:9-18:19
+MERGED from [com.google.firebase:firebase-analytics-ktx:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3505da215a7373158e5644c60092d32a/jetified-firebase-analytics-ktx-17.5.0/AndroidManifest.xml:8:9-14:19
+MERGED from [com.google.firebase:firebase-analytics-ktx:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3505da215a7373158e5644c60092d32a/jetified-firebase-analytics-ktx-17.5.0/AndroidManifest.xml:8:9-14:19
+MERGED from [com.google.firebase:firebase-auth-ktx:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/4ea8ba7030cea55b690eb44e89d760bc/jetified-firebase-auth-ktx-19.4.0/AndroidManifest.xml:8:9-14:19
+MERGED from [com.google.firebase:firebase-auth-ktx:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/4ea8ba7030cea55b690eb44e89d760bc/jetified-firebase-auth-ktx-19.4.0/AndroidManifest.xml:8:9-14:19
+MERGED from [com.google.firebase:firebase-firestore-ktx:21.6.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9962b931acad1581312522741ff6eef2/jetified-firebase-firestore-ktx-21.6.0/AndroidManifest.xml:12:9-18:19
+MERGED from [com.google.firebase:firebase-firestore-ktx:21.6.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9962b931acad1581312522741ff6eef2/jetified-firebase-firestore-ktx-21.6.0/AndroidManifest.xml:12:9-18:19
 MERGED from [com.google.firebase:firebase-common-ktx:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3cbd29216ac7f218df558e9362c2cf88/jetified-firebase-common-ktx-19.3.1/AndroidManifest.xml:12:9-18:19
 MERGED from [com.google.firebase:firebase-common-ktx:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3cbd29216ac7f218df558e9362c2cf88/jetified-firebase-common-ktx-19.3.1/AndroidManifest.xml:12:9-18:19
+MERGED from [com.google.firebase:firebase-auth:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9a785c63d004be19866e8a0b8808a6d6/jetified-firebase-auth-19.4.0/AndroidManifest.xml:33:9-39:19
+MERGED from [com.google.firebase:firebase-auth:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9a785c63d004be19866e8a0b8808a6d6/jetified-firebase-auth-19.4.0/AndroidManifest.xml:33:9-39:19
 MERGED from [com.google.firebase:firebase-storage:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/15c7b565a6d641c5447020fd8ebadfe5/jetified-firebase-storage-19.2.0/AndroidManifest.xml:30:9-36:19
 MERGED from [com.google.firebase:firebase-storage:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/15c7b565a6d641c5447020fd8ebadfe5/jetified-firebase-storage-19.2.0/AndroidManifest.xml:30:9-36:19
+MERGED from [com.google.firebase:firebase-firestore:21.6.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/56b9d5f76d8c05d935c577515b8b4517/jetified-firebase-firestore-21.6.0/AndroidManifest.xml:17:9-23:19
+MERGED from [com.google.firebase:firebase-firestore:21.6.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/56b9d5f76d8c05d935c577515b8b4517/jetified-firebase-firestore-21.6.0/AndroidManifest.xml:17:9-23:19
 MERGED from [com.google.android.gms:play-services-measurement-api:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/96661ef1c479879a63c69d6e5cfab331/jetified-play-services-measurement-api-17.5.0/AndroidManifest.xml:27:9-33:19
 MERGED from [com.google.android.gms:play-services-measurement-api:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/96661ef1c479879a63c69d6e5cfab331/jetified-play-services-measurement-api-17.5.0/AndroidManifest.xml:27:9-33:19
 MERGED from [com.google.firebase:firebase-installations:16.3.2] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f0b00889921a96d4f9e7092a239bf26d/jetified-firebase-installations-16.3.2/AndroidManifest.xml:14:9-20:19
@@ -408,6 +499,24 @@ ADDED from [com.google.firebase:firebase-storage-ktx:19.2.0] /home/arikzil/.grad
 		ADDED from [com.google.firebase:firebase-storage-ktx:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/0e4ec124ff6f01884b9e96b71d5eb8a6/jetified-firebase-storage-ktx-19.2.0/AndroidManifest.xml:17:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-storage-ktx:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/0e4ec124ff6f01884b9e96b71d5eb8a6/jetified-firebase-storage-ktx-19.2.0/AndroidManifest.xml:16:17-122
+meta-data#com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsKtxRegistrar
+ADDED from [com.google.firebase:firebase-analytics-ktx:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3505da215a7373158e5644c60092d32a/jetified-firebase-analytics-ktx-17.5.0/AndroidManifest.xml:11:13-13:85
+	android:value
+		ADDED from [com.google.firebase:firebase-analytics-ktx:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3505da215a7373158e5644c60092d32a/jetified-firebase-analytics-ktx-17.5.0/AndroidManifest.xml:13:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics-ktx:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3505da215a7373158e5644c60092d32a/jetified-firebase-analytics-ktx-17.5.0/AndroidManifest.xml:12:17-126
+meta-data#com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthKtxRegistrar
+ADDED from [com.google.firebase:firebase-auth-ktx:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/4ea8ba7030cea55b690eb44e89d760bc/jetified-firebase-auth-ktx-19.4.0/AndroidManifest.xml:11:13-13:85
+	android:value
+		ADDED from [com.google.firebase:firebase-auth-ktx:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/4ea8ba7030cea55b690eb44e89d760bc/jetified-firebase-auth-ktx-19.4.0/AndroidManifest.xml:13:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-auth-ktx:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/4ea8ba7030cea55b690eb44e89d760bc/jetified-firebase-auth-ktx-19.4.0/AndroidManifest.xml:12:17-116
+meta-data#com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreKtxRegistrar
+ADDED from [com.google.firebase:firebase-firestore-ktx:21.6.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9962b931acad1581312522741ff6eef2/jetified-firebase-firestore-ktx-21.6.0/AndroidManifest.xml:15:13-17:85
+	android:value
+		ADDED from [com.google.firebase:firebase-firestore-ktx:21.6.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9962b931acad1581312522741ff6eef2/jetified-firebase-firestore-ktx-21.6.0/AndroidManifest.xml:17:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-firestore-ktx:21.6.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9962b931acad1581312522741ff6eef2/jetified-firebase-firestore-ktx-21.6.0/AndroidManifest.xml:16:17-126
 meta-data#com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar
 ADDED from [com.google.firebase:firebase-common-ktx:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3cbd29216ac7f218df558e9362c2cf88/jetified-firebase-common-ktx-19.3.1/AndroidManifest.xml:15:13-17:85
 	android:value
@@ -440,8 +549,32 @@ ADDED from [com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2
 		ADDED from [com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cdc78d7f8414118ef255956bbff5857/jetified-core-1.19.0/AndroidManifest.xml:46:13-77
 	android:name
 		ADDED from [com.google.ar:core:1.19.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9cdc78d7f8414118ef255956bbff5857/jetified-core-1.19.0/AndroidManifest.xml:41:13-62
+activity#com.google.firebase.auth.internal.FederatedSignInActivity
+ADDED from [com.google.firebase:firebase-auth:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9a785c63d004be19866e8a0b8808a6d6/jetified-firebase-auth-19.4.0/AndroidManifest.xml:24:9-31:50
+	android:excludeFromRecents
+		ADDED from [com.google.firebase:firebase-auth:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9a785c63d004be19866e8a0b8808a6d6/jetified-firebase-auth-19.4.0/AndroidManifest.xml:26:13-46
+	android:launchMode
+		ADDED from [com.google.firebase:firebase-auth:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9a785c63d004be19866e8a0b8808a6d6/jetified-firebase-auth-19.4.0/AndroidManifest.xml:28:13-44
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9a785c63d004be19866e8a0b8808a6d6/jetified-firebase-auth-19.4.0/AndroidManifest.xml:27:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-auth:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9a785c63d004be19866e8a0b8808a6d6/jetified-firebase-auth-19.4.0/AndroidManifest.xml:29:13-102
+	android:theme
+		ADDED from [com.google.firebase:firebase-auth:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9a785c63d004be19866e8a0b8808a6d6/jetified-firebase-auth-19.4.0/AndroidManifest.xml:30:13-72
+	tools:replace
+		ADDED from [com.google.firebase:firebase-auth:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9a785c63d004be19866e8a0b8808a6d6/jetified-firebase-auth-19.4.0/AndroidManifest.xml:31:13-47
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9a785c63d004be19866e8a0b8808a6d6/jetified-firebase-auth-19.4.0/AndroidManifest.xml:25:13-85
+meta-data#com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar
+ADDED from [com.google.firebase:firebase-auth:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9a785c63d004be19866e8a0b8808a6d6/jetified-firebase-auth-19.4.0/AndroidManifest.xml:36:13-38:85
+	android:value
+		ADDED from [com.google.firebase:firebase-auth:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9a785c63d004be19866e8a0b8808a6d6/jetified-firebase-auth-19.4.0/AndroidManifest.xml:38:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:19.4.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9a785c63d004be19866e8a0b8808a6d6/jetified-firebase-auth-19.4.0/AndroidManifest.xml:37:17-109
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.firebase:firebase-storage:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/15c7b565a6d641c5447020fd8ebadfe5/jetified-firebase-storage-19.2.0/AndroidManifest.xml:26:5-79
+MERGED from [com.google.firebase:firebase-firestore:21.6.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/56b9d5f76d8c05d935c577515b8b4517/jetified-firebase-firestore-21.6.0/AndroidManifest.xml:13:5-79
+MERGED from [com.google.firebase:firebase-firestore:21.6.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/56b9d5f76d8c05d935c577515b8b4517/jetified-firebase-firestore-21.6.0/AndroidManifest.xml:13:5-79
 MERGED from [com.google.android.gms:play-services-measurement-api:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/96661ef1c479879a63c69d6e5cfab331/jetified-play-services-measurement-api-17.5.0/AndroidManifest.xml:23:5-79
 MERGED from [com.google.android.gms:play-services-measurement-api:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/96661ef1c479879a63c69d6e5cfab331/jetified-play-services-measurement-api-17.5.0/AndroidManifest.xml:23:5-79
 MERGED from [com.google.firebase:firebase-installations:16.3.2] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f0b00889921a96d4f9e7092a239bf26d/jetified-firebase-installations-16.3.2/AndroidManifest.xml:10:5-79
@@ -452,6 +585,8 @@ MERGED from [com.google.android.gms:play-services-measurement-impl:17.5.0] /home
 MERGED from [com.google.android.gms:play-services-measurement-impl:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9bb23782480b01cb3ce3158cbd5e9114/jetified-play-services-measurement-impl-17.5.0/AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/66193ddba9d84add3f04a31b39a1e15b/jetified-play-services-measurement-sdk-api-17.5.0/AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/66193ddba9d84add3f04a31b39a1e15b/jetified-play-services-measurement-sdk-api-17.5.0/AndroidManifest.xml:24:5-79
+MERGED from [io.grpc:grpc-android:1.28.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/385d438f9fd6502f1320b333d50a6824/jetified-grpc-android-1.28.0/AndroidManifest.xml:11:5-79
+MERGED from [io.grpc:grpc-android:1.28.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/385d438f9fd6502f1320b333d50a6824/jetified-grpc-android-1.28.0/AndroidManifest.xml:11:5-79
 	android:name
 		ADDED from [com.google.firebase:firebase-storage:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/15c7b565a6d641c5447020fd8ebadfe5/jetified-firebase-storage-19.2.0/AndroidManifest.xml:26:22-76
 meta-data#com.google.firebase.components:com.google.firebase.storage.StorageRegistrar
@@ -460,6 +595,12 @@ ADDED from [com.google.firebase:firebase-storage:19.2.0] /home/arikzil/.gradle/c
 		ADDED from [com.google.firebase:firebase-storage:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/15c7b565a6d641c5447020fd8ebadfe5/jetified-firebase-storage-19.2.0/AndroidManifest.xml:35:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-storage:19.2.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/15c7b565a6d641c5447020fd8ebadfe5/jetified-firebase-storage-19.2.0/AndroidManifest.xml:34:17-107
+meta-data#com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar
+ADDED from [com.google.firebase:firebase-firestore:21.6.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/56b9d5f76d8c05d935c577515b8b4517/jetified-firebase-firestore-21.6.0/AndroidManifest.xml:20:13-22:85
+	android:value
+		ADDED from [com.google.firebase:firebase-firestore:21.6.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/56b9d5f76d8c05d935c577515b8b4517/jetified-firebase-firestore-21.6.0/AndroidManifest.xml:22:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-firestore:21.6.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/56b9d5f76d8c05d935c577515b8b4517/jetified-firebase-firestore-21.6.0/AndroidManifest.xml:21:17-111
 uses-permission#android.permission.WAKE_LOCK
 ADDED from [com.google.android.gms:play-services-measurement-api:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/96661ef1c479879a63c69d6e5cfab331/jetified-play-services-measurement-api-17.5.0/AndroidManifest.xml:24:5-68
 MERGED from [com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:25:5-68
@@ -495,13 +636,13 @@ ADDED from [com.google.firebase:firebase-common:19.3.1] /home/arikzil/.gradle/ca
 	android:name
 		ADDED from [com.google.firebase:firebase-common:19.3.1] /home/arikzil/.gradle/caches/transforms-2/files-2.1/5ad83460d584eee98c0d9efe22603e35/jetified-firebase-common-19.3.1/AndroidManifest.xml:27:13-77
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3651a3ec2d53ef1d9bab0b7938b8d877/jetified-play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+ADDED from [com.google.android.gms:play-services-base:17.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/618a1efc5e11d464598ccb21967ea089/jetified-play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3651a3ec2d53ef1d9bab0b7938b8d877/jetified-play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+		ADDED from [com.google.android.gms:play-services-base:17.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/618a1efc5e11d464598ccb21967ea089/jetified-play-services-base-17.1.0/AndroidManifest.xml:25:13-37
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3651a3ec2d53ef1d9bab0b7938b8d877/jetified-play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+		ADDED from [com.google.android.gms:play-services-base:17.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/618a1efc5e11d464598ccb21967ea089/jetified-play-services-base-17.1.0/AndroidManifest.xml:26:13-72
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/3651a3ec2d53ef1d9bab0b7938b8d877/jetified-play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+		ADDED from [com.google.android.gms:play-services-base:17.1.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/618a1efc5e11d464598ccb21967ea089/jetified-play-services-base-17.1.0/AndroidManifest.xml:24:13-79
 uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
 ADDED from [com.google.android.gms:play-services-measurement:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/f384843b7b57dbcc7f49fbf80a66fbde/jetified-play-services-measurement-17.5.0/AndroidManifest.xml:26:5-110
 MERGED from [com.google.android.gms:play-services-measurement-impl:17.5.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/9bb23782480b01cb3ce3158cbd5e9114/jetified-play-services-measurement-impl-17.5.0/AndroidManifest.xml:26:5-110
@@ -540,3 +681,11 @@ ADDED from [com.google.android.gms:play-services-basement:17.0.0] /home/arikzil/
 		ADDED from [com.google.android.gms:play-services-basement:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/52faba9891f7b60cb957d5c7a38d4e31/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
 	android:name
 		ADDED from [com.google.android.gms:play-services-basement:17.0.0] /home/arikzil/.gradle/caches/transforms-2/files-2.1/52faba9891f7b60cb957d5c7a38d4e31/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+provider#com.squareup.picasso.PicassoProvider
+ADDED from [com.squareup.picasso:picasso:2.71828] /home/arikzil/.gradle/caches/transforms-2/files-2.1/281285e6a0b868425864396668808cda/jetified-picasso-2.71828/AndroidManifest.xml:8:9-11:40
+	android:authorities
+		ADDED from [com.squareup.picasso:picasso:2.71828] /home/arikzil/.gradle/caches/transforms-2/files-2.1/281285e6a0b868425864396668808cda/jetified-picasso-2.71828/AndroidManifest.xml:10:13-72
+	android:exported
+		ADDED from [com.squareup.picasso:picasso:2.71828] /home/arikzil/.gradle/caches/transforms-2/files-2.1/281285e6a0b868425864396668808cda/jetified-picasso-2.71828/AndroidManifest.xml:11:13-37
+	android:name
+		ADDED from [com.squareup.picasso:picasso:2.71828] /home/arikzil/.gradle/caches/transforms-2/files-2.1/281285e6a0b868425864396668808cda/jetified-picasso-2.71828/AndroidManifest.xml:9:13-64

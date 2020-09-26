@@ -19,7 +19,6 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.ar.core.Anchor
 import com.google.ar.core.HitResult
@@ -723,7 +722,6 @@ class OpenCameraActivity : AppCompatActivity() {
         var toast = Toasty.success(this, "Shape was measured!", Toast.LENGTH_SHORT, true)
 
         toast.setGravity(toast.gravity, toast.xOffset, toast.yOffset + 70)
-
         toast.show();
     }
 
@@ -737,10 +735,8 @@ class OpenCameraActivity : AppCompatActivity() {
 
 
     private fun openSearchDialog() {
-
-        val dialog = FullScreenDialog()
-        val ft: FragmentTransaction = supportFragmentManager.beginTransaction()
-        dialog.show(ft, FullScreenDialog.TAG)
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 
     // TODO:: finish it

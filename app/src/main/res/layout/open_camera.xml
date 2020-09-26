@@ -24,11 +24,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <include layout="@layout/camera_bottom_scale" />
 
     <include layout="@layout/camera_bottom_panel" />
-
 
     <include layout="@layout/camera_loading_animation" />
 

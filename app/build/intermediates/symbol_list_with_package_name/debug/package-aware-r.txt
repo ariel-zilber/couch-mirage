@@ -30,6 +30,11 @@ anim design_snackbar_out
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
+anim slide_in
+anim slide_in_left
+anim slide_in_right
+anim slide_out_left
+anim slide_out_right
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -429,6 +434,16 @@ attr isb_track_progress_color
 attr isb_track_progress_size
 attr isb_track_rounded_corners
 attr isb_user_seekable
+attr iss_auto_cycle
+attr iss_corner_radius
+attr iss_delay
+attr iss_error_image
+attr iss_period
+attr iss_placeholder
+attr iss_selected_dot
+attr iss_text_align
+attr iss_title_background
+attr iss_unselected_dot
 attr itemBackground
 attr itemFillColor
 attr itemHorizontalPadding
@@ -945,6 +960,7 @@ color fab_color_pressed
 color fab_color_shadow
 color foreground_material_dark
 color foreground_material_light
+color grey_font
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color ic_launcher_background
@@ -957,6 +973,7 @@ color info_ripple_red
 color info_ripple_yellow
 color isb_selector_tick_marks_color
 color isb_selector_tick_texts_color
+color light_font
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1039,6 +1056,7 @@ color mtrl_textinput_hovered_box_stroke_color
 color normalColor
 color notification_action_color_filter
 color notification_icon_bg_color
+color notification_material_background_media_default_color
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -1066,6 +1084,8 @@ color switch_thumb_normal_material_light
 color test_mtrl_calendar_day
 color test_mtrl_calendar_day_selected
 color text_like_counter
+color text_shadow
+color text_shadow_white
 color tooltip_background_dark
 color tooltip_background_light
 color warningColor
@@ -1413,6 +1433,10 @@ dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
 dimen publish_photo_thumbnail_size
+dimen subtitle_corner_radius
+dimen subtitle_outline_width
+dimen subtitle_shadow_offset
+dimen subtitle_shadow_radius
 dimen test_mtrl_calendar_day_cornerSize
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
@@ -1544,6 +1568,8 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable default_selected_dot
+drawable default_unselected_dot
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1552,28 +1578,47 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable desk
 drawable done_green_32
+drawable error
 drawable fab
+drawable favorite_img_4
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable gradient
+drawable ic_3d_cube
+drawable ic_3d_model
+drawable ic_arrow_back_white_24dp
+drawable ic_arrow_forward_black_24dp
+drawable ic_arrow_forward_white_24dp
 drawable ic_camera
+drawable ic_camera_rear_white_24dp
 drawable ic_check_white_24dp
 drawable ic_clear_white_24dp
+drawable ic_close_white_24dp
+drawable ic_collections_white_24dp
+drawable ic_edit_white_24dp
 drawable ic_error_outline_white_24dp
+drawable ic_grid_on_white
+drawable ic_grid_on_white_24dp
 drawable ic_info
 drawable ic_info_first_stage
 drawable ic_info_outline_white_24dp
 drawable ic_info_second_stage
 drawable ic_info_third_stage
+drawable ic_keyboard_arrow_left_white_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_question
 drawable ic_videocam
+drawable ic_videocam_white_24dp
 drawable isb_indicator_rounded_corners
 drawable isb_indicator_square_corners
 drawable line_small_12
+drawable loading
+drawable logo_circular
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
 drawable material_ic_edit_black_24dp
@@ -1581,6 +1626,7 @@ drawable material_ic_keyboard_arrow_left_black_24dp
 drawable material_ic_keyboard_arrow_right_black_24dp
 drawable material_ic_menu_arrow_down_black_24dp
 drawable material_ic_menu_arrow_up_black_24dp
+drawable minus_48
 drawable minus_green_48
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
@@ -1604,12 +1650,18 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable placeholder
+drawable plus_48
 drawable plus_green_48
 drawable popup_background
 drawable question_black
+drawable ruler_24
 drawable ruler_green_32
+drawable ruler_white_24
+drawable ruler_white_32
 drawable sceneform_hand_phone
 drawable sceneform_plane
+drawable search_24
 drawable search_green_32
 drawable shape_rect_blue
 drawable shape_rect_white
@@ -1617,6 +1669,7 @@ drawable test_custom_background
 drawable toast_frame
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+font calibri
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -1663,6 +1716,7 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
+id action0
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -1700,7 +1754,9 @@ id bottom
 id bottomPanel
 id button
 id buttonPanel
+id cancel_action
 id cancel_button
+id category_title
 id center
 id center_horizontal
 id center_vertical
@@ -1735,6 +1791,8 @@ id decor_content_parent
 id default_activity_button
 id department_img
 id department_name
+id description
+id description_title
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1748,6 +1806,7 @@ id divider
 id dropdown_menu
 id edit_query
 id end
+id end_padder
 id enterAlways
 id enterAlwaysCollapsed
 id exitUntilCollapsed
@@ -1771,6 +1830,7 @@ id ghost_view
 id ghost_view_holder
 id glide_custom_view_target_tag
 id gone
+id goto_store_button
 id group_divider
 id groups
 id hardware
@@ -1783,6 +1843,8 @@ id icon_only
 id ifRoom
 id image
 id imageView
+id imageView2
+id image_view
 id inc_height
 id indicator_arrow
 id indicator_container
@@ -1790,6 +1852,11 @@ id info
 id invisible
 id isb_progress
 id italic
+id item_color
+id item_images_slider
+id item_img
+id item_name
+id item_price
 id item_touch_helper_previous_elevation
 id ivThumbnail
 id labeled
@@ -1798,13 +1865,16 @@ id left
 id light
 id line1
 id line3
+id linear_layout
 id listMode
 id list_item
 id lottie_layer_name
 id masked
+id media_actions
 id message
 id middle
 id mini
+id model_title
 id monospace
 id month_grid
 id month_navigation_bar
@@ -1847,6 +1917,7 @@ id on
 id outline
 id oval
 id packed
+id pager_dots
 id parallax
 id parent
 id parentPanel
@@ -1855,6 +1926,7 @@ id password_toggle
 id peekHeight
 id percent
 id pin
+id price_text
 id progress_circular
 id progress_horizontal
 id radio
@@ -1881,6 +1953,7 @@ id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
+id scrollView2
 id scrollable
 id search_badge
 id search_bar
@@ -1919,6 +1992,7 @@ id src_in
 id src_over
 id standard
 id start
+id status_bar_latest_event_content
 id stretch
 id submenuarrow
 id submit_area
@@ -1945,6 +2019,7 @@ id textView
 id textView2
 id text_input_end_icon
 id text_input_start_icon
+id text_view
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -1966,6 +2041,7 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id try_3d_model
 id tvTitle
 id unchecked
 id uniform
@@ -1973,6 +2049,7 @@ id unlabeled
 id up
 id useLogo
 id view_offset_helper
+id view_pager
 id visible
 id wide
 id withText
@@ -2048,6 +2125,7 @@ layout camera_bottom_scale
 layout camera_loading_animation
 layout camera_top_panel
 layout custom_dialog
+layout departement_items_gallery_layout
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -2068,8 +2146,13 @@ layout distance_card_layout
 layout frame_layout
 layout hand_layout
 layout height_distance_card_layout
+layout image_slider
 layout isb_indicator
+layout item_details_activity
+layout items_loading_animation
 layout layout_department_list_item
+layout layout_department_single_list_item
+layout layout_single_list_item
 layout measurment_item_model
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
@@ -2101,11 +2184,21 @@ layout mtrl_picker_text_input_date
 layout mtrl_picker_text_input_date_range
 layout notification_action
 layout notification_action_tombstone
+layout notification_media_action
+layout notification_media_cancel_action
+layout notification_template_big_media
+layout notification_template_big_media_custom
+layout notification_template_big_media_narrow
+layout notification_template_big_media_narrow_custom
 layout notification_template_custom_big
 layout notification_template_icon_group
+layout notification_template_lines_media
+layout notification_template_media
+layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout open_camera
+layout pager_row
 layout sceneform_plane_discovery_layout
 layout sceneform_ux_fragment_layout
 layout select_dialog_item_material
@@ -2136,6 +2229,7 @@ plurals mtrl_badge_content_description
 raw andy
 raw keep_arcore
 raw layer_2
+raw layer_3
 raw sceneform_camera_material
 raw sceneform_default_light_probe
 raw sceneform_face_mesh
@@ -2226,6 +2320,7 @@ string green_advise_2
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
+string left
 string lib_name
 string material_slider_range_end
 string material_slider_range_start
@@ -2644,9 +2739,14 @@ style TextAppearance_AppCompat_Widget_Switch
 style TextAppearance_AppCompat_Widget_TextView_SpinnerItem
 style TextAppearance_Compat_Notification
 style TextAppearance_Compat_Notification_Info
+style TextAppearance_Compat_Notification_Info_Media
 style TextAppearance_Compat_Notification_Line2
+style TextAppearance_Compat_Notification_Line2_Media
+style TextAppearance_Compat_Notification_Media
 style TextAppearance_Compat_Notification_Time
+style TextAppearance_Compat_Notification_Time_Media
 style TextAppearance_Compat_Notification_Title
+style TextAppearance_Compat_Notification_Title_Media
 style TextAppearance_Design_CollapsingToolbar_Expanded
 style TextAppearance_Design_Counter
 style TextAppearance_Design_Counter_Overflow
@@ -3031,6 +3131,7 @@ styleable FontFamilyFont android_font android_fontWeight android_fontStyle andro
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
+styleable ImageSlider iss_auto_cycle iss_corner_radius iss_delay iss_error_image iss_period iss_placeholder iss_selected_dot iss_text_align iss_title_background iss_unselected_dot
 styleable IndicatorSeekBar isb_clear_default_padding isb_indicator_color isb_indicator_content_layout isb_indicator_text_color isb_indicator_text_size isb_indicator_top_content_layout isb_max isb_min isb_only_thumb_draggable isb_progress isb_progress_value_float isb_r2l isb_seek_smoothly isb_show_indicator isb_show_thumb_text isb_show_tick_marks_type isb_show_tick_texts isb_thumb_adjust_auto isb_thumb_color isb_thumb_drawable isb_thumb_size isb_thumb_text_color isb_tick_marks_color isb_tick_marks_drawable isb_tick_marks_ends_hide isb_tick_marks_size isb_tick_marks_swept_hide isb_tick_texts_array isb_tick_texts_color isb_tick_texts_size isb_tick_texts_typeface isb_ticks_count isb_track_background_color isb_track_background_size isb_track_progress_color isb_track_progress_size isb_track_rounded_corners isb_user_seekable
 styleable Insets paddingBottomSystemWindowInsets paddingLeftSystemWindowInsets paddingRightSystemWindowInsets
 styleable LinearConstraintLayout android_orientation
