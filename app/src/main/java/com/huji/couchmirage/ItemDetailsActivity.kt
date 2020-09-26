@@ -64,7 +64,7 @@ class ItemDetailsActivity : AppCompatActivity() {
             val browserIntent =
                 Intent(
                     Intent.ACTION_VIEW,
-                    Uri.parse("https://www.ikea.co.il/catalogue/Workspaces/Home_work_chairs/20339420")
+                    Uri.parse(currentItem.source)
                 )
             startActivity(browserIntent)
         }

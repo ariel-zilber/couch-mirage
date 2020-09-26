@@ -11,7 +11,8 @@ data class SingleItem(
     var images: List<String?>,
     var model: String?,
     var price: Int?,
-    var sizes: List<Long?>
+    var sizes: List<Long?>,
+    var source: String?
 ) : Serializable {
     constructor() : this(
         category = null,
@@ -20,7 +21,8 @@ data class SingleItem(
         images = listOf<String?>(),
         model = null,
         price = null,
-        sizes = listOf<Long?>()
+        sizes = listOf<Long?>(),
+        source=null
     )
 
 
