@@ -10,30 +10,16 @@ import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import kotlinx.android.synthetic.main.item_details_activity.view.*
 import kotlinx.android.synthetic.main.layout_single_list_item.view.*
+import org.w3c.dom.Text
 
 class ItemRecyclerAdapter(
     private var listener: OnItemClickListen
-) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+)   : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
     var items: ArrayList<SingleItem> = ArrayList()
 
-    private val liveDataList: MutableLiveData<ArrayList<SingleItem>> = MutableLiveData()
-
-    fun getLiveData(): LiveData<ArrayList<SingleItem>> {
-        return liveDataList
-    }
-    fun getMutableLiveData(): MutableLiveData<ArrayList<SingleItem>> {
-        return liveDataList
-    }
-
-    fun addSingleItem(singleItem: SingleItem) {
-        items.add(singleItem)
-        liveDataList.value = items
-    }
-
-    fun getItemList(): List<SingleItem> {
-        return items
-    }
 
     fun setItemList(itemList: ArrayList<SingleItem>) {
         items = itemList
@@ -48,10 +34,7 @@ class ItemRecyclerAdapter(
             .inflate(R.layout.layout_single_list_item, parent, false)
         val viewHol = ItemViewHolder(textView)
         textView.setOnClickListener { v ->
-            listener.onItemClick(
-                v,
-                viewHol.layoutPosition
-            )
+            listener.onItemClick(v, viewHol.layoutPosition)
         }
 
         return viewHol
@@ -71,9 +54,13 @@ class ItemRecyclerAdapter(
 
         private val itemImg: ImageView = itemView.item_img
         private val itemName: TextView = itemView.item_name
-
+        private val itemPrice: TextView = itemView.item_price
+        private val itemColor: TextView = itemView.item_color
+//        private val itemDetails: TextView = itemView.item_color
         fun bind(item: SingleItem) {
             itemName.text = item.model
+            itemColor.text = item.color
+            itemPrice.text = item.price.toString() + "₪"
             val requestOptions = RequestOptions()
                 .placeholder(R.drawable.ic_launcher_background)
                 .error(R.drawable.ic_launcher_background)
@@ -103,11 +90,27 @@ class ItemRecyclerAdapter(
             return items.size
         }
     }
-
-
 }
 
 interface OnItemClickListen {
     fun onItemClick(view: View, position: Int)
 }
 
+
+//    private val liveDataList: MutableLiveData<ArrayList<SingleItem>> = MutableLiveData()
+//
+//    fun getLiveData(): LiveData<ArrayList<SingleItem>> {
+//        return liveDataList
+//    }
+//    fun getMutableLiveData(): MutableLiveData<ArrayList<SingleItem>> {
+//        return liveDataList
+//    }
+//
+//    fun addSingleItem(singleItem: SingleItem) {
+//        items.add(singleItem)
+//        liveDataList.value = items
+//    }
+//
+//    fun getItemList(): List<SingleItem> {
+//        return items
+//    }

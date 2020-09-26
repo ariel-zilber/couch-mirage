@@ -39,7 +39,8 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'com.google.firebase:firebase-firestore:21.6.0'
     implementation 'com.google.firebase:firebase-database-ktx:19.4.0'
-    testImplementation 'junit:junit:4.12'
+    implementation 'com.google.firebase:firebase-storage-ktx:19.2.0'
+    testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
@@ -67,8 +68,8 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:1.1.0"
     implementation 'com.google.firebase:firebase-analytics:17.5.0'
 
-    implementation "com.github.bumptech.glide:glide:4.8.0"
-    annotationProcessor "com.github.bumptech.glide:compiler:4.8.0"
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
     implementation 'com.github.denzcoskun:ImageSlideshow:0.0.7'
 

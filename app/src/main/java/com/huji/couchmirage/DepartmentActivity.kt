@@ -18,25 +18,22 @@ class DepartmentActivity : AppCompatActivity() {
         lateinit var itemAdapter: ItemRecyclerAdapter
     }
 
+    private var lst: ArrayList<SingleItem> = ArrayList<SingleItem>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.departement_items_gallery_layout)
-
-
         initRecyclerView()
-        var bundle = intent.extras
-        var list = bundle!!.getSerializable("items") as ArrayList<SingleItem>
-        itemAdapter.setItemList(list)
-
+        val bundle = intent.extras
+        lst = bundle!!.getSerializable("items") as ArrayList<SingleItem>
+        itemAdapter.setItemList(lst)
         // update the title text
-        findViewById<TextView>(R.id.category_title).setText(intent.extras!!.getString("DEPARTMENT NAME"))
+        findViewById<TextView>(R.id.category_title).text =
+            intent.extras!!.getString("DEPARTMENT NAME")
 
     }
 
     override fun onResume() {
         super.onResume()
-
     }
 
     override fun finish() {
@@ -44,25 +41,15 @@ class DepartmentActivity : AppCompatActivity() {
         overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
     }
 
-    private fun addDataSet(department: String?) {
-        Toast.makeText(this, "BEFORE " + itemAdapter.getItemList().size, Toast.LENGTH_SHORT).show()
-        ItemDataSource.createDepartmentGallery(department)
 
-//        itemAdapter.setItemList(data)
-        Toast.makeText(this, "AFTER " + itemAdapter.getItemList().size, Toast.LENGTH_SHORT).show()
-    }
-
-    private fun openItemDetailsActivity() {
+    private fun openItemDetailsActivity(position: Int) {
         val intent = Intent(this, ItemDetailsActivity::class.java).apply {
-
+            putExtra("ITEM LIST", lst)
+            putExtra("CLICKED ITEM", position)
         }
-
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-
-
         startActivity(intent)
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-
     }
 
     private fun initRecyclerView() {
@@ -70,15 +57,18 @@ class DepartmentActivity : AppCompatActivity() {
             layoutManager = GridLayoutManager(this.context, 2)
             itemAdapter = ItemRecyclerAdapter(object : OnItemClickListen {
                 override fun onItemClick(view: View, position: Int) {
-
-                    openItemDetailsActivity()
-
+                    openItemDetailsActivity(position)
                 }
             })
             adapter = itemAdapter
-
         }
     }
-
-
 }
+
+//    private fun addDataSet(department: String?) {
+//        Toast.makeText(this, "BEFORE " + itemAdapter.getItemList().size, Toast.LENGTH_SHORT).show()
+//        ItemDataSource.createDepartmentGallery(department)
+//
+////        itemAdapter.setItemList(data)
+//        Toast.makeText(this, "AFTER " + itemAdapter.getItemList().size, Toast.LENGTH_SHORT).show()
+//    }

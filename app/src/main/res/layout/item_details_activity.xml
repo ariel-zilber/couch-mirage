@@ -32,7 +32,6 @@
                     app:iss_auto_cycle="false"
                     app:iss_delay="0"
                     app:iss_period="1000"
-                    app:iss_placeholder="@drawable/favorite_img_4"
 
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -41,19 +40,6 @@
 
                     />
 
-
-                <!--                <ImageView-->
-                <!--                    android:id="@+id/item_img"-->
-                <!--                    android:layout_margin="10dp"-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:scaleType="centerCrop"-->
-                <!--                    android:src="@drawable/favorite_img_4"-->
-                <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-                <!--                    app:layout_constraintEnd_toEndOf="parent"-->
-                <!--                    app:layout_constraintStart_toStartOf="parent"-->
-                <!--                    app:layout_constraintTop_toTopOf="parent" -->
-                <!--                    />-->
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -185,9 +171,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/calibri"
                 android:padding="16dp"
-                android:text="פעולת הטיה מתכווננת וננעלת המאפשרת להתאים את מידת ההתנגדות כך שתתאים לתנועותיכם ולמשקל גופכם.
-תנוחת ישיבה נוחה הודות לגובה המתכוונן של הכיסא .
-לגלגלי הבטיחות יש בלמים בעלי מכניזם רגיש ללחץ, השומר על הכיסא במקומו כאשר קמים ממנו, ומשתחרר באופן אוטומטי כאשר אתם מתיישבים."
+                android:text="Item Description"
                 android:textColor="#444444"
                 android:textSize="16sp" />
 
