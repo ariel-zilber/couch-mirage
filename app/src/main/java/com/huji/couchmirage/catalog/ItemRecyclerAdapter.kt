@@ -15,10 +15,10 @@ class ItemRecyclerAdapter(
     private var listener: OnItemClickListen
 )   : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    var items: ArrayList<SingleItem> = ArrayList()
+    var items: ArrayList<Furniture> = ArrayList()
 
 
-    fun setItemList(itemList: ArrayList<SingleItem>) {
+    fun setItemList(itemList: ArrayList<Furniture>) {
         items = itemList
     }
 
@@ -57,7 +57,7 @@ class ItemRecyclerAdapter(
         private val itemPrice: TextView = itemView.item_price
         private val itemColor: TextView = itemView.item_color
         //        private val itemDetails: TextView = itemView.item_color
-        fun bind(item: SingleItem) {
+        fun bind(item: Furniture) {
             itemName.text = item.model
             itemColor.text = item.color
             itemPrice.text = item.price.toString() + "₪"
@@ -72,7 +72,7 @@ class ItemRecyclerAdapter(
     }
 
     class DepartmentListGridRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-        private var items: List<SingleItem> = ArrayList()
+        private var items: List<Furniture> = ArrayList()
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
             return ItemViewHolder(
@@ -101,20 +101,20 @@ interface OnItemClickListen {
 }
 
 
-//    private val liveDataList: MutableLiveData<ArrayList<SingleItem>> = MutableLiveData()
+//    private val liveDataList: MutableLiveData<ArrayList<Furniture>> = MutableLiveData()
 //
-//    fun getLiveData(): LiveData<ArrayList<SingleItem>> {
+//    fun getLiveData(): LiveData<ArrayList<Furniture>> {
 //        return liveDataList
 //    }
-//    fun getMutableLiveData(): MutableLiveData<ArrayList<SingleItem>> {
+//    fun getMutableLiveData(): MutableLiveData<ArrayList<Furniture>> {
 //        return liveDataList
 //    }
 //
-//    fun addSingleItem(singleItem: SingleItem) {
+//    fun addSingleItem(singleItem: Furniture) {
 //        items.add(singleItem)
 //        liveDataList.value = items
 //    }
 //
-//    fun getItemList(): List<SingleItem> {
+//    fun getItemList(): List<Furniture> {
 //        return items
 //    }

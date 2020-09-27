@@ -12,7 +12,9 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.huji.couchmirage.R
 import kotlinx.android.synthetic.main.activity_main.*
 
-
+/***
+ *
+ */
 class CatalogFrontActivity : AppCompatActivity() {
 
     private lateinit var departmentAdapter: DepartmentRecyclerAdapter
@@ -83,13 +85,13 @@ class CatalogFrontActivity : AppCompatActivity() {
 
 
         var db = FirebaseFirestore.getInstance()
-        val list = ArrayList<SingleItem>()
+        val list = ArrayList<Furniture>()
 
         db.collection(departmentAdapter.items[position].departmentName).get()
             .addOnSuccessListener { documents ->
 
                 for (document in documents) {
-                    val i = document.toObject(SingleItem::class.java)
+                    val i = document.toObject(Furniture::class.java)
                     list.add(i)
                 }
                 intent.putExtra("items", list);

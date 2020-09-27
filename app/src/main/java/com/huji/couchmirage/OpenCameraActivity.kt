@@ -107,7 +107,7 @@ class OpenCameraActivity : AppCompatActivity() {
                 modelLength = modelLength / 100f
                 modelWidth = modelWidth / 100f
                 modelHeight = modelHeight / 100f
-
+                onClear()
 
                 //
                 buildModel(file!!)
@@ -418,7 +418,7 @@ class OpenCameraActivity : AppCompatActivity() {
 
     private fun setARFragment() {
         arFragment = supportFragmentManager.findFragmentById(R.id.fragment) as MyArFragment
-        arFragment.activity = this
+        arFragment.cameraActivity = this
         arFragment.animationLayout = this.findViewById(R.id.animation)
 
     }

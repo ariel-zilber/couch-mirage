@@ -5,7 +5,11 @@ import android.os.Parcelable
 import com.google.ar.sceneform.rendering.Renderable
 import java.io.Serializable
 
-data class SingleItem(
+/****
+ *  Represents a single furniture item
+ *
+ */
+data class Furniture(
     var category: String?,
     var color: String?,
     var details: Map<String?, String?>,

@@ -10,33 +10,22 @@ import com.google.ar.sceneform.ux.HandMotionAnimation
 import com.google.ar.sceneform.ux.HandMotionView
 import com.huji.couchmirage.R
 
-
+/**
+ *  A custom hand gesture animation.
+ */
 class CustomMotionView : HandMotionView {
-    private var animation: HandMotionAnimation? = null
 
     constructor(context: Context?) : super(context) {}
     constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) {}
 
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
-//        clearAnimation()
-//
         val container =
             (context as Activity).findViewById<View>(R.id.animation) as ConstraintLayout
 
 
         container.visibility = View.VISIBLE
-//
-//        animation = HandMotionAnimation(container, this)
-//        animation!!.repeatCount = Animation.INFINITE
-//        animation!!.duration = ANIMATION_SPEED_MS
-//        animation!!.startOffset = 5000
-//        startAnimation(animation)
-//
-
     }
 
-    companion object {
-        private const val ANIMATION_SPEED_MS: Long = 1000
-    }
+
 }

@@ -12,12 +12,16 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.huji.couchmirage.*
 import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ *
+ */
 class DepartmentActivity : AppCompatActivity() {
     companion object {
         lateinit var itemAdapter: ItemRecyclerAdapter
     }
 
-    private var lst: ArrayList<SingleItem>? = ArrayList<SingleItem>()
+    // the items belonging to the department
+    private var departmentItems: ArrayList<Furniture>? = ArrayList<Furniture>()
 
 
     private val receiver: BroadcastReceiver = object : BroadcastReceiver() {
@@ -25,12 +29,35 @@ class DepartmentActivity : AppCompatActivity() {
             val action = intent.getAction()
 
             if (action == "show_model") {
+                // close open activity after pressing the button
+                // "Show item in place" at the ItemDetails  activity
                 finish()
             }
         }
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.departement_items_gallery_layout)
 
+        // init the receiver
+        configureReceiver()
+
+        initRecyclerView()
+        val bundle = intent.extras
+        departmentItems = bundle!!.getSerializable("items") as ArrayList<Furniture>?
+        itemAdapter.setItemList(departmentItems!!)
+
+
+        // update the title text
+        findViewById<TextView>(R.id.category_title).text =
+            intent.extras!!.getString("DEPARTMENT NAME")
+
+    }
+
+    /***
+     * Initialize the receiver
+     */
     private fun configureReceiver() {
         registerReceiver(
             receiver, IntentFilter("show_model")
@@ -41,24 +68,10 @@ class DepartmentActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
 
+        //
         unregisterReceiver(receiver)
     }
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.departement_items_gallery_layout)
-        configureReceiver()
-
-        initRecyclerView()
-        val bundle = intent.extras
-        lst = bundle!!.getSerializable("items") as ArrayList<SingleItem>?
-        itemAdapter.setItemList(lst!!)
-        // update the title text
-        findViewById<TextView>(R.id.category_title).text =
-            intent.extras!!.getString("DEPARTMENT NAME")
-
-    }
 
     override fun finish() {
         super.finish()
@@ -66,9 +79,15 @@ class DepartmentActivity : AppCompatActivity() {
     }
 
 
+    /***
+     * Opens page displaying a given item's details
+     *
+     */
     private fun openItemDetailsActivity(position: Int) {
+
+        //
         val intent = Intent(this, ItemDetailsActivity::class.java).apply {
-            putExtra("ITEM LIST", lst)
+            putExtra("ITEM LIST", departmentItems)
             putExtra("CLICKED ITEM", position)
         }
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
@@ -79,26 +98,21 @@ class DepartmentActivity : AppCompatActivity() {
         );
     }
 
+    /**
+     * Initialize the the recyclerview of hte the departments items
+     */
     private fun initRecyclerView() {
         recycler_view.apply {
             layoutManager = GridLayoutManager(this.context, 2)
-            itemAdapter =
-                ItemRecyclerAdapter(object :
-                    OnItemClickListen {
-                    override fun onItemClick(view: View, position: Int) {
-                        openItemDetailsActivity(position)
-                    }
-                })
-            adapter =
-                itemAdapter
+            itemAdapter = ItemRecyclerAdapter(object :
+                OnItemClickListen {
+                override fun onItemClick(view: View, position: Int) {
+                    openItemDetailsActivity(position)
+                }
+            })
+
+            //
+            adapter = itemAdapter
         }
     }
 }
-
-//    private fun addDataSet(department: String?) {
-//        Toast.makeText(this, "BEFORE " + itemAdapter.getItemList().size, Toast.LENGTH_SHORT).show()
-//        ItemDataSource.createDepartmentGallery(department)
-//
-////        itemAdapter.setItemList(data)
-//        Toast.makeText(this, "AFTER " + itemAdapter.getItemList().size, Toast.LENGTH_SHORT).show()
-//    }

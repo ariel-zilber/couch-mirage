@@ -8,8 +8,8 @@ import android.provider.Settings
 import androidx.core.app.ActivityCompat
 import com.google.ar.sceneform.ux.ArFragment
 
-
 /**
+ *
  * Writing Ar Fragment extends the ArFragment class to include the WRITER_EXTERNAL_STORAGE
  * permission. This adds this permission to the list of permissions presented to the user for
  * granting.

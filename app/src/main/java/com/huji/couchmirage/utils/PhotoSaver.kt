@@ -62,9 +62,6 @@ class PhotoSaver(
 
         generateFilename()
 
-
-
-
     }
 
     private fun saveBitmapToGallery(bmp: Bitmap, filename: String) {

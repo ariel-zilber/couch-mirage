@@ -12,9 +12,15 @@ import com.google.ar.sceneform.Scene
 import com.google.ar.sceneform.ux.ArFragment
 import com.huji.couchmirage.OpenCameraActivity
 
+/****
+ * Custom ar fragment
+ */
 class MyArFragment : ArFragment(), Scene.OnUpdateListener {
 
-    var activity: OpenCameraActivity? = null
+    //  reference on the main activity
+    var cameraActivity: OpenCameraActivity? = null
+
+    //
     var animationLayout: ConstraintLayout? = null
 
 
@@ -28,20 +34,21 @@ class MyArFragment : ArFragment(), Scene.OnUpdateListener {
 
         planeDiscoveryController.hide()
         planeDiscoveryController.setInstructionView(null)
-        return view
 
+
+        return view
     }
 
     override fun onUpdate(p0: FrameTime?) {
 
         super.onUpdate(p0)
 
-
+        //
         if (animationLayout!!.visibility != View.VISIBLE) {
             return
         }
 
-
+        // change the information button state to yellow
         val frame = arSceneView!!.arFrame ?: return
         if (frame.camera.trackingState != TrackingState.TRACKING) {
             return
@@ -49,7 +56,7 @@ class MyArFragment : ArFragment(), Scene.OnUpdateListener {
         for (plane in frame.getUpdatedTrackables(Plane::class.java)) {
             if (plane.trackingState == TrackingState.TRACKING) {
                 hideLoadingMessage()
-                activity!!.changeInfoStageToYellow()
+                cameraActivity!!.changeInfoStageToYellow()
             }
         }
 
@@ -80,78 +87,18 @@ class MyArFragment : ArFragment(), Scene.OnUpdateListener {
 
     override fun onResume() {
         super.onResume()
+
+        //
         if (arSceneView == null) {
             return
         }
 
+        //   whenever the arSceneView has started show loading message
         if (arSceneView!!.session != null) {
             showLoadingMessage()
-            activity!!.changeInfoStageToRed()
+            cameraActivity!!.changeInfoStageToRed()
         }
     }
 
-
-//    override fun onUpdate(p0: FrameTime?) {
-//
-//        arFragment.onUpdate(p0)
-//
-//
-//        val animation = findViewById<View>(R.id.animation) as ConstraintLayout
-//
-//        if (animation.visibility != View.VISIBLE) {
-//            return
-//        }
-//
-//
-//        val frame = arSceneView!!.arFrame ?: return
-//        if (frame.camera.trackingState != TrackingState.TRACKING) {
-//            return
-//        }
-//        for (plane in frame.getUpdatedTrackables(Plane::class.java)) {
-//            if (plane.trackingState == TrackingState.TRACKING) {
-//                hideLoadingMessage()
-//            }
-//        }
-//
-//    }
-//
-
-
-//
-//    override fun onResume() {
-//        super.onResume()
-////        if (arSceneView == null) {
-////            return
-////        }
-////
-////        if (arSceneView!!.session != null) {
-////            showLoadingMessage()
-////        }
-//    }
-
-
-//    private fun showLoadingMessage() {
-//        val animation = findViewById<View>(R.id.animation) as ConstraintLayout
-//
-//        if (animation.visibility != View.INVISIBLE) {
-//            return
-//        }
-//
-//
-//
-//        animation.visibility = View.VISIBLE
-//
-//    }
-//
-//
-//    private fun hideLoadingMessage() {
-//        val animation = findViewById<View>(R.id.animation) as ConstraintLayout
-//
-//        if (animation.visibility == View.INVISIBLE) {
-//            return
-//        }
-//
-//        animation.visibility = View.INVISIBLE
-//    }
 
 }

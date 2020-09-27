@@ -17,43 +17,71 @@ import java.io.File
 import java.io.IOException
 
 
+/***
+ * Activity showing information about a selected furniture item
+ *
+ */
 class ItemDetailsActivity : AppCompatActivity() {
-    private val imageList = ArrayList<SlideModel>() // Create image list
-    private var lst: ArrayList<SingleItem> = ArrayList<SingleItem>()
-    lateinit var currentItem: SingleItem
+
+    // Create image list
+    private val selectedItemImageList = ArrayList<SlideModel>()
+
+    // current selected item
+    lateinit var selectedItem: Furniture
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.item_details_activity)
-        val itemDescription: TextView = findViewById(R.id.description)
 
+        //
         val bundle = intent.extras
-        lst = bundle!!.getSerializable("ITEM LIST") as ArrayList<SingleItem>
-        currentItem = lst[bundle.get("CLICKED ITEM") as Int]
-        currentItem.details["description"]?.let { Log.d("CHECK DETAILS", it) }
-        itemDescription.setText(currentItem.details["description"])
-        DepartmentActivity.itemAdapter.setItemList(lst)
-        loadImages()
+        val departmentItems = bundle!!.getSerializable("ITEM LIST") as ArrayList<Furniture>
+
+        // init selected item
+        selectedItem = departmentItems[bundle.get("CLICKED ITEM") as Int]
+        selectedItem.details["description"]?.let { Log.d("CHECK DETAILS", it) }
+
+        // Init adapter
+        DepartmentActivity.itemAdapter.setItemList(departmentItems)
+
+
+        // Init UI components
+        setUpItemDescription()
+        loadSelectedItemImages()
         setupSlider()
-        setUpURLButton()
+        setUpURLSourceButton()
         setupDisplay3DModelButton()
     }
 
+    private fun setUpItemDescription() {
+        val itemDescription: TextView = findViewById(R.id.description)
+        itemDescription.setText(selectedItem.details["description"])
+    }
 
-    private fun loadImages() {
-        //todo: currently the black chair
-        for (s in currentItem.images) {
-            imageList.add(SlideModel(s))
+    /**
+     *
+     */
+    private fun loadSelectedItemImages() {
+
+        for (s in selectedItem.images) {
+            selectedItemImageList.add(SlideModel(s))
         }
     }
 
+    /**
+     *  Initialize the custom image list slider
+     *
+     */
     private fun setupSlider() {
         val imageSlider = findViewById<ImageSlider>(R.id.item_images_slider)
-        imageSlider.setImageList(imageList)
+        imageSlider.setImageList(selectedItemImageList)
     }
 
 
-    private fun setUpURLButton() {
-        //todo
+    /**
+     *
+     */
+    private fun setUpURLSourceButton() {
 
         //
         var goToUrlBtn = findViewById<Button>(R.id.goto_store_button)
@@ -62,63 +90,73 @@ class ItemDetailsActivity : AppCompatActivity() {
             val browserIntent =
                 Intent(
                     Intent.ACTION_VIEW,
-                    Uri.parse(currentItem.source)
+                    Uri.parse(selectedItem.source)
                 )
             startActivity(browserIntent)
         }
     }
 
-    private fun broadcast(file: File) {
+    /**
+     *
+     * @param the 3d model rendeable file
+     */
+    private fun broadcastShow3DModel(file: File) {
+
         val intent = Intent()
-        intent.putExtra("model_length", currentItem.sizes[0]!!.toFloat())
-        intent.putExtra("model_width", currentItem.sizes[1]!!.toFloat())
-        intent.putExtra("model_height", currentItem.sizes[2]!!.toFloat())
+
+        // put the model's measurements
+        intent.putExtra("model_length", selectedItem.sizes[0]!!.toFloat())
+        intent.putExtra("model_width", selectedItem.sizes[1]!!.toFloat())
+        intent.putExtra("model_height", selectedItem.sizes[2]!!.toFloat())
+
+        //  put the rendeable model
         intent.putExtra("file", file)
+
+        // set the current action
         intent.action = "show_model"
 
         sendBroadcast(intent)
     }
 
 
+    /**
+     * Setups the button to display the 3d model
+     */
     private fun setupDisplay3DModelButton() {
-        // todo
         val show3DModel = findViewById<FloatingActionButton>(R.id.try_3d_model)
         show3DModel.setOnClickListener() {
 
-
-            getFireBaseModel(
-                currentItem.rendable!!,
-                currentItem.sizes[0]!!.toFloat(),
-                currentItem.sizes[1]!!.toFloat(),
-                currentItem.sizes[2]!!.toFloat()
-            )
+            // downloads the model
+            show3DModel(selectedItem.rendable!!)
         }
     }
 
-
-    private fun getFireBaseModel(
-        pathString: String,
-        modelLength: Float,
-        modelWidth: Float,
-        modelHeight: Float
+    /**
+     *  Download the model
+     *  @param fbRelativePath The  relative path in the firebase storage of the model
+     */
+    private fun show3DModel(
+        fbRelativePath: String
     ) {
 
+        // get reference to the model
         val storage: FirebaseStorage = FirebaseStorage.getInstance()
-        val modelRef: StorageReference = storage.getReference().child(pathString)
+        val modelRef: StorageReference = storage.getReference().child(fbRelativePath)
+
+        // download the model and then show it locally
         try {
+
             val file = File.createTempFile("out", "glb")
             modelRef.getFile(file).addOnSuccessListener {
 
-                broadcast(file)
+                broadcastShow3DModel(file)
                 finish()
-
             }
         } catch (e: IOException) {
             e.printStackTrace()
         }
 
     }
-
 
 }
 
