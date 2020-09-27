@@ -50,7 +50,7 @@ enum class MeasurementStage {
 /**
  *  Class applying the ARCore used to measure real world 3d box
  */
-class MeasurmentBox(
+class MeasurementBox(
     var boxRenderData: BoxRenderData,
     var boxInfoCardLayouts: BoxInfoCardLayouts,
     var applicationContext: Context,
@@ -99,7 +99,7 @@ class MeasurmentBox(
     companion object {
         private val NUM_OF_VERTICIES: Int = 8
         private val MIN_HEIGHT_INDICATOR = 10
-        private val TAG = MeasurmentBox::class.simpleName
+        private val TAG = MeasurementBox::class.simpleName
         private val LINE_DEFAULT = 0.005f
 
         // node points
@@ -216,18 +216,20 @@ class MeasurmentBox(
         anchorNodeSecond: AnchorNode
     ) {
 
+        // word position of the nodes
         val point1: Vector3 = anchorNodeFirst.worldPosition
         val point2: Vector3 = anchorNodeSecond.worldPosition
 
+        // the pose of the nodes
         val pose1 = anchorNodeFirst.anchor?.pose
         val pose2 = anchorNodeSecond.anchor?.pose
 
         val difference = Vector3.subtract(point1, point2)
         if (difference != Vector3.zero()) {
+            //
             val directionFromTopToBottom = difference.normalized()
             val rotationFromAToB =
                 Quaternion.lookRotation(directionFromTopToBottom, Vector3.up())
-
 
             // add line
             MaterialFactory.makeOpaqueWithColor(
@@ -236,27 +238,38 @@ class MeasurmentBox(
             )
                 .thenAccept { material ->
 
+                    // init the line model
                     val modelRenderable = ShapeFactory.makeCube(
                         Vector3(LINE_DEFAULT, LINE_DEFAULT, difference.length()),
                         Vector3.zero(),
                         material
                     )
 
+                    //  create a node holding the rendable
                     val node = Node()
                     node.setParent(anchorNodeSecond)
                     node.renderable = modelRenderable
+
+                    // set the position of the node
                     node.worldPosition = Vector3.add(point1, point2).scaled(.5f)
                     node.worldRotation = rotationFromAToB
 
+                    // display  a box at the middle of the line
                     addTextBox(node, getDistanceMeters(pose1!!, pose2!!).toFloat())
                 }
-
 
         }
 
     }
 
 
+    /*
+     *  Draws a surrounding frame comprised of 4 lines around the box body
+     *  @param position location to place the frame at
+     *  @param rotation rotation of the frame
+     *  @param dist1 length of the frame
+     *  @param dist2 width of the box
+     */
     private fun drawFrame(position: Vector3, rotation: Quaternion, dist1: Float, dist2: Float) {
         // add horizontal lines ---------------------------------------------------------------
 
@@ -423,16 +436,26 @@ class MeasurmentBox(
 
     }
 
-
+    /***
+     *  Renders the 3d measurement box
+     *  See : https://technology.edmunds.com/2018/12/14/Augmented-Reality-on-Android-Drawing-a-Box-Part-3/
+     */
     fun drawSquare() {
+        // see
 
+        // two poijnts reprents the length rof the box
         val pt1 = anchorNodeList[PT_1].worldPosition
         val pt2 = anchorNodeList[PT_2].worldPosition
+
+        // 3 pint of the line of the paraaler line to the
+        // line created by PT_1 and PT_2
         val tracker = anchorNodeList[PT_3].worldPosition
         val p2ToPt1 = Vector3.subtract(pt2, pt1)
         val p2ToTracker = Vector3.subtract(pt2, tracker)
         val r = rejections(p2ToTracker, p2ToPt1)
         val midPoint = midPointVector(pt1, pt2)
+
+        // offset of the box
         val toAdd = Vector3(0f, 0f, Math.abs(r.length()) / 2 + 0f)
 
         // set the box length and width
@@ -623,6 +646,10 @@ class MeasurmentBox(
 
     }
 
+    fun getBoxMeasurements(): BoxMeasurements {
+        return realWorldMeasurements
+    }
+
 // Private methods ----------------------------------------------------------------------------
 
 
@@ -638,10 +665,19 @@ class MeasurmentBox(
         )
     }
 
-    fun getBoxMeasurements(): BoxMeasurements {
-        return realWorldMeasurements
-    }
 
+    /***
+     * Diplay a floating text box above a given node
+     *@param node
+     * @param dist
+     * @param position
+     * @param rotation
+     * @param measurement
+     * @param startUnit
+     * @param view
+     *
+     *
+     */
     private fun addTextBox(
         node: Node,
         dist: Float,
@@ -888,6 +924,7 @@ class MeasurmentBox(
 
         return modelRenderable
     }
+
 
     private fun renderLine(
         context: Context,

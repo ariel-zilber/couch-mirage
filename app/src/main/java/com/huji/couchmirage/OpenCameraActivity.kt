@@ -74,7 +74,7 @@ class OpenCameraActivity : AppCompatActivity() {
     lateinit var plus: ImageView
 
     // measuremnt related
-    private lateinit var box: MeasurmentBox
+    private lateinit var box: MeasurementBox
     private var userMeasurements: BoxMeasurements? = null
 
     // furniture module related
@@ -199,7 +199,7 @@ class OpenCameraActivity : AppCompatActivity() {
             heightCardLayout = R.layout.height_distance_card_layout
         )
 
-        box = MeasurmentBox(
+        box = MeasurementBox(
             boxRenderData = boxRenderData,
             boxInfoCardLayouts = boxInfoCardLayouts,
             applicationContext = this,
@@ -450,8 +450,8 @@ class OpenCameraActivity : AppCompatActivity() {
 
                     if (box.getMeasurementStage() == MeasurementStage.WIDTH) {
                         box.drawLine(
-                            box.getAnchorNode(MeasurmentBox.PT_1),
-                            box.getAnchorNode(MeasurmentBox.PT_2)
+                            box.getAnchorNode(MeasurementBox.PT_1),
+                            box.getAnchorNode(MeasurementBox.PT_2)
                         )
                     }
 
