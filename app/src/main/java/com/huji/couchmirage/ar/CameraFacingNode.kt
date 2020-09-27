@@ -5,10 +5,11 @@ import com.google.ar.sceneform.Node
 import com.google.ar.sceneform.math.Quaternion
 import com.google.ar.sceneform.math.Vector3
 
-/****
+/**
  * A type of node facing directly to the camera
  */
 class CameraFacingNode : Node() {
+
 
 
     override fun onUpdate(p0: FrameTime?) {

@@ -13,6 +13,9 @@ import com.google.ar.sceneform.ux.TransformableNode
 import com.huji.couchmirage.ar.CameraFacingNode
 import java.io.Serializable
 
+/***
+ * Class representing details needed to render box
+ */
 data class BoxRenderData(
     val pointRenderableRadius: Float,
     var pointRenderableColor: Color,
@@ -20,23 +23,33 @@ data class BoxRenderData(
     var areaRenderableColor: Color
 )
 
+/***
+ * Holds the layout of the measurements floating  cards
+ */
 data class BoxInfoCardLayouts(
     val cardLayout: Int,
     val heightCardLayout: Int
 )
 
+/***
+ *  Holds the measurements of a 3D measurement box
+ */
 data class BoxMeasurements(
     var boxWidth: Float,
     var boxLength: Float,
     var boxHeight: Float
-):Serializable
+) : Serializable
 
-
+/**
+ *
+ */
 enum class MeasurementStage {
     NONE, ORIGIN, WIDTH, LENGTH, HEIGHT
 }
 
-
+/**
+ *
+ */
 class MeasurmentBox(
     var boxRenderData: BoxRenderData,
     var boxInfoCardLayouts: BoxInfoCardLayouts,
@@ -44,9 +57,9 @@ class MeasurmentBox(
     var arFragment: ArFragment
 
 ) {
-    // Data class ------------------------------------------------------------------------------
+    // Data class --------------------------------------------------------------------------------
 
-    // Data memebers ------------------------------------------------------------------------------
+    // Data members ------------------------------------------------------------------------------
 
     private var vertices: ArrayList<Node> = ArrayList()
     private var verticalVertices: ArrayList<Node> = ArrayList()
@@ -365,46 +378,6 @@ class MeasurmentBox(
 
     }
 
-    var rend: Renderable? = null
-    var centerRotation: Quaternion? = null
-
-    fun getRotation(): Quaternion? {
-        val pt1 = anchorNodeList[PT_1].worldPosition
-        val pt2 = anchorNodeList[PT_2].worldPosition
-        val tracker = anchorNodeList[PT_3].worldPosition
-        val p2ToPt1 = Vector3.subtract(pt2, pt1)
-        val p2ToTracker = Vector3.subtract(pt2, tracker)
-        val r = rejections(p2ToTracker, p2ToPt1)
-
-
-        val directionFromTopToBottom = r.normalized()
-        val rotation = Quaternion.lookRotation(directionFromTopToBottom, Vector3.up())
-
-
-
-
-
-        return rotation
-    }
-
-
-    fun worldLocation(): Vector3? {
-
-        val pt1 = anchorNodeList[PT_1].worldPosition
-        val pt2 = anchorNodeList[PT_2].worldPosition
-        val tracker = anchorNodeList[PT_3].worldPosition
-        val p2ToPt1 = Vector3.subtract(pt2, pt1)
-        val p2ToTracker = Vector3.subtract(pt2, tracker)
-        val r = rejections(p2ToTracker, p2ToPt1)
-        val midPoint = midPointVector(pt1, pt2)
-        val toAdd = r.normalized().scaled(r.length() / 2).scaled(-1f)
-
-
-
-        return Vector3.add(
-            midPoint, toAdd
-        )
-    }
 
     fun drawSquare() {
 
@@ -454,7 +427,7 @@ class MeasurmentBox(
                         isShadowCaster = false
                         isShadowReceiver = false
                     }
-                    rend = modelRenderable
+
                     val node = TransformableNode(arFragment.transformationSystem)
                     node.scaleController.isEnabled = false
                     node.getTranslationController().setEnabled(false);
@@ -666,17 +639,6 @@ class MeasurmentBox(
     }
 
 
-    private fun setNodeHeight(height: Float, node: Node, scale: Vector3, offset: Float) {
-
-        node.localScale = Vector3(1f, height, 1f)
-        node.worldPosition = Vector3(
-            scale.x,
-            scale.y + offset / 100,
-            scale.z
-        )
-    }
-
-
     private fun updateBoxHeight(height: Float) {
 
         var toAdd = Vector3(0f, 0f + height * LINE_DEFAULT, Math.abs(boxMeasurements.boxLength) / 2)
@@ -712,51 +674,6 @@ class MeasurmentBox(
 
     }
 
-    private fun updateUpperFrameHeight(height: Float) {
-
-
-        // add line
-        upperFrameVertices[0].renderable = getLineModelRendable(
-            context = applicationContext,
-            color = boxRenderData.lineRenderableColor,
-            modeSize = Vector3(boxMeasurements.boxWidth, LINE_DEFAULT, LINE_DEFAULT),
-            offset = Vector3(0f, 0f + height / 100, 0f)
-        )
-
-        // add line
-        upperFrameVertices[1].renderable = getLineModelRendable(
-            context = applicationContext,
-            color = boxRenderData.lineRenderableColor,
-            modeSize = Vector3(boxMeasurements.boxWidth, LINE_DEFAULT, LINE_DEFAULT),
-            offset = Vector3(0f, 0f + height / 100, Math.abs(boxMeasurements.boxLength))
-        )
-
-        // add line
-        upperFrameVertices[2].renderable = getLineModelRendable(
-            context = applicationContext,
-            color = boxRenderData.lineRenderableColor,
-            modeSize = Vector3(LINE_DEFAULT, LINE_DEFAULT, boxMeasurements.boxLength),
-            offset = Vector3(
-                -boxMeasurements.boxWidth / 2,
-                0f + height / 100,
-                Math.abs(boxMeasurements.boxLength / 2)
-            )
-        )
-
-        // add line
-        upperFrameVertices[3].renderable = getLineModelRendable(
-            context = applicationContext,
-            color = boxRenderData.lineRenderableColor,
-            modeSize = Vector3(LINE_DEFAULT, LINE_DEFAULT, boxMeasurements.boxLength),
-            offset = Vector3(
-                boxMeasurements.boxWidth / 2,
-                0f + height / 100,
-                Math.abs(boxMeasurements.boxLength / 2)
-            )
-        )
-
-
-    }
 
     private fun updateVerticalFrameHeight(height: Float) {
 

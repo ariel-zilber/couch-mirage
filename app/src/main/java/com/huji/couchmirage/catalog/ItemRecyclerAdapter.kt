@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.layout_single_list_item.view.*
 
 class ItemRecyclerAdapter(
     private var listener: OnItemClickListen
-)   : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     var items: ArrayList<Furniture> = ArrayList()
 
@@ -56,6 +56,7 @@ class ItemRecyclerAdapter(
         private val itemName: TextView = itemView.item_name
         private val itemPrice: TextView = itemView.item_price
         private val itemColor: TextView = itemView.item_color
+
         //        private val itemDetails: TextView = itemView.item_color
         fun bind(item: Furniture) {
             itemName.text = item.model
