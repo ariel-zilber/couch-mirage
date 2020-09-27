@@ -73,13 +73,17 @@ class ItemDetailsActivity : AppCompatActivity() {
         }
     }
 
-    private fun broadcast() {
-        Log.d("xxx", "111")
+    private fun broadcast(file: File) {
         val intent = Intent()
+        intent.putExtra("model_length", currentItem.sizes[0]!!.toFloat())
+        intent.putExtra("model_width", currentItem.sizes[1]!!.toFloat())
+        intent.putExtra("model_height", currentItem.sizes[2]!!.toFloat())
+        intent.putExtra("file", file)
         intent.action = "show_model"
 
         sendBroadcast(intent)
     }
+
 
     private fun setupDisplay3DModelButton() {
         // todo
@@ -110,7 +114,7 @@ class ItemDetailsActivity : AppCompatActivity() {
             val file = File.createTempFile("out", "glb")
             modelRef.getFile(file).addOnSuccessListener {
 
-                broadcast()
+                broadcast(file)
                 finish()
 
             }

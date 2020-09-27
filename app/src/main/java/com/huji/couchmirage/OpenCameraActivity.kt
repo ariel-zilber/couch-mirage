@@ -4,9 +4,7 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.ActivityManager
-import android.content.ContentValues
-import android.content.Context
-import android.content.Intent
+import android.content.*
 import android.content.pm.PackageManager
 import android.media.CamcorderProfile
 import android.net.Uri
@@ -63,7 +61,7 @@ class OpenCameraActivity : AppCompatActivity() {
     var measureSelected: Boolean = false
 
     //
-    private var isSearching = false
+    private var isModelFound = false
 
     // ar fragment related
     lateinit var arFragment: MyArFragment
@@ -87,6 +85,51 @@ class OpenCameraActivity : AppCompatActivity() {
     var videoSaver = VideoRecorder()    // todo fix video recorder
 
 
+    var modelLength: Float = 0f
+    var modelWidth: Float = 0f
+    var modelHeight: Float = 0f
+    var file: File? = null
+
+    private val receiver: BroadcastReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            val action = intent.getAction()
+
+            if (action == "show_model") {
+                modelLength = intent.extras!!.get("model_length") as Float
+                modelWidth = intent.extras!!.get("model_width") as Float
+                modelHeight = intent.extras!!.get("model_height") as Float
+                file = intent.extras!!.get("file") as File
+                isModelFound = true
+
+                // rescale
+                modelLength = modelLength / 100f
+                modelWidth = modelWidth / 100f
+                modelHeight = modelHeight / 100f
+
+
+                //
+                buildModel(file!!)
+
+
+            }
+        }
+    }
+
+
+    private fun configureReceiver() {
+
+        registerReceiver(
+            receiver, IntentFilter("show_model")
+        );
+    }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        unregisterReceiver(receiver)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.open_camera)
@@ -99,6 +142,7 @@ class OpenCameraActivity : AppCompatActivity() {
         setupToast()
         setupFireBase()
         setARFragment()
+        configureReceiver()
 
         setupBox()
         setARFragmentAction()
@@ -393,7 +437,7 @@ class OpenCameraActivity : AppCompatActivity() {
 
         arFragment.setOnTapArPlaneListener { hitResult, plane, motionEvent ->
 
-            if (!isSearching) {
+            if (!isModelFound) {
                 if (measureSelected && box.getMeasurementStage() < MeasurementStage.LENGTH) {
 
                     val anchorNode = createAnchorNode(hitResult)
@@ -430,6 +474,32 @@ class OpenCameraActivity : AppCompatActivity() {
                     }
 
                 }
+            } else {
+
+
+                // create anchor node
+                val anchorNode = AnchorNode(hitResult.createAnchor())
+
+                // create node
+                val node = TransformableNode(arFragment.transformationSystem)
+                node.scaleController.isEnabled = false
+                node.getTranslationController().setEnabled(false);
+                node.setParent(anchorNode)
+                node.renderable = furnitureRenderable
+
+
+                val boundingBox: Box = furnitureRenderable!!.getCollisionShape() as Box
+                val renderableSize: Vector3 = boundingBox.getSize()
+
+                // update world scale
+                node.worldScale = Vector3(
+                    modelWidth * 1 / renderableSize.x,
+                    modelHeight * 1 / renderableSize.y,
+                    modelLength * 1 / renderableSize.z
+                )
+
+                arFragment.arSceneView.scene.addChild(anchorNode)
+
             }
 
         }
@@ -742,26 +812,9 @@ class OpenCameraActivity : AppCompatActivity() {
     // TODO:: finish it
     private fun searchItem() {
         // search
-        //TODO:
-
-
-        isSearching = true
 
         // open activity
         openSearchDialog()
-//
-//        // close activity
-//        var modelPath = "models/desk_1.glb"
-//
-//        getFireBaseModel(
-//            pathString = modelPath,
-//            modelWidth = userMeasurements!!.boxWidth,
-//            modelLength = userMeasurements!!.boxLength,
-//            modelHeight = (userMeasurements!!.boxHeight / 100f)
-//        )
-//
-//
-//        isSearching = false
 
     }
 
@@ -860,35 +913,11 @@ class OpenCameraActivity : AppCompatActivity() {
 
     // fire base relateed
 
-    /**
-     * Returns firebase model from firebase storage
-     */
-    private fun getFireBaseModel(
-        pathString: String,
-        modelLength: Float,
-        modelWidth: Float,
-        modelHeight: Float
-    ) {
-
-        val storage: FirebaseStorage = FirebaseStorage.getInstance()
-        val modelRef: StorageReference = storage.getReference().child(pathString)
-        try {
-            val file = File.createTempFile("out", "glb")
-            modelRef.getFile(file).addOnSuccessListener {
-
-                buildModel(file, modelLength, modelWidth, modelHeight)
-
-            }
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-
-    }
 
     /***
      * Builds the model
      */
-    private fun buildModel(file: File, modelLength: Float, modelWidth: Float, modelHeight: Float) {
+    private fun buildModel(file: File) {
         val renderableSource = RenderableSource
             .builder()
             .setSource(this, Uri.parse(file.path), RenderableSource.SourceType.GLB)
@@ -903,34 +932,11 @@ class OpenCameraActivity : AppCompatActivity() {
             .build()
             .thenAccept { modelRenderable: ModelRenderable ->
                 furnitureRenderable = modelRenderable
-
-                Toast.makeText(this, "Model built", Toast.LENGTH_SHORT).show()
-
-                // create anchor node
-                val anchorNode = AnchorNode(furnitureAnchor)
-
-                // create node
-                val node = TransformableNode(arFragment.transformationSystem)
-                node.scaleController.isEnabled = false
-                node.getTranslationController().setEnabled(false);
-                node.setParent(anchorNode)
-                node.renderable = modelRenderable
-                node.worldPosition = box.worldLocation()
-                node.worldRotation = box.getRotation()
-
-
-                val boundingBox: Box = modelRenderable.getCollisionShape() as Box
-                val renderableSize: Vector3 = boundingBox.getSize()
-
-                // update world scale
-                node.worldScale = Vector3(
-                    modelWidth * 1 / renderableSize.x,
-                    modelHeight * 1 / renderableSize.y,
-                    modelLength * 1 / renderableSize.z
-                )
                 onClear2()
 
-                arFragment.arSceneView.scene.addChild(anchorNode)
+                infoMessage("Please place the model", Toast.LENGTH_SHORT)
+
+//
             }
 
 
