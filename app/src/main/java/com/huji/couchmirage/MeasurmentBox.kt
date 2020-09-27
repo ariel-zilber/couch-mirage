@@ -48,7 +48,7 @@ enum class MeasurementStage {
 }
 
 /**
- *
+ *  Class applying the ARCore used to measure real world 3d box
  */
 class MeasurmentBox(
     var boxRenderData: BoxRenderData,
@@ -61,61 +61,92 @@ class MeasurmentBox(
 
     // Data members ------------------------------------------------------------------------------
 
-    private var vertices: ArrayList<Node> = ArrayList()
-    private var verticalVertices: ArrayList<Node> = ArrayList()
+    /* the box's anchor nodes*/
     var anchorNodeList: ArrayList<AnchorNode> = ArrayList()
+
+
+    /* All the vertices used to represent the box*/
+    private var vertices: ArrayList<Node> = ArrayList()
+
+    /* All the vertical vertices used to represent the box */
+    private var verticalVertices: ArrayList<Node> = ArrayList()
+
+    /* All the  vertices of the upper frame of the box box */
     private var upperFrameVertices: ArrayList<Node> = ArrayList()
+
+    /* All the  vertices of the lower frame of the box box */
     private var lowerFrameVertices: ArrayList<Node> = ArrayList()
 
-
+    /*  node appearing at the center of base the box */
     var areaCenterNode: Node? = null
+
+    /*  vector representing the location of the base of the box */
     var centerRealScale: Vector3? = null
+
+    /* node representing the height of the box */
     private var heightNode: Node? = null
+
+    /* rendeable of the body of the 3d box */
     private var cubeRenderable: ModelRenderable? = null
+
+    /* rendeable of the floating cards displying real world measurements */
     private var distanceCardViewRenderable: ViewRenderable? = null
 
-    private val boxMeasurements = BoxMeasurements(0f, 0f, 0f)
+    // holds the real work shape
+    private val realWorldMeasurements = BoxMeasurements(0f, 0f, 0f)
 
-    private companion object {
+    //
+    companion object {
         private val NUM_OF_VERTICIES: Int = 8
         private val MIN_HEIGHT_INDICATOR = 10
         private val TAG = MeasurmentBox::class.simpleName
         private val LINE_DEFAULT = 0.005f
 
+        // node points
+        val PT_1: Int = 0
+        val PT_2: Int = 1
+        val PT_3: Int = 2
+        val PT_4: Int = 3
+        val PT_5: Int = 4
+        val PT_6: Int = 5
+        val PT_7: Int = 6
+        val PT_8: Int = 7
+
     }
 
-    val PT_1: Int = 0
-    val PT_2: Int = 1
-    val PT_3: Int = 2
-    val PT_4: Int = 3
-    val PT_5: Int = 4
-    val PT_6: Int = 5
-    val PT_7: Int = 6
-    val PT_8: Int = 7
 
+// Public methods -----------------------------------------------------------------------------
 
-    // Public methods -----------------------------------------------------------------------------
-
+    /**
+     * Add anchor node to the box
+     * @param anchorNode the node to add
+     */
     fun addAnchorNode(anchorNode: AnchorNode) {
 
+        //
         val transformableNode =
             TransformableNode(arFragment.transformationSystem).apply {
                 renderable = null
                 setParent(anchorNode)
+                scaleController.isEnabled = false
+                getTranslationController().setEnabled(false)
             }
-        transformableNode.scaleController.isEnabled = false
-        transformableNode.getTranslationController().setEnabled(false);
 
         if (anchorNodeList.size != 2) {
             transformableNode.renderable = cubeRenderable
         }
+
+        // add to list of the box'es nodes
         anchorNodeList.add(anchorNode)
 
     }
 
-
-    fun addVertex(anchorNode: AnchorNode) {
-        vertices.add(anchorNode)
+    /**
+     * Add a vertex to the list of the box'es vertices
+     * @param node the vertex to add
+     */
+    fun addVertex(node: Node) {
+        vertices.add(node)
     }
 
     fun setUI() {
@@ -146,15 +177,24 @@ class MeasurmentBox(
             }
     }
 
-
+    /***
+     * Returns an expicit anchor node
+     * @param index index of the node to return
+     */
     fun getAnchorNode(index: Int): AnchorNode {
         return anchorNodeList[index]
     }
 
+    /**
+     *  @return how many anchor nodes belong to the box
+     */
     fun getAnchorListSize(): Int {
         return anchorNodeList.size
     }
 
+    /***
+     * @return the current measurement stage
+     */
     fun getMeasurementStage(): MeasurementStage {
         when (vertices.size) {
             PT_1 -> return MeasurementStage.NONE
@@ -166,6 +206,11 @@ class MeasurmentBox(
     }
 
 
+    /***
+     * Draws a line on a 3d plane between two anchor nodes
+     * @param anchorNodeFirst
+     * @param anchorNodeSecond
+     */
     fun drawLine(
         anchorNodeFirst: AnchorNode,
         anchorNodeSecond: AnchorNode
@@ -220,7 +265,7 @@ class MeasurmentBox(
             context = applicationContext,
             color = boxRenderData.lineRenderableColor,
             modeSize = Vector3(LINE_DEFAULT, LINE_DEFAULT, LINE_DEFAULT),
-            offset = Vector3(boxMeasurements.boxWidth / 2, 0f, 0f),
+            offset = Vector3(realWorldMeasurements.boxWidth / 2, 0f, 0f),
             parentAnchorNode = anchorNodeList[PT_3],
             position = position,
             rotation = rotation
@@ -231,7 +276,7 @@ class MeasurmentBox(
             context = applicationContext,
             color = boxRenderData.lineRenderableColor,
             modeSize = Vector3(LINE_DEFAULT, LINE_DEFAULT, LINE_DEFAULT),
-            offset = Vector3(-boxMeasurements.boxWidth / 2, 0f, 0f),
+            offset = Vector3(-realWorldMeasurements.boxWidth / 2, 0f, 0f),
             parentAnchorNode = anchorNodeList[PT_3],
             position = position,
             rotation = rotation
@@ -244,9 +289,9 @@ class MeasurmentBox(
             color = boxRenderData.lineRenderableColor,
             modeSize = Vector3(LINE_DEFAULT, LINE_DEFAULT, LINE_DEFAULT),
             offset = Vector3(
-                boxMeasurements.boxWidth / 2,
+                realWorldMeasurements.boxWidth / 2,
                 0f,
-                Math.abs(boxMeasurements.boxLength)
+                Math.abs(realWorldMeasurements.boxLength)
             ),
             parentAnchorNode = anchorNodeList[PT_3],
             position = position,
@@ -259,9 +304,9 @@ class MeasurmentBox(
             color = boxRenderData.lineRenderableColor,
             modeSize = Vector3(LINE_DEFAULT, LINE_DEFAULT, LINE_DEFAULT),
             offset = Vector3(
-                -boxMeasurements.boxWidth / 2,
+                -realWorldMeasurements.boxWidth / 2,
                 0f,
-                Math.abs(boxMeasurements.boxLength)
+                Math.abs(realWorldMeasurements.boxLength)
             ),
             parentAnchorNode = anchorNodeList[PT_3],
             position = position,
@@ -273,7 +318,7 @@ class MeasurmentBox(
         renderLowerFrameLine(
             context = applicationContext,
             color = boxRenderData.lineRenderableColor,
-            modeSize = Vector3(boxMeasurements.boxWidth, LINE_DEFAULT, LINE_DEFAULT),
+            modeSize = Vector3(realWorldMeasurements.boxWidth, LINE_DEFAULT, LINE_DEFAULT),
             offset = Vector3.zero(),
             parentAnchorNode = anchorNodeList[1],
             position = position,
@@ -284,8 +329,8 @@ class MeasurmentBox(
         renderLowerFrameLine(
             context = applicationContext,
             color = boxRenderData.lineRenderableColor,
-            modeSize = Vector3(boxMeasurements.boxWidth, LINE_DEFAULT, LINE_DEFAULT),
-            offset = Vector3(0f, 0f, Math.abs(boxMeasurements.boxLength)),
+            modeSize = Vector3(realWorldMeasurements.boxWidth, LINE_DEFAULT, LINE_DEFAULT),
+            offset = Vector3(0f, 0f, Math.abs(realWorldMeasurements.boxLength)),
             parentAnchorNode = anchorNodeList[1],
             position = position,
             rotation = rotation
@@ -295,11 +340,11 @@ class MeasurmentBox(
         renderLowerFrameLine(
             context = applicationContext,
             color = boxRenderData.lineRenderableColor,
-            modeSize = Vector3(LINE_DEFAULT, LINE_DEFAULT, boxMeasurements.boxLength),
+            modeSize = Vector3(LINE_DEFAULT, LINE_DEFAULT, realWorldMeasurements.boxLength),
             offset = Vector3(
-                -boxMeasurements.boxWidth / 2,
+                -realWorldMeasurements.boxWidth / 2,
                 0f,
-                Math.abs(boxMeasurements.boxLength / 2)
+                Math.abs(realWorldMeasurements.boxLength / 2)
             ),
             parentAnchorNode = anchorNodeList[1],
             position = position,
@@ -310,11 +355,11 @@ class MeasurmentBox(
         renderLowerFrameLine(
             context = applicationContext,
             color = boxRenderData.lineRenderableColor,
-            modeSize = Vector3(LINE_DEFAULT, LINE_DEFAULT, boxMeasurements.boxLength),
+            modeSize = Vector3(LINE_DEFAULT, LINE_DEFAULT, realWorldMeasurements.boxLength),
             offset = Vector3(
-                boxMeasurements.boxWidth / 2,
+                realWorldMeasurements.boxWidth / 2,
                 0f,
-                Math.abs(boxMeasurements.boxLength / 2)
+                Math.abs(realWorldMeasurements.boxLength / 2)
             ),
             parentAnchorNode = anchorNodeList[1],
             position = position,
@@ -326,7 +371,7 @@ class MeasurmentBox(
         renderUpperFrameLine(
             context = applicationContext,
             color = boxRenderData.lineRenderableColor,
-            modeSize = Vector3(boxMeasurements.boxWidth, LINE_DEFAULT, LINE_DEFAULT),
+            modeSize = Vector3(realWorldMeasurements.boxWidth, LINE_DEFAULT, LINE_DEFAULT),
             offset = Vector3.zero(),
             parentAnchorNode = anchorNodeList[PT_3],
             position = position,
@@ -338,8 +383,8 @@ class MeasurmentBox(
         renderUpperFrameLine(
             context = applicationContext,
             color = boxRenderData.lineRenderableColor,
-            modeSize = Vector3(boxMeasurements.boxWidth, LINE_DEFAULT, LINE_DEFAULT),
-            offset = Vector3(0f, 0f, Math.abs(boxMeasurements.boxLength)),
+            modeSize = Vector3(realWorldMeasurements.boxWidth, LINE_DEFAULT, LINE_DEFAULT),
+            offset = Vector3(0f, 0f, Math.abs(realWorldMeasurements.boxLength)),
             parentAnchorNode = anchorNodeList[PT_3],
             position = position,
             rotation = rotation
@@ -349,11 +394,11 @@ class MeasurmentBox(
         renderUpperFrameLine(
             context = applicationContext,
             color = boxRenderData.lineRenderableColor,
-            modeSize = Vector3(LINE_DEFAULT, LINE_DEFAULT, boxMeasurements.boxLength),
+            modeSize = Vector3(LINE_DEFAULT, LINE_DEFAULT, realWorldMeasurements.boxLength),
             offset = Vector3(
-                -boxMeasurements.boxWidth / 2,
+                -realWorldMeasurements.boxWidth / 2,
                 0f,
-                Math.abs(boxMeasurements.boxLength / 2)
+                Math.abs(realWorldMeasurements.boxLength / 2)
             ),
             parentAnchorNode = anchorNodeList[PT_3],
             position = position,
@@ -365,11 +410,11 @@ class MeasurmentBox(
         renderUpperFrameLine(
             context = applicationContext,
             color = boxRenderData.lineRenderableColor,
-            modeSize = Vector3(LINE_DEFAULT, LINE_DEFAULT, boxMeasurements.boxLength),
+            modeSize = Vector3(LINE_DEFAULT, LINE_DEFAULT, realWorldMeasurements.boxLength),
             offset = Vector3(
-                boxMeasurements.boxWidth / 2,
+                realWorldMeasurements.boxWidth / 2,
                 0f,
-                Math.abs(boxMeasurements.boxLength / 2)
+                Math.abs(realWorldMeasurements.boxLength / 2)
             ),
             parentAnchorNode = anchorNodeList[PT_3],
             position = position,
@@ -391,8 +436,8 @@ class MeasurmentBox(
         val toAdd = Vector3(0f, 0f, Math.abs(r.length()) / 2 + 0f)
 
         // set the box length and width
-        boxMeasurements.boxLength = r.length()
-        boxMeasurements.boxWidth = p2ToPt1.length()
+        realWorldMeasurements.boxLength = r.length()
+        realWorldMeasurements.boxWidth = p2ToPt1.length()
 
         // real distance
         val dist1 = getDistanceMeters(
@@ -420,7 +465,11 @@ class MeasurmentBox(
                     material.setFloat("metallic", 1F)
 
                     val modelRenderable = ShapeFactory.makeCube(
-                        Vector3(boxMeasurements.boxWidth, LINE_DEFAULT, boxMeasurements.boxLength),
+                        Vector3(
+                            realWorldMeasurements.boxWidth,
+                            LINE_DEFAULT,
+                            realWorldMeasurements.boxLength
+                        ),
                         toAdd,
                         material
                     ).apply {
@@ -531,9 +580,9 @@ class MeasurmentBox(
         centerRealScale = null
         areaCenterNode = null
         heightNode = null
-        boxMeasurements.boxWidth = 0f
-        boxMeasurements.boxHeight = 0f
-        boxMeasurements.boxLength = 0f
+        realWorldMeasurements.boxWidth = 0f
+        realWorldMeasurements.boxHeight = 0f
+        realWorldMeasurements.boxLength = 0f
 
     }
 
@@ -546,9 +595,9 @@ class MeasurmentBox(
             height = 1f
         }
 
-        var diffrence = height - boxMeasurements.boxHeight
+        var diffrence = height - realWorldMeasurements.boxHeight
 
-        boxMeasurements.boxHeight = height
+        realWorldMeasurements.boxHeight = height
 
         updateBoxHeight(height)
         updateVerticalFrameHeight(height)
@@ -574,7 +623,7 @@ class MeasurmentBox(
 
     }
 
-    // Private methods ----------------------------------------------------------------------------
+// Private methods ----------------------------------------------------------------------------
 
 
     private fun getDistanceMeters(pose1: Pose, pose2: Pose): Double {
@@ -590,7 +639,7 @@ class MeasurmentBox(
     }
 
     fun getBoxMeasurements(): BoxMeasurements {
-        return boxMeasurements
+        return realWorldMeasurements
     }
 
     private fun addTextBox(
@@ -641,7 +690,8 @@ class MeasurmentBox(
 
     private fun updateBoxHeight(height: Float) {
 
-        var toAdd = Vector3(0f, 0f + height * LINE_DEFAULT, Math.abs(boxMeasurements.boxLength) / 2)
+        var toAdd =
+            Vector3(0f, 0f + height * LINE_DEFAULT, Math.abs(realWorldMeasurements.boxLength) / 2)
         // add area
 
         MaterialFactory.makeTransparentWithColor(
@@ -657,9 +707,9 @@ class MeasurmentBox(
 
                 val modelRenderable = ShapeFactory.makeCube(
                     Vector3(
-                        boxMeasurements.boxWidth,
+                        realWorldMeasurements.boxWidth,
                         2 * height * LINE_DEFAULT,
-                        boxMeasurements.boxLength
+                        realWorldMeasurements.boxLength
                     ),
                     toAdd,
                     material
@@ -683,7 +733,7 @@ class MeasurmentBox(
             context = applicationContext,
             color = boxRenderData.lineRenderableColor,
             modeSize = Vector3(LINE_DEFAULT, 2 * LINE_DEFAULT * height, LINE_DEFAULT),
-            offset = Vector3(boxMeasurements.boxWidth / 2, 0f + height / 200, 0f)
+            offset = Vector3(realWorldMeasurements.boxWidth / 2, 0f + height / 200, 0f)
         )
 
         // line 2
@@ -691,7 +741,7 @@ class MeasurmentBox(
             context = applicationContext,
             color = boxRenderData.lineRenderableColor,
             modeSize = Vector3(LINE_DEFAULT, 2 * LINE_DEFAULT * height, LINE_DEFAULT),
-            offset = Vector3(-boxMeasurements.boxWidth / 2, 0f + height / 200, 0f)
+            offset = Vector3(-realWorldMeasurements.boxWidth / 2, 0f + height / 200, 0f)
         )
 
 
@@ -701,9 +751,9 @@ class MeasurmentBox(
             color = boxRenderData.lineRenderableColor,
             modeSize = Vector3(LINE_DEFAULT, 2 * LINE_DEFAULT * height, LINE_DEFAULT),
             offset = Vector3(
-                boxMeasurements.boxWidth / 2,
+                realWorldMeasurements.boxWidth / 2,
                 0f + height / 200,
-                Math.abs(boxMeasurements.boxLength)
+                Math.abs(realWorldMeasurements.boxLength)
             )
         )
 
@@ -713,9 +763,9 @@ class MeasurmentBox(
             color = boxRenderData.lineRenderableColor,
             modeSize = Vector3(LINE_DEFAULT, 2 * LINE_DEFAULT * height, LINE_DEFAULT),
             offset = Vector3(
-                -boxMeasurements.boxWidth / 2,
+                -realWorldMeasurements.boxWidth / 2,
                 0f + height / 200,
-                Math.abs(boxMeasurements.boxLength)
+                Math.abs(realWorldMeasurements.boxLength)
             )
         )
 

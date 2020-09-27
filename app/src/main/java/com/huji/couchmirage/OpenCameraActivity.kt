@@ -182,7 +182,7 @@ class OpenCameraActivity : AppCompatActivity() {
     }
 
     /***
-     * Inits the setupbox
+     * Init's the setup box
      */
     private fun setupBox() {
         //
@@ -210,7 +210,7 @@ class OpenCameraActivity : AppCompatActivity() {
     }
 
     /**
-     * Inits the seekbase
+     * Init's the seekbar
      */
     private fun setupSeekBar() {
 
@@ -449,7 +449,10 @@ class OpenCameraActivity : AppCompatActivity() {
                     }
 
                     if (box.getMeasurementStage() == MeasurementStage.WIDTH) {
-                        box.drawLine(box.getAnchorNode(box.PT_1), box.getAnchorNode(box.PT_2))
+                        box.drawLine(
+                            box.getAnchorNode(MeasurmentBox.PT_1),
+                            box.getAnchorNode(MeasurmentBox.PT_2)
+                        )
                     }
 
                     if (box.getAnchorListSize() == 3) {
