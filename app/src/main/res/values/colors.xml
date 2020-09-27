@@ -27,7 +27,9 @@
     <color name="info_ripple_green">#AB76FF03</color>
     <color name="info_ripple_yellow">#FFFF8D</color>
     <color name="info_ripple_red">#EF5350</color>
+    <color name="info_ripple_blue">#82B1FF</color>
     <color name="info_background_green">#AB76FF03</color>
+    <color name="info_background_blue">#303F9F</color>
     <color name="info_background_yellow">#A9FBEE76</color>
     <color name="info_background_red">#57D50000</color>
     <color name="scale_btn_tint">#80D5D5D5</color>

@@ -61,11 +61,7 @@ class PhotoSaver(
         }
 
         generateFilename()
-        MediaStore.Images.Media.insertImage(
-            activity.contentResolver, bmp,
-            title,
-            description
-        );
+
 
 
 

@@ -8,7 +8,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
  * UI stage of InfoFAB
  */
 enum class InfoStage {
-    RED, YELLOW, GREEN
+    RED, YELLOW, GREEN, BLUE
 }
 
 /***

@@ -395,8 +395,6 @@ class OpenCameraActivity : AppCompatActivity() {
                 changeIconAnimated(measurement, 180f, R.drawable.ruler_green_32)
             }
             clear.visibility = View.GONE
-
-
         }
 
         clear.visibility = View.GONE
@@ -416,7 +414,6 @@ class OpenCameraActivity : AppCompatActivity() {
     private fun setupToast() {
         Toasty.Config.getInstance()
             .allowQueue(false) // optional (prevents several Toastys from queuing)
-
             .apply();
     }
 
@@ -502,6 +499,8 @@ class OpenCameraActivity : AppCompatActivity() {
                 val clear: View = findViewById(R.id.clear)
                 clear.visibility = View.VISIBLE
 
+                //
+                changeInfoStageToGreen()
             }
 
         }

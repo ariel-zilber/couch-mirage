@@ -150,23 +150,18 @@ public class VideoRecorder {
         // Stop recording
         mediaRecorder.stop();
         mediaRecorder.reset();
-
-
     }
-
 
 
     private void setUpMediaRecorder() throws IOException {
 
         mediaRecorder.setVideoSource(MediaRecorder.VideoSource.SURFACE);
         mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
-
         mediaRecorder.setOutputFile(videoPath.getAbsolutePath());
         mediaRecorder.setVideoEncodingBitRate(bitRate);
         mediaRecorder.setVideoFrameRate(frameRate);
         mediaRecorder.setVideoSize(videoSize.getWidth(), videoSize.getHeight());
         mediaRecorder.setVideoEncoder(videoCodec);
-
         mediaRecorder.prepare();
 
         try {
