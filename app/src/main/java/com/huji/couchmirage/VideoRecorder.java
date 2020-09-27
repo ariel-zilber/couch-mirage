@@ -1,13 +1,21 @@
 package com.huji.couchmirage;
 
 import android.app.Activity;
+import android.content.ContentValues;
+import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
+import android.database.Cursor;
 import android.media.CamcorderProfile;
 import android.media.MediaRecorder;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.util.Size;
 import android.view.Surface;
+import android.widget.Toast;
 
 import com.google.ar.sceneform.SceneView;
 
@@ -142,7 +150,11 @@ public class VideoRecorder {
         // Stop recording
         mediaRecorder.stop();
         mediaRecorder.reset();
+
+
     }
+
+
 
     private void setUpMediaRecorder() throws IOException {
 

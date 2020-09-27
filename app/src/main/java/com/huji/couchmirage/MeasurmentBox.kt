@@ -11,6 +11,7 @@ import com.google.ar.sceneform.math.Vector3
 import com.google.ar.sceneform.rendering.*
 import com.google.ar.sceneform.ux.ArFragment
 import com.google.ar.sceneform.ux.TransformableNode
+import java.io.Serializable
 
 data class BoxRenderData(
     val pointRenderableRadius: Float,
@@ -28,7 +29,7 @@ data class BoxMeasurements(
     var boxWidth: Float,
     var boxLength: Float,
     var boxHeight: Float
-)
+):Serializable
 
 
 enum class MeasurementStage {

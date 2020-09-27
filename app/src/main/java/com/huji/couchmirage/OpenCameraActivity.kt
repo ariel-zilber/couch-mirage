@@ -344,18 +344,15 @@ class OpenCameraActivity : AppCompatActivity() {
 
             } else if (measureSelected && box.getMeasurementStage() == MeasurementStage.HEIGHT) {
                 measureSelected = false
-                //  onClear()
 
                 vibrate()
                 changeIconAnimated(measurement, 180f, R.drawable.ruler_green_32)
-                clear.visibility = View.GONE
+                // clear.visibility = View.GONE
 
                 userMeasurements = box.getBoxMeasurements()
                 showShapedMeasuredDialog()
 
 
-                // xxx
-                // xxx
                 changeInfoStageToGreen()
             }
 
@@ -373,10 +370,12 @@ class OpenCameraActivity : AppCompatActivity() {
         search.setOnClickListener { view ->
 
             if (userMeasurements == null) {
-                showNoShapeWashMeasuredDialog()
-            } else {
-                searchItem()
+                userMeasurements = BoxMeasurements(0f, 0f, 0f)
             }
+
+
+            searchItem()
+
 
         }
     }
@@ -394,9 +393,8 @@ class OpenCameraActivity : AppCompatActivity() {
             if (measureSelected) {
                 measureSelected = false
                 changeIconAnimated(measurement, 180f, R.drawable.ruler_green_32)
-                clear.visibility = View.GONE
-
             }
+            clear.visibility = View.GONE
 
 
         }
@@ -476,7 +474,6 @@ class OpenCameraActivity : AppCompatActivity() {
                 }
             } else {
 
-
                 // create anchor node
                 val anchorNode = AnchorNode(hitResult.createAnchor())
 
@@ -499,6 +496,11 @@ class OpenCameraActivity : AppCompatActivity() {
                 )
 
                 arFragment.arSceneView.scene.addChild(anchorNode)
+                isModelFound = false
+
+                // clear button
+                val clear: View = findViewById(R.id.clear)
+                clear.visibility = View.VISIBLE
 
             }
 
@@ -806,6 +808,18 @@ class OpenCameraActivity : AppCompatActivity() {
 
     private fun openSearchDialog() {
         val intent = Intent(this, MainActivity::class.java)
+        //
+
+        var measurement = BoxMeasurements(
+            boxWidth = userMeasurements!!.boxWidth * 100f,
+            boxLength = userMeasurements!!.boxLength * 100f,
+            boxHeight = userMeasurements!!.boxHeight
+
+
+        )
+
+        intent.putExtra("user_measurements", measurement);
+
         startActivity(intent)
     }
 

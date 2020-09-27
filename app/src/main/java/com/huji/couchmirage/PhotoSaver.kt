@@ -25,12 +25,14 @@ import java.util.*
 class PhotoSaver(
     private val activity: Activity
 ) {
+    private var title: String = ""
+    private var description = "taken with CouchMirage"
 
     private fun generateFilename(): String? {
         val date = SimpleDateFormat("yyyyMMddHHmmss", Locale.getDefault()).format(Date())
+        title = "/couch_mirage_screenshot_${date}.jpg"
 
-        return activity.getExternalFilesDir(Environment.DIRECTORY_PICTURES)?.absolutePath +
-                "/${date}_screenshot.jpg"
+        return activity.getExternalFilesDir(Environment.DIRECTORY_PICTURES)?.absolutePath + title
     }
 
     @RequiresApi(Build.VERSION_CODES.Q)
@@ -57,6 +59,16 @@ class PhotoSaver(
                 }
             }
         }
+
+        generateFilename()
+        MediaStore.Images.Media.insertImage(
+            activity.contentResolver, bmp,
+            title,
+            description
+        );
+
+
+
     }
 
     private fun saveBitmapToGallery(bmp: Bitmap, filename: String) {
@@ -66,10 +78,12 @@ class PhotoSaver(
             Log.d("PhotoSaver", "creating folder:${out.absolutePath}")
         }
         try {
+            Log.d("PhotoSaver", "Saving to  folder:${out.absolutePath}")
 
             val outputStream = FileOutputStream(filename)
             saveDataToGallery(bmp, outputStream)
             MediaScannerConnection.scanFile(activity, arrayOf(filename), null, null)
+
 
         } catch (e: IOException) {
             Toast.makeText(activity, "Failed to save bitmap to gallery.", Toast.LENGTH_LONG).show()
@@ -80,6 +94,13 @@ class PhotoSaver(
 
     private fun saveDataToGallery(bmp: Bitmap, outputStream: OutputStream) {
         val outputData = ByteArrayOutputStream()
+
+        MediaStore.Images.Media.insertImage(
+            activity.contentResolver, bmp,
+            title,
+            description
+        );
+
 
         bmp.compress(Bitmap.CompressFormat.JPEG, 100, outputData)
         outputData.writeTo(outputStream)
@@ -96,13 +117,20 @@ class PhotoSaver(
         PixelCopy.request(arSceneView, bmp, { result ->
             if (result == PixelCopy.SUCCESS) {
                 if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.P) {
+                    Log.d("PhotoSaver", "Build.VERSION.SDK_INT <= Build.VERSION_CODES.P")
                     val filename = generateFilename()
                     saveBitmapToGallery(bmp, filename ?: return@request)
                 } else {
                     saveBitmapToGallery(bmp)
                 }
                 activity.runOnUiThread {
+
+                    //
+
+
                     Toast.makeText(activity, "Successfully took photo!", Toast.LENGTH_LONG).show()
+
+
                 }
             } else {
                 activity.runOnUiThread {
