@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-    <!--btn_capture_options.xml-->
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-android:shape="rectangle">
-<stroke
-    android:width="2dp"
-    android:color="#111111"
-    android:dashWidth="0dp" />
-</shape>

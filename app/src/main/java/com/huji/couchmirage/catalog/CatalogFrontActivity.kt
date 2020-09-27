@@ -13,7 +13,8 @@ import com.huji.couchmirage.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 /***
- *
+ * Main page of the Catalog.
+ * Contains different furniture categories
  */
 class CatalogFrontActivity : AppCompatActivity() {
 
@@ -24,9 +25,7 @@ class CatalogFrontActivity : AppCompatActivity() {
             val action = intent.getAction()
 
             if (action == "show_model") {
-
                 finish()
-
             }
 
         }
@@ -34,10 +33,7 @@ class CatalogFrontActivity : AppCompatActivity() {
 
 
     private fun configureReceiver() {
-
-        registerReceiver(
-            receiver, IntentFilter("show_model")
-        );
+        registerReceiver(receiver, IntentFilter("show_model"))
     }
 
 
@@ -69,7 +65,6 @@ class CatalogFrontActivity : AppCompatActivity() {
                 DepartmentRecyclerAdapter(object :
                     OnDepartmentClickListen {
                     override fun onDepartmentClick(view: View, position: Int) {
-//                    Toast.makeText(view.context, "clicked", Toast.LENGTH_SHORT).show()
                         openDepartmentPage(view, position)
                     }
                 })

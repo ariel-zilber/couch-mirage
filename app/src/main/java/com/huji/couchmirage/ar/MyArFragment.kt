@@ -53,6 +53,8 @@ class MyArFragment : ArFragment(), Scene.OnUpdateListener {
         if (frame.camera.trackingState != TrackingState.TRACKING) {
             return
         }
+
+        //
         for (plane in frame.getUpdatedTrackables(Plane::class.java)) {
             if (plane.trackingState == TrackingState.TRACKING) {
                 hideLoadingMessage()
