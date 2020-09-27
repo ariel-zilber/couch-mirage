@@ -1,10 +1,10 @@
-package com.huji.couchmirage
+package com.huji.couchmirage.catalog
 //
 //import android.util.Log
 //import com.google.common.primitives.UnsignedBytes.toInt
 //import com.google.firebase.firestore.FirebaseFirestore
 //import com.google.firebase.firestore.ktx.toObject
-//import com.huji.couchmirage.DepartmentActivity.Companion.itemAdapter
+//import com.huji.couchmirage.catalog.DepartmentActivity.Companion.itemAdapter
 //
 //
 //class ItemDataSource {

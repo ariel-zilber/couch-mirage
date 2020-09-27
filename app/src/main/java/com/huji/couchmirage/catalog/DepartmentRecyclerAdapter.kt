@@ -1,4 +1,4 @@
-package com.huji.couchmirage
+package com.huji.couchmirage.catalog
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.huji.couchmirage.R
 import kotlinx.android.synthetic.main.layout_department_single_list_item.view.*
 
 class DepartmentRecyclerAdapter(
@@ -19,7 +20,10 @@ class DepartmentRecyclerAdapter(
         val textView = LayoutInflater.from(parent.context)
             .inflate(R.layout.layout_department_single_list_item, parent, false)
 
-        val viewHol = DepartmentViewHolder(textView)
+        val viewHol =
+            DepartmentViewHolder(
+                textView
+            )
         textView.setOnClickListener { v ->
             listener.onDepartmentClick(
                 v,
@@ -73,7 +77,11 @@ class DepartmentRecyclerAdapter(
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
             return DepartmentViewHolder(
                 LayoutInflater.from(parent.context)
-                    .inflate(R.layout.layout_department_single_list_item, parent, false)
+                    .inflate(
+                        R.layout.layout_department_single_list_item,
+                        parent,
+                        false
+                    )
             )
         }
 

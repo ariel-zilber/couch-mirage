@@ -31,15 +31,16 @@ import com.google.ar.sceneform.rendering.ModelRenderable
 import com.google.ar.sceneform.rendering.Renderable
 import com.google.ar.sceneform.ux.TransformableNode
 import com.google.firebase.FirebaseApp
-import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
+import com.huji.couchmirage.ar.MyArFragment
+import com.huji.couchmirage.catalog.CatalogFrontActivity
+import com.huji.couchmirage.utils.PhotoSaver
+import com.huji.couchmirage.utils.VideoRecorder
 import com.warkiz.widget.IndicatorSeekBar
 import com.warkiz.widget.IndicatorStayLayout
 import com.warkiz.widget.OnSeekChangeListener
 import com.warkiz.widget.SeekParams
 import es.dmoral.toasty.Toasty
 import java.io.File
-import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -82,7 +83,8 @@ class OpenCameraActivity : AppCompatActivity() {
 
     // media saves
     var photoSaver = PhotoSaver(this)
-    var videoSaver = VideoRecorder()    // todo fix video recorder
+    var videoSaver =
+        VideoRecorder()    // todo fix video recorder
 
 
     var modelLength: Float = 0f
@@ -225,18 +227,15 @@ class OpenCameraActivity : AppCompatActivity() {
             override fun onSeeking(seekParams: SeekParams?) {
                 if (isSeeking) {
                     box.setBoxHeight(seekParams!!.progress.toFloat())
-
                 }
             }
 
             override fun onStartTrackingTouch(seekBar: IndicatorSeekBar?) {
                 isSeeking = true
-
             }
 
             override fun onStopTrackingTouch(seekBar: IndicatorSeekBar?) {
                 isSeeking = false
-
             }
 
 
@@ -368,9 +367,9 @@ class OpenCameraActivity : AppCompatActivity() {
 
         val search: FloatingActionButton = findViewById(R.id.fab_search)
         search.setOnClickListener { view ->
-
+            var INFINITY = 1000000000f
             if (userMeasurements == null) {
-                userMeasurements = BoxMeasurements(0f, 0f, 0f)
+                userMeasurements = BoxMeasurements(INFINITY, INFINITY, INFINITY)
             }
 
 
@@ -477,7 +476,10 @@ class OpenCameraActivity : AppCompatActivity() {
                 // create node
                 val node = TransformableNode(arFragment.transformationSystem)
                 node.scaleController.isEnabled = false
-                node.getTranslationController().setEnabled(false);
+
+                node.getTranslationController().setEnabled(true);
+                node.rotationController.setEnabled(true);
+
                 node.setParent(anchorNode)
                 node.renderable = furnitureRenderable
 
@@ -806,7 +808,7 @@ class OpenCameraActivity : AppCompatActivity() {
 
 
     private fun openSearchDialog() {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, CatalogFrontActivity::class.java)
         //
 
         var measurement = BoxMeasurements(

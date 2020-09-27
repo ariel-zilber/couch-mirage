@@ -1,22 +1,19 @@
-package com.huji.couchmirage
+package com.huji.couchmirage.catalog
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
+import com.huji.couchmirage.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-class MainActivity : AppCompatActivity() {
+class CatalogFrontActivity : AppCompatActivity() {
 
     private lateinit var departmentAdapter: DepartmentRecyclerAdapter
 
@@ -66,12 +63,14 @@ class MainActivity : AppCompatActivity() {
     private fun initRecyclerView() {
         recycler_view.apply {
             layoutManager = GridLayoutManager(this.context, 2)
-            departmentAdapter = DepartmentRecyclerAdapter(object : OnDepartmentClickListen {
-                override fun onDepartmentClick(view: View, position: Int) {
+            departmentAdapter =
+                DepartmentRecyclerAdapter(object :
+                    OnDepartmentClickListen {
+                    override fun onDepartmentClick(view: View, position: Int) {
 //                    Toast.makeText(view.context, "clicked", Toast.LENGTH_SHORT).show()
-                    openDepartmentPage(view, position)
-                }
-            })
+                        openDepartmentPage(view, position)
+                    }
+                })
             adapter = departmentAdapter
         }
     }
@@ -96,7 +95,10 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("items", list);
 
                 startActivity(intent)
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                overridePendingTransition(
+                    R.anim.slide_in_right,
+                    R.anim.slide_out_left
+                );
 
 
             }

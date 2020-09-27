@@ -1,15 +1,14 @@
-package com.huji.couchmirage
+package com.huji.couchmirage.ar
 
 
 import android.app.Activity
 import android.content.Context
 import android.util.AttributeSet
 import android.view.View
-import android.view.animation.Animation
-import android.widget.FrameLayout
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.ar.sceneform.ux.HandMotionAnimation
 import com.google.ar.sceneform.ux.HandMotionView
+import com.huji.couchmirage.R
 
 
 class CustomMotionView : HandMotionView {

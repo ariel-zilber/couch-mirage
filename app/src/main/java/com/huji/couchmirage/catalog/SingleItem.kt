@@ -1,4 +1,4 @@
-package com.huji.couchmirage
+package com.huji.couchmirage.catalog
 
 import android.app.Application
 import android.os.Parcelable

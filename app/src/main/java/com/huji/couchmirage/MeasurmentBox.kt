@@ -1,7 +1,6 @@
 package com.huji.couchmirage
 
 import android.content.Context
-import android.util.Log
 import android.widget.TextView
 import com.google.ar.core.Pose
 import com.google.ar.sceneform.AnchorNode
@@ -11,6 +10,7 @@ import com.google.ar.sceneform.math.Vector3
 import com.google.ar.sceneform.rendering.*
 import com.google.ar.sceneform.ux.ArFragment
 import com.google.ar.sceneform.ux.TransformableNode
+import com.huji.couchmirage.ar.CameraFacingNode
 import java.io.Serializable
 
 data class BoxRenderData(

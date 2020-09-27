@@ -1,6 +1,5 @@
-package com.huji.couchmirage
+package com.huji.couchmirage.ar
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +10,7 @@ import com.google.ar.core.TrackingState
 import com.google.ar.sceneform.FrameTime
 import com.google.ar.sceneform.Scene
 import com.google.ar.sceneform.ux.ArFragment
+import com.huji.couchmirage.OpenCameraActivity
 
 class MyArFragment : ArFragment(), Scene.OnUpdateListener {
 

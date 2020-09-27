@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
 
-    tools:context=".ItemDetailsActivity">
+    tools:context=".catalog.ItemDetailsActivity">
 
     <ScrollView
         android:id="@+id/scrollView2"

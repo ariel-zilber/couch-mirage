@@ -1,18 +1,15 @@
-package com.huji.couchmirage
+package com.huji.couchmirage.catalog
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import kotlinx.android.synthetic.main.item_details_activity.view.*
+import com.huji.couchmirage.R
 import kotlinx.android.synthetic.main.layout_single_list_item.view.*
-import org.w3c.dom.Text
 
 class ItemRecyclerAdapter(
     private var listener: OnItemClickListen
@@ -32,7 +29,10 @@ class ItemRecyclerAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val textView = LayoutInflater.from(parent.context)
             .inflate(R.layout.layout_single_list_item, parent, false)
-        val viewHol = ItemViewHolder(textView)
+        val viewHol =
+            ItemViewHolder(
+                textView
+            )
         textView.setOnClickListener { v ->
             listener.onItemClick(v, viewHol.layoutPosition)
         }
@@ -77,7 +77,11 @@ class ItemRecyclerAdapter(
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
             return ItemViewHolder(
                 LayoutInflater.from(parent.context)
-                    .inflate(R.layout.layout_single_list_item, parent, false)
+                    .inflate(
+                        R.layout.layout_single_list_item,
+                        parent,
+                        false
+                    )
             )
         }
 

@@ -7,7 +7,7 @@
     android:backgroundTint="#FFFFFF"
 
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".catalog.CatalogFrontActivity">
 
 
     <TextView

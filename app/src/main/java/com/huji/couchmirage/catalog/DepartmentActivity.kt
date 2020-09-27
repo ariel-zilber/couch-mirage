@@ -1,20 +1,16 @@
-package com.huji.couchmirage
+package com.huji.couchmirage.catalog
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import com.huji.couchmirage.DepartmentSourceData.Companion.createDataSet
+import com.huji.couchmirage.*
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.layout_department_single_list_item.*
-import kotlinx.android.synthetic.main.layout_department_single_list_item.view.*
 
 class DepartmentActivity : AppCompatActivity() {
     companion object {
@@ -77,18 +73,24 @@ class DepartmentActivity : AppCompatActivity() {
         }
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         startActivity(intent)
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        overridePendingTransition(
+            R.anim.slide_in_right,
+            R.anim.slide_out_left
+        );
     }
 
     private fun initRecyclerView() {
         recycler_view.apply {
             layoutManager = GridLayoutManager(this.context, 2)
-            itemAdapter = ItemRecyclerAdapter(object : OnItemClickListen {
-                override fun onItemClick(view: View, position: Int) {
-                    openItemDetailsActivity(position)
-                }
-            })
-            adapter = itemAdapter
+            itemAdapter =
+                ItemRecyclerAdapter(object :
+                    OnItemClickListen {
+                    override fun onItemClick(view: View, position: Int) {
+                        openItemDetailsActivity(position)
+                    }
+                })
+            adapter =
+                itemAdapter
         }
     }
 }

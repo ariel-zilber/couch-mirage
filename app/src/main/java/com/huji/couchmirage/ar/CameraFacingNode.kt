@@ -1,4 +1,4 @@
-package com.huji.couchmirage
+package com.huji.couchmirage.ar
 
 import com.google.ar.sceneform.FrameTime
 import com.google.ar.sceneform.Node

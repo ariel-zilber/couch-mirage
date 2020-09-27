@@ -1,4 +1,6 @@
-package com.huji.couchmirage
+package com.huji.couchmirage.catalog
+
+import com.huji.couchmirage.catalog.Department
 
 class DepartmentSourceData {
     companion object {

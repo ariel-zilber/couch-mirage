@@ -1,4 +1,4 @@
-package com.huji.couchmirage
+package com.huji.couchmirage.ar
 
 import android.Manifest
 import android.content.Intent

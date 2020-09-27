@@ -1,23 +1,18 @@
-package com.huji.couchmirage
+package com.huji.couchmirage.catalog
 
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.models.SlideModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import com.google.firebase.storage.ktx.storage
-import kotlinx.android.synthetic.main.item_details_activity.view.*
-import kotlinx.android.synthetic.main.layout_single_list_item.view.*
+import com.huji.couchmirage.R
 import java.io.File
 import java.io.IOException
 

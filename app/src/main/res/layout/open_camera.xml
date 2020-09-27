@@ -10,7 +10,7 @@
 
     <fragment
         android:id="@+id/fragment"
-        android:name="com.huji.couchmirage.MyArFragment"
+        android:name="com.huji.couchmirage.ar.MyArFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/bottomPanel"
