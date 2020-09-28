@@ -15,6 +15,7 @@ See : https://shnaton.huji.ac.il/index.php/NewSyl/67625/2/2020/
 
 ## demo
 ![Alt Text](https://j.gifs.com/MwrJvB.gif)
+![](docs/images/demo_1.gif)
 ## Screenshots
 
 ### Main page searching for plane
