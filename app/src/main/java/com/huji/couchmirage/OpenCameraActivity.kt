@@ -52,6 +52,10 @@ class OpenCameraActivity : AppCompatActivity() {
     val TAG = OpenCameraActivity::class.simpleName
     val MIN_OPENGL_VERSION: Double = 3.0
 
+    // installion required
+    private var installRequested: Boolean = false
+
+
     // renderable constants
     val CUBE_RENDABLE_RADIUS = 0.01f
     val CUBE_RENDABLE_COLOR = Color(0F, 255F, 0F, 0F)
@@ -123,6 +127,7 @@ class OpenCameraActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.open_camera)
 
         if (!checkIsSupportedDeviceOrFinish(this)) {
@@ -145,11 +150,20 @@ class OpenCameraActivity : AppCompatActivity() {
         setupSeekBar()
     }
 
+    override fun onResume() {
+        super.onResume()
+
+    }
+
     override fun onDestroy() {
         super.onDestroy()
 
         unregisterReceiver(receiver)
     }
+
+
+    //
+
 
     // setup methods
 
@@ -952,6 +966,7 @@ class OpenCameraActivity : AppCompatActivity() {
             activity.finish()
             return false
         }
+
         val openGlVersionString =
             (activity.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager)
                 .deviceConfigurationInfo

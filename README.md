@@ -13,7 +13,9 @@ By utilizing ARCore and Sceneform libraries by google it allows you to visualize
 Couch Mirage is the final project in the university course #67625 at The Hebrew University in Jerusalem.
 See : https://shnaton.huji.ac.il/index.php/NewSyl/67625/2/2020/
 
-## 
+## demo
+<iframe src='//gifs.com/embed/couch-mirage-demo-MwrJvB' frameborder='0' scrolling='no' width='352px' height='640px' style='-webkit-backface-visibility: hidden;-webkit-transform: scale(1);' ></iframe>
+
 ## Screenshots
 
 ### Main page searching for plane
@@ -30,6 +32,7 @@ See : https://shnaton.huji.ac.il/index.php/NewSyl/67625/2/2020/
 ![screenshot 6](docs/images/screenshot_6.jpeg)
 ### The model has been placed!!
 ![screenshot 7](docs/images/screenshot_7.jpeg)
+
 
 ## Features
 - Measuring real world  location
