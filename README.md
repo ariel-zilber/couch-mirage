@@ -48,10 +48,7 @@ The models were takes from multiple sources.
 They were preproccessed using blender software and uploaded to firebase using python.
 See : https://github.com/arikzilWork/CouchMirageFirebaseLoader
 
-
-
-### List of possible  sources
-#### ikea
+### List of 3d models sources
     * https://free3d.com/3d-models/ikea
 
     * https://www.polantis.com/ikea/arstid-wall-lamp
@@ -78,13 +75,8 @@ See : https://github.com/arikzilWork/CouchMirageFirebaseLoader
 
     * http://www.cgchannel.com/2014/03/download-10-free-models-of-ikea-furniture-from-proviz/
 
-
-#### general
     * https://archibaseplanet.com/download/6f86e1ec.html
 
-## Changelog
 ## Credits
-
-
-## License
-
+Ariel Zilbershtyin - Computer Engineering student at the hebrew university
+Brahan Wassan - math & computer science student at the hebrew university
