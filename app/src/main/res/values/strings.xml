@@ -52,6 +52,7 @@
     <string name="green_advise_1">Press the Search button</string>
     <string name="green_advise_2">Press the Ruler button to reset</string>
     <string name="camera_load_animation_text">Move phone to start</string>
+    <string name="default_text">no description</string>
 
 
 </resources>

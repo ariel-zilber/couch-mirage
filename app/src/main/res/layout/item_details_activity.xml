@@ -105,6 +105,7 @@
                 android:background="#dedede" />
 
             <include layout="@layout/item_details_description" />
+            <include layout="@layout/item_details_good_to_know" />
 
 
         </LinearLayout>

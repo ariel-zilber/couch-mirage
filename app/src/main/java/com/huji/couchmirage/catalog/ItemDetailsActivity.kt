@@ -3,10 +3,14 @@ package com.huji.couchmirage.catalog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.transition.AutoTransition
+import android.transition.TransitionManager
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.models.SlideModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -46,9 +50,13 @@ class ItemDetailsActivity : AppCompatActivity() {
 
 
         // Init UI components
+        setupDescriptionToggle()
+        setupGoodToKnowToggle()
         setUpItemCategory()
         setUpItemPrice()
         setUpItemDescription()
+        setUpItemGoodToKnow()
+        setUpItemSizes()
         setUpItemModel()
         setUpItemColor()
         loadSelectedItemImages()
@@ -57,6 +65,57 @@ class ItemDetailsActivity : AppCompatActivity() {
         setupDisplay3DModelButton()
     }
 
+    private fun setupDescriptionToggle() {
+
+        var description = findViewById<TextView>(R.id.description)
+        var arrowBtn = findViewById<Button>(R.id.show_description)
+        var description_view = findViewById<ConstraintLayout>(R.id.descrption_view)
+
+        arrowBtn.setOnClickListener {
+            if (description.getVisibility() == View.GONE) {
+                TransitionManager.beginDelayedTransition(
+                    description_view,
+                    AutoTransition()
+                )
+                description.setVisibility(View.VISIBLE)
+                arrowBtn.setBackgroundResource(R.drawable.ic_keyboard_arrow_up_black_24dp)
+            } else {
+                TransitionManager.beginDelayedTransition(
+                    description_view,
+                    AutoTransition()
+                )
+                description.setVisibility(View.GONE)
+                arrowBtn.setBackgroundResource(R.drawable.ic_keyboard_arrow_down_black_24dp)
+            }
+        }
+    }
+
+    private fun setupGoodToKnowToggle() {
+
+        var goodToKnow = findViewById<TextView>(R.id.good_to_know)
+        var arrowBtn = findViewById<Button>(R.id.show_good_to_know)
+        var goodToKnow_view = findViewById<ConstraintLayout>(R.id.good_to_know_view)
+
+        arrowBtn.setOnClickListener {
+            if (goodToKnow.getVisibility() == View.GONE) {
+                TransitionManager.beginDelayedTransition(
+                    goodToKnow_view,
+                    AutoTransition()
+                )
+                goodToKnow.setVisibility(View.VISIBLE)
+                arrowBtn.setBackgroundResource(R.drawable.ic_keyboard_arrow_up_black_24dp)
+            } else {
+                TransitionManager.beginDelayedTransition(
+                    goodToKnow_view,
+                    AutoTransition()
+                )
+                goodToKnow.setVisibility(View.GONE)
+                arrowBtn.setBackgroundResource(R.drawable.ic_keyboard_arrow_down_black_24dp)
+            }
+        }
+    }
+
+
     private fun setUpItemCategory() {
         val itemDescription: TextView = findViewById(R.id.item_category)
         itemDescription.setText(selectedItem.category)
@@ -64,12 +123,33 @@ class ItemDetailsActivity : AppCompatActivity() {
 
     private fun setUpItemPrice() {
         val itemDescription: TextView = findViewById(R.id.price_text)
-        itemDescription.setText(selectedItem.price.toString()+" ₪")
+        itemDescription.setText(selectedItem.price.toString() + " ₪")
     }
 
     private fun setUpItemDescription() {
         val itemDescription: TextView = findViewById(R.id.description)
         itemDescription.setText(selectedItem.details["description"])
+    }
+
+    private fun setUpItemGoodToKnow() {
+        val itemDescription: TextView = findViewById(R.id.good_to_know)
+        var goodToKnow_view = findViewById<ConstraintLayout>(R.id.good_to_know_view)
+
+        if (selectedItem.details["good_to_know"] == null) {
+            goodToKnow_view.visibility = View.GONE
+        } else {
+            itemDescription.setText(selectedItem.details["good_to_know"])
+
+        }
+
+    }
+
+    private fun setUpItemSizes() {
+        val itemSizes: TextView = findViewById(R.id.item_sizes)
+
+
+        itemSizes.setText("${selectedItem.sizes[0]} x ${selectedItem.sizes[1]} x ${selectedItem.sizes[2]}")
+
     }
 
     private fun setUpItemColor() {

@@ -56,12 +56,15 @@ class ItemRecyclerAdapter(
         private val itemName: TextView = itemView.item_name
         private val itemPrice: TextView = itemView.item_price
         private val itemColor: TextView = itemView.item_color
+        private val itemSizes: TextView = itemView.item_sizes
 
         //        private val itemDetails: TextView = itemView.item_color
         fun bind(item: Furniture) {
             itemName.text = item.model
             itemColor.text = item.color
             itemPrice.text = item.price.toString() + "₪"
+            itemSizes.text="${item.sizes[0]} x ${item.sizes[1]} x ${item.sizes[2]}"
+
             val requestOptions = RequestOptions()
                 .placeholder(R.drawable.ic_launcher_background)
                 .error(R.drawable.ic_launcher_background)

@@ -7,7 +7,7 @@
     android:weightSum="100">
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="50">
 
@@ -18,7 +18,7 @@
 
             <TextView
                 android:id="@+id/item_category"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="CHAIRS"
@@ -27,7 +27,7 @@
 
             <TextView
                 android:id="@+id/model_title"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/calibri"
                 android:text="RENBERGET"
@@ -36,7 +36,7 @@
 
             <TextView
                 android:id="@+id/price_text"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/calibri"
                 android:text="245 ₪"
@@ -46,12 +46,23 @@
 
             <TextView
                 android:id="@+id/item_color"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/calibri"
                 android:text="white"
                 android:textColor="@color/btn_context_menu_pressed"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/item_sizes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/calibri"
+                android:text="white"
+                android:textColor="@color/btn_context_menu_text_red"
                 android:textSize="14sp"
                 android:textStyle="italic" />
         </LinearLayout>

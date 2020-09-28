@@ -2,7 +2,6 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="8dp"
@@ -12,9 +11,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:backgroundTint="@color/btn_send_normal"
+        android:layout_height="wrap_content"
 
-        android:layout_height="wrap_content">
+        android:backgroundTint="@color/btn_send_normal">
 
         <ImageView
 
@@ -67,10 +66,25 @@
 
             <TextView
 
-                android:id="@+id/item_price"
+                android:id="@+id/item_sizes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="0 x 0 x 0"
+                android:textColor="#7CB342"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/item_price" />
+
+            <TextView
+
+                android:id="@+id/item_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="Item Price"
                 android:textColor="#000"
@@ -78,7 +92,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/item_name" />
+                app:layout_constraintTop_toBottomOf="@+id/item_name"
+                app:layout_constraintVertical_bias="0.24000001" />
 
             <TextView
 
