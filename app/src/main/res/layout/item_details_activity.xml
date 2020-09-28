@@ -116,10 +116,9 @@
     <Button
         android:id="@+id/goto_store_button"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="60dp"
         android:layout_gravity="center"
-        android:layout_margin="16dp"
-        android:backgroundTint="@color/btn_send_normal"
+        android:backgroundTint="@color/camera_menu_btn_tint"
 
         android:fontFamily="@font/calibri"
         android:text="Go to site"
