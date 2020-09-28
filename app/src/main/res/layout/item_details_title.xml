@@ -57,8 +57,9 @@
             <TextView
                 android:id="@+id/item_sizes"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_height="20dp"
+                android:gravity="left"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/calibri"
                 android:text="0 x 0 x 0"
                 android:textColor="#9A9E9C"
