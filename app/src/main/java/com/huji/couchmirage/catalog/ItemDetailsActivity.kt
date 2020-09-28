@@ -3,12 +3,12 @@ package com.huji.couchmirage.catalog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.Html
 import android.transition.AutoTransition
 import android.transition.TransitionManager
 import android.util.Log
 import android.view.View
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -117,8 +117,6 @@ class ItemDetailsActivity : AppCompatActivity() {
     }
 
 
-
-
     private fun setUpItemCategory() {
         val itemDescription: TextView = findViewById(R.id.item_category)
         itemDescription.setText(selectedItem.category)
@@ -149,7 +147,7 @@ class ItemDetailsActivity : AppCompatActivity() {
 
     private fun setUpItemSizes() {
         val itemSizes: TextView = findViewById(R.id.item_sizes)
-        itemSizes.setText("${selectedItem.sizes[0]} x ${selectedItem.sizes[1]} x ${selectedItem.sizes[2]}")
+        itemSizes.setText(Html.fromHtml("${selectedItem.sizes[0]} x ${selectedItem.sizes[1]} x ${selectedItem.sizes[2]} [cm <sup>3</sup>]"))
 
     }
 

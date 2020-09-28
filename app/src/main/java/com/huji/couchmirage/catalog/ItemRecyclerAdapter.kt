@@ -1,5 +1,6 @@
 package com.huji.couchmirage.catalog
 
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -63,7 +64,7 @@ class ItemRecyclerAdapter(
             itemName.text = item.model
             itemColor.text = item.color
             itemPrice.text = item.price.toString() + "₪"
-            itemSizes.text="${item.sizes[0]} x ${item.sizes[1]} x ${item.sizes[2]}"
+            itemSizes.text=Html.fromHtml("${item.sizes[0]} x ${item.sizes[1]} x ${item.sizes[2]} [cm <sup>3</sup>]")
 
             val requestOptions = RequestOptions()
                 .placeholder(R.drawable.ic_launcher_background)

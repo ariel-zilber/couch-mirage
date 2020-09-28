@@ -122,7 +122,7 @@
         android:backgroundTint="@color/btn_send_normal"
 
         android:fontFamily="@font/calibri"
-        android:text="Go to Site"
+        android:text="Go to site"
         android:textAllCaps="false"
         android:textColor="#ffffff"
         android:textSize="24sp"
