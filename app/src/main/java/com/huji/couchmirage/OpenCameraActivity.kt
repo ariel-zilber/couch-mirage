@@ -41,10 +41,9 @@ import com.warkiz.widget.OnSeekChangeListener
 import com.warkiz.widget.SeekParams
 import es.dmoral.toasty.Toasty
 import java.io.File
-import java.text.SimpleDateFormat
 import java.util.*
 
-/****
+/**
  * Camera activity
  */
 class OpenCameraActivity : AppCompatActivity() {
@@ -83,8 +82,7 @@ class OpenCameraActivity : AppCompatActivity() {
 
     // media saves
     var photoSaver = PhotoSaver(this)
-    var videoSaver =
-        VideoRecorder()    // todo fix video recorder
+    var videoSaver = VideoRecorder()
 
 
     var modelLength: Float = 0f
@@ -595,11 +593,6 @@ class OpenCameraActivity : AppCompatActivity() {
             // Send  notification of updated content.
 
 
-            val date = SimpleDateFormat("yyyyMMddHHmmss", Locale.getDefault()).format(Date())
-
-            var name = getExternalFilesDir(Environment.DIRECTORY_PICTURES)?.absolutePath +
-                    "/${date}_screenshot.jpg"
-
             val values = ContentValues()
             values.put(MediaStore.Video.Media.TITLE, "Sceneform Video")
             values.put(MediaStore.Video.Media.MIME_TYPE, "video/mp4")
@@ -808,7 +801,6 @@ class OpenCameraActivity : AppCompatActivity() {
         toast.show()
 
     }
-
 
     private fun openSearchDialog() {
         val intent = Intent(this, CatalogFrontActivity::class.java)
