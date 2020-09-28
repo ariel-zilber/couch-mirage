@@ -1,6 +1,6 @@
 # Couch Mirage
 
-<img src="https://github.com/arikzilWork/couch-mirage/blob/ruler/docs/images/logo.png" width="200" align="right" />
+<img src="docs/images/logo.png" width="200" align="right" />
 
 <b>Welcome to Couch Mirage!</b>
 
@@ -15,19 +15,19 @@ See : https://shnaton.huji.ac.il/index.php/NewSyl/67625/2/2020/
 
 ## 
 ## Screenshots
-![screenshot 1](https://github.com/arikzilWork/couch-mirage/blob/ruler/docs/images/screenshot_1.jpeg)
+![screenshot 1](docs/images/screenshot_1.jpeg)
 
-![screenshot 2](https://github.com/arikzilWork/couch-mirage/blob/ruler/docs/images/screenshot_2.jpeg)
+![screenshot 2](docs/images/screenshot_2.jpeg)
 
-![screenshot 3](https://github.com/arikzilWork/couch-mirage/blob/ruler/docs/images/screenshot_3.jpeg)
+![screenshot 3](docs/images/screenshot_3.jpeg)
 
-![screenshot 4](https://github.com/arikzilWork/couch-mirage/blob/ruler/docs/images/screenshot_4.jpeg)
+![screenshot 4](docs/images/screenshot_4.jpeg)
 
-![screenshot 5](https://github.com/arikzilWork/couch-mirage/blob/ruler/docs/images/screenshot_5.jpeg)
+![screenshot 5](docs/images/screenshot_5.jpeg)
 
-![screenshot 6](https://github.com/arikzilWork/couch-mirage/blob/ruler/docs/images/screenshot_6.jpeg)
+![screenshot 6](docs/images/screenshot_6.jpeg)
 
-![screenshot 7](https://github.com/arikzilWork/couch-mirage/blob/ruler/docs/images/screenshot_7.jpeg)
+![screenshot 7](docs/images/screenshot_7.jpeg)
 
 ## Features
 
