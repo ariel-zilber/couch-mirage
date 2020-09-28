@@ -8,6 +8,7 @@ import android.transition.TransitionManager
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -77,24 +78,15 @@ class ItemDetailsActivity : AppCompatActivity() {
                     description_view,
                     AutoTransition()
                 )
-
                 description.setVisibility(View.VISIBLE)
-                changeIconAnimated(
-                    arrowBtn, 180f,
-                    R.drawable.ic_keyboard_arrow_up_black_24dp
-                )
-
+                arrowBtn.setBackgroundResource(R.drawable.ic_keyboard_arrow_up_black_24dp)
             } else {
                 TransitionManager.beginDelayedTransition(
                     description_view,
                     AutoTransition()
                 )
-
                 description.setVisibility(View.GONE)
-                changeIconAnimated(
-                    arrowBtn, 180f,
-                    R.drawable.ic_keyboard_arrow_down_black_24dp
-                )
+                arrowBtn.setBackgroundResource(R.drawable.ic_keyboard_arrow_down_black_24dp)
             }
         }
     }
@@ -112,40 +104,19 @@ class ItemDetailsActivity : AppCompatActivity() {
                     AutoTransition()
                 )
                 goodToKnow.setVisibility(View.VISIBLE)
-
-
-                changeIconAnimated(arrowBtn, 180f, R.drawable.ic_keyboard_arrow_up_black_24dp)
+                arrowBtn.setBackgroundResource(R.drawable.ic_keyboard_arrow_up_black_24dp)
             } else {
                 TransitionManager.beginDelayedTransition(
                     goodToKnow_view,
                     AutoTransition()
                 )
                 goodToKnow.setVisibility(View.GONE)
-                changeIconAnimated(arrowBtn, 180f, R.drawable.ic_keyboard_arrow_down_black_24dp)
-
+                arrowBtn.setBackgroundResource(R.drawable.ic_keyboard_arrow_down_black_24dp)
             }
         }
     }
 
-    private fun changeIconAnimated(measurement: Button, rotation: Float, icon: Int) {
-        //Rise
-        measurement.animate()
-            .rotationBy(rotation)
-            .setDuration(100)
-            .withEndAction(Runnable {
-                measurement.setBackgroundResource(icon)
 
-                //Shrink Animation
-                measurement.animate()
-                    .rotationBy(rotation)
-                    .setDuration(100)
-                    .start()
-
-            })
-            .start()
-
-
-    }
 
 
     private fun setUpItemCategory() {
