@@ -57,10 +57,10 @@ class OpenCameraActivity : AppCompatActivity() {
     val CUBE_RENDABLE_COLOR = Color(0F, 255F, 0F, 0F)
     val CUBE_RENDABLE_SQUARE_COLOR = Color(0F, 0.05F, 0F, 0.9F)
 
-    //
+    /* Represents whenever currently measuring the box */
     var measureSelected: Boolean = false
 
-    //
+    /* Represents whenever a 3d model was found */
     private var isModelFound = false
 
     // ar fragment related
@@ -69,26 +69,30 @@ class OpenCameraActivity : AppCompatActivity() {
     // seekbar related
     private var isSeeking = false
     lateinit var seekBar: IndicatorSeekBar
-    lateinit var minus: ImageView
-    lateinit var plus: ImageView
+    lateinit var minusButton: ImageView
+    lateinit var plusButton: ImageView
 
-    // measuremnt related
+    // measurement related
     private lateinit var box: MeasurementBox
     private var userMeasurements: BoxMeasurements? = null
 
     // furniture module related
     private var furnitureRenderable: Renderable? = null
     var furnitureAnchor: Anchor? = null
-
-    // media saves
-    var photoSaver = PhotoSaver(this)
-    var videoSaver = VideoRecorder()
-
-
     var modelLength: Float = 0f
     var modelWidth: Float = 0f
     var modelHeight: Float = 0f
     var file: File? = null
+
+    // media saves
+
+    /** Used to save photo of the ar scene **/
+    var photoSaver = PhotoSaver(this)
+
+    /** Used to save video of the ar scene **/
+    var videoSaver = VideoRecorder()
+
+    // recievers
 
     private val receiver: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
@@ -115,20 +119,7 @@ class OpenCameraActivity : AppCompatActivity() {
         }
     }
 
-
-    private fun configureReceiver() {
-
-        registerReceiver(
-            receiver, IntentFilter("show_model")
-        );
-    }
-
-
-    override fun onDestroy() {
-        super.onDestroy()
-
-        unregisterReceiver(receiver)
-    }
+    // lifecycle methods
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -153,6 +144,14 @@ class OpenCameraActivity : AppCompatActivity() {
         setupUpInfoButton()
         setupSeekBar()
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        unregisterReceiver(receiver)
+    }
+
+    // setup methods
 
     /***
      * Inits the info button
@@ -281,7 +280,6 @@ class OpenCameraActivity : AppCompatActivity() {
         // take picture
         camera.setOnClickListener { view ->
 
-            // https://github.com/owahltinez/androidx-camera-activity/tree/master/sample/src/main
             if (!videoSaver.isRecording) {
                 photoSaver.takePhoto(arFragment.arSceneView)
             } else {
@@ -291,7 +289,6 @@ class OpenCameraActivity : AppCompatActivity() {
         }
 
         // take video
-        // Initialize the VideoRecorder.
 
         // Initialize the VideoRecorder.
         videoSaver = VideoRecorder(this)
@@ -307,7 +304,6 @@ class OpenCameraActivity : AppCompatActivity() {
 
     }
 
-
     /*
    * Used as a handler for onClick, so the signature must match onClickListener.
    */
@@ -319,7 +315,6 @@ class OpenCameraActivity : AppCompatActivity() {
             vibrate()
             var infoFab = findViewById<InfoFAB>(R.id.fab_info)
 
-            Log.d("infoFab", infoFab.getStage().toString())
 
             // todo
             if (!measureSelected) {
@@ -349,6 +344,10 @@ class OpenCameraActivity : AppCompatActivity() {
                 userMeasurements = box.getBoxMeasurements()
                 showShapedMeasuredDialog()
 
+                //
+                seekBar.visibility = View.GONE
+                minusButton.visibility = View.GONE
+                plusButton.visibility = View.GONE
 
                 changeInfoStageToGreen()
             }
@@ -371,7 +370,7 @@ class OpenCameraActivity : AppCompatActivity() {
             }
 
 
-            searchItem()
+            openSearchDialog()
 
 
         }
@@ -414,6 +413,9 @@ class OpenCameraActivity : AppCompatActivity() {
             .apply();
     }
 
+    /***
+     * Inits the ar fragment
+     */
     private fun setARFragment() {
         arFragment = supportFragmentManager.findFragmentById(R.id.fragment) as MyArFragment
         arFragment.cameraActivity = this
@@ -421,9 +423,12 @@ class OpenCameraActivity : AppCompatActivity() {
 
     }
 
+    /**
+     * Inits the user actions on the arfragment
+     */
     private fun setARFragmentAction() {
-        minus = findViewById<ImageView>(R.id.dec_height)
-        plus = findViewById<ImageView>(R.id.inc_height)
+        minusButton = findViewById<ImageView>(R.id.dec_height)
+        plusButton = findViewById<ImageView>(R.id.inc_height)
 
         // test
 
@@ -460,8 +465,8 @@ class OpenCameraActivity : AppCompatActivity() {
 
 
                         seekBar.visibility = View.VISIBLE
-                        minus.visibility = View.VISIBLE
-                        plus.visibility = View.VISIBLE
+                        minusButton.visibility = View.VISIBLE
+                        plusButton.visibility = View.VISIBLE
                         findViewById<IndicatorStayLayout>(R.id.indicator_container).visibility =
                             View.VISIBLE
 
@@ -510,6 +515,16 @@ class OpenCameraActivity : AppCompatActivity() {
 
         box.arFragment = arFragment
 
+    }
+
+    /**
+     * Setups the receiver
+     */
+    private fun configureReceiver() {
+
+        registerReceiver(
+            receiver, IntentFilter("show_model")
+        );
     }
 
     /***
@@ -628,7 +643,9 @@ class OpenCameraActivity : AppCompatActivity() {
                 === PackageManager.PERMISSION_GRANTED)
     }
 
-    /** Launch Application Setting to grant permissions.  */
+    /**
+     *  Launch Application Setting to grant permissions.
+     */
     fun launchPermissionSettings() {
         val intent = Intent()
         intent.action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
@@ -787,6 +804,9 @@ class OpenCameraActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Displays error message when no shape was measured
+     */
     private fun showShapedMeasuredDialog() {
         var toast = Toasty.success(this, "Shape was measured!", Toast.LENGTH_SHORT, true)
 
@@ -794,14 +814,11 @@ class OpenCameraActivity : AppCompatActivity() {
         toast.show();
     }
 
-    private fun showNoShapeWashMeasuredDialog() {
-        var toast = Toasty.error(this, "Error:no shape was measured", Toast.LENGTH_SHORT, true)
-        Log.d("toast.yOffset", toast.yOffset.toString())
-        toast.setGravity(toast.gravity, toast.xOffset, toast.yOffset + 70)
-        toast.show()
+    // item catalog related methods
 
-    }
-
+    /**
+     * Open furniture catalog
+     */
     private fun openSearchDialog() {
         val intent = Intent(this, CatalogFrontActivity::class.java)
         //
@@ -819,16 +836,13 @@ class OpenCameraActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    // TODO:: finish it
-    private fun searchItem() {
-        // search
+    // clear methods
 
-        // open activity
-        openSearchDialog()
-
-    }
-
-    internal fun onClear() {
+    /***
+     * Clears all the nodes appearing on the screen
+     *
+     */
+    private fun onClear() {
         val children = ArrayList(arFragment.arSceneView.scene.children)
         for (node in children) {
             if (node is AnchorNode) {
@@ -849,11 +863,14 @@ class OpenCameraActivity : AppCompatActivity() {
 
         //
         seekBar.visibility = View.GONE
-        minus.visibility = View.GONE
-        plus.visibility = View.GONE
+        minusButton.visibility = View.GONE
+        plusButton.visibility = View.GONE
     }
 
-    internal fun onClear2() {
+    /***
+     *
+     */
+    private fun onClearMeasurementBox() {
         val children = ArrayList(arFragment.arSceneView.scene.children)
 
         for (node in children) {
@@ -877,10 +894,11 @@ class OpenCameraActivity : AppCompatActivity() {
         seekBar.setProgress(0f)
 
         seekBar.visibility = View.GONE
-        minus.visibility = View.GONE
-        plus.visibility = View.GONE
+        minusButton.visibility = View.GONE
+        plusButton.visibility = View.GONE
     }
 
+    // arcore plane related methods
 
     /**
      * Creates achor node
@@ -894,9 +912,39 @@ class OpenCameraActivity : AppCompatActivity() {
 
     }
 
+    // fire base related
 
+    /***
+     * Builds the model
+     */
+    private fun buildModel(file: File) {
+        val renderableSource = RenderableSource
+            .builder()
+            .setSource(this, Uri.parse(file.path), RenderableSource.SourceType.GLB)
+            .setRecenterMode(RenderableSource.RecenterMode.ROOT)
+            .build()
+
+        ModelRenderable
+            .builder()
+            .setSource(this, renderableSource)
+            .setRegistryId(file.path)
+
+            .build()
+            .thenAccept { modelRenderable: ModelRenderable ->
+                furnitureRenderable = modelRenderable
+                onClearMeasurementBox()
+
+                infoMessage("Please place the model", Toast.LENGTH_SHORT)
+
+//
+            }
+
+
+    }
+
+    // dependency check
     @SuppressLint("ObsoleteSdkInt")
-    fun checkIsSupportedDeviceOrFinish(activity: Activity): Boolean {
+    private fun checkIsSupportedDeviceOrFinish(activity: Activity): Boolean {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
             Log.e(TAG, "Sceneform requires Android N or later")
             Toast.makeText(activity, "Sceneform requires Android N or later", Toast.LENGTH_LONG)
@@ -919,37 +967,6 @@ class OpenCameraActivity : AppCompatActivity() {
             return false
         }
         return true
-    }
-
-    // fire base relateed
-
-
-    /***
-     * Builds the model
-     */
-    private fun buildModel(file: File) {
-        val renderableSource = RenderableSource
-            .builder()
-            .setSource(this, Uri.parse(file.path), RenderableSource.SourceType.GLB)
-            .setRecenterMode(RenderableSource.RecenterMode.ROOT)
-            .build()
-
-        ModelRenderable
-            .builder()
-            .setSource(this, renderableSource)
-            .setRegistryId(file.path)
-
-            .build()
-            .thenAccept { modelRenderable: ModelRenderable ->
-                furnitureRenderable = modelRenderable
-                onClear2()
-
-                infoMessage("Please place the model", Toast.LENGTH_SHORT)
-
-//
-            }
-
-
     }
 
 }

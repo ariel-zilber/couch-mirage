@@ -46,16 +46,40 @@ class ItemDetailsActivity : AppCompatActivity() {
 
 
         // Init UI components
+        setUpItemCategory()
+        setUpItemPrice()
         setUpItemDescription()
+        setUpItemModel()
+        setUpItemColor()
         loadSelectedItemImages()
         setupSlider()
         setUpURLSourceButton()
         setupDisplay3DModelButton()
     }
 
+    private fun setUpItemCategory() {
+        val itemDescription: TextView = findViewById(R.id.item_category)
+        itemDescription.setText(selectedItem.category)
+    }
+
+    private fun setUpItemPrice() {
+        val itemDescription: TextView = findViewById(R.id.price_text)
+        itemDescription.setText(selectedItem.price.toString()+" ₪")
+    }
+
     private fun setUpItemDescription() {
         val itemDescription: TextView = findViewById(R.id.description)
         itemDescription.setText(selectedItem.details["description"])
+    }
+
+    private fun setUpItemColor() {
+        val itemDescription: TextView = findViewById(R.id.item_color)
+        itemDescription.setText(selectedItem.color)
+    }
+
+    private fun setUpItemModel() {
+        val itemDescription: TextView = findViewById(R.id.model_title)
+        itemDescription.setText(selectedItem.model)
     }
 
     /**
