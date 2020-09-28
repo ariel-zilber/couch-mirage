@@ -90,7 +90,7 @@ class DepartmentActivity : AppCompatActivity() {
             putExtra("ITEM LIST", departmentItems)
             putExtra("CLICKED ITEM", position)
         }
-        intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+
         startActivity(intent)
         overridePendingTransition(
             R.anim.slide_in_right,

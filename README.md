@@ -9,6 +9,8 @@ Couch mirage is an augmented reality furniture design planner app similar to [IK
 Couch Mirage lets you place 3D models in your place.
 By utilizing ARCore and Sceneform libraries by google it allows you to visualize how furniture would
  fit to your home without ever going to the shop.   
+Currently Couch Mirage works only in Israel.
+
 
 Couch Mirage is the final project in the university course #67625 at The Hebrew University in Jerusalem.
 See : https://shnaton.huji.ac.il/index.php/NewSyl/67625/2/2020/
