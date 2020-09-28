@@ -118,7 +118,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_gravity="center"
-        android:backgroundTint="@color/camera_menu_btn_tint"
+        android:backgroundTint="#36CC52"
 
         android:fontFamily="@font/calibri"
         android:text="Go to site"
