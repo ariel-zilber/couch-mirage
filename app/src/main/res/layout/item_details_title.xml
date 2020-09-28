@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="CHAIRS"
-                android:textColor="#7CB342"
+                android:textColor="#31332F"
                 android:textSize="14sp" />
 
             <TextView
@@ -40,9 +40,8 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/calibri"
                 android:text="245 ₪"
-                android:textColor="#86E44A"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textColor="#000000"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/item_color"
@@ -51,7 +50,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/calibri"
                 android:text="white"
-                android:textColor="@color/btn_context_menu_pressed"
+                android:textColor="#C6000000"
                 android:textSize="14sp"
                 android:textStyle="italic" />
 
@@ -61,8 +60,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/calibri"
-                android:text="white"
-                android:textColor="#00897B"
+                android:text="0 x 0 x 0"
+                android:textColor="#9A9E9C"
                 android:textSize="14sp"
                 android:textStyle="italic" />
         </LinearLayout>
