@@ -12,8 +12,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#000"
 
-        android:backgroundTint="@color/btn_send_normal">
+        >
 
         <ImageView
 
@@ -72,7 +73,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:text="0 x 0 x 0"
-                android:textColor="#00897B"
+                android:textColor="#000"
                 android:textSize="12sp"
                 android:textStyle="italic"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -87,7 +88,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="Item Price"
-                android:textColor="#86E44A"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -96,13 +96,13 @@
                 app:layout_constraintVertical_bias="0.24000001" />
 
             <TextView
+                android:textColor="#000"
 
                 android:id="@+id/item_color"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Item Color"
-                android:textColor="@color/btn_context_menu_pressed"
-                android:textSize="12sp"
+                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
