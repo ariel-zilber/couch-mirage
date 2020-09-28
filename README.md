@@ -14,8 +14,7 @@ Couch Mirage is the final project in the university course #67625 at The Hebrew 
 See : https://shnaton.huji.ac.il/index.php/NewSyl/67625/2/2020/
 
 ## demo
-<iframe src='//gifs.com/embed/couch-mirage-demo-MwrJvB' frameborder='0' scrolling='no' width='352px' height='640px' style='-webkit-backface-visibility: hidden;-webkit-transform: scale(1);' ></iframe>
-
+![Alt Text](https://j.gifs.com/MwrJvB.gif)
 ## Screenshots
 
 ### Main page searching for plane
