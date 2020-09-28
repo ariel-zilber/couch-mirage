@@ -77,15 +77,24 @@ class ItemDetailsActivity : AppCompatActivity() {
                     description_view,
                     AutoTransition()
                 )
+
                 description.setVisibility(View.VISIBLE)
-                arrowBtn.setBackgroundResource(R.drawable.ic_keyboard_arrow_up_black_24dp)
+                changeIconAnimated(
+                    arrowBtn, 180f,
+                    R.drawable.ic_keyboard_arrow_up_black_24dp
+                )
+
             } else {
                 TransitionManager.beginDelayedTransition(
                     description_view,
                     AutoTransition()
                 )
+
                 description.setVisibility(View.GONE)
-                arrowBtn.setBackgroundResource(R.drawable.ic_keyboard_arrow_down_black_24dp)
+                changeIconAnimated(
+                    arrowBtn, 180f,
+                    R.drawable.ic_keyboard_arrow_down_black_24dp
+                )
             }
         }
     }
@@ -103,16 +112,39 @@ class ItemDetailsActivity : AppCompatActivity() {
                     AutoTransition()
                 )
                 goodToKnow.setVisibility(View.VISIBLE)
-                arrowBtn.setBackgroundResource(R.drawable.ic_keyboard_arrow_up_black_24dp)
+
+
+                changeIconAnimated(arrowBtn, 180f, R.drawable.ic_keyboard_arrow_up_black_24dp)
             } else {
                 TransitionManager.beginDelayedTransition(
                     goodToKnow_view,
                     AutoTransition()
                 )
                 goodToKnow.setVisibility(View.GONE)
-                arrowBtn.setBackgroundResource(R.drawable.ic_keyboard_arrow_down_black_24dp)
+                changeIconAnimated(arrowBtn, 180f, R.drawable.ic_keyboard_arrow_down_black_24dp)
+
             }
         }
+    }
+
+    private fun changeIconAnimated(measurement: Button, rotation: Float, icon: Int) {
+        //Rise
+        measurement.animate()
+            .rotationBy(rotation)
+            .setDuration(100)
+            .withEndAction(Runnable {
+                measurement.setBackgroundResource(icon)
+
+                //Shrink Animation
+                measurement.animate()
+                    .rotationBy(rotation)
+                    .setDuration(100)
+                    .start()
+
+            })
+            .start()
+
+
     }
 
 
@@ -146,8 +178,6 @@ class ItemDetailsActivity : AppCompatActivity() {
 
     private fun setUpItemSizes() {
         val itemSizes: TextView = findViewById(R.id.item_sizes)
-
-
         itemSizes.setText("${selectedItem.sizes[0]} x ${selectedItem.sizes[1]} x ${selectedItem.sizes[2]}")
 
     }

@@ -62,7 +62,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/calibri"
                 android:text="white"
-                android:textColor="@color/btn_context_menu_text_red"
+                android:textColor="#00897B"
                 android:textSize="14sp"
                 android:textStyle="italic" />
         </LinearLayout>
