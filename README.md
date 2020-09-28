@@ -14,7 +14,6 @@ Couch Mirage is the final project in the university course #67625 at The Hebrew 
 See : https://shnaton.huji.ac.il/index.php/NewSyl/67625/2/2020/
 
 ## demo
-![Alt Text](https://j.gifs.com/MwrJvB.gif)
 ![](docs/images/demo_1.gif)
 ## Screenshots
 
