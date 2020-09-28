@@ -8,29 +8,34 @@
 Couch mirage is an augmented reality furniture design planner app similar to [IKEA Place](https://play.google.com/store/apps/details?id=com.inter_ikea.place&hl=en_US).
 Couch Mirage lets you place 3D models in your place.
 By utilizing ARCore and Sceneform libraries by google it allows you to visualize how furniture would
- fit to your home withoout ever going to the shop.   
+ fit to your home without ever going to the shop.   
 
 Couch Mirage is the final project in the university course #67625 at The Hebrew University in Jerusalem.
 See : https://shnaton.huji.ac.il/index.php/NewSyl/67625/2/2020/
 
 ## 
 ## Screenshots
+
+### Main page searching for plane
 ![screenshot 1](docs/images/screenshot_1.jpeg)
-
+### Main page plane discovered
 ![screenshot 2](docs/images/screenshot_2.jpeg)
-
+### Main page measuring 3d box
 ![screenshot 3](docs/images/screenshot_3.jpeg)
-
+### Furniture Catalog main papge
 ![screenshot 4](docs/images/screenshot_4.jpeg)
-
+### Item catalog by category screen
 ![screenshot 5](docs/images/screenshot_5.jpeg)
-
+### Item description screen
 ![screenshot 6](docs/images/screenshot_6.jpeg)
-
+### The model has been placed!!
 ![screenshot 7](docs/images/screenshot_7.jpeg)
 
 ## Features
-
+- Measuring real world  location
+- Searching furniture with  maximum measumrent
+- Placing 3D model of <b>real furnitures!</b>  at home
+- Taking picture/ vidoe of model at your home
 
 ## Release
 
