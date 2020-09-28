@@ -82,6 +82,6 @@ See : https://github.com/arikzilWork/CouchMirageFirebaseLoader
     * https://archibaseplanet.com/download/6f86e1ec.html
 
 ## Credits
-[Ariel Zilbershtyin - Computer Engineering student at the hebrew university](https://www.linkedin.com/in/ariel-zilberstein-cmc/)
+[Ariel Zilbershtyin ](https://www.linkedin.com/in/ariel-zilberstein-cmc/)- Computer Engineering student at the hebrew university
 
-[Brahan Wassan  - math & computer science student at the hebrew university](https://www.linkedin.com/in/brahan-wassan/)
+[Brahan Wassan  ](https://www.linkedin.com/in/brahan-wassan/)- math & computer science student at the hebrew university
