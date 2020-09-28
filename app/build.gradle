@@ -42,37 +42,32 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-
+    // arcore related
     implementation 'com.google.ar:core:1.19.0'
 
     implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.17.1'
     implementation 'com.google.ar.sceneform:assets:1.17.1'
     implementation 'com.google.ar.sceneform:core:1.17.1'
     implementation "com.google.ar.sceneform:animation:1.17.1"
-    implementation 'com.github.warkiz.widget:indicatorseekbar:2.1.2'
 
-
+    // material library
     implementation 'com.google.android.material:material:1.2.0'
-    implementation 'com.github.GrenderG:Toasty:1.5.0'
 
-    def lottieVersion = "3.4.0"
-    implementation "com.airbnb.android:lottie:$lottieVersion"
+    //  custom UI components
+    implementation 'com.github.warkiz.widget:indicatorseekbar:2.1.2'
+    implementation 'com.github.GrenderG:Toasty:1.5.0'
+    implementation "com.airbnb.android:lottie:3.4.0"
+    implementation 'com.github.denzcoskun:ImageSlideshow:0.0.7'
 
     // glide
     implementation "com.github.bumptech.glide:glide:4.8.0"
     annotationProcessor "com.github.bumptech.glide:compiler:4.8.0"
-
-    // slideshow
-    implementation 'com.github.denzcoskun:ImageSlideshow:0.0.7'
 
     // firebase
     implementation 'com.google.firebase:firebase-analytics-ktx:17.5.0'
     implementation 'com.google.firebase:firebase-auth-ktx:19.4.0'
     implementation 'com.google.firebase:firebase-firestore-ktx:21.6.0'
     implementation 'com.firebaseui:firebase-ui-firestore:6.2.1'
-
-    //
-    //  implementation 'com.google.firebase:firebase-database-ktx:19.4.0'
 
 }
 
