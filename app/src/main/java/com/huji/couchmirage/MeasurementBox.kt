@@ -175,7 +175,6 @@ class MeasurementBox(
                         material
                     )
 
-
                     //  create a node holding the rendable
                     val node = Node()
                     node.setParent(anchorNodeSecond)
