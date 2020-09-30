@@ -35,8 +35,8 @@ class CatalogFrontActivity : AppCompatActivity() {
 
     private fun initFilterMeasurments() {
         // todo: remove it
-        filterMeasurements = BoxMeasurements(10000f, 10000f, 10000f)
-//        filterMeasurements = intent.extras!!.get("USER_MEASUREMENTS") as BoxMeasurements
+       // filterMeasurements = BoxMeasurements(10000f, 10000f, 10000f)
+        filterMeasurements = intent.extras!!.get("USER_MEASUREMENTS") as BoxMeasurements
 
     }
 

@@ -129,5 +129,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/scrollView2"
         app:layout_constraintVertical_bias="1.0" />
+    <include layout="@layout/items_loading_animation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

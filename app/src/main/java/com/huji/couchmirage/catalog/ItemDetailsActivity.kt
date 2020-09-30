@@ -1,6 +1,5 @@
 package com.huji.couchmirage.catalog
 
-import android.app.ProgressDialog.show
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -13,13 +12,13 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.fragment.app.FragmentManager
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.models.SlideModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.huji.couchmirage.R
+import kotlinx.android.synthetic.main.item_details_activity.*
 import java.io.File
 import java.io.IOException
 
@@ -28,7 +27,7 @@ import java.io.IOException
  * Activity showing information about a selected furniture item
  *
  */
-abstract class ItemDetailsActivity : AppCompatActivity() {
+class ItemDetailsActivity : AppCompatActivity() {
 
     // Create image list
     private val selectedItemImageList = ArrayList<SlideModel>()
@@ -235,6 +234,7 @@ abstract class ItemDetailsActivity : AppCompatActivity() {
             show3DModel(selectedItem.rendable!!)
         }
     }
+
     /**
      *  Download the model
      *  @param fbRelativePath The  relative path in the firebase storage of the model
@@ -247,20 +247,29 @@ abstract class ItemDetailsActivity : AppCompatActivity() {
         val storage: FirebaseStorage = FirebaseStorage.getInstance()
         val modelRef: StorageReference = storage.getReference().child(fbRelativePath)
 
+        var loading = findViewById<ConstraintLayout>(R.id.load_animation)
         // download the model and then show it locally
         try {
-
             val file = File.createTempFile("out", "glb")
+
             modelRef.getFile(file).addOnSuccessListener {
-                // dialog
 
                 broadcastShow3DModel(file)
-                loadingDialogFragment.dismissAllowingStateLoss()
+
+
+                //              loadingDialogFragment.dismissAllowingStateLoss()
+//                loading.visibility = View.GONE
+//                goto_store_button.visibility = View.VISIBLE
 
                 finish()
-            }
-            loadingDialogFragment.show(supportFragmentManager, "layer_3")
 
+
+            }
+
+            // dialog
+//            loadingDialogFragment.show(supportFragmentManager, "layer_3")
+            goto_store_button.visibility = View.GONE
+            loading.visibility = View.VISIBLE
         } catch (e: IOException) {
             e.printStackTrace()
         }
