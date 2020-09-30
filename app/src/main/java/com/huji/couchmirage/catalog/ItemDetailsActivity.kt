@@ -1,5 +1,6 @@
 package com.huji.couchmirage.catalog
 
+import android.app.ProgressDialog.show
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -12,6 +13,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.fragment.app.FragmentManager
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.models.SlideModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -26,13 +28,14 @@ import java.io.IOException
  * Activity showing information about a selected furniture item
  *
  */
-class ItemDetailsActivity : AppCompatActivity() {
+abstract class ItemDetailsActivity : AppCompatActivity() {
 
     // Create image list
     private val selectedItemImageList = ArrayList<SlideModel>()
 
     // current selected item
     lateinit var selectedItem: Furniture
+    private val loadingDialogFragment by lazy { LoadingDialogFragment() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -228,12 +231,10 @@ class ItemDetailsActivity : AppCompatActivity() {
     private fun setupDisplay3DModelButton() {
         val show3DModel = findViewById<FloatingActionButton>(R.id.try_3d_model)
         show3DModel.setOnClickListener() {
-
             // downloads the model
             show3DModel(selectedItem.rendable!!)
         }
     }
-
     /**
      *  Download the model
      *  @param fbRelativePath The  relative path in the firebase storage of the model
@@ -251,15 +252,21 @@ class ItemDetailsActivity : AppCompatActivity() {
 
             val file = File.createTempFile("out", "glb")
             modelRef.getFile(file).addOnSuccessListener {
+                // dialog
 
                 broadcastShow3DModel(file)
+                loadingDialogFragment.dismissAllowingStateLoss()
+
                 finish()
             }
+            loadingDialogFragment.show(supportFragmentManager, "layer_3")
+
         } catch (e: IOException) {
             e.printStackTrace()
         }
 
     }
+
 
 }
 

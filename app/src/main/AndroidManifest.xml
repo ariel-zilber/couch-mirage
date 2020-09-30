@@ -29,6 +29,10 @@
             android:screenOrientation="portrait"
             >
             <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
                 <action android:name="transparent.text.SECONDACTIVITY" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -44,10 +48,7 @@
         <activity
             android:name=".OpenCameraActivity"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
 
         <!-- ARCORE REQUIRED-->
