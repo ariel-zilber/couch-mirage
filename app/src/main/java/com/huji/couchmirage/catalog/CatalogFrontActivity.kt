@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
 import com.huji.couchmirage.BoxMeasurements
@@ -92,6 +93,7 @@ class CatalogFrontActivity : AppCompatActivity() {
 
         var db = FirebaseFirestore.getInstance()
         val list = ArrayList<Furniture>()
+        var loading = findViewById<ConstraintLayout>(R.id.load_animation)
 
         db.collection(departmentAdapter.items[position].departmentName).get()
             .addOnSuccessListener { documents ->
@@ -141,7 +143,6 @@ class CatalogFrontActivity : AppCompatActivity() {
 
 
             }
-
 
     }
 

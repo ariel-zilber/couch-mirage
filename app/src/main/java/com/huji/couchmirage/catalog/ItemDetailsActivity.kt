@@ -36,6 +36,10 @@ class ItemDetailsActivity : AppCompatActivity() {
     lateinit var selectedItem: Furniture
     private val loadingDialogFragment by lazy { LoadingDialogFragment() }
 
+    //
+    private var isLoading = false
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.item_details_activity)
@@ -192,12 +196,17 @@ class ItemDetailsActivity : AppCompatActivity() {
         var goToUrlBtn = findViewById<Button>(R.id.goto_store_button)
 
         goToUrlBtn.setOnClickListener() {
-            val browserIntent =
-                Intent(
-                    Intent.ACTION_VIEW,
-                    Uri.parse(selectedItem.source)
-                )
-            startActivity(browserIntent)
+
+            if (!isLoading) {
+
+
+                val browserIntent =
+                    Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse(selectedItem.source)
+                    )
+                startActivity(browserIntent)
+            }
         }
     }
 
@@ -257,17 +266,13 @@ class ItemDetailsActivity : AppCompatActivity() {
                 broadcastShow3DModel(file)
 
 
-                //              loadingDialogFragment.dismissAllowingStateLoss()
-//                loading.visibility = View.GONE
-//                goto_store_button.visibility = View.VISIBLE
+                isLoading = false
 
                 finish()
 
-
             }
+            isLoading = true
 
-            // dialog
-//            loadingDialogFragment.show(supportFragmentManager, "layer_3")
             goto_store_button.visibility = View.GONE
             loading.visibility = View.VISIBLE
         } catch (e: IOException) {

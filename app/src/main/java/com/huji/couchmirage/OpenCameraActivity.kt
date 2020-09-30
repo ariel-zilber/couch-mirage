@@ -379,12 +379,21 @@ class OpenCameraActivity : AppCompatActivity() {
         val search: FloatingActionButton = findViewById(R.id.fab_search)
         search.setOnClickListener { view ->
             var INFINITY = 1000000000f
-            if (userMeasurements == null) {
-                userMeasurements = BoxMeasurements(INFINITY, INFINITY, INFINITY)
+
+            //
+            if (!measureSelected) {
+
+
+                if (userMeasurements == null) {
+                    userMeasurements = BoxMeasurements(INFINITY, INFINITY, INFINITY)
+                }
+
+                //
+
+                openSearchDialog()
+            } else {
+                showErrorMeasuredDialog()
             }
-
-
-            openSearchDialog()
 
 
         }
@@ -819,10 +828,20 @@ class OpenCameraActivity : AppCompatActivity() {
     }
 
     /**
-     * Displays error message when no shape was measured
+     * Displays   message when no shape was measured
      */
     private fun showShapedMeasuredDialog() {
         var toast = Toasty.success(this, "Shape was measured!", Toast.LENGTH_SHORT, true)
+
+        toast.setGravity(toast.gravity, toast.xOffset, toast.yOffset + 70)
+        toast.show();
+    }
+
+    private fun showErrorMeasuredDialog() {
+        var toast = Toasty.error(
+            this, "Error:please finish measure",
+            Toast.LENGTH_SHORT, true
+        )
 
         toast.setGravity(toast.gravity, toast.xOffset, toast.yOffset + 70)
         toast.show();
@@ -879,6 +898,7 @@ class OpenCameraActivity : AppCompatActivity() {
         seekBar.visibility = View.GONE
         minusButton.visibility = View.GONE
         plusButton.visibility = View.GONE
+        userMeasurements = null
     }
 
     /***
