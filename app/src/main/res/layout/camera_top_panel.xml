@@ -7,9 +7,7 @@
     android:layout_alignParentStart="true"
     android:layout_alignParentTop="true"
     android:layout_alignParentEnd="true"
-    android:background="@color/camera_menu_background"
-
-    >
+    android:background="@color/camera_menu_background">
 
 
     <com.huji.couchmirage.InfoFAB
@@ -21,7 +19,7 @@
         android:src="@drawable/ic_info_first_stage"
         app:backgroundTint="@color/ic_launcher_background"
         app:borderWidth="1dp"
-        app:fabCustomSize="32dp"
+        app:fabCustomSize="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"

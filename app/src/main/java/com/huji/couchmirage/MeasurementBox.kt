@@ -184,8 +184,13 @@ class MeasurementBox(
                     node.worldPosition = Vector3.add(point1, point2).scaled(.5f)
                     node.worldRotation = rotationFromAToB
 
+                    var type=""
+
+                    if (anchorNodeList.size==2){
+                        type = "width "
+                    }
                     // display  a box at the middle of the line
-                    addTextBox(node, getDistanceMeters(pose1!!, pose2!!).toFloat())
+                    addTextBox(node, getDistanceMeters(pose1!!, pose2!!).toFloat(),type = type)
                 }
 
         }
@@ -738,7 +743,8 @@ class MeasurementBox(
             parentAnchorNode = anchorNodeList[PT_3],
             position = position,
             rotation = rotation,
-            dist = dist1
+            dist = dist1,
+            type = "width ="
         )
 
         // add line
@@ -765,7 +771,9 @@ class MeasurementBox(
             parentAnchorNode = anchorNodeList[PT_3],
             position = position,
             rotation = rotation,
-            dist = dist2
+            dist = dist2,
+            type = "length ="
+
         )
 
         // add line
@@ -801,7 +809,7 @@ class MeasurementBox(
         node: Node, dist: Float, position: Vector3 = Vector3(0f, 0.02f, 0f),
         rotation: Quaternion = Quaternion.axisAngle(Vector3(0f, 1f, 0f), 90f),
         measurement: String = "cm", startUnit: String = "",
-        view: Int = boxInfoCardLayouts.cardLayout
+        view: Int = boxInfoCardLayouts.cardLayout, type: String = ""
     ) {
 
 
@@ -810,7 +818,7 @@ class MeasurementBox(
             .build()
             .thenAccept { it ->
                 (it.view as TextView).text =
-                    "${startUnit}${String.format(" % .1f", dist * 100)} ${measurement}"
+                    "${type}${startUnit}${String.format(" % .1f", dist * 100)} ${measurement}"
 
                 it.isShadowCaster = false
                 it.isShadowReceiver = false
@@ -856,7 +864,7 @@ class MeasurementBox(
         offset: Vector3,
         parentAnchorNode: AnchorNode,
         position: Vector3,
-        rotation: Quaternion, dist: Float? = null
+        rotation: Quaternion, dist: Float? = null, type: String = ""
     ) {
 
         var node = renderLine(
@@ -875,7 +883,7 @@ class MeasurementBox(
                     offset,
                     Vector3(0f, 0.01f, 0f)
                 ),
-                measurement = "cm"
+                measurement = "cm", type = type
             )
         }
 
@@ -894,7 +902,7 @@ class MeasurementBox(
         offset: Vector3,
         parentAnchorNode: AnchorNode,
         position: Vector3,
-        rotation: Quaternion, dist: Float? = null
+        rotation: Quaternion, dist: Float? = null, type: String = ""
     ) {
 
         var node = renderLine(
@@ -908,7 +916,7 @@ class MeasurementBox(
 
             addTextBox(
                 node, dist, position = Vector3.add(offset, Vector3(0f, 0.01f, 0f)),
-                measurement = "cm"
+                measurement = "cm", type = type
             )
         }
 

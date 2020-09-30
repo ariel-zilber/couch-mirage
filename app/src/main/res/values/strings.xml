@@ -45,9 +45,10 @@
     <string name="red_advise_6">Try to recognize another surface</string>
 
     <string name="yellow_advise_1">Press the Ruler button</string>
-    <string name="yellow_advise_2">Select 3 points on the ground</string>
-    <string name="yellow_advise_3">Select height</string>
-    <string name="yellow_advise_4">Confirm shape</string>
+    <string name="yellow_advise_2">Select width</string>
+    <string name="yellow_advise_3">Select length</string>
+    <string name="yellow_advise_4">Select height</string>
+    <string name="yellow_advise_5">Press confirm</string>
 
     <string name="green_advise_1">Press the Search button</string>
     <string name="green_advise_2">Press the Ruler button to reset</string>

@@ -770,6 +770,8 @@ class OpenCameraActivity : AppCompatActivity() {
         val MESSAGE_2 = "2. " + resources.getString(R.string.yellow_advise_2)
         val MESSAGE_3 = "3. " + resources.getString(R.string.yellow_advise_3)
         val MESSAGE_4 = "4. " + resources.getString(R.string.yellow_advise_4)
+        val MESSAGE_5 = "5. " + resources.getString(R.string.yellow_advise_5)
+
         var infoFab = findViewById<InfoFAB>(R.id.fab_info)
         infoFab.isEnabled = false
 
@@ -788,6 +790,12 @@ class OpenCameraActivity : AppCompatActivity() {
             infoFab.isEnabled = true
 
         }, 6000)
+
+        handler.postDelayed({
+            infoMessage(MESSAGE_5, Toast.LENGTH_SHORT)
+            infoFab.isEnabled = true
+
+        }, 8000)
 
 
     }
@@ -837,6 +845,9 @@ class OpenCameraActivity : AppCompatActivity() {
         toast.show();
     }
 
+    /***
+     *  Displays an error message
+     */
     private fun showErrorMeasuredDialog() {
         var toast = Toasty.error(
             this, "Error:please finish measure",
