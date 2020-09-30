@@ -5,10 +5,12 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
+import com.huji.couchmirage.BoxMeasurements
 import com.huji.couchmirage.R
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -19,16 +21,21 @@ import kotlinx.android.synthetic.main.activity_main.*
 class CatalogFrontActivity : AppCompatActivity() {
 
     private lateinit var departmentAdapter: DepartmentRecyclerAdapter
+    private var filterMeasurements: BoxMeasurements? = null
 
     private val receiver: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
             val action = intent.getAction()
-
             if (action == "show_model") {
                 finish()
             }
 
         }
+    }
+
+    private fun initFilterMeasurments() {
+        filterMeasurements = intent.extras!!.get("USER_MEASUREMENTS") as BoxMeasurements
+
     }
 
 
@@ -49,6 +56,8 @@ class CatalogFrontActivity : AppCompatActivity() {
         configureReceiver()
 
         setContentView(R.layout.activity_main)
+        initFilterMeasurments()
+
         initRecyclerView()
         addDataSet()
     }
@@ -89,7 +98,38 @@ class CatalogFrontActivity : AppCompatActivity() {
                     val i = document.toObject(Furniture::class.java)
                     list.add(i)
                 }
-                intent.putExtra("items", list);
+
+
+                // filter items
+                // xxx
+                var filteredDepartmentItems: ArrayList<Furniture>? = ArrayList<Furniture>()
+
+
+                for (i in 0..list!!.size-1) {
+                    var currItem = list!!.get(i)
+                    var currLength = currItem.sizes[0]
+                    var currWidth = currItem.sizes[1]
+                    var currHeight = currItem.sizes[2]
+
+                    //
+                    Log.d("currLength", currLength.toString())
+                    Log.d("currWidth", currWidth.toString())
+                    Log.d("currHeight", currHeight.toString())
+                    Log.d("filterMeasurements", filterMeasurements.toString())
+
+                    if (filterMeasurements!!.boxLength < currLength!!) {
+                        continue
+                    }
+                    if (filterMeasurements!!.boxWidth < currWidth!!) {
+                        continue
+                    }
+                    if (currHeight!!> filterMeasurements!!.boxHeight) {
+                        continue
+                    }
+                    filteredDepartmentItems!!.add(currItem)
+                }
+
+                intent.putExtra("items", filteredDepartmentItems);
 
                 startActivity(intent)
                 overridePendingTransition(

@@ -845,7 +845,7 @@ class OpenCameraActivity : AppCompatActivity() {
 
         )
 
-        intent.putExtra("user_measurements", measurement);
+        intent.putExtra("USER_MEASUREMENTS", measurement);
 
         startActivity(intent)
     }
