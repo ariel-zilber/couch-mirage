@@ -34,7 +34,9 @@ class CatalogFrontActivity : AppCompatActivity() {
     }
 
     private fun initFilterMeasurments() {
-        filterMeasurements = intent.extras!!.get("USER_MEASUREMENTS") as BoxMeasurements
+        // todo: remove it
+        filterMeasurements = BoxMeasurements(10000f, 10000f, 10000f)
+//        filterMeasurements = intent.extras!!.get("USER_MEASUREMENTS") as BoxMeasurements
 
     }
 
@@ -105,7 +107,7 @@ class CatalogFrontActivity : AppCompatActivity() {
                 var filteredDepartmentItems: ArrayList<Furniture>? = ArrayList<Furniture>()
 
 
-                for (i in 0..list!!.size-1) {
+                for (i in 0..list!!.size - 1) {
                     var currItem = list!!.get(i)
                     var currLength = currItem.sizes[0]
                     var currWidth = currItem.sizes[1]
@@ -123,7 +125,7 @@ class CatalogFrontActivity : AppCompatActivity() {
                     if (filterMeasurements!!.boxWidth < currWidth!!) {
                         continue
                     }
-                    if (currHeight!!> filterMeasurements!!.boxHeight) {
+                    if (currHeight!! > filterMeasurements!!.boxHeight) {
                         continue
                     }
                     filteredDepartmentItems!!.add(currItem)
