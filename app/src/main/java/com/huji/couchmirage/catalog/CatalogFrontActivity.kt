@@ -23,6 +23,7 @@ class CatalogFrontActivity : AppCompatActivity() {
 
     private lateinit var departmentAdapter: DepartmentRecyclerAdapter
     private var filterMeasurements: BoxMeasurements? = null
+    private var isClicked = false
 
     private val receiver: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
@@ -36,7 +37,7 @@ class CatalogFrontActivity : AppCompatActivity() {
 
     private fun initFilterMeasurments() {
         // todo: remove it
-       // filterMeasurements = BoxMeasurements(10000f, 10000f, 10000f)
+        // filterMeasurements = BoxMeasurements(10000f, 10000f, 10000f)
         filterMeasurements = intent.extras!!.get("USER_MEASUREMENTS") as BoxMeasurements
 
     }
@@ -85,64 +86,68 @@ class CatalogFrontActivity : AppCompatActivity() {
     }
 
     fun openDepartmentPage(view: View, position: Int) {
-
-        val intent = Intent(this, DepartmentActivity::class.java).apply {
-            putExtra("DEPARTMENT NAME", departmentAdapter.items[position].departmentName)
-        }
+        if (!isClicked) {
 
 
-        var db = FirebaseFirestore.getInstance()
-        val list = ArrayList<Furniture>()
-        var loading = findViewById<ConstraintLayout>(R.id.load_animation)
-
-        db.collection(departmentAdapter.items[position].departmentName).get()
-            .addOnSuccessListener { documents ->
-
-                for (document in documents) {
-                    val i = document.toObject(Furniture::class.java)
-                    list.add(i)
-                }
-
-
-                // filter items
-                // xxx
-                var filteredDepartmentItems: ArrayList<Furniture>? = ArrayList<Furniture>()
-
-
-                for (i in 0..list!!.size - 1) {
-                    var currItem = list!!.get(i)
-                    var currLength = currItem.sizes[0]
-                    var currWidth = currItem.sizes[1]
-                    var currHeight = currItem.sizes[2]
-
-                    //
-                    Log.d("currLength", currLength.toString())
-                    Log.d("currWidth", currWidth.toString())
-                    Log.d("currHeight", currHeight.toString())
-                    Log.d("filterMeasurements", filterMeasurements.toString())
-
-                    if (filterMeasurements!!.boxLength < currLength!!) {
-                        continue
-                    }
-                    if (filterMeasurements!!.boxWidth < currWidth!!) {
-                        continue
-                    }
-                    if (currHeight!! > filterMeasurements!!.boxHeight) {
-                        continue
-                    }
-                    filteredDepartmentItems!!.add(currItem)
-                }
-
-                intent.putExtra("items", filteredDepartmentItems);
-
-                startActivity(intent)
-                overridePendingTransition(
-                    R.anim.slide_in_right,
-                    R.anim.slide_out_left
-                );
-
-
+            val intent = Intent(this, DepartmentActivity::class.java).apply {
+                putExtra("DEPARTMENT NAME", departmentAdapter.items[position].departmentName)
             }
+
+
+            var db = FirebaseFirestore.getInstance()
+            val list = ArrayList<Furniture>()
+            var loading = findViewById<ConstraintLayout>(R.id.load_animation)
+
+            db.collection(departmentAdapter.items[position].departmentName).get()
+                .addOnSuccessListener { documents ->
+
+                    for (document in documents) {
+                        val i = document.toObject(Furniture::class.java)
+                        list.add(i)
+                    }
+
+
+                    // filter items
+                    // xxx
+                    var filteredDepartmentItems: ArrayList<Furniture>? = ArrayList<Furniture>()
+
+
+                    for (i in 0..list!!.size - 1) {
+                        var currItem = list!!.get(i)
+                        var currLength = currItem.sizes[0]
+                        var currWidth = currItem.sizes[1]
+                        var currHeight = currItem.sizes[2]
+
+                        //
+                        Log.d("currLength", currLength.toString())
+                        Log.d("currWidth", currWidth.toString())
+                        Log.d("currHeight", currHeight.toString())
+                        Log.d("filterMeasurements", filterMeasurements.toString())
+
+                        if (filterMeasurements!!.boxLength < currLength!!) {
+                            continue
+                        }
+                        if (filterMeasurements!!.boxWidth < currWidth!!) {
+                            continue
+                        }
+                        if (currHeight!! > filterMeasurements!!.boxHeight) {
+                            continue
+                        }
+                        filteredDepartmentItems!!.add(currItem)
+                    }
+
+                    intent.putExtra("items", filteredDepartmentItems);
+
+                    startActivity(intent)
+                    overridePendingTransition(
+                        R.anim.slide_in_right,
+                        R.anim.slide_out_left
+                    );
+
+                    isClicked = false
+                }
+            isClicked = true
+        }
 
     }
 
