@@ -18,6 +18,8 @@ See : https://shnaton.huji.ac.il/index.php/NewSyl/67625/2/2020/
 ## Release
 The app can be found on Google Play:
 
+[https://play.google.com/store/apps/details?id=com.huji.couchmirage](https://play.google.com/store/apps/details?id=com.huji.couchmirage)
+
 ## Features
 - Measuring real world  location
 - Searching furniture with  maximum measumrent
@@ -30,7 +32,6 @@ Go to :
 
 [https://developers.google.com/ar/discover/supported-devices](https://developers.google.com/ar/discover/supported-devices)
 
-[https://play.google.com/store/apps/details?id=com.huji.couchmirage](https://play.google.com/store/apps/details?id=com.huji.couchmirage)
 
 
 ## demo
