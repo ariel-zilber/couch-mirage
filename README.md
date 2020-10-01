@@ -41,8 +41,15 @@ See : https://shnaton.huji.ac.il/index.php/NewSyl/67625/2/2020/
 - Placing 3D model of <b>real furnitures!</b>  at home
 - Taking picture/ vidoe of model at your home
 
-## Release
+## supported devices
 
+Go to :
+
+[https://developers.google.com/ar/discover/supported-devices](https://developers.google.com/ar/discover/supported-devices)
+## Release
+The app can be found on Google Play:
+
+[https://play.google.com/store/apps/details?id=com.huji.couchmirage](https://play.google.com/store/apps/details?id=com.huji.couchmirage)
 
 
 ## 3D models

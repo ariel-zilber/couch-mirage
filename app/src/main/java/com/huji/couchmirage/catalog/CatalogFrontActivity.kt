@@ -107,8 +107,6 @@ class CatalogFrontActivity : AppCompatActivity() {
                     }
 
 
-                    // filter items
-                    // xxx
                     var filteredDepartmentItems: ArrayList<Furniture>? = ArrayList<Furniture>()
 
 
