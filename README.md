@@ -15,8 +15,27 @@ Currently Couch Mirage works only in Israel.
 Couch Mirage is the final project in the university course #67625 at The Hebrew University in Jerusalem.
 See : https://shnaton.huji.ac.il/index.php/NewSyl/67625/2/2020/
 
+## Release
+The app can be found on Google Play:
+
+## Features
+- Measuring real world  location
+- Searching furniture with  maximum measumrent
+- Placing 3D model of <b>real furnitures!</b>  at home
+- Taking picture/ vidoe of model at your home
+
+## supported devices
+
+Go to :
+
+[https://developers.google.com/ar/discover/supported-devices](https://developers.google.com/ar/discover/supported-devices)
+
+[https://play.google.com/store/apps/details?id=com.huji.couchmirage](https://play.google.com/store/apps/details?id=com.huji.couchmirage)
+
+
 ## demo
 ![](docs/images/demo_1.gif)
+
 ## Screenshots
 
 ### Main page searching for plane
@@ -33,23 +52,6 @@ See : https://shnaton.huji.ac.il/index.php/NewSyl/67625/2/2020/
 ![screenshot 6](docs/images/screenshot_6.jpeg)
 ### The model has been placed!!
 ![screenshot 7](docs/images/screenshot_7.jpeg)
-
-
-## Features
-- Measuring real world  location
-- Searching furniture with  maximum measumrent
-- Placing 3D model of <b>real furnitures!</b>  at home
-- Taking picture/ vidoe of model at your home
-
-## supported devices
-
-Go to :
-
-[https://developers.google.com/ar/discover/supported-devices](https://developers.google.com/ar/discover/supported-devices)
-## Release
-The app can be found on Google Play:
-
-[https://play.google.com/store/apps/details?id=com.huji.couchmirage](https://play.google.com/store/apps/details?id=com.huji.couchmirage)
 
 
 ## 3D models
