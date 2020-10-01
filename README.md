@@ -26,7 +26,7 @@ The app can be found on Google Play:
 - Placing 3D model of <b>real furnitures!</b>  at home
 - Taking picture/ vidoe of model at your home
 
-## supported devices
+## Supported devices
 
 Go to :
 
@@ -34,7 +34,7 @@ Go to :
 
 
 
-## demo
+## Demo
 ![](docs/images/demo_1.gif)
 
 ## Screenshots
