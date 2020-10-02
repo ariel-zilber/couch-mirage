@@ -33,6 +33,7 @@ import com.google.ar.sceneform.ux.TransformableNode
 import com.google.firebase.FirebaseApp
 import com.huji.couchmirage.ar.MyArFragment
 import com.huji.couchmirage.catalog.CatalogFrontActivity
+import com.huji.couchmirage.instructions.GreetingActivity
 import com.huji.couchmirage.utils.PhotoSaver
 import com.huji.couchmirage.utils.VideoRecorder
 import com.warkiz.widget.IndicatorSeekBar
@@ -47,13 +48,12 @@ import java.util.*
  * Camera activity
  */
 class OpenCameraActivity : AppCompatActivity() {
+    val PREFS_FILE = "CouchMirageMeasurmentFile"
+    var prefs: SharedPreferences? = null
 
     //
     val TAG = OpenCameraActivity::class.simpleName
     val MIN_OPENGL_VERSION: Double = 3.0
-
-    // installion required
-    private var installRequested: Boolean = false
 
 
     // renderable constants
@@ -123,12 +123,41 @@ class OpenCameraActivity : AppCompatActivity() {
         }
     }
 
+    /***
+     * Init the preference file
+     */
+    private fun setupSharedPrefs() {
+        prefs = getSharedPreferences(PREFS_FILE, 0)
+
+    }
+
+    private fun startGreetingActivity() {
+
+        val previouslyStarted =
+            prefs!!.getBoolean("first_time", false)
+
+        val intent = Intent(application, GreetingActivity::class.java)
+
+        if (!previouslyStarted) {
+            val edit = prefs!!.edit()
+            edit.putBoolean("first_time", java.lang.Boolean.TRUE)
+
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+
+            startActivity(intent)
+
+            edit.commit()
+        }
+    }
+
     // lifecycle methods
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.open_camera)
+        setupSharedPrefs()
+        startGreetingActivity()
 
         if (!checkIsSupportedDeviceOrFinish(this)) {
             return
@@ -166,6 +195,7 @@ class OpenCameraActivity : AppCompatActivity() {
 
 
     // setup methods
+
 
     /***
      * Inits the info button
@@ -540,6 +570,7 @@ class OpenCameraActivity : AppCompatActivity() {
 
     }
 
+
     /**
      * Setups the receiver
      */
@@ -549,6 +580,7 @@ class OpenCameraActivity : AppCompatActivity() {
             receiver, IntentFilter("show_model")
         );
     }
+
 
     /***
      * Vibeates the phone

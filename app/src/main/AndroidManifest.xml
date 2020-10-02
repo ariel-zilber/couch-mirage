@@ -25,9 +25,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".catalog.CatalogFrontActivity"
-            android:screenOrientation="portrait"
-            >
+        <activity
+            android:name=".catalog.CatalogFrontActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="transparent.text.SECONDACTIVITY" />
 
@@ -41,11 +41,23 @@
             android:name=".catalog.DepartmentActivity"
             android:screenOrientation="portrait" />
 
+
+        <activity
+            android:name=".instructions.GreetingActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="locked"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+
+        </activity>
+
+
         <activity
             android:name=".OpenCameraActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 

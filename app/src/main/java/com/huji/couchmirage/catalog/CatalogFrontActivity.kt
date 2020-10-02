@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
 import com.huji.couchmirage.BoxMeasurements
 import com.huji.couchmirage.R
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.catalog_front.*
 
 /***
  * Main page of the Catalog.
@@ -59,7 +59,7 @@ class CatalogFrontActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         configureReceiver()
 
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.catalog_front)
         initFilterMeasurments()
 
         initRecyclerView()

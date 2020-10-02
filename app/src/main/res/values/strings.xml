@@ -56,4 +56,11 @@
     <string name="default_text">no description</string>
 
 
+    <string name="welcome_message">Welcome to \nCouch Mirage</string>
+
+    <string-array name="arcore_welcome_buttons">
+        <item>@string/welcome_message</item>
+    </string-array>
+
+
 </resources>

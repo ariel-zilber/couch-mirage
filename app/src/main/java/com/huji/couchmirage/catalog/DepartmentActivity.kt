@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.huji.couchmirage.*
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.catalog_front.*
 
 /**
  *
