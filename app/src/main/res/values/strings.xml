@@ -62,5 +62,11 @@
         <item>@string/welcome_message</item>
     </string-array>
 
+    <string name="info_textured">Use flat textured surfaces, as they are more visible to the app.</string>
+    <string name="info_move_short">Move the camera</string>
+    <string name="how_to_recognize_surfaces">How to recognize surfaces?</string>
+    <string name="about_app">An app that lets you measure the real world in a 3d virtual cube and virtually place furniture in your home</string>
+    <string name="how_app_works">It utilizes the ARCore and Sceneform libraries by google to generate  virtual surface plane  onto your floor.
+        Then the surface can be measured to generate 3d measurements and place 3D models  </string>
 
 </resources>

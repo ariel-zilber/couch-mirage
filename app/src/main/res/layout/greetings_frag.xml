@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/greetings_next_page"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:background="@drawable/cool_bcg"
+            android:fontFamily="sans-serif-thin"
+            android:text="Welcome to \nCouch Mirage"
+            android:textAlignment="center"
+            android:textColor="#ABFFFFFF"
+            android:textStyle="bold"
+            android:textSize="40sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

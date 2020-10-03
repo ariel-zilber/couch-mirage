@@ -13,4 +13,9 @@
     <dimen name="fab_halo_width">4dp</dimen>
     <dimen name="collapsed_fab_size">56dp</dimen>
     <dimen name="extended_fab_height">48dp</dimen>
+
+
+    <dimen name="card_view_instruction_margin">4.0dip</dimen>
+    <dimen name="card_view_corner_radius">6.0dip</dimen>
+
 </resources>

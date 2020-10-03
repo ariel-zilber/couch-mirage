@@ -1,0 +1,1592 @@
+<html>
+<head>
+    <meta name='viewport' content='initial-scale=1, viewport-fit=cover'/>
+    <meta charset="utf-8"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <style type="text/css">
+    /* Overwrite the default to keep the scrollbar always visible */
+    ::-webkit-scrollbar {
+      -webkit-appearance: none;
+      width: 6px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, .4);
+      border-radius: 3px;
+    }
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: transparent;
+      max-height: 100%;
+      overflow: hidden;
+      font-size: 16px;
+      -webkit-touch-callout: none;
+      /* iOS Safari */
+      -webkit-user-select: none;
+      /* Safari */
+      user-select: none;
+      /* Chrome */
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      -webkit-text-size-adjust: none;
+      -moz-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+      text-size-adjust: none;
+    }
+    body {
+      color: rgba(0, 0, 0, .86);
+      font-family: 'Roboto', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .no-display {
+      display: none !important;
+    }
+    .hidden {
+      opacity: 0 !important;
+      visibility: hidden !important;
+    }
+    .flex-center {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+    .btn {
+      cursor: pointer;
+    }
+    #overlay {
+      position: fixed;
+      top: 30px;
+      bottom: 30px;
+      left: 20px;
+      right: 20px;
+      min-width: 300px;
+      -webkit-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+    #overlay.center {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      top: 0;
+      bottom: 0;
+    }
+    #overlay::before {
+      background-color: rgba(0, 0, 0, .5);
+      content: '';
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+    #content {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.23);
+      box-sizing: border-box;
+      -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      overflow: hidden;
+      padding: 20px;
+      position: relative;
+      text-align: center;
+      -webkit-transition: height 0.3s ease-in-out;
+      -o-transition: height 0.3s ease-in-out;
+      transition: height 0.3s ease-in-out;
+    }
+    #content.NPA-only {
+      max-width: 338px;
+    }
+    #title_head {
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 14px;
+      text-align: center;
+    }
+    .head_intro {
+      color: rgba(0, 0, 0, .71);
+      font-size: 12px;
+      line-height: 16px;
+    }
+    #head_question {
+      font-size: 18px;
+      line-height: 23px;
+      margin-top: 12px;
+    }
+    .head_detail {
+      color: rgba(0, 0, 0, .71);
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      margin-top: 12px;
+    }
+    .app_icon {
+      margin-bottom: 2px;
+      margin-right: 10px;
+      width: 32px;
+      height: 32px;
+      vertical-align: middle;
+    }
+    #app_name {
+      font-family: 'Roboto', Arial, sans-serif;
+      font-size: 18px;
+      line-height: 20px;
+      text-align: left;
+    }
+    #buttons {
+      color: #1A73E8;
+    }
+    .button {
+      border-radius: 8px;
+      border: 1px solid #DADCE0;
+      box-sizing: border-box;
+      cursor: pointer;
+      padding: 12px 16px 14px;
+      margin-top: 16px;
+      min-height: 52px;
+      text-align: center;
+      overflow: hidden;
+      opacity: 1;
+      visibility: visible;
+      -webkit-box-flex: 1;
+      -webkit-flex: 1 1 0;
+      -ms-flex: 1 1 0px;
+      flex: 1 1 0;
+      -webkit-transition: all .2s ease-in-out;
+      -o-transition: all .2s ease-in-out;
+      transition: all .2s ease-in-out;
+    }
+    .button.sel {
+      background-color: rgba(26, 115, 232, .08);
+      border: 1px solid #1A73E8;
+      box-shadow: none;
+    }
+    .button_title {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 19px;
+    }
+    .message {
+      color: rgba(0, 0, 0, .71);
+      font-size: 12px;
+      line-height: 16px;
+    }
+    #providers {
+      color: rgba(0, 0, 0, .71);
+      font-family: 'Roboto', Arial, sans-serif;
+      font-size: 14px;
+      padding: 0;
+      text-align: center;
+      min-height: 36px;
+      line-height: 18px;
+    }
+    #providers::after {
+      background-color: #DADCE0;
+      content: '';
+      height: 1px;
+      left: 0;
+      position: absolute;
+      right: 0;
+    }
+    #providers > div {
+      box-sizing: border-box;
+      padding: 2px 10px;
+    }
+    #providers ul {
+      box-sizing: border-box;
+      font-size: 12px;
+      list-style-type: none;
+      margin-bottom: 0;
+      margin-right: -2px;
+      overflow: auto;
+      padding: 0 0 12px;
+      text-align: left;
+    }
+    #providers li {
+      border: 1px solid #DADCE0;
+      border-radius: 8px;
+      display: inline-block;
+      margin-bottom: 5px;
+      margin-right: 2px;
+    }
+    #providers li:active {
+      background-color: #EEEEEE;
+    }
+    #providers a {
+      color: #3C4043;
+      display: inline-block;
+      padding: 6px 10px;
+    }
+    .how-use-data {
+      font-size: 12px;
+      margin-top: 16px;
+    }
+    .actions {
+      margin-top: 20px;
+    }
+    .back {
+      background-color: white;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMHB4IiBoZWlnaHQ9IjIwcHgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzQyODVGNCI+ICAgIDxwYXRoIGQ9Ik0xMS42NyAzLjg3TDkuOSAyLjEgMCAxMmw5LjkgOS45IDEuNzctMS43N0wzLjU0IDEyeiIvPiAgICA8cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PC9zdmc+);
+      background-position: 14px center;
+      background-repeat: no-repeat;
+      border: 1px solid #DADCE0;
+      border-radius: 4px;
+      color: #1A73E8;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 500;
+      height: 32px;
+      line-height: 32px;
+      padding: 0 16px 0 34px;
+      vertical-align: middle;
+    }
+    .agree {
+      background-color: #1A73E8;
+      border: 1px solid #1A73E8;
+      border-radius: 4px;
+      color: white;
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 500;
+      height: 32px;
+      line-height: 32px;
+      margin-left: 12px;
+      padding: 0 16px;
+      vertical-align: middle;
+    }
+    .consent {
+      margin-top: 16px;
+    }
+    .consent.fade-in,
+    #options.fade-in {
+      opacity: 1 !important;
+      -webkit-transition: opacity .3s .15s ease-in-out;
+      -o-transition: opacity .3s .15s ease-in-out;
+      transition: opacity .3s .15s ease-in-out;
+    }
+    #consent2 .head_intro {
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+    a {
+      color: #1A73E8;
+    }
+    a:link {
+      text-decoration: none;
+    }
+    a:visited {
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+    a:active {
+      text-decoration: none;
+    }
+    @media screen and (max-width: 410px) and (max-height: 730px) {
+      /* e.g. iPhone 4, 5, 6/7/8 portrait */
+      #overlay {
+        left: 10px;
+        right: 10px;
+      }
+      #content {
+        padding: 12px;
+      }
+      #content.NPA-AdFree {
+        padding: 14px;
+      }
+      #buttons.selected .button:not(.sel) {
+        height: 0;
+        padding: 0;
+        margin: 0;
+        border: none;
+        box-shadow: none;
+      }
+      #buttons.selected .button:not(.sel) div {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .button {
+        margin-top: 12px;
+      }
+      .message {
+        display: inline;
+      }
+      #providers {
+        padding: 0;
+      }
+      .back.btn {
+        display: inline-block;
+      }
+    }
+    @media screen and (max-width: 730px) and (max-height: 410px) {
+      /* e.g. iPhone 4, 5, 6/7/8 landscape */
+      #overlay {
+        left: 8px;
+        right: 8px;
+      }
+      #buttons.selected .button:not(.sel) {
+        display: none;
+      }
+      #content {
+        max-width: 900px;
+        padding: 12px;
+      }
+      #content.NPA-only {
+        max-width: 386px;
+        padding: 16px;
+      }
+      #title_head {
+        font-size: 13px;
+        margin-top: 8px;
+      }
+      #buttons {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin: 0 -5px;
+      }
+      .button {
+        margin: 12px 5px 0;
+        padding: 8px;
+      }
+      .button_title {
+        font-size: 13px;
+        line-height: 16px;
+      }
+      .consent {
+        line-height: 16px;
+        margin-top: 8px;
+      }
+      .message {
+        display: inline;
+        font-size: 12px;
+      }
+      #providers {
+        font-size: 12px;
+        padding: 0;
+      }
+      .how-use-data {
+        margin-top: 12px;
+      }
+      .back.btn {
+        display: inline-block;
+      }
+      .agree.btn {
+        margin-left: 8px;
+      }
+      .footer {
+        margin-top: 16px;
+      }
+      .actions {
+        margin-top: 0;
+      }
+    }
+    @media screen and (min-width: 731px) and (max-height: 731px), screen and (min-width: 1024px) {
+      /* e.g. iPhone 6/7/8 Plus, Pixel, Pixel XL, Tablets landscape */
+      #content {
+        max-width: 900px;
+      }
+      #title_head {
+        margin-top: 8px;
+      }
+      #content.NPA-only {
+        max-width: 386px;
+        padding: 16px;
+      }
+      #buttons {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin: 0 -5px;
+      }
+      .button {
+        margin: 14px 5px 0;
+        padding: 9px 8px 12px;
+      }
+      .button_title {
+        font-size: 14px;
+      }
+      .message {
+        display: inline;
+      }
+      #providers {
+        padding: 0;
+      }
+      #providers ul {
+        padding: 0 16px 12px;
+      }
+      .footer {
+        margin-top: 20px;
+      }
+      .actions {
+        margin-top: 0;
+      }
+    }
+    @media screen and (min-height: 377px) and (max-height: 700px) {
+      /* e.g. iPhone 4, 5, 6/7/8 portrait, 6/7/8 Plus landscape */
+      #providers ul {
+        max-height: calc(100vh - 246px);
+      }
+    }
+    @media screen and (min-height: 701px) {
+      /* e.g. iPhone 6/7/8 Plus portrait or taller (tablets) */
+      #providers ul {
+        max-height: 460px;
+      }
+    }
+    @media screen and (min-height: 361px) and (max-height: 376px) {
+      /* e.g. iPhone 6/7/8, X landscape */
+      #providers ul {
+        max-height: calc(100vh - 212px);
+      }
+    }
+    @media screen and (max-height: 360px) {
+      /* e.g. iPhone 4, 5 landscape */
+      #providers ul {
+        max-height: calc(100vh - 230px);
+      }
+    }
+
+
+    </style>
+    <script type="text/javascript">
+    var obj = {};
+    var state = 'init';
+    var consentDelayMs = 1000;
+     // Function that opens app privacy policy URL in a browser.
+    var showAppPrivacyPolicy = function() {};
+
+    function getStyle(el, prop, notParseToNumber) {
+      var style = window.getComputedStyle(el, null);
+      var val;
+      if (prop === undefined) {
+        return style;
+      } else {
+        val = style.getPropertyValue(prop);
+        if (val === undefined || val === null || val === '') {
+          return;
+        }
+        return notParseToNumber ? val : parseFloat(val);
+      }
+    };
+
+    function hideAllConsents() {
+      var consentList = document.getElementsByClassName('consent')
+      var i = consentList.length;
+      while (i-- > 0) {
+        consentList[i].classList.add('no-display');
+        consentList[i].classList.remove('fade-in');
+      }
+    };
+
+    function consentAnimation(consentEl, to) {
+      var contentEl = obj.contentEl;
+      var contentBoxEl = obj.contentBoxEl;
+      var contentElPadding = 2 * getStyle(contentEl, 'padding-top');
+      var optionsEl = obj.optionsEl;
+      var newH;
+
+      // set the height with number (instead of 'auto') to get ready for animation
+      contentEl.style.height = contentBoxEl.offsetHeight + contentElPadding;
+      if (to === 'in') {
+        optionsEl.classList.add('no-display');
+        optionsEl.classList.remove('fade-in');
+        consentEl.classList.remove('no-display');
+        consentEl.style.opacity = 0;
+      } else if (to === 'out') {
+        consentEl.classList.add('no-display');
+        consentEl.classList.remove('fade-in');
+        optionsEl.classList.remove('no-display');
+        optionsEl.style.opacity = 0;
+      }
+
+      setTimeout(function() {
+        if (to === 'in') {
+          // fade in the detail info
+          consentEl.classList.add('fade-in');
+        } else if (to === 'out') {
+          // fade in the options
+          optionsEl.classList.add('fade-in');
+        }
+        // make animation occurs towards the new height
+        newH = contentBoxEl.offsetHeight + contentElPadding;
+        contentEl.style.height =  newH % 2 === 0 ? newH : newH + 1;
+      }, 0)
+    };
+
+    function showProviders() {
+      consentAnimation(obj.consent0El, 'in');
+      document.getElementById('providersList').scrollTop = 0;
+    };
+
+    function showUniqueIdInfo() {
+      consentAnimation(obj.consent1El, 'in');
+    };
+
+    function actionClick(e, id) {
+      switch (id) {
+        case 'close':
+          // 'Close App'
+          dismissConsentModal('close_app');
+          break;
+        case 'back0':
+          consentAnimation(obj.consent0El, 'out');
+          break;
+        case 'back1':
+          consentAnimation(obj.consent1El, 'out');
+          break;
+        case 'agree0':
+          // 'Agree' on 'See personalized ads'
+          dismissConsentModal('personalized');
+          break;
+        case 'agree1':
+          // 'Agree' on 'See non-personalized ads'
+          dismissConsentModal('non_personalized');
+          break;
+        case 'install':
+          // 'Install' on 'See no ads'
+          dismissConsentModal('ad_free');
+          break;
+      }
+    };
+
+    function dismissConsentModal(status) {
+      var info = {
+        'action': 'dismiss',
+        'status': status || 'Error: no status.'
+      };
+      sendMessage(info);
+    };
+
+    function formLoadCompleted(status) {
+      var info = {
+        'action': 'load_complete',
+        'status': status || 'Error: no status.'
+      };
+      sendMessage(info);
+    };
+
+    function openBrowser(url) {
+      var info = {
+        'action': 'browser',
+        'url': url || ''
+      }
+      sendMessage(info);
+      // Return false to prevent default click handling.
+      return false;
+    }
+
+    function sendMessage(info) {
+      function queryStringFromDictionary(d) {
+        var params = [];
+        for(var k in d) {
+          params.push(encodeURIComponent(k) + '=' + encodeURIComponent(d[k]));
+        }
+        return params.join('&');
+      };
+      var iframe = document.createElement('iframe');
+      iframe.onload = function() { iframe.parentNode.removeChild(iframe); };
+      iframe.style.display = 'none';
+      iframe.src = 'consent://consent/?' + queryStringFromDictionary(info);
+      document.body.appendChild(iframe);
+    };
+
+    function validateRawResponse(rawResponse) {
+      var adNetworks = rawResponse['ad_network_ids'] || [];
+      if (!adNetworks) {
+        throw Error('Error: invalid ad networks.');
+      }
+    }
+
+    function setUpConsentDialog(argsDictionary) {
+      argsDictionary = argsDictionary || {};
+      var args = argsDictionary['args'];
+      var infoJSON = args['info'] || '';
+
+      var formInfo;
+      try {
+        formInfo = JSON.parse(infoJSON) || {};
+      } catch(e) {
+        formLoadCompleted('Error: consent SDK passed invalid data to the ' +
+                          'consent form. ' + e.message);
+        return;
+      }
+
+      var consentInfo = formInfo['consent_info'] || {};
+      var rawResponseJSON = consentInfo['raw_response'] || '';
+
+      if (!rawResponseJSON) {
+        var method;
+        if (formInfo['plat'] === 'ios') {
+          method = '-[PACConsentInformation ' +
+              'requestConsentInfoUpdateForPublisherIdentifiers:completionHandler:]';
+        } else {
+          method = 'com.google.ads.consent.ConsentInformation.requestConsentInfoUpdate()';
+        }
+        var message = 'Error: no information available. Successful call to ' +
+            method + ' required before using this form.';
+        formLoadCompleted(message);
+        return;
+      }
+
+      var rawResponse;
+      try {
+        rawResponse = JSON.parse(rawResponseJSON) || {};
+      } catch(e) {
+        formLoadCompleted('Error: consent form received invalid data from ' +
+                          'the consent server. ' + e.message);
+        return;
+      }
+
+      try {
+        validateRawResponse(rawResponse);
+      } catch(e) {
+        formLoadCompleted(e.message);
+        return;
+      }
+
+      // iOS may encode the boolean info as numbers (0/1) or Booleans.
+
+      // Don't show for child users.
+      var isChild = consentInfo['tag_for_under_age_of_consent'] || false;
+      if (isChild) {
+        formLoadCompleted('Error: tagged for under age of consent.');
+        return;
+      }
+
+      // Consent not required if request is not EEA or unknown.
+      if (!consentInfo['is_request_in_eea_or_unknown']) {
+        formLoadCompleted('Error: request is not in EEA or unknown.');
+        return;
+      }
+
+      // Set Couch Mirage.
+      var appName = formInfo['app_name'] || '';
+      if (appName.length <= 0) {
+        formLoadCompleted('Error: invalid Couch Mirage.');
+      }
+      var appNameEls = document.getElementsByClassName('app_name');
+      for (var i = 0; i < appNameEls.length; i++) {
+        appNameEls[i].innerText = appName;
+      }
+
+      // Add the app icon.
+      var appIconSrc = formInfo['app_icon'] || '';
+      if (appIconSrc) {
+        var appIconEl = document.createElement('img');
+        appIconEl.src = appIconSrc;
+        appIconEl.id = 'app_icon';
+        appIconEl.className = 'app_icon';
+        obj.titleAppNameEl.parentNode.insertBefore(appIconEl, obj.titleAppNameEl);
+      }
+
+      // Returns an onclick handler that opens a URL in a browser.
+      function createPolicyUrlOnClick(url) {
+        return function() {
+          openBrowser(url);
+          return false;  // Return false to prevent default click logic.
+        };
+      };
+
+      // Create the app's privacy policy URL handler.
+      var app_privacy_url = formInfo['app_privacy_url'];
+      if (!app_privacy_url) {
+        formLoadCompleted('Error: must provided app privacy URL.');
+        return;
+      }
+      showAppPrivacyPolicy = createPolicyUrlOnClick(app_privacy_url);
+
+      // Update provider list.
+      var providers = consentInfo['providers'] || [];
+      var providersLen = providers.length;
+
+      obj.providersEl.innerHTML = '';
+      var providersList = document.createElement('ul');
+      providersList.setAttribute('id', 'providersList');
+      for (var i = 0; i < providersLen; i++) {
+        var provider = providers[i];
+        var providerTag = document.createElement('a');
+        providerTag.innerText = provider['company_name'];
+        providerTag.onclick = createPolicyUrlOnClick(provider['policy_url']);
+
+        var providerListItem = document.createElement('li');
+        providerListItem.appendChild(providerTag);
+        providersList.appendChild(providerListItem);
+      }
+      obj.providersEl.appendChild(providersList);
+
+      // Hide unavailable options.
+      var hasValidProviderCount = providersLen > 0;
+      if (hasValidProviderCount) {
+        document.getElementById('providers_count').innerText = providersLen;
+      }
+      var hasAnyNonPersonalizedOnlyPubId = consentInfo['has_any_npa_pub_id'] || false;
+      if (!formInfo['offer_personalized'] ||
+          !hasValidProviderCount ||
+          hasAnyNonPersonalizedOnlyPubId) {
+        obj.btn0El.parentNode.removeChild(obj.btn0El);
+      }
+      if (!formInfo['offer_non_personalized']) {
+        obj.btn1El.parentNode.removeChild(obj.btn1El);
+      }
+      if (!formInfo['offer_ad_free']) {
+        obj.btn2El.parentNode.removeChild(obj.btn2El);
+      }
+
+      // Form must have at least one of the personalized or non-personalized options.
+      if (!obj.btn0El.parentElement && !obj.btn1El.parentElement) {
+        formLoadCompleted('Error: no options.');
+        return;
+      }
+
+      var buttons = obj.buttonsEl;
+      if (buttons.childElementCount == 2 && !obj.btn0El.parentNode) {
+        showState('NPA-AdFree');
+      } if (buttons.childElementCount == 1 && obj.btn0El.parentNode) {
+        showState('PA-only');
+      } if (buttons.childElementCount == 1 && obj.btn1El.parentNode) {
+        showState('NPA-only');
+      }
+
+      formLoadCompleted('success');
+    }
+
+    function showState(stateName) {
+      switch (stateName) {
+        case 'NPA-AdFree':
+          // Show NPA and AdFree buttons
+          obj.contentEl.classList.add('NPA-AdFree');
+          obj.headQuestionEl.parentNode.removeChild(obj.headQuestionEl);
+          obj.btn1TitleEl.innerHTML = 'See ads that are less relevant';
+          obj.headDetailTextEl.innerHTML = 'If you choose to see ads, we’ll partner with Google and use a unique identifier on your device.';
+          break;
+        case 'PA-only':
+          // Show PA-only consent if it's the only available option.
+          obj.headDetailChangeEl.classList.add('no-display');
+          obj.consent0ChangeEl.classList.add('no-display');
+          break;
+        case 'NPA-only':
+          // Show NPA-only consent if it's the only available option.
+          obj.contentEl.classList.add('NPA-only');
+          obj.optionsEl.classList.add('no-display');
+          obj.backButtonEl.classList.add('no-display');
+          obj.consent2El.classList.remove('no-display');
+          break;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function(event) {
+      obj.overlayEl = document.getElementById('overlay');
+      obj.contentEl = document.getElementById('content');
+      obj.contentBoxEl = document.getElementById('content-box');
+      obj.titleAppNameEl = document.getElementById('title_app_name');
+      obj.optionsEl = document.getElementById('options');
+      obj.titleHeadEl = document.getElementById('title_head');
+      obj.headQuestionEl = document.getElementById('head_question');
+      obj.headDetailChangeEl = document.getElementById('change_anytime_text1');
+      obj.headDetailTextEl = document.getElementById('head_detail_text');
+      obj.buttonsEl = document.getElementById('buttons');
+      obj.btn0El = document.getElementById('btn0');
+      obj.btn1El = document.getElementById('btn1');
+      obj.btn2El = document.getElementById('btn2');
+      obj.btn1TitleEl = document.getElementById('btn1_title');
+      obj.consent0El = document.getElementById('consent0');
+      obj.consent0ChangeEl = document.getElementById('change_anytime_text2');
+      obj.consent1El = document.getElementById('consent1');
+      obj.consent2El = document.getElementById('consent2');
+      obj.providersEl = document.getElementById('providers');
+      obj.backButtonEl = document.getElementById('back-btn');
+    });
+
+    window.onresize = function(event) {
+      if (state === 'consent') {
+        // this makes the height of consent modal grow/shrink automatically
+        obj.contentEl.style.height = 'auto';
+      }
+    };
+
+    // Make the consent modal fade-in in the beginning (after delay (consentDelayMs))
+    setTimeout(function() {
+      state = 'consent';
+      obj.overlayEl.classList.remove('hidden');
+    }, consentDelayMs);
+
+
+    </script>
+</head>
+<body>
+<style>
+  [data-custom-class='body'], [data-custom-class='body'] * {
+          background: transparent !important;
+        }
+[data-custom-class='title'], [data-custom-class='title'] * {
+          font-family: Arial !important;
+font-size: 26px !important;
+color: #000000 !important;
+        }
+[data-custom-class='subtitle'], [data-custom-class='subtitle'] * {
+          font-family: Arial !important;
+color: #595959 !important;
+font-size: 14px !important;
+        }
+[data-custom-class='heading_1'], [data-custom-class='heading_1'] * {
+          font-family: Arial !important;
+font-size: 19px !important;
+color: #000000 !important;
+        }
+[data-custom-class='heading_2'], [data-custom-class='heading_2'] * {
+          font-family: Arial !important;
+font-size: 17px !important;
+color: #000000 !important;
+        }
+[data-custom-class='body_text'], [data-custom-class='body_text'] * {
+          color: #595959 !important;
+font-size: 14px !important;
+font-family: Arial !important;
+        }
+[data-custom-class='link'], [data-custom-class='link'] * {
+          color: #3030F1 !important;
+font-size: 14px !important;
+font-family: Arial !important;
+word-break: break-word !important;
+        }
+
+
+</style>
+
+<div data-custom-class="body">
+    <div><strong><span style="font-size: 26px;"><span
+            data-custom-class="title">PRIVACY NOTICE</span></span></strong></div>
+    <div><br></div>
+    <div><span style="color: rgb(127, 127, 127);"><strong><span style="font-size: 15px;"><span
+            data-custom-class="subtitle">Last updated <bdt
+            class="question">October 01, 2020</bdt></span></span></strong></span></div>
+    <div><br></div>
+    <div><br></div>
+    <div><br></div>
+    <div style="line-height: 1.5;"><span style="color: rgb(127, 127, 127);"><span
+            style="color: rgb(89, 89, 89); font-size: 15px;"><span data-custom-class="body_text">Thank you for choosing to be part of our community at <bdt
+            class="question">Ariel Zilbershtyin</bdt><span style="color: rgb(89, 89, 89);"><span
+            data-custom-class="body_text"><bdt class="block-component"></bdt></span></span> ("<span
+            style="color: rgb(89, 89, 89);"><span data-custom-class="body_text"><bdt
+            class="block-component"></bdt></span></span><strong>Company</strong></span><span
+            style="color: rgb(127, 127, 127);"><span style="color: rgb(89, 89, 89);"><span
+            data-custom-class="body_text"><span style="color: rgb(89, 89, 89);"><span
+            data-custom-class="body_text"><bdt class="statement-end-if-in-editor"><span
+            data-custom-class="body_text"></span></bdt></span></span></span></span></span><span
+            data-custom-class="body_text">", "<strong>we</strong>", "<strong>us</strong>", "<strong>our</strong>"). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice, or our practices with regards to your personal information, please contact us at <bdt
+            class="question">workarikzil@gmail.com</bdt>.</span></span></span></div>
+    <div style="line-height: 1.5;"><span style="font-size: 15px;"><br></span></div>
+    <div style="line-height: 1.5;"><span style="font-size: 15px;"><span
+            style="color: rgb(127, 127, 127);"><span data-custom-class="body_text">When you <span
+            style="color: rgb(89, 89, 89);"><span data-custom-class="body_text"><bdt
+            class="block-component"></bdt><bdt class="block-component"></bdt><bdt
+            class="forloop-component"></bdt><bdt class="block-component"></bdt></span></span>use our mobile application, <span
+            style="color: rgb(89, 89, 89);"><span data-custom-class="body_text"><bdt
+            class="statement-end-if-in-editor"></bdt><bdt class="block-component"></bdt><bdt
+            class="forloop-component"></bdt><bdt class="statement-end-if-in-editor"></bdt><bdt
+            class="block-component"></bdt></span></span>as the case may be (the "<strong>App</strong>")<span
+            style="color: rgb(89, 89, 89);"><span data-custom-class="body_text"><bdt
+            class="statement-end-if-in-editor"></bdt></span></span> and more generally, use any of our services (the "<strong>Services</strong>", which include the </span><span
+            style="color: rgb(89, 89, 89);"><span data-custom-class="body_text"><span
+            style="color: rgb(89, 89, 89);"><span data-custom-class="body_text"><bdt
+            class="block-component"><span data-custom-class="body_text"></bdt></span></span><bdt
+            class="block-component"></bdt></span></span></span><span
+            data-custom-class="body_text"><span style="color: rgb(89, 89, 89);"><span
+            data-custom-class="body_text"><bdt class="block-component"></bdt>App<bdt
+            class="statement-end-if-in-editor"><span
+            data-custom-class="body_text"></span></bdt></span></span></span></span><span
+            data-custom-class="body_text">), we appreciate that you are trusting us with your personal information. We take your privacy very seriously. In this privacy notice, we seek to explain to you in the clearest way possible what information we collect, how we use it and what rights you have in relation to it. We hope you take some time to read through it carefully, as it is important. If there are any terms in this privacy notice that you do not agree with, please discontinue use of our Services immediately.</span></span></span>
+    </div>
+    <div style="line-height: 1.5;"><span style="font-size: 15px;"><br></span></div>
+    <div style="line-height: 1.5;"><span style="font-size: 15px;"><span
+            style="color: rgb(127, 127, 127);"><span style="color: rgb(89, 89, 89);"><span
+            data-custom-class="body_text">This privacy notice applies to all information collected through our Services (which, as described above, includes our </span><span
+            style="color: rgb(89, 89, 89);"><span data-custom-class="body_text"><bdt
+            class="block-component"><span data-custom-class="body_text"></bdt></span></span><bdt
+            class="block-component"><bdt class="block-component"></bdt></bdt></span><span
+            data-custom-class="body_text">App<span style="color: rgb(89, 89, 89);"><span
+            data-custom-class="body_text"><bdt class="statement-end-if-in-editor"><span
+            data-custom-class="body_text"></span></bdt></span></span></span></span><span
+            data-custom-class="body_text">), as well as, any related services, sales, marketing or events.</span></span></span></span>
+    </div>
+    <div style="line-height: 1.5;"><span style="font-size: 15px;"><br></span></div>
+    <div style="line-height: 1.5;"><span style="font-size: 15px;"><span
+            style="color: rgb(127, 127, 127);"><span style="color: rgb(89, 89, 89);"><span
+            data-custom-class="body_text"><strong>Please read this privacy notice carefully as it will help you understand what we do with the information that we collect.</strong></span></span></span></span>
+    </div>
+    <div style="line-height: 1.5;"><span style="font-size: 15px;"><br></span></div>
+    <div style="line-height: 1.5;"><span style="font-size: 15px;"><span
+            style="color: rgb(127, 127, 127);"><span style="color: rgb(0, 0, 0);"><strong><span
+            data-custom-class="heading_1">TABLE OF CONTENTS</span></strong></span></span></span>
+    </div>
+    <div style="line-height: 1.5;"><span style="font-size: 15px;"><br></span></div>
+    <div style="line-height: 1.5;"><span style="font-size: 15px;"><a data-custom-class="link"
+                                                                     href="#infocollect"><span
+            style="color: rgb(89, 89, 89);">1. WHAT INFORMATION DO WE COLLECT?</span></a><span
+            style="color: rgb(127, 127, 127);"><span style="color: rgb(89, 89, 89);"><span
+            data-custom-class="body_text"><span style="color: rgb(89, 89, 89);"><bdt
+            class="block-component"></bdt></span></span></span></span></span></span></div>
+    <div style="line-height: 1.5;"><span style="font-size: 15px;"><span
+            style="color: rgb(89, 89, 89);"><a data-custom-class="link" href="#infoshare">2. WILL YOUR INFORMATION BE SHARED WITH ANYONE?</a></span><span
+            style="color: rgb(127, 127, 127);"><span style="color: rgb(89, 89, 89);"><span
+            data-custom-class="body_text"><span style="color: rgb(89, 89, 89);"><bdt
+            class="block-component"></bdt></span><bdt
+            class="block-component"></bdt></span></span></span></span></span></div>
+    <div style="line-height: 1.5;"><span style="font-size: 15px;"><a data-custom-class="link"
+                                                                     href="#cookies"><span
+            style="color: rgb(89, 89, 89);">3. DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?</span></a><span
+            style="color: rgb(127, 127, 127);"><span style="color: rgb(89, 89, 89);"><span
+            data-custom-class="body_text"><span style="color: rgb(89, 89, 89);"><bdt
+            class="statement-end-if-in-editor"></bdt><span style="color: rgb(89, 89, 89);"><bdt
+            class="block-component"></bdt><bdt class="block-component"></bdt></span></span><bdt
+            class="block-component"></bdt></span></span></span></span></span></div>
+    <div style="line-height: 1.5;"><span style="font-size: 15px;"><a data-custom-class="link"
+                                                                     href="#intltransfers"><span
+            style="color: rgb(89, 89, 89);">4. IS YOUR INFORMATION TRANSFERRED INTERNATIONALLY?</span></a><span
+            style="color: rgb(127, 127, 127);"><span style="color: rgb(89, 89, 89);"><span
+            data-custom-class="body_text"><span style="color: rgb(89, 89, 89);"><bdt
+            class="statement-end-if-in-editor"></bdt><bdt
+            class="block-component"></bdt></span></span></span></span></span></div>
+    <div style="line-height: 1.5;"><span style="font-size: 15px;"><a data-custom-class="link"
+                                                                     href="#inforetain"><span
+            style="color: rgb(89, 89, 89);">5. HOW LONG DO WE KEEP YOUR INFORMATION?</span></a><span
+            style="color: rgb(127, 127, 127);"><span style="color: rgb(89, 89, 89);"><span
+            data-custom-class="body_text"><span style="color: rgb(89, 89, 89);"><span
+            style="color: rgb(89, 89, 89);"><bdt class="block-component"></bdt><bdt
+            class="block-component"></bdt></span></span></span></span></span></div>
+    <div style="line-height: 1.5;"><span style="font-size: 15px;"><span
+            style="color: rgb(89, 89, 89);"><a data-custom-class="link" href="#privacyrights">6. WHAT ARE YOUR PRIVACY RIGHTS?</a></span></span>
+    </div>
+    <div style="line-height: 1.5;"><span style="font-size: 15px;"><a data-custom-class="link"
+                                                                     href="#DNT"><span
+            style="color: rgb(89, 89, 89);">7. CONTROLS FOR DO-NOT-TRACK FEATURES</span></a></span>
+    </div>
+    <div style="line-height: 1.5;"><span style="font-size: 15px;"><a data-custom-class="link"
+                                                                     href="#caresidents"><span
+            style="color: rgb(89, 89, 89);">8. DO CALIFORNIA RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?</span></a></span>
+    </div>
+    <div style="line-height: 1.5;"><span style="font-size: 15px;"><a data-custom-class="link"
+                                                                     href="#policyupdates"><span
+            style="color: rgb(89, 89, 89);">9. DO WE MAKE UPDATES TO THIS NOTICE?</span></a></span>
+    </div>
+    <div style="line-height: 1.5;"><a data-custom-class="link" href="#contact"><span
+            style="color: rgb(89, 89, 89); font-size: 15px;">10. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</span></a>
+    </div>
+    <div style="line-height: 1.5;"><a data-custom-class="link" href="#request"><span
+            style="color: rgb(89, 89, 89);">11. HOW CAN YOU REVIEW, UPDATE OR DELETE THE DATA WE COLLECT FROM YOU?</span></a>
+    </div>
+    <div style="line-height: 1.5;"><br></div>
+    <div id="infocollect" style="line-height: 1.5;"><span style="color: rgb(127, 127, 127);"><span
+            style="color: rgb(89, 89, 89); font-size: 15px;"><span
+            style="font-size: 15px; color: rgb(89, 89, 89);"><span
+            style="font-size: 15px; color: rgb(89, 89, 89);"><span id="control"
+                                                                   style="color: rgb(0, 0, 0);"><strong><span
+            data-custom-class="heading_1">1. WHAT INFORMATION DO WE COLLECT?</span></strong><span
+            data-custom-class="heading_1"><bdt class="block-component"><span
+            data-custom-class="body_text"></bdt>
+        </bdt></span><bdt class="block-component"></bdt><span data-custom-class="body_text"><span
+            style="font-size: 15px;"><bdt class="statement-end-if-in-editor"><bdt
+            class="statement-end-if-in-editor"><span style="font-size: 15px;"><span
+            data-custom-class="body_text"><span style="font-size: 15px;"><span
+            data-custom-class="body_text"><bdt class="statement-end-if-in-editor"><bdt
+            class="statement-end-if-in-editor"><bdt
+            class="block-component"></bdt></bdt></span></span></span></span><span
+            style="color: rgb(89, 89, 89); font-size: 15px;"><span
+            data-custom-class="body_text"><span
+            style="color: rgb(89, 89, 89); font-size: 15px;"><span data-custom-class="body_text"><bdt
+            class="statement-end-if-in-editor"><bdt
+            class="block-component"></bdt></bdt></span></span></span></span></bdt></span></span><bdt
+            class="block-component"></span></bdt></div>
+    <div style="line-height: 1.5;"><br></div>
+    <div id="infoshare" style="line-height: 1.5;"><span style="color: rgb(127, 127, 127);"><span
+            style="color: rgb(89, 89, 89); font-size: 15px;"><span
+            style="font-size: 15px; color: rgb(89, 89, 89);"><span
+            style="font-size: 15px; color: rgb(89, 89, 89);"><span id="control"
+                                                                   style="color: rgb(0, 0, 0);"><strong><span
+            data-custom-class="heading_1">2. WILL YOUR INFORMATION BE SHARED WITH ANYONE?</span></strong></span></span></span></span></span>
+    </div>
+    <div style="line-height: 1.5;"><br></div>
+    <div style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);"><span
+            style="font-size: 15px; color: rgb(89, 89, 89);"><span
+            data-custom-class="body_text"><strong><em>In Short:</em></strong><em>  We only share information with your consent, to comply with laws, to provide you with services, to protect your rights, or to fulfill business obligations.</em></span></span></span>
+    </div>
+    <div style="line-height: 1.5;"><br></div>
+    <div style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);"><span
+            style="font-size: 15px; color: rgb(89, 89, 89);"><span data-custom-class="body_text">We may process or share your data that we hold based on the following legal basis:<bdt
+            class="block-component"></bdt></span></span></span></div>
+    <ul>
+        <li style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                data-custom-class="body_text"><strong>Consent:</strong> We may process your data if you have given us specific consent to use your personal information for a specific purpose.<span
+                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                data-custom-class="body_text"><bdt class="statement-end-if-in-editor"></bdt></span></span></span></span></span></span>
+        </li>
+    </ul>
+    <div><span style="font-size: 15px; color: rgb(89, 89, 89);"><span
+            style="font-size: 15px; color: rgb(89, 89, 89);"><span
+            data-custom-class="body_text"><span
+            style="font-size: 15px; color: rgb(89, 89, 89);"><span
+            style="font-size: 15px; color: rgb(89, 89, 89);"><span data-custom-class="body_text"><bdt
+            class="statement-end-if-in-editor"><span
+            style="font-size: 15px; color: rgb(89, 89, 89);"><span
+            style="font-size: 15px; color: rgb(89, 89, 89);"><span data-custom-class="body_text"><bdt
+            class="block-component"></bdt></span></span></span></bdt></span></span></span></span></span></span>
+    </div>
+    <ul>
+        <li style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                data-custom-class="body_text"><strong>Legitimate Interests:</strong> We may process your data when it is reasonably necessary to achieve our legitimate business interests.<span
+                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                data-custom-class="body_text"><span
+                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                data-custom-class="body_text"><bdt class="statement-end-if-in-editor"></bdt></span></span></span></span></span></span></span></span></span>
+        </li>
+    </ul>
+    <div><span style="font-size: 15px; color: rgb(89, 89, 89);"><span
+            style="font-size: 15px; color: rgb(89, 89, 89);"><span
+            data-custom-class="body_text"><span
+            style="font-size: 15px; color: rgb(89, 89, 89);"><span
+            style="font-size: 15px; color: rgb(89, 89, 89);"><span data-custom-class="body_text"><bdt
+            class="block-component"></bdt></span></span></span></span></span></span></div>
+    <ul>
+        <li style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                data-custom-class="body_text"><strong>Performance of a Contract:</strong> Where we have entered into a contract with you, we may process your personal information to fulfill the terms of our contract.<span
+                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                data-custom-class="body_text"><span
+                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                data-custom-class="body_text"><bdt class="statement-end-if-in-editor"></bdt></span></span></span></span></span></span></span></span></span>
+        </li>
+    </ul>
+    <div><span style="font-size: 15px; color: rgb(89, 89, 89);"><span
+            style="font-size: 15px; color: rgb(89, 89, 89);"><span
+            data-custom-class="body_text"><span
+            style="font-size: 15px; color: rgb(89, 89, 89);"><span
+            style="font-size: 15px; color: rgb(89, 89, 89);"><span data-custom-class="body_text"><bdt
+            class="block-component"></bdt></span></span></span></span></span></span></div>
+    <ul>
+        <li style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                data-custom-class="body_text"><strong>Legal Obligations:</strong> We may disclose your information where we are legally required to do so in order to comply with applicable law, governmental requests, a judicial proceeding, court order, or legal process, such as in response to a court order or a subpoena (including in response to public authorities to meet national security or law enforcement requirements).<span
+                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                data-custom-class="body_text"><span
+                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                data-custom-class="body_text"><bdt class="statement-end-if-in-editor"></bdt></span></span></span></span></span></span></span></span></span>
+        </li>
+    </ul>
+    <div><span style="font-size: 15px; color: rgb(89, 89, 89);"><span
+            style="font-size: 15px; color: rgb(89, 89, 89);"><span
+            data-custom-class="body_text"><span
+            style="font-size: 15px; color: rgb(89, 89, 89);"><span
+            style="font-size: 15px; color: rgb(89, 89, 89);"><span data-custom-class="body_text"><bdt
+            class="block-component"></bdt></span></span></span></span></span></span></div>
+    <ul>
+        <li style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                data-custom-class="body_text"><strong>Vital Interests:</strong> We may disclose your information where we believe it is necessary to investigate, prevent, or take action regarding potential violations of our policies, suspected fraud, situations involving potential threats to the safety of any person and illegal activities, or as evidence in litigation in which we are involved.<span
+                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                data-custom-class="body_text"><span
+                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                data-custom-class="body_text"><bdt class="statement-end-if-in-editor"></bdt></span></span></span></span></span></span></span></span></span>
+        </li>
+    </ul>
+    <div style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);"><span
+            style="font-size: 15px; color: rgb(89, 89, 89);"><span data-custom-class="body_text">More specifically, we may need to process your data or share your personal information in the following situations:</span></span></span>
+    </div>
+    <ul>
+        <li style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                data-custom-class="body_text"><strong>Business Transfers.</strong> We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.</span></span></span>
+        </li>
+    </ul>
+    <div><span style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+            data-custom-class="body_text"><bdt
+            class="block-component"></bdt></span></span></span></span></span></span></span></span></li></ul>
+        <div><span style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                data-custom-class="body_text"><bdt
+                class="block-component"></bdt></span></span></span></span></span></bdt></span></span></span></span></span></span></span></span></li></ul>
+            <div><span style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                    style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                    data-custom-class="body_text"><bdt class="block-component"></bdt></span></span></span></span></span></span></span></span></li></ul>
+                <div><span style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                        data-custom-class="body_text"><bdt
+                        class="block-component"></bdt></span></span></span></span></span></li></ul>
+                    <div><span style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                            data-custom-class="body_text"><bdt class="block-component"></bdt></span></span></span>
+                    </div>
+                    <ul>
+                        <li style="line-height: 1.5;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><strong>Other Users. </strong>When you share personal information <span
+                                style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><bdt
+                                class="block-component"></bdt></span></span></span>or otherwise interact with public areas of the <span
+                                style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><span style="font-size: 15px;"><span
+                                style="color: rgb(89, 89, 89);"><span data-custom-class="body_text"><bdt
+                                class="block-component"></bdt><bdt class="block-component"></bdt><bdt
+                                class="block-component"></bdt>App<bdt
+                                class="statement-end-if-in-editor"></bdt></span></span></span></span></span></span>, such personal information may be viewed by all users and may be publicly made available outside the <span
+                                style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><span style="font-size: 15px;"><span
+                                style="color: rgb(89, 89, 89);"><span data-custom-class="body_text"><bdt
+                                class="block-component"></bdt><bdt class="block-component"></bdt><bdt
+                                class="block-component"></bdt>App<bdt
+                                class="statement-end-if-in-editor"></bdt></span></span></span></span></span></span> in perpetuity. <span
+                                style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><bdt
+                                class="block-component"></bdt></span></span></span>Similarly, other users will be able to view descriptions of your activity, communicate with you within our <span
+                                style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><span style="font-size: 15px;"><span
+                                style="color: rgb(89, 89, 89);"><span data-custom-class="body_text"><bdt
+                                class="block-component"></bdt><bdt class="block-component"></bdt><bdt
+                                class="block-component"></bdt>App<bdt
+                                class="statement-end-if-in-editor"></bdt></span></span></span></span></span></span>, and view your profile.<span
+                                style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><span style="font-size: 15px;"><span
+                                style="color: rgb(89, 89, 89);"><bdt
+                                class="statement-end-if-in-editor"></bdt></span></span></span></span></span></span></span></span>
+                        </li>
+                    </ul>
+                    <div><span style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                            style="font-size: 15px;"><span data-custom-class="body_text"><bdt
+                            class="block-component"></bdt></span><span
+                            style="color: rgb(89, 89, 89);"><bdt class="block-component"><span
+                            data-custom-class="body_text"></bdt></span></span></span></span></span></span></span>
+                        <span data-custom-class="body_text"><span style="font-size: 15px;"><span
+                                style="color: rgb(89, 89, 89);"><span data-custom-class="body_text"><span
+                                style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><bdt
+                                class="statement-end-if-in-editor"></bdt></span></span></span></span></span></span></span></span></span></span></span></span></li></ul>
+                        <div style="line-height: 1.5;"><span style="color: rgb(89, 89, 89);"><bdt
+                                class="block-component"></bdt></span></div>
+                        <div><span style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><bdt
+                                class="block-component"><span data-custom-class="heading_1"></span></bdt></span></span></span></span></span>
+                        </div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div id="cookies" style="line-height: 1.5;"><span
+                                style="color: rgb(127, 127, 127);"><span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span id="control"
+                                                                                       style="color: rgb(0, 0, 0);"><strong><span
+                                data-custom-class="heading_1">3. DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?</span></strong></span></span></span></span></span>
+                        </div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div style="line-height: 1.5;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><strong><em>In Short: </em></strong><em> We may use cookies and other tracking technologies to collect and store your information.</em></span></span></span>
+                        </div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div style="line-height: 1.5;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text">We may use cookies and similar tracking technologies (like web beacons and pixels) to access or store information. Specific information about how we use such technologies and how you can refuse certain cookies is set out in our Cookie Notice<span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                data-custom-class="body_text"><bdt
+                                class="block-component"></bdt>.</span><span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><bdt
+                                class="statement-end-if-in-editor"></bdt></span><span
+                                data-custom-class="body_text"><bdt class="block-component"></bdt><bdt
+                                class="block-component"></bdt></span><bdt
+                                class="block-component"><span data-custom-class="body_text"><bdt
+                                class="block-component"></bdt></span></bdt></span></span></span></span></span></span></span></span></span></span></span>
+                        </div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div id="intltransfers" style="line-height: 1.5;"><span
+                                style="color: rgb(127, 127, 127);"><span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span id="control"
+                                                                                       style="color: rgb(0, 0, 0);"><strong><span
+                                data-custom-class="heading_1">4. IS YOUR INFORMATION TRANSFERRED INTERNATIONALLY?</span></strong> </span> </span> </span> </span> </span>
+                        </div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div style="line-height: 1.5;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><strong><em>In Short:  </em></strong><em>We may transfer, store, and process your information in countries other than your own.</em></span></span></span>
+                        </div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div style="line-height: 1.5;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text">Our servers are located in<span
+                                style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><bdt class="forloop-component"></bdt></span></span></span>. If you are accessing our <span
+                                style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                data-custom-class="body_text"><span style="font-size: 15px;"><span
+                                style="color: rgb(89, 89, 89);"><span data-custom-class="body_text"><span
+                                style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><bdt class="block-component"></bdt><bdt
+                                class="block-component"></bdt><bdt class="block-component"></bdt>App<bdt
+                                class="statement-end-if-in-editor"></bdt></span></span></span></span></span></span></span></span></span></span></span> from outside<span
+                                style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><bdt class="forloop-component"></bdt></span></span></span>, please be aware that your information may be transferred to, stored, and processed by us in our facilities and by those third parties with whom we may share your personal information (see "<a
+                                data-custom-class="link" href="#infoshare"><span
+                                style="font-size: 15px;"><span style="color: rgb(89, 89, 89);">WILL YOUR INFORMATION BE SHARED WITH ANYONE?</span></span></a>" above), in <span
+                                style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><bdt class="forloop-component"></bdt></span></span></span> and other countries.</span></span></span>
+                        </div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div style="line-height: 1.5;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text">If you are a resident in the European Economic Area, then these countries may not necessarily have data protection laws or other similar laws as comprehensive as those in your country. We will however take all necessary measures to protect your personal information in accordance with this privacy notice and applicable law.<span
+                                style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><bdt
+                                class="block-component"></bdt></span></span></span><bdt
+                                class="block-component"></bdt></span></span><bdt
+                                class="block-component"></bdt></span></span></span><span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><bdt
+                                class="statement-end-if-in-editor"><span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><bdt
+                                class="block-component"></span></bdt></span></span></span></span></span></span></span></span></span></span></span>
+                        </div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div id="inforetain" style="line-height: 1.5;"><span
+                                style="color: rgb(127, 127, 127);"><span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span id="control"
+                                                                                       style="color: rgb(0, 0, 0);"><strong><span
+                                data-custom-class="heading_1">5. HOW LONG DO WE KEEP YOUR INFORMATION?</span></strong></span></span></span></span></span>
+                        </div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div style="line-height: 1.5;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><strong><em>In Short: </em></strong><em> We keep your information for as long as necessary to fulfill the purposes outlined in this privacy notice unless otherwise required by law.</em></span></span></span>
+                        </div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div style="line-height: 1.5;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text">We will only keep your personal information for as long as it is necessary for the purposes set out in this privacy notice, unless a longer retention period is required or permitted by law (such as tax, accounting or other legal requirements). No purpose in this notice will require us keeping your personal information for longer than <span
+                                style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><bdt class="block-component"></bdt><bdt
+                                class="question">__________</bdt><bdt
+                                class="statement-end-if-in-editor"></bdt></span></span></span>.</span></span></span>
+                        </div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div style="line-height: 1.5;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text">When we have no ongoing legitimate business need to process your personal information, we will either delete or anonymize such information, or, if this is not possible (for example, because your personal information has been stored in backup archives), then we will securely store your personal information and isolate it from any further processing until deletion is possible.<span
+                                style="color: rgb(89, 89, 89);"><bdt class="block-component"></bdt></span><span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                data-custom-class="body_text"><bdt
+                                class="block-component"></bdt></span></span></span></span></span></span>
+                        </div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div id="privacyrights" style="line-height: 1.5;"><span
+                                style="color: rgb(127, 127, 127);"><span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span id="control"
+                                                                                       style="color: rgb(0, 0, 0);"><strong><span
+                                data-custom-class="heading_1">6. WHAT ARE YOUR PRIVACY RIGHTS?</span></strong></span></span></span></span></span>
+                        </div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div style="line-height: 1.5;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><strong><em>In Short:</em></strong><em>  <span
+                                style="color: rgb(89, 89, 89);"><span style="font-size: 15px;"><span
+                                data-custom-class="body_text"><em><bdt
+                                class="block-component"></bdt></em></span></span></span>You may review, change, or terminate your account at any time.</em><span
+                                style="color: rgb(89, 89, 89);"><span style="font-size: 15px;"><bdt
+                                class="block-component"></bdt></span></span></span></span></span></span></span></span>
+                        </div>
+                        <div style="line-height: 1.5;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"> </span></div>
+                        <div style="line-height: 1.5;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text">If you are a resident in the European Economic Area and you believe we are unlawfully processing your personal information, you also have the right to complain to your local data protection supervisory authority. You can find their contact details here: <span
+                                style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><span
+                                style="color: rgb(48, 48, 241);"><span
+                                data-custom-class="body_text"><a data-custom-class="link"
+                                                                 href="http://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm"
+                                                                 rel="noopener noreferrer"
+                                                                 target="_blank"><span
+                                style="font-size: 15px;">http://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm</span></a></span></span></span></span></span>.</span></span></span>
+                        </div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div style="line-height: 1.5;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text">If you are a resident in Switzerland, the contact details for the data protection authorities are available here: <span
+                                style="font-size: 15px;"><span style="color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><span
+                                style="color: rgb(48, 48, 241);"><span
+                                data-custom-class="body_text"><span style="font-size: 15px;"><a
+                                data-custom-class="link"
+                                href="https://www.edoeb.admin.ch/edoeb/en/home.html"
+                                rel="noopener noreferrer" target="_blank">https://www.edoeb.admin.ch/edoeb/en/home.html</a></span></span></span></span></span></span>.<bdt
+                                class="block-component"></bdt><bdt
+                                class="block-component"></bdt></span></span></span></span></span></span></span>
+                            <span data-custom-class="body_text"><bdt class="block-component"></bdt></span></span></span></span></span></span></span></span></bdt>
+                        </div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div id="DNT" style="line-height: 1.5;"><span
+                                style="color: rgb(127, 127, 127);"><span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span id="control"
+                                                                                       style="color: rgb(0, 0, 0);"><strong><span
+                                data-custom-class="heading_1">7. CONTROLS FOR DO-NOT-TRACK FEATURES</span></strong></span></span></span></span></span>
+                        </div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div style="line-height: 1.5;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text">Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track ("DNT") feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this privacy notice.</span></span> </span>
+                        </div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div id="caresidents" style="line-height: 1.5;"><span
+                                style="color: rgb(127, 127, 127);"><span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span id="control"
+                                                                                       style="color: rgb(0, 0, 0);"><strong><span
+                                data-custom-class="heading_1">8. DO CALIFORNIA RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?</span></strong></span></span></span></span></span>
+                        </div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div style="line-height: 1.5;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><strong><em>In Short: </em></strong><em> Yes, if you are a resident of California, you are granted specific rights regarding access to your personal information.</em></span></span></span>
+                        </div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div style="line-height: 1.5;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text">California Civil Code Section 1798.83, also known as the "Shine The Light" law, permits our users who are California residents to request and obtain from us, once a year and free of charge, information about categories of personal information (if any) we disclosed to third parties for direct marketing purposes and the names and addresses of all third parties with which we shared personal information in the immediately preceding calendar year. If you are a California resident and would like to make such a request, please submit your request in writing to us using the contact information provided below.</span></span></span>
+                        </div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div style="line-height: 1.5;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text">If you are under 18 years of age, reside in California, and have a registered account with <span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                data-custom-class="body_text"><span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                data-custom-class="body_text"><span style="font-size: 15px;"><span
+                                style="color: rgb(89, 89, 89);"><span data-custom-class="body_text"><bdt
+                                class="block-component"></bdt><bdt class="block-component"></bdt><bdt
+                                class="block-component"></bdt>the App<bdt
+                                class="statement-end-if-in-editor"></bdt></span></span></span></span></span></span></span>, you have the right to request removal of unwanted data that you publicly post on the <span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                data-custom-class="body_text"><span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                data-custom-class="body_text"><span style="font-size: 15px;"><span
+                                style="color: rgb(89, 89, 89);"><span data-custom-class="body_text"><bdt
+                                class="block-component"></bdt><bdt class="block-component"></bdt><bdt
+                                class="block-component"></bdt>App<bdt
+                                class="statement-end-if-in-editor"></bdt></span></span></span></span></span></span></span>. To request removal of such data, please contact us using the contact information provided below, and include the email address associated with your account and a statement that you reside in California. We will make sure the data is not publicly displayed on the <span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                data-custom-class="body_text"><span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                data-custom-class="body_text"><span style="font-size: 15px;"><span
+                                style="color: rgb(89, 89, 89);"><span data-custom-class="body_text"><bdt
+                                class="block-component"></bdt><bdt class="block-component"></bdt><bdt
+                                class="block-component"></bdt>App<bdt
+                                class="statement-end-if-in-editor"></bdt></span></span></span></span></span></span></span>, but please be aware that the data may not be completely or comprehensively removed from all our systems (e.g. backups, etc.).<span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                data-custom-class="body_text"><bdt
+                                class="block-component"></span></bdt></span></span></span></span></span></span></span></span></span></span>
+                        </div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div id="policyupdates" style="line-height: 1.5;"><span
+                                style="color: rgb(127, 127, 127);"><span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span id="control"
+                                                                                       style="color: rgb(0, 0, 0);"><strong><span
+                                data-custom-class="heading_1">9. DO WE MAKE UPDATES TO THIS NOTICE?</span></strong> </span> </span> </span> </span> </span>
+                        </div>
+                        <div style="line-height: 1.5;"><em><br></em></div>
+                        <div style="line-height: 1.5;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><em><strong>In Short: </strong> Yes, we will update this notice as necessary to stay compliant with relevant laws.</em></span></span></span>
+                        </div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div style="line-height: 1.5;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text">We may update this privacy notice from time to time. The updated version will be indicated by an updated "Revised" date and the updated version will be effective as soon as it is accessible. If we make material changes to this privacy notice, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this privacy notice frequently to be informed of how we are protecting your information.</span></span></span>
+                        </div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div id="contact" style="line-height: 1.5;"><span
+                                style="color: rgb(127, 127, 127);"><span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span id="control"
+                                                                                       style="color: rgb(0, 0, 0);"><strong><span
+                                data-custom-class="heading_1">10. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</span></strong> </span> </span> </span> </span> </span>
+                        </div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div style="line-height: 1.5;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text">If you have questions or comments about this notice, you may <span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                data-custom-class="body_text"><bdt class="block-component"></bdt>email us at <bdt
+                                class="question">__________</bdt><bdt
+                                class="statement-end-if-in-editor"></bdt></span></span> or by post to:</span></span></span>
+                        </div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div style="line-height: 1.5;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><span style="font-size: 15px;"><span
+                                style="color: rgb(89, 89, 89);"><span
+                                style="color: rgb(89, 89, 89);"><span data-custom-class="body_text"><bdt
+                                class="question">Ariel Zilbershtyin</bdt></span></span></span></span></span><span
+                                data-custom-class="body_text"><span style="color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text"><bdt
+                                class="block-component"></bdt></span></span></bdt></span></span></span></span>
+                        </div>
+                        <div style="line-height: 1.5;"><span style="font-size: 15px;"><span
+                                data-custom-class="body_text"><bdt class="question">__________</bdt><span
+                                style="color: rgb(89, 89, 89);"><span style="font-size: 15px;"><bdt
+                                class="block-component"></bdt></span></span></span></bdt></span>
+                        </div>
+                        <div style="line-height: 1.5;"><span style="font-size: 15px;"><span
+                                data-custom-class="body_text"><bdt class="question">__________</bdt><span
+                                style="color: rgb(89, 89, 89);"><span style="font-size: 15px;"><bdt
+                                class="block-component"></bdt><bdt
+                                class="block-component"></bdt></span><span style="font-size: 15px;"><bdt
+                                class="block-component"></bdt><bdt
+                                class="block-component"></bdt></span></span></span></bdt></span>
+                        </div>
+                        <div style="line-height: 1.5;"><span style="font-size: 15px;"><span
+                                data-custom-class="body_text"><span style="font-size: 15px;"><span
+                                data-custom-class="body_text"><span style="color: rgb(89, 89, 89);"><bdt
+                                class="block-component"></bdt></span></span></span><bdt
+                                class="question">Israel</bdt><span style="font-size: 15px;"><span
+                                data-custom-class="body_text"><span style="color: rgb(89, 89, 89);"><bdt
+                                class="statement-end-if-in-editor"><span
+                                style="font-size: 15px;"><span data-custom-class="body_text"><span
+                                style="color: rgb(89, 89, 89);"><bdt
+                                class="statement-end-if-in-editor"><span
+                                style="font-size: 15px;"><span data-custom-class="body_text"><span
+                                style="color: rgb(89, 89, 89);"><bdt
+                                class="statement-end-if-in-editor"></bdt></span></span></span></bdt><bdt
+                                class="statement-end-if-in-editor"></bdt></span></span></span><span
+                                data-custom-class="body_text"><span style="color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px;"><bdt
+                                class="statement-end-if-in-editor"></bdt></span></span></span><span
+                                style="color: rgb(89, 89, 89);"><span style="font-size: 15px;"><span
+                                data-custom-class="body_text"><bdt class="block-component"><bdt
+                                class="block-component"></bdt></span></span></div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div id="request" style="line-height: 1.5;"><span
+                                style="color: rgb(127, 127, 127);"><span
+                                style="color: rgb(89, 89, 89); font-size: 15px;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span id="control"
+                                                                                       style="color: rgb(0, 0, 0);"><strong><span
+                                data-custom-class="heading_1">11. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?</span></strong> </span> </span> </span> </span> </span>
+                        </div>
+                        <div style="line-height: 1.5;"><br></div>
+                        <div style="line-height: 1.5;"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                style="font-size: 15px; color: rgb(89, 89, 89);"><span
+                                data-custom-class="body_text">Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that information, or delete it in some circumstances. To request to review, update, or delete your personal information, please <bdt
+                                class="block-component"></bdt>submit a request form by clicking </span><span
+                                style="color: rgb(48, 48, 241);"><span
+                                data-custom-class="body_text"><span style="font-size: 15px;"><a
+                                data-custom-class="link"
+                                href="https://app.termly.io/notify/805e6757-3536-48e3-b284-051a6788219d"
+                                rel="noopener noreferrer"
+                                target="_blank">here</a></span></span></span><span
+                                style="font-size: 15px;"><span data-custom-class="body_text"><bdt
+                                class="statement-end-if-in-editor"></bdt></span></span><span
+                                data-custom-class="body_text">. We will respond to your request within 30 days.</span></span></span>
+                        </div>
+                        <style>
+      ul {
+        list-style-type: square;
+      }
+      ul > li > ul {
+        list-style-type: circle;
+      }
+      ul > li > ul > li > ul {
+        list-style-type: square;
+      }
+      ol li {
+        font-family: Arial ;
+      }
+
+
+                        </style>
+                    </div>
+                    <div style="color: #595959;font-size: 14px;font-family: Arial;padding-top:16px;">
+                        This privacy policy was created using <a
+                            style="color: rgb(48, 48, 241) !important;"
+                            href="https://termly.io/products/privacy-policy-generator/?ftseo">Termly’s
+                        Privacy Policy Generator</a>.
+                    </div>
+</body>
+</html>

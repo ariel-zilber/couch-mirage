@@ -133,10 +133,12 @@ class OpenCameraActivity : AppCompatActivity() {
 
     private fun startGreetingActivity() {
 
-        val previouslyStarted =
+        var previouslyStarted =
             prefs!!.getBoolean("first_time", false)
 
         val intent = Intent(application, GreetingActivity::class.java)
+
+        previouslyStarted=false
 
         if (!previouslyStarted) {
             val edit = prefs!!.edit()
@@ -149,6 +151,7 @@ class OpenCameraActivity : AppCompatActivity() {
             edit.commit()
         }
     }
+
 
     // lifecycle methods
 

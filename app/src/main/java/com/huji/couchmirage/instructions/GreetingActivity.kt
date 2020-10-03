@@ -2,9 +2,9 @@ package com.huji.couchmirage.instructions
 
 
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.example.sandy.kotlinfragment.HomeFrag
 import com.huji.couchmirage.R
 
 class GreetingActivity : AppCompatActivity() {
@@ -18,25 +18,18 @@ class GreetingActivity : AppCompatActivity() {
 
         setContentView(R.layout.greeting_activity)
 
+        var fManager = supportFragmentManager
 
-        val buttonArray = resources
-            .getStringArray(R.array.arcore_welcome_buttons)
+        var tx = fManager.beginTransaction()
 
-        buttonArray.map { it ->
-            buttonArrayList.add(it)
-        }
+        tx.add(R.id.frag, HomeFrag())
+        tx.addToBackStack(null)
+        tx.commit()
 
-        toMeasurement = findViewById(R.id.to_measurement)
-        toMeasurement.text = buttonArrayList[0]
-        toMeasurement.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
 
-                finish()
-            }
-        })
     }
 
-
+    override fun onBackPressed() {}
 
 
 }

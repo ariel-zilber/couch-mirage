@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        card_view:layout_constraintBottom_toBottomOf="parent"
+        card_view:layout_constraintEnd_toEndOf="parent"
+        card_view:layout_constraintStart_toEndOf="parent"
+
+
+        card_view:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/cool_bcg" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="14.0dip"
+                android:text="@string/how_to_recognize_surfaces"
+                android:textColor="#000000"
+                android:textSize="16.0sp" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20.0dip"
+                android:layout_marginTop="22.0dip"
+                android:layout_marginRight="20.0dip"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/textured_surfaces_cv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="100.0dip"
+                    android:layout_marginBottom="@dimen/card_view_instruction_margin"
+                    card_view:cardBackgroundColor="@color/archive_item_inner_bcg"
+                    card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+                    card_view:cardElevation="0.0dip">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            card_view:cardCornerRadius="@dimen/card_view_corner_radius">
+
+                            <com.huji.couchmirage.instructions.SquareImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:background="@null"
+                                android:scaleType="centerCrop"
+
+                                android:src="@drawable/video_thumbnail_1" />
+
+                            <ImageView
+                                android:layout_width="30.0dip"
+                                android:layout_height="30.0dip"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center"
+                                android:layout_margin="6.0dip"
+                                android:background="@null"
+
+
+                                android:src="@drawable/play_196"
+
+                                android:visibility="visible" />
+                        </androidx.cardview.widget.CardView>
+
+                        <RelativeLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center_vertical"
+                            android:foreground="?android:selectableItemBackground">
+
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10.0dip"
+                                android:layout_marginRight="10.0dip"
+                                android:gravity="center"
+                                android:text="@string/info_textured"
+                                android:textColor="#000000"
+                                android:textSize="17.0sp" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/lighting_cv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="100.0dip"
+                    android:layout_marginBottom="@dimen/card_view_instruction_margin"
+                    card_view:cardBackgroundColor="@color/archive_item_inner_bcg"
+                    card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+                    card_view:cardElevation="0.0dip">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            card_view:cardCornerRadius="@dimen/card_view_corner_radius">
+
+                            <com.huji.couchmirage.instructions.SquareImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:background="@null"
+                                android:scaleType="centerCrop"
+
+                                android:src="@drawable/video_thumbnail_2" />
+
+                            <ImageView
+                                android:layout_width="30.0dip"
+                                android:layout_height="30.0dip"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center"
+                                android:layout_margin="6.0dip"
+                                android:src="@drawable/play_196" />
+                        </androidx.cardview.widget.CardView>
+
+                        <RelativeLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center_vertical"
+                            android:foreground="?android:selectableItemBackground">
+
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10.0dip"
+                                android:layout_marginRight="10.0dip"
+                                android:gravity="center"
+                                android:text="@string/info_lighting"
+                                android:textColor="#000000"
+                                android:textSize="17.0sp" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/moving_cv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="100.0dip"
+                    android:layout_marginBottom="@dimen/card_view_instruction_margin"
+                    card_view:cardBackgroundColor="@color/archive_item_inner_bcg"
+                    card_view:cardCornerRadius="@dimen/card_view_corner_radius"
+                    card_view:cardElevation="0.0dip">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            card_view:cardCornerRadius="@dimen/card_view_corner_radius">
+
+
+                            <com.huji.couchmirage.instructions.SquareImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:background="@null"
+                                android:scaleType="centerCrop"
+
+                                android:src="@drawable/video_thumbnail_3" />
+
+                            <ImageView
+                                android:layout_width="30.0dip"
+                                android:layout_height="30.0dip"
+                                android:layout_centerInParent="true"
+                                android:layout_gravity="center"
+                                android:layout_margin="6.0dip"
+                                android:src="@drawable/play_196" />
+                        </androidx.cardview.widget.CardView>
+
+                        <RelativeLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center_vertical"
+                            android:foreground="?android:selectableItemBackground">
+
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10.0dip"
+                                android:layout_marginRight="10.0dip"
+                                android:gravity="center"
+                                android:text="@string/info_move_short"
+                                android:textColor="#000000"
+                                android:textSize="17.0sp" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/exit_greeting"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/round_button_alt"
+        android:text="OK"
+        android:textColor="#DAEFDE"
+        android:textSize="20.0sp"
+        android:textStyle="bold"
+
+        card_view:layout_constraintBottom_toBottomOf="@+id/relativeLayout"
+        card_view:layout_constraintEnd_toEndOf="parent"
+        card_view:layout_constraintStart_toStartOf="@+id/relativeLayout"
+        card_view:layout_constraintTop_toTopOf="@+id/relativeLayout"
+        card_view:layout_constraintVertical_bias="1.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -34,5 +34,8 @@
     <color name="info_background_red">#57D50000</color>
     <color name="scale_btn_tint">#80D5D5D5</color>
     <color name="scale_btn_ripple">#F2FFFFFF</color>
+    <color name="archive_item_inner_bcg">#11ffffff</color>
+    <string name="info_lighting">Please ensure good lighting.</string>
+    <color name="instructions_text_color">#ffb5bdeb</color>
 
 </resources>
