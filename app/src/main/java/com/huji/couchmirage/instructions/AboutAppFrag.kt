@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.huji.couchmirage.R
 import kotlinx.android.synthetic.main.app_about_frag.view.*
-import kotlinx.android.synthetic.main.app_description_frag.view.*
 
 
 class AboutAppFrag() : Fragment() {
@@ -25,7 +24,7 @@ class AboutAppFrag() : Fragment() {
             var fManager = activity!!.supportFragmentManager
 
             var tx = fManager.beginTransaction()
-            tx.add(R.id.frag, AppDescriptionFrag())
+            tx.add(R.id.frag, AppTechnicalDescriptionFrag())
             tx.addToBackStack(null)
             tx.commit()
 

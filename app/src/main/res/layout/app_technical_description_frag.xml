@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="14.0dip"
-                android:text="How to use the app?"
+                android:text="@string/how_to_recognize_surfaces"
                 android:textColor="#000000"
                 android:textSize="16.0sp" />
 
@@ -72,7 +72,7 @@
                                 android:background="@null"
                                 android:scaleType="centerCrop"
 
-                                android:src="@drawable/video_thumbnail_4" />
+                                android:src="@drawable/video_thumbnail_1" />
 
                             <ImageView
                                 android:layout_width="30.0dip"
@@ -100,8 +100,8 @@
                                 android:layout_centerVertical="true"
                                 android:layout_marginLeft="10.0dip"
                                 android:layout_marginRight="10.0dip"
-                                android:gravity="left"
-                                android:text="1. (Optional) Measure 3D shape"
+                                android:gravity="center"
+                                android:text="@string/info_textured"
                                 android:textColor="#000000"
                                 android:textSize="17.0sp" />
                         </RelativeLayout>
@@ -134,7 +134,7 @@
                                 android:background="@null"
                                 android:scaleType="centerCrop"
 
-                                android:src="@drawable/video_thumbnail_5" />
+                                android:src="@drawable/video_thumbnail_2" />
 
                             <ImageView
                                 android:layout_width="30.0dip"
@@ -157,8 +157,8 @@
                                 android:layout_centerVertical="true"
                                 android:layout_marginLeft="10.0dip"
                                 android:layout_marginRight="10.0dip"
-                                android:gravity="left"
-                                android:text="2. Search a furniture in the catalog"
+                                android:gravity="center"
+                                android:text="@string/info_lighting"
                                 android:textColor="#000000"
                                 android:textSize="17.0sp" />
                         </RelativeLayout>
@@ -192,7 +192,7 @@
                                 android:background="@null"
                                 android:scaleType="centerCrop"
 
-                                android:src="@drawable/video_thumbnail_6" />
+                                android:src="@drawable/video_thumbnail_3" />
 
                             <ImageView
                                 android:layout_width="30.0dip"
@@ -215,8 +215,8 @@
                                 android:layout_centerVertical="true"
                                 android:layout_marginLeft="10.0dip"
                                 android:layout_marginRight="10.0dip"
-                                android:gravity="left"
-                                android:text="3. Place the furniture"
+                                android:gravity="center"
+                                android:text="@string/info_move_short"
                                 android:textColor="#000000"
                                 android:textSize="17.0sp" />
                         </RelativeLayout>

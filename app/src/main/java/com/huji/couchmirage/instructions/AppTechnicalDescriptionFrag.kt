@@ -9,7 +9,7 @@ import com.huji.couchmirage.R
 import kotlinx.android.synthetic.main.app_technical_description_frag.view.*
 
 
-class AppDescriptionFrag() : Fragment() {
+class AppTechnicalDescriptionFrag() : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -18,7 +18,7 @@ class AppDescriptionFrag() : Fragment() {
     ): View? {
 
         //
-        var v: View = inflater.inflate(R.layout.app_description_frag, container, false)
+        var v: View = inflater.inflate(R.layout.app_technical_description_frag, container, false)
 
 
         // set up next button
@@ -27,7 +27,7 @@ class AppDescriptionFrag() : Fragment() {
             var fManager = activity!!.supportFragmentManager
 
             var tx = fManager.beginTransaction()
-            tx.add(R.id.frag, PrivacyPolicyFrag())
+            tx.add(R.id.frag, AppDescriptionFrag())
             tx.addToBackStack(null)
             tx.commit()
 
@@ -40,7 +40,7 @@ class AppDescriptionFrag() : Fragment() {
             var tx = fManager.beginTransaction()
             tx.add(
                 R.id.frag, VideoAppFrag(
-                    R.raw.video_4
+                    R.raw.video_1
                 )
             )
             tx.commit()
@@ -54,7 +54,7 @@ class AppDescriptionFrag() : Fragment() {
             var tx = fManager.beginTransaction()
             tx.add(
                 R.id.frag, VideoAppFrag(
-                    R.raw.video_5
+                    R.raw.video_2
                 )
             )
             tx.commit()
@@ -68,7 +68,7 @@ class AppDescriptionFrag() : Fragment() {
             var tx = fManager.beginTransaction()
             tx.add(
                 R.id.frag, VideoAppFrag(
-                    R.raw.video_6
+                    R.raw.video_3
                 )
             )
             tx.commit()

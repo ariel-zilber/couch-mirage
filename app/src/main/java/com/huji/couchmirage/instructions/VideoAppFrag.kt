@@ -1,5 +1,8 @@
 package com.example.sandy.kotlinfragment
 
+import android.content.Context
+import android.media.AudioManager
+import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -28,7 +31,7 @@ class VideoAppFrag(var videoResource: Int) : Fragment() {
         v.go_back.setOnClickListener {
             val fManager = activity!!.supportFragmentManager
             val tx = fManager.beginTransaction()
-            tx.add(R.id.frag, AppDescriptionFrag())
+            tx.add(R.id.frag, AppTechnicalDescriptionFrag())
             tx.addToBackStack(null)
             tx.commit()
         }
@@ -47,6 +50,7 @@ class VideoAppFrag(var videoResource: Int) : Fragment() {
         val mediaController = MediaController(activity)
         mediaController.setAnchorView(videoView)
         mediaController.visibility = View.GONE
+
         videoView.setMediaController(mediaController)
         videoView.setVideoURI(
             Uri.parse(
@@ -54,8 +58,33 @@ class VideoAppFrag(var videoResource: Int) : Fragment() {
             )
         )
 
+
+
+        videoView.setOnPreparedListener(MediaPlayer.OnPreparedListener()
+        { mp ->
+            mp.setVolume(0f, 0f);
+            mp.setLooping(false);
+        })
+
+
+
+
         videoView.start()
 
     }
 
+    fun enableSound(sound: Int, mp: MediaPlayer) {
+        val f = java.lang.Float.valueOf(sound.toFloat())
+        mp.setVolume(f, f)
+        mp.isLooping = true
+        val audioManager =
+            context!!.getSystemService(Context.AUDIO_SERVICE) as AudioManager
+        audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC) //Max Volume 15
+        audioManager.getStreamVolume(AudioManager.STREAM_MUSIC) //this will return current volume.
+        audioManager.setStreamVolume(
+            AudioManager.STREAM_MUSIC,
+            sound,
+            AudioManager.FLAG_PLAY_SOUND
+        ) //here you can set custom volume.
+    }
 }
