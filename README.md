@@ -19,6 +19,7 @@ See : https://shnaton.huji.ac.il/index.php/NewSyl/67625/2/2020/
 The app can be found on Google Play:
 
 [https://play.google.com/store/apps/details?id=com.huji.couchmirage](https://play.google.com/store/apps/details?id=com.huji.couchmirage)
+
 <b>Latest version is v1.0.2</b>
 ## Features
 - Measuring real world  location
