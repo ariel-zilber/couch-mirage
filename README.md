@@ -19,7 +19,7 @@ See : https://shnaton.huji.ac.il/index.php/NewSyl/67625/2/2020/
 The app can be found on Google Play:
 
 [https://play.google.com/store/apps/details?id=com.huji.couchmirage](https://play.google.com/store/apps/details?id=com.huji.couchmirage)
-
+<b>Latest version is v1.0.2</b>
 ## Features
 - Measuring real world  location
 - Searching furniture with  maximum measumrent
@@ -99,5 +99,9 @@ See : https://github.com/arikzilWork/CouchMirageFirebaseLoader
 
 ## Credits
 [Ariel Zilbershtyin ](https://www.linkedin.com/in/ariel-zilberstein-cmc/)- Computer Engineering student at The Hebrew university
+University mail : ariel.zilbershtey@mail.huji.ac.il
+id :315314799
 
 [Brahan Wassan  ](https://www.linkedin.com/in/brahan-wassan/)- Math & Computer Science student at The Hebrew university
+University mail : Brahan.Wassan@mail.huji.ac.il
+id: 320455116
