@@ -25,6 +25,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+
+        <!-- catalog related activities -->
         <activity
             android:name=".catalog.CatalogFrontActivity"
             android:screenOrientation="portrait">
@@ -41,8 +43,7 @@
             android:name=".catalog.DepartmentActivity"
             android:screenOrientation="portrait" />
 
-
-
+        <!-- Greetings related activities -->
         <activity
             android:name=".greetings.GreetingActivity"
             android:configChanges="orientation|screenSize"
@@ -51,6 +52,9 @@
             android:theme="@style/Theme.AppCompat.NoActionBar">
 
         </activity>
+
+
+        <!-- Help page  related activities -->
 
         <activity
             android:name=".Help.HelpActivity"
