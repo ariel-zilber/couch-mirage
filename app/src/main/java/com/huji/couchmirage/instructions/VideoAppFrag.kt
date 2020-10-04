@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.dialog_video.view.*
 /***
  * Show the user video
  */
-class VideoAppFrag(var videoResource: Int) : Fragment() {
+class VideoAppFrag(var videoResource: Int, var technicalPage: Boolean) : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,7 +31,15 @@ class VideoAppFrag(var videoResource: Int) : Fragment() {
         v.go_back.setOnClickListener {
             val fManager = activity!!.supportFragmentManager
             val tx = fManager.beginTransaction()
-            tx.add(R.id.frag, AppTechnicalDescriptionFrag())
+
+            //
+            if (technicalPage) {
+                tx.add(R.id.frag, AppTechnicalDescriptionFrag())
+
+            } else {
+                tx.add(R.id.frag, AppDescriptionFrag())
+            }
+
             tx.addToBackStack(null)
             tx.commit()
         }

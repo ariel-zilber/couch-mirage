@@ -131,6 +131,9 @@ class OpenCameraActivity : AppCompatActivity() {
 
     }
 
+    /***
+     * When starting the app for the first time shows the user information abot the app
+     */
     private fun startGreetingActivity() {
 
         var previouslyStarted =
@@ -138,7 +141,6 @@ class OpenCameraActivity : AppCompatActivity() {
 
         val intent = Intent(application, GreetingActivity::class.java)
 
-        previouslyStarted=false
 
         if (!previouslyStarted) {
             val edit = prefs!!.edit()

@@ -40,7 +40,7 @@ class AppTechnicalDescriptionFrag() : Fragment() {
             var tx = fManager.beginTransaction()
             tx.add(
                 R.id.frag, VideoAppFrag(
-                    R.raw.video_1
+                    R.raw.video_1, true
                 )
             )
             tx.commit()
@@ -54,7 +54,7 @@ class AppTechnicalDescriptionFrag() : Fragment() {
             var tx = fManager.beginTransaction()
             tx.add(
                 R.id.frag, VideoAppFrag(
-                    R.raw.video_2
+                    R.raw.video_2, true
                 )
             )
             tx.commit()
@@ -68,7 +68,7 @@ class AppTechnicalDescriptionFrag() : Fragment() {
             var tx = fManager.beginTransaction()
             tx.add(
                 R.id.frag, VideoAppFrag(
-                    R.raw.video_3
+                    R.raw.video_3, true
                 )
             )
             tx.commit()
