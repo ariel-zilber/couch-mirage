@@ -42,8 +42,9 @@
             android:screenOrientation="portrait" />
 
 
+
         <activity
-            android:name=".instructions.GreetingActivity"
+            android:name=".greetings.GreetingActivity"
             android:configChanges="orientation|screenSize"
             android:exported="true"
             android:screenOrientation="locked"
@@ -51,6 +52,9 @@
 
         </activity>
 
+        <activity
+            android:name=".Help.HelpActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".OpenCameraActivity"

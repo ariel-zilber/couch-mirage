@@ -31,9 +31,11 @@ import com.google.ar.sceneform.rendering.ModelRenderable
 import com.google.ar.sceneform.rendering.Renderable
 import com.google.ar.sceneform.ux.TransformableNode
 import com.google.firebase.FirebaseApp
+import com.huji.couchmirage.Help.HelpActivity
 import com.huji.couchmirage.ar.MyArFragment
 import com.huji.couchmirage.catalog.CatalogFrontActivity
-import com.huji.couchmirage.instructions.GreetingActivity
+import com.huji.couchmirage.greetings.GreetingActivity
+import com.huji.couchmirage.greetings.SquareImageButton
 import com.huji.couchmirage.utils.PhotoSaver
 import com.huji.couchmirage.utils.VideoRecorder
 import com.warkiz.widget.IndicatorSeekBar
@@ -154,6 +156,20 @@ class OpenCameraActivity : AppCompatActivity() {
         }
     }
 
+    /***
+     * Initialzie the help button
+     */
+    private fun setupHelpButton() {
+        val help: SquareImageButton = findViewById(R.id.help_btn)
+        help.setOnClickListener { view ->
+
+            val intent = Intent(this, HelpActivity::class.java)
+
+            startActivity(intent)
+
+        }
+    }
+
 
     // lifecycle methods
 
@@ -181,6 +197,7 @@ class OpenCameraActivity : AppCompatActivity() {
         setupSearchButton()
         setupCameraButton()
         setupUpInfoButton()
+        setupHelpButton()
         setupSeekBar()
     }
 

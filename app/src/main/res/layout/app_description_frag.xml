@@ -65,7 +65,7 @@
                             android:layout_height="fill_parent"
                             card_view:cardCornerRadius="@dimen/card_view_corner_radius">
 
-                            <com.huji.couchmirage.instructions.SquareImageButton
+                            <com.huji.couchmirage.greetings.SquareImageButton
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentLeft="true"
@@ -127,7 +127,7 @@
                             android:layout_height="fill_parent"
                             card_view:cardCornerRadius="@dimen/card_view_corner_radius">
 
-                            <com.huji.couchmirage.instructions.SquareImageButton
+                            <com.huji.couchmirage.greetings.SquareImageButton
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentLeft="true"
@@ -185,7 +185,7 @@
                             card_view:cardCornerRadius="@dimen/card_view_corner_radius">
 
 
-                            <com.huji.couchmirage.instructions.SquareImageButton
+                            <com.huji.couchmirage.greetings.SquareImageButton
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentLeft="true"

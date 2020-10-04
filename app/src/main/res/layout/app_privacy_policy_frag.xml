@@ -6,7 +6,7 @@
     android:background="#FFFFFF">
     <!-- TODO: Update blank fragment layout -->
 
-    <com.huji.couchmirage.instructions.ObservableWebView
+    <com.huji.couchmirage.greetings.ObservableWebView
         android:id="@+id/webView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-    </com.huji.couchmirage.instructions.ObservableWebView>
+    </com.huji.couchmirage.greetings.ObservableWebView>
 
 
     <Button
