@@ -25,6 +25,7 @@ The app can be found on Google Play:
 - Searching furniture with  maximum measumrent
 - Placing 3D model of <b>real furnitures!</b>  at home
 - Taking picture/ vidoe of model at your home
+- help page showing how to use the app
 
 ## Supported devices
 
@@ -54,6 +55,11 @@ Go to :
 ### The model has been placed!!
 ![screenshot 7](docs/images/screenshot_7.jpeg)
 
+### Help page 1
+![screenshot 8](docs/images/screenshot_8.jpeg)
+
+### Help page 2
+![screenshot 8](docs/images/screenshot_9.jpeg)
 
 ## 3D models
 Our app uses Firebase as backend.
