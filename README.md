@@ -61,6 +61,56 @@ Go to :
 ### Help page 2
 ![screenshot 8](docs/images/screenshot_9.jpeg)
 
+
+
+## project structure
+```
+.
+├── ar                                      # arcore related logic
+│   ├── CameraFacingNode.kt                 # a type of node always facing the camera
+│   └── MyArFragment.kt                     # custom arframgent 
+
+├── catalog                                 # contains the catalog screens logic
+│   ├── CatalogFrontActivity.kt             # main page of the catalog(the one with the categories)
+│   ├── DepartmentActivity.kt               # department page activit
+│   ├── Department.kt                       # department item 
+│   ├── DepartmentRecyclerAdapter.kt        # department adapter
+│   ├── DepartmentSourceData.kt             # holds the department images
+│   ├── Furniture.kt                        # data class representing a furniture
+│   ├── ItemDetailsActivity.kt              #  activity showing details about ites.
+                                               Also allows downloading a model to show
+│   ├── ItemRecyclerAdapter.kt              # recycle adapter for items
+│   └── LoadingDialogFragment.kt            # loading aimation fragment
+
+├── greetings                               # contains logic regearding screens displaying on first app usage
+│   ├── AboutAppFrag.kt                     # fragemnt showing details about the app
+│   ├── AppDescriptionFrag.kt               # show how to use the app
+│   ├── AppTechnicalDescriptionFrag.kt      # shows technical notes regardign ar
+│   ├── GreetingActivity.kt                 # the activity showed to the user on first usage
+│   ├── HomeFrag.kt                         # first page  showed in the greetnig fragment
+│   ├── ObservableWebView.java              # webviewcustom   used to show the privacy notes
+│   ├── PrivacyPolicyFrag.kt                # fragments show the privacy policy
+│   ├── SquareImageButton.java              # sqaure image button.Extends Button class
+│   └── VideoAppFrag.kt                     # video framenget of the video 
+                                              shown to the user in the greetings pages
+
+├── Help                                    # use help activit'ies related logic
+│   ├── HelpActivity.kt                     # actvity that disaplys usage help to the user
+│   ├── HelpDescriptionFrag.kt              # show how to use the app
+│   ├── HelpTechnicalDescriptionFrag.kt     # shows technical notes regardign ar
+│   └── HelpVideoFrag.kt                    # video framenget of the videds
+                                              shown to the user in the help pages
+
+├── InfoFAB.kt                              # the infofab shows no the camera activity.Top left panel
+├── MeasurementBox.kt                       # holds logic regearding creating the 3d cube used to
+                                              measure a reald world 3d sapcec
+├── OpenCameraActivity.kt                   # the main activity.Holds the AR logic
+
+└── utils                                   # utility classes
+    ├── PhotoSaver.kt                       # saves ar scene photo
+    └── VideoRecorder.java                  # records ar scene video
+```
+
 ## 3D models
 Our app uses Firebase as backend.
 
