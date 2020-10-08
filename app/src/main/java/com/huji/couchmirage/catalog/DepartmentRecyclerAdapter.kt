@@ -66,6 +66,10 @@ class DepartmentRecyclerAdapter(
                 .load(department.departmentImg)
                 .into(departmentImg)
 
+
+
+
+
         }
 
 

@@ -148,6 +148,15 @@ See : https://github.com/arikzilWork/CouchMirageFirebaseLoader
 
     * https://archibaseplanet.com/download/6f86e1ec.html
 
+## List of tools used
+
+1. [Blender](https://www.blender.org/) - used to edit/prepare models for ARCore to be displayed
+
+2. [adobe after effects](https://www.adobe.com/il_en/products/aftereffects.html?gclid=Cj0KCQjw8fr7BRDSARIsAK0Qqr48Zn77ZN5bvCHuYUj-A8n33hjqkPH6LINI5eQyFHOb9LtmSKOBRUcaAoBNEALw_wcB&sdid=8DN85NTY&mv=search&skwcid=AL!3085!3!340845921979!e!!g!!adobe%20after%20effects&ef_id=Cj0KCQjw8fr7BRDSARIsAK0Qqr48Zn77ZN5bvCHuYUj-A8n33hjqkPH6LINI5eQyFHOb9LtmSKOBRUcaAoBNEALw_wcB:G:s&s_kwcid=AL!3085!3!340845921979!e!!g!!adobe%20after%20effects!1464058443!56263479985) - used to prepare the instruction videos 
+
+3. [free logo design ](https://editor.freelogodesign.org/?lang=en&logo=2895af34-67d1-42d7-8c42-0ddedb973ba0&companyname=&category=0) - used to create the icon
+
+
 ## Credits
 [Ariel Zilbershtyin ](https://www.linkedin.com/in/ariel-zilberstein-cmc/)- Computer Engineering student at The Hebrew university
 University mail : ariel.zilbershtey@mail.huji.ac.il

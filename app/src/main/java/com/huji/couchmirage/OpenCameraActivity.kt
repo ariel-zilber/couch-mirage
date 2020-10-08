@@ -415,6 +415,9 @@ class OpenCameraActivity : AppCompatActivity() {
                 minusButton.visibility = View.GONE
                 plusButton.visibility = View.GONE
 
+                findViewById<IndicatorStayLayout>(R.id.indicator_container).visibility =
+                    View.GONE
+
                 changeInfoStageToGreen()
             }
 

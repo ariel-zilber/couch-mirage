@@ -2,19 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/bottomPanel"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_alignParentStart="true"
-    android:layout_alignParentEnd="true"
-    android:layout_alignParentBottom="true"
     android:background="@color/camera_menu_background"
-
     >
 
 
     <FrameLayout
         android:layout_width="64dp"
-        android:layout_height="96dp"
+        android:layout_height="80dp"
         android:layout_weight="1">
 
 
@@ -23,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:backgroundTint="@color/design_default_color_on_secondary"
             android:src="@drawable/search_green_32"
             app:backgroundTint="@color/camera_menu_btn_tint"
@@ -33,7 +29,7 @@
 
     <FrameLayout
         android:layout_width="64dp"
-        android:layout_height="96dp"
+        android:layout_height="80dp"
         android:layout_weight="1">
 
 
@@ -42,7 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:backgroundTint="@color/design_default_color_on_secondary"
             android:src="@drawable/ic_camera"
             app:backgroundTint="@color/camera_menu_btn_tint"
@@ -55,7 +51,7 @@
 
     <FrameLayout
         android:layout_width="64dp"
-        android:layout_height="96dp"
+        android:layout_height="80dp"
         android:layout_weight="1">
 
 
@@ -65,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
 
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:backgroundTint="@color/design_default_color_on_secondary"
             android:src="@drawable/ruler_green_32"
             app:backgroundTint="@color/camera_menu_btn_tint"

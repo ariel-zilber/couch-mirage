@@ -33,6 +33,8 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/container1"
 
@@ -51,10 +53,10 @@
                 android:layout_marginRight="10dp"
                 android:fontFamily="@font/calibri"
                 android:gravity="start"
+                android:maxWidth="120dp"
                 android:text="BABY &amp; CHILDREN PRODUCTS"
                 android:textColor="#3C3C3C"
                 android:textSize="12sp"
-                android:maxWidth="120dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/imageView"
                 app:layout_constraintHorizontal_bias="0.0"
