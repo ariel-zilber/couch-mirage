@@ -116,7 +116,7 @@ Go to :
 Our app uses Firebase as backend.
 
 The models were takes from multiple sources.
-They were preproccessed using blender software and uploaded to firebase using python.
+They were preprocessed using blender software and uploaded to firebase using python.
 See : https://github.com/arikzilWork/CouchMirageFirebaseLoader
 
 ### List of 3d models sources
