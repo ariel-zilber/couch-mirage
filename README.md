@@ -160,8 +160,6 @@ See : https://github.com/arikzilWork/CouchMirageFirebaseLoader
 ## Credits
 [Ariel Zilbershtyin ](https://www.linkedin.com/in/ariel-zilberstein-cmc/)- Computer Engineering student at The Hebrew university
 University mail : ariel.zilbershtey@mail.huji.ac.il
-id :315314799
 
 [Brahan Wassan  ](https://www.linkedin.com/in/brahan-wassan/)- Math & Computer Science student at The Hebrew university
 University mail : Brahan.Wassan@mail.huji.ac.il
-id: 320455116
